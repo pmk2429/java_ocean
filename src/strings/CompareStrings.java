@@ -19,6 +19,8 @@ public class CompareStrings {
 		} else {
 			System.out.println("\nNO, strings are not equal!!!");
 		}
+		input.close();
+		input2.close();
 	}
 
 	private boolean compareStrings(String inputString, String inputString2) {

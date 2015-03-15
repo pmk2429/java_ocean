@@ -20,11 +20,12 @@ public class UniqueCharacters {
 		uniqueObj.printUniqueCharacters(mapUniqueChars);
 	}
 
+	@SuppressWarnings("unchecked")
 	private void printUniqueCharacters(Map<Character, Integer> mapUniqueChars) {
-		Set setMap = mapUniqueChars.entrySet();
-		Iterator iter = setMap.iterator();
+		Set<?> setMap = mapUniqueChars.entrySet();
+		Iterator<?> iter = setMap.iterator();
 		while (iter.hasNext()) {
-			Map.Entry entryMap = (Map.Entry) iter.next();
+			Map.Entry<Character, Integer> entryMap = (Map.Entry<Character, Integer>) iter.next();
 			if ((Integer) (entryMap.getValue()) == 1) {
 				System.out.print(entryMap.getKey() + ", ");
 			}
@@ -35,8 +36,7 @@ public class UniqueCharacters {
 		Map<Character, Integer> mapUniqueChars = new HashMap<Character, Integer>();
 		for (int i = 0; i < inputString.length(); i++) {
 			if (mapUniqueChars.containsKey(inputString.charAt(i))) {
-				mapUniqueChars.put(inputString.charAt(i),
-						mapUniqueChars.get(inputString.charAt(i)) + 1);
+				mapUniqueChars.put(inputString.charAt(i), mapUniqueChars.get(inputString.charAt(i)) + 1);
 			} else {
 				mapUniqueChars.put(inputString.charAt(i), 1);
 			}

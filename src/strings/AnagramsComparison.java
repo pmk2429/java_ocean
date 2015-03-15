@@ -16,10 +16,8 @@ public class AnagramsComparison {
 	List<Character> anagramList = new ArrayList<Character>();
 
 	public static void main(String[] args) {
-
 		String word = "mother-in-law";
 		String anagram = "woman hitler";
-
 		AnagramsComparison comparisonObj = new AnagramsComparison();
 		comparisonObj.createList(word, anagram);
 
@@ -60,10 +58,8 @@ public class AnagramsComparison {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result
-				+ ((anagramList == null) ? 0 : anagramList.hashCode());
-		result = prime * result
-				+ ((wordList == null) ? 0 : wordList.hashCode());
+		result = prime * result + ((anagramList == null) ? 0 : anagramList.hashCode());
+		result = prime * result + ((wordList == null) ? 0 : wordList.hashCode());
 		return result;
 	}
 
