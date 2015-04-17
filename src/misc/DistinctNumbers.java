@@ -1,7 +1,7 @@
 package misc;
 
 /**
- * DistinctNumbers method is used to find Distinct number from a ArrayList.
+ * DistinctNumbers is used to find Distinct number from a ArrayList.
  * The class implements Map<K,V> for storing and looking up the distinct numbers
  * Since ArrayList takes O(1) for insertion and also Map<K,V> takes constant order time
  * O(1) for insertion, the total time required to look for distinct numbers
@@ -36,10 +36,8 @@ public class DistinctNumbers {
 
 		final long duration = System.nanoTime() - startTime;
 
-		long msDuration = TimeUnit.MILLISECONDS.convert(duration,
-				TimeUnit.NANOSECONDS);
-		long secDuration = TimeUnit.SECONDS.convert(duration,
-				TimeUnit.NANOSECONDS);
+		long msDuration = TimeUnit.MILLISECONDS.convert(duration, TimeUnit.NANOSECONDS);
+		long secDuration = TimeUnit.SECONDS.convert(duration, TimeUnit.NANOSECONDS);
 		// Print out the running time of program.
 		System.out.println("\n-----------------------------------\n");
 		System.out.println("Running time: " + msDuration + " milliseconds");
@@ -52,8 +50,7 @@ public class DistinctNumbers {
 	}
 
 	// Method to find distinct numbers and maintaining the insertion order.
-	private Map<Integer, Integer> findDistinctNumbers(
-			ArrayList<Integer> listItems) {
+	private Map<Integer, Integer> findDistinctNumbers(ArrayList<Integer> listItems) {
 		int count = 1;
 		Map<Integer, Integer> mapNumbers = new HashMap<Integer, Integer>();
 		for (int i = 0; i < listItems.size(); i++) {
@@ -67,8 +64,7 @@ public class DistinctNumbers {
 	}
 
 	// Method to find the distinct numbers in the List.
-	private Map<Integer, Integer> findDistinctNumbersInOrder(
-			ArrayList<Integer> listItems) {
+	private Map<Integer, Integer> findDistinctNumbersInOrder(ArrayList<Integer> listItems) {
 		int count = 1;
 		Map<Integer, Integer> mapNumbers = new HashMap<Integer, Integer>();
 		Map<Integer, Integer> mapOrdered = new HashMap<Integer, Integer>();

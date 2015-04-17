@@ -23,6 +23,5 @@ public class FibonacciSeries {
 			temp = next;
 			System.out.print(next + " ");
 		}
-
 	}
 }

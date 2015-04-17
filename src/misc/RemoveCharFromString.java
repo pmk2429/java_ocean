@@ -50,13 +50,10 @@ public class RemoveCharFromString {
 			}
 		}
 		if (count > 0) {
-			System.out.printf("\n> '" + characterToRemove
-					+ "' was Successfully removed from String.\n");
+			System.out.printf("\n> '" + characterToRemove + "' was Successfully removed from String.\n");
 		} else if (count == 0) {
-			System.out.printf("\n> Sorry! '" + characterToRemove
-					+ "' was not found in input String.\n");
+			System.out.printf("\n> Sorry! '" + characterToRemove + "' was not found in input String.\n");
 		}
-
 	}
 
 	/**

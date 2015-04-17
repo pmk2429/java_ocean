@@ -18,16 +18,14 @@ public class CharacterFrequency {
 
 	@SuppressWarnings("resource")
 	public static void main(String[] args) {
-		System.out
-				.println("Enter the string to count frequency of each characters:");
+		System.out.println("Enter the string to count frequency of each characters:");
 		System.out.print("> ");
 		Scanner input = new Scanner(System.in);
 		String inputText = input.nextLine();
 
 		CharacterFrequency dcObj = new CharacterFrequency();
 		// Pass the input string as parameter to findDuplicateNumbers()
-		Map<Character, Integer> charMap = dcObj
-				.findDuplicateCharacters(inputText);
+		Map<Character, Integer> charMap = dcObj.findDuplicateCharacters(inputText);
 		// Print the character count of each characters;
 		// dcObj.printFrequencyCount(charMap);
 
@@ -38,7 +36,7 @@ public class CharacterFrequency {
 		String ch = input.next();
 
 		int count = charMap.get(ch.charAt(0));
-		System.out.println("Count-> " + count);
+		System.out.println("\nCount-> " + count);
 
 		input.close();
 	}
@@ -63,8 +61,7 @@ public class CharacterFrequency {
 		int count = 1;
 		for (int i = 0; i < inputText.length(); i++) {
 			if (charMap.containsKey(inputText.charAt(i))) {
-				charMap.put(inputText.charAt(i),
-						charMap.get(inputText.charAt(i)) + 1);
+				charMap.put(inputText.charAt(i), charMap.get(inputText.charAt(i)) + 1);
 			} else {
 				charMap.put(inputText.charAt(i), count);
 			}
@@ -75,8 +72,7 @@ public class CharacterFrequency {
 	public void printFrequencyCount(Map<Character, Integer> charMap) {
 
 		// Sorting the HashMap by passing HashMap as an argument to TreeMap
-		Map<Character, Integer> sortedMap = new TreeMap<Character, Integer>(
-				charMap);
+		Map<Character, Integer> sortedMap = new TreeMap<Character, Integer>(charMap);
 		// Getting the Entry set for each entries in the HashMap.
 		Set<?> setMap = sortedMap.entrySet();
 
@@ -84,13 +80,11 @@ public class CharacterFrequency {
 		Iterator<?> iter = setMap.iterator();
 
 		System.out.println("\nCharacter \t:\t Count");
-		while (iter.hasNext()) {	
+		while (iter.hasNext()) {
 			// Map.Entry will map all the keys and values together.
 			@SuppressWarnings("unchecked")
-			Map.Entry<Character, Integer> mapCharacters = (Map.Entry<Character, Integer>) iter
-					.next();
-			System.out.println(mapCharacters.getKey() + "\t\t:\t\t"
-					+ mapCharacters.getValue());
+			Map.Entry<Character, Integer> mapCharacters = (Map.Entry<Character, Integer>) iter.next();
+			System.out.println(mapCharacters.getKey() + "\t\t:\t\t" + mapCharacters.getValue());
 		}
 	}
 }

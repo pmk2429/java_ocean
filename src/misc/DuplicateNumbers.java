@@ -68,14 +68,13 @@ public class DuplicateNumbers {
 
 	public static void main(String a[]) {
 
-		int[] duplicateArray2 = { 2, 6, 7, 19, 55, 7, 2, 55, 8, 10, 2, 6, 7,
-				19, 55, 14, 3, 2, 8, 9, 47, 54, 65, 87, 48, 16, 5, 4, 1, 161,
-				15, 1, 51, 5121, 1584, 84, 15, 1, 15, 1, 61, 61, 616, 1, };
+		int[] duplicateArray2 = { 2, 6, 7, 19, 55, 7, 2, 55, 8, 10, 2, 6, 7, 19, 55, 14, 3, 2, 8, 9, 47, 54, 65, 87,
+				48, 16, 5, 4, 1, 161, 15, 1, 51, 5121, 1584, 84, 15, 1, 15, 1, 61, 61, 616, 1, };
+
 		int[] duplicateArray = { 3, 5, 2, 6, 8, 9, 7, 6 };
 		DuplicateNumbers dns = new DuplicateNumbers();
 
-		List<Integer> duplicate1 = dns
-				.findDuplicateNumberUsingSet(duplicateArray);
+		List<Integer> duplicate1 = dns.findDuplicateNumberUsingSet(duplicateArray2);
 		System.out.println("\nDuplicate number using HashSet: " + duplicate1);
 
 		/*	
