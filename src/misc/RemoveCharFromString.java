@@ -6,7 +6,6 @@ public class RemoveCharFromString {
 	char[] stringArray;
 
 	public static void main(String[] args) {
-
 		System.out.println("Enter a string: ");
 		System.out.print("> ");
 		Scanner stringInput = new Scanner(System.in);
@@ -20,16 +19,15 @@ public class RemoveCharFromString {
 		RemoveCharFromString rcs = new RemoveCharFromString();
 		rcs.removeCharFromString(original, charac);
 		rcs.displayCharArray();
-
 	}
 
 	/**
-	 * removeCharFromString(String, char) method is used to remove the specified
-	 * char from the String. This method converts the input String into a
-	 * Character Array and then it iterates each element of the Character Array
-	 * to check whether the specified char is in the Character Array or not. If
-	 * match is found then the char is replaced with a null and a count is
-	 * incremented to make sure how many characters were replaced(removed).
+	 * <h1>removeCharFromString(String, char)</h1> method is used to remove the
+	 * specified char from the String. This method converts the input String
+	 * into a Character Array and then it iterates each element of the Character
+	 * Array to check whether the specified char is in the Character Array or
+	 * not. If match is found then the char is replaced with a null and a count
+	 * is incremented to make sure how many characters were replaced(removed).
 	 * Otherwise the message is printed that the specified character was not
 	 * found in the String.
 	 * 
