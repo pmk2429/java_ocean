@@ -15,7 +15,7 @@ public final class StdIn {
 	private static Scanner scanner;
 
 	// assume Unicode UTF-8 encoding
-	private static final String CHARSET_NAME = "UTF_8";
+	private static final String CHARSET_NAME = "UTF-8";
 
 	// assuming language = English
 	private static final Locale LOCALE = Locale.US;
@@ -64,7 +64,7 @@ public final class StdIn {
 	}
 
 	/**
-	 * Reads and returns the remainder of the input, as a string.
+	 * Reads and returns the remainder of the input, as a String.
 	 * 
 	 * @return the remainder of the input, as a string
 	 */
@@ -181,7 +181,12 @@ public final class StdIn {
 
 	/**
 	 * Reads all remaining tokens from standard input and returns them as an
-	 * array of strings.
+	 * Array of strings.
+	 * <p>
+	 * </p>
+	 * ***IMP
+	 * <p>
+	 * </p>
 	 * 
 	 * @return all remaining tokens on standard input, as an array of strings
 	 */
@@ -189,14 +194,139 @@ public final class StdIn {
 		// we could use readAll.trim().split(), but that's not consistent
 		// because trim() uses characters 0x00..0x20 as whitespace
 		String[] tokens = WHITESPACE_PATTERN.split(readAll());
-		if (tokens.length == 0 || tokens[0].length() > 0)
+		if (tokens.length == 0 || tokens[0].length() > 0) {
 			return tokens;
+		}
 
 		// don't include first token if it is leading whitespace
 		String[] decapitokens = new String[tokens.length - 1];
-		for (int i = 0; i < tokens.length - 1; i++)
+		for (int i = 0; i < tokens.length - 1; i++) {
 			decapitokens[i] = tokens[i + 1];
+		}
 		return decapitokens;
+	}
+
+	/**
+	 * Reads all remaining lines from standard input and returns them as an
+	 * Array of strings.
+	 * 
+	 * @return all remaining lines on standard input, as an array of strings
+	 */
+	public static String[] readAllLines() {
+		ArrayList<String> lines = new ArrayList<String>();
+		while (hasNextLine()) {
+			lines.add(readLine());
+		}
+		return lines.toArray(new String[0]);
+	}
+
+	/**
+	 * Reads all remaining tokens from standard input, parses them as integers,
+	 * and returns them as an Array of integers.
+	 * 
+	 * @return all remaining integers on standard input, as an array
+	 * @throws InputMismatchException
+	 *             if any token cannot be parsed as an <tt>int</tt>
+	 */
+	public static int[] readAllInts() {
+		String[] fields = readAllStrings();
+		int[] vals = new int[fields.length];
+		for (int i = 0; i < fields.length; i++)
+			vals[i] = Integer.parseInt(fields[i]);
+		return vals;
+	}
+
+	/**
+	 * Reads all remaining tokens from standard input, parses them as doubles,
+	 * and returns them as an Array of doubles.
+	 * 
+	 * @return all remaining doubles on standard input, as an array
+	 * @throws InputMismatchException
+	 *             if any token cannot be parsed as a <tt>double</tt>
+	 */
+	public static double[] readAllDoubles() {
+		String[] fields = readAllStrings();
+		double[] vals = new double[fields.length];
+		for (int i = 0; i < fields.length; i++)
+			vals[i] = Double.parseDouble(fields[i]);
+		return vals;
+	}
+
+	// do this once when StdIn is initialized
+	static {
+		resync();
+	}
+
+	private static void resync() {
+		setScanner(new Scanner(new java.io.BufferedInputStream(System.in), CHARSET_NAME));
+	}
+
+	private static void setScanner(Scanner scanner) {
+		StdIn.scanner = scanner;
+		StdIn.scanner.useLocale(LOCALE);
+	}
+
+	/**
+	 * Reads all remaining tokens, parses them as integers, and returns them as
+	 * an array of integers.
+	 * 
+	 * @return all remaining integers, as an array
+	 * @throws InputMismatchException
+	 *             if any token cannot be parsed as an <tt>int</tt>
+	 * @deprecated For more consistency, use {@link #readAllInts()}
+	 */
+	public static int[] readInts() {
+		return readAllInts();
+	}
+
+	/**
+	 * Reads all remaining tokens, parses them as doubles, and returns them as
+	 * an array of doubles.
+	 * 
+	 * @return all remaining doubles, as an array
+	 * @throws InputMismatchException
+	 *             if any token cannot be parsed as a <tt>double</tt>
+	 * @deprecated For more consistency, use {@link #readAllDoubles()}
+	 */
+	public static double[] readDoubles() {
+		return readAllDoubles();
+	}
+
+	/**
+	 * Reads all remaining tokens and returns them as an array of strings.
+	 * 
+	 * @return all remaining tokens, as an array of strings
+	 * @deprecated For more consistency, use {@link #readAllStrings()}
+	 */
+	public static String[] readStrings() {
+		return readAllStrings();
+	}
+
+	/**
+	 * Interactive test of basic functionality.
+	 */
+	public static void main(String[] args) {
+
+		System.out.println("Type a string: ");
+		String s = StdIn.readString();
+		System.out.println("Your string was: " + s);
+		System.out.println();
+
+		System.out.println("Type an int: ");
+		int a = StdIn.readInt();
+		System.out.println("Your int was: " + a);
+		System.out.println();
+
+		System.out.println("Type a boolean: ");
+		boolean b = StdIn.readBoolean();
+		System.out.println("Your boolean was: " + b);
+		System.out.println();
+
+		System.out.println("Type a double: ");
+		double c = StdIn.readDouble();
+		System.out.println("Your double was: " + c);
+		System.out.println();
+
 	}
 
 }
