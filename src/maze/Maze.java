@@ -1,14 +1,11 @@
 package maze;
 
-/* Maze.java */
-
 import java.util.*;
-
-//import set.*;
 
 /**
  * The Maze class represents a maze in a rectangular grid. There is exactly one
- * path between any two points.
+ * path between any two points. The Maze class is a static class for generating
+ * Maze.
  **/
 
 public class Maze {
