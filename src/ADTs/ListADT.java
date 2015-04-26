@@ -1,12 +1,14 @@
 package ADTs;
 
-import java.util.Scanner;
+import java.util.Vector;
 
 public class ListADT implements ListInterface {
 
 	private static final int MAX_SIZE = 50;
 	private Object items[]; // an array of list items
 	private int numOfItems;
+
+	Vector<String> v = new Vector<String>();
 
 	public ListADT() {
 		items = new Object[MAX_SIZE];
@@ -98,9 +100,6 @@ public class ListADT implements ListInterface {
 	public static void main(String[] args) {
 
 		ListADT list = new ListADT();
-		String dataItem;
-		int intItem;
-
 		System.out.println(list);
 
 	}
