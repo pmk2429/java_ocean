@@ -1,0 +1,59 @@
+Advantages of factory pattern
+
+By now, you should be able to count the main advantages of using factory pattern. Lets note down:
+
+The creation of an object precludes its reuse without significant duplication of code.
+The creation of an object requires access to information or resources that should not be contained within the composing class.
+The lifetime management of the generated objects must be centralized to ensure a consistent behavior within the application.
+
+
+
+Advantage of Factory method Pattern in Java:
+
+Factory pattern in Java is heavily used everywhere including JDK, open source library and other frameworks.In following are main advantages of using Factory pattern in Java:
+
+1) Factory method design pattern decouples the calling class from the target class, which result in less coupled and highly cohesive code?
+E.g.: JDBC is a good example for this pattern; application code doesn't need to know what database it will be used with, so it doesn't know what database-specific driver classes it should use. Instead, it uses factory methods to get Connections, Statements, and other objects to work with. Which gives you flexibility to change your back-end database without changing your DAO layer in case you are using ANSI SQL features and not coded on DBMS specific feature?
+
+2) Factory pattern in Java enables the subclasses to provide extended version of an object, because creating an object inside factory is more flexible than creating an object directly in the client. Since client is working on interface level any time you can enhance the implementation and return from Factory.
+
+3) Another benefit of using Factory design pattern in Java is that it encourages consistency in Code since every time object is created using Factory rather than using different constructor at different client side.
+
+4) Code written using Factory design pattern in Java is also easy to debug and troubleshoot because you have a centralized method for object creation and every client is getting object from same place.
+
+
+Some more advantages of factory method design pattern is:
+1. Static factory method used in factory design pattern enforces use of Interface than implementation which itself a good practice. for example:
+
+
+Read more: http://javarevisited.blogspot.com/2011/12/factory-design-pattern-java-example.html#ixzz3ZRCp5d8b
+
+------------------------------------------------------------------------------------------------------------------------------
+
+
+Example of static factory method in JDK
+
+ Best Example of Factory method design pattern is 
+ 
+valueOf() method which is there in String and wrapper classes like Integer and Boolean and used for type conversion i.e. from converting String to Integer or String to double in java..
+
+Some more examples of factory method design pattern from JDK is :
+
+valueOf() method which returns object created by factory equivalent to value of parameter passed.
+
+getInstance() method which creates instance of Singleton class.
+
+newInstance() method which is used to create and return new instance from factory method every time called.
+
+getType() and newType() equivalent of getInstance() and newInstance() factory method but used when factory method resides in separate class.
+
+
+------------------------------------------------------------------------------------------------------------------------------
+
+
+When to use Factory design pattern in Java
+
+Static Factory methods are common in frameworks where library code needs to create objects of types which may be sub classed by applications using the framework.        
+Some or all concrete products can be created in multiple ways, or we want to leave open the option that in the future there may be new ways to create the concrete product.
+Factory method is used when Products don't need to know how they are created.
+We  can use factory pattern where we have to create an object of any one of sub-classes depending on the data provided
