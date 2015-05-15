@@ -1,4 +1,4 @@
-package designPattern.adapterPattern.main;
+package designPattern.adapterPattern;
 
 import designPattern.adapterPattern.adapter.AudioPlayer;
 
