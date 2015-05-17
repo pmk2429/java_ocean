@@ -15,8 +15,11 @@ public class CompositePatternDemo {
 		Employee salesExecutive1 = new Employee("Richard", "Sales", 10000);
 		Employee salesExecutive2 = new Employee("Rob", "Sales", 10000);
 
+		Employee CTO = new Employee("Mark", "Technology Head", 105000);
+
 		CEO.add(headSales);
 		CEO.add(headMarketing);
+		CEO.add(CTO);
 
 		headSales.add(salesExecutive1);
 		headSales.add(salesExecutive2);
