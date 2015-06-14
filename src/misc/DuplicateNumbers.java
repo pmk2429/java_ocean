@@ -52,15 +52,14 @@ public class DuplicateNumbers {
 	 * @return
 	 */
 	public List<Integer> findDuplicateNumberUsingSet(int[] numbers) {
-		int[] duplicateArray = numbers;
 		ArrayList<Integer> duplicateNos = new ArrayList<Integer>();
 		Set<Integer> s = new HashSet<Integer>();
-		for (int i = 0; i < duplicateArray.length; i++) {
-			if (s.contains(duplicateArray[i])) {
-				if (!duplicateNos.contains(duplicateArray[i]))
-					duplicateNos.add(duplicateArray[i]);
+		for (int i = 0; i < numbers.length; i++) {
+			if (s.contains(numbers[i])) {
+				if (!duplicateNos.contains(numbers[i]))
+					duplicateNos.add(numbers[i]);
 			} else {
-				s.add(duplicateArray[i]);
+				s.add(numbers[i]);
 			}
 		}
 		return duplicateNos;
@@ -74,7 +73,7 @@ public class DuplicateNumbers {
 		int[] duplicateArray = { 3, 5, 2, 6, 8, 9, 7, 6 };
 		DuplicateNumbers dns = new DuplicateNumbers();
 
-		List<Integer> duplicate1 = dns.findDuplicateNumberUsingSet(duplicateArray2);
+		List<Integer> duplicate1 = dns.findDuplicateNumberUsingSet(duplicateArray);
 		System.out.println("\nDuplicate number using HashSet: " + duplicate1);
 
 		/*	

@@ -1,4 +1,4 @@
-package Java_Basics;
+package misc;
 
 import java.util.*;
 
