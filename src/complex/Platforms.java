@@ -1,4 +1,4 @@
-package complexProblems;
+package complex;
 
 /**
  * Given arrival and departure times of all trains that reach a railway station,
