@@ -10,7 +10,7 @@ public class UniqueCharacters {
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		String inputString = input.next();
+		String inputString = input.nextLine();
 		input.close();
 
 		UniqueCharacters uniqueObj = new UniqueCharacters();
@@ -25,18 +25,27 @@ public class UniqueCharacters {
 		Set<?> setMap = mapUniqueChars.entrySet();
 		Iterator<?> iter = setMap.iterator();
 		while (iter.hasNext()) {
-			Map.Entry<Character, Integer> entryMap = (Map.Entry<Character, Integer>) iter.next();
+			Map.Entry<Character, Integer> entryMap = (Map.Entry<Character, Integer>) iter
+					.next();
 			if ((Integer) (entryMap.getValue()) == 1) {
 				System.out.print(entryMap.getKey() + ", ");
 			}
 		}
+
+		// OR
+
+		// for (Map.Entry<Character, Integer> entry : mapUniqueChars.entrySet())
+		// {
+		// System.out.println(entry.getKey() + " : " + entry.getValue());
+		// }
 	}
 
 	private Map<Character, Integer> findUniqueCharacters(String inputString) {
 		Map<Character, Integer> mapUniqueChars = new HashMap<Character, Integer>();
 		for (int i = 0; i < inputString.length(); i++) {
 			if (mapUniqueChars.containsKey(inputString.charAt(i))) {
-				mapUniqueChars.put(inputString.charAt(i), mapUniqueChars.get(inputString.charAt(i)) + 1);
+				mapUniqueChars.put(inputString.charAt(i),
+						mapUniqueChars.get(inputString.charAt(i)) + 1);
 			} else {
 				mapUniqueChars.put(inputString.charAt(i), 1);
 			}
