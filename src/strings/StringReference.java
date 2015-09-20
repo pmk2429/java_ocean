@@ -10,6 +10,8 @@ public class StringReference {
 		String s5 = "India";
 		System.out.println(s1 == s2A);
 		System.out.println(s1.equals(s2A));
+		String s1a = s1;
+		System.out.println(s1a == s1);
 
 		int a = 5;
 		int b = 5;
