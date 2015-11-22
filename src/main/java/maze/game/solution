@@ -1,0 +1,9 @@
+On any given point, you will have 4 directions to move to if you or not on the edge, with the given constraint that you cannot move diagonally or through walls. Start with an empty 2x2 matrix, and on every step you can take near the starting point, mark a "1" because it takes one step.
+
+Afterwards, mark a "2" to adjacent legal steps that does not already have a number.
+
+Next, mark a "3" to all adjacent legal steps next to the 2s that already does not have a number.
+
+Ultimately, this will end up filling the whole matrix with legal moves and the minimum amount of moves that will lead to a spot.
+
+By only marking a number to a spot that have not already been assigned, this will avoid backtracking or stepping on a step that can has already been reached earlier. This ensures that the matrix will be filled with "best possible routes."

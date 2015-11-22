@@ -1,184 +1,522 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="10d2fc22-35db-43f2-9e3b-cd629a85da6f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/generics/A.class" afterPath="$PROJECT_DIR$/bin/generics/A.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/evaluator/Addition.class" afterPath="$PROJECT_DIR$/bin/evaluator/Addition.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/strings/Anagrams.class" afterPath="$PROJECT_DIR$/bin/strings/Anagrams.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/strings/AnagramsComparison.class" afterPath="$PROJECT_DIR$/bin/strings/AnagramsComparison.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/generics/Animal.class" afterPath="$PROJECT_DIR$/bin/generics/Animal.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/generics/boundedgenerics/Animal.class" afterPath="$PROJECT_DIR$/bin/generics/boundedgenerics/Animal.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/iterable/Animal.class" afterPath="$PROJECT_DIR$/bin/iterable/Animal.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/polymorphism/Animal.class" afterPath="$PROJECT_DIR$/bin/polymorphism/Animal.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/generics/Animal2.class" afterPath="$PROJECT_DIR$/bin/generics/Animal2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/iterable/AnimalIterator.class" afterPath="$PROJECT_DIR$/bin/iterable/AnimalIterator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/interfaces/AnonymousClass$1.class" afterPath="$PROJECT_DIR$/bin/interfaces/AnonymousClass$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/interfaces/AnonymousClass$1EnglishGreeting.class" afterPath="$PROJECT_DIR$/bin/interfaces/AnonymousClass$1EnglishGreeting.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/interfaces/AnonymousClass$DemoInterface.class" afterPath="$PROJECT_DIR$/bin/interfaces/AnonymousClass$DemoInterface.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/interfaces/AnonymousClass.class" afterPath="$PROJECT_DIR$/bin/interfaces/AnonymousClass.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/practice/AnotherDemo.class" afterPath="$PROJECT_DIR$/bin/practice/AnotherDemo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/misc/AppendNums.class" afterPath="$PROJECT_DIR$/bin/misc/AppendNums.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/misc/Armstrong.class" afterPath="$PROJECT_DIR$/bin/misc/Armstrong.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/practice/ArrayListDemo.class" afterPath="$PROJECT_DIR$/bin/practice/ArrayListDemo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/encoding/AsciiToBinary.class" afterPath="$PROJECT_DIR$/bin/encoding/AsciiToBinary.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/encoding/AsciiValueConversion.class" afterPath="$PROJECT_DIR$/bin/encoding/AsciiValueConversion.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/operators/AssignmentOperatorsDemo.class" afterPath="$PROJECT_DIR$/bin/operators/AssignmentOperatorsDemo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/generics/B.class" afterPath="$PROJECT_DIR$/bin/generics/B.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/evaluator/Bang.class" afterPath="$PROJECT_DIR$/bin/evaluator/Bang.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/encoding/BinaryConversion.class" afterPath="$PROJECT_DIR$/bin/encoding/BinaryConversion.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/encoding/BinaryData.class" afterPath="$PROJECT_DIR$/bin/encoding/BinaryData.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/search/BinarySearch.class" afterPath="$PROJECT_DIR$/bin/search/BinarySearch.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/search/BinarySearchIterative.class" afterPath="$PROJECT_DIR$/bin/search/BinarySearchIterative.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/encoding/BinaryText.class" afterPath="$PROJECT_DIR$/bin/encoding/BinaryText.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/operators/BitwiseDemo.class" afterPath="$PROJECT_DIR$/bin/operators/BitwiseDemo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/generics/BoundEx.class" afterPath="$PROJECT_DIR$/bin/generics/BoundEx.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/generics/BoundedClassDemo.class" afterPath="$PROJECT_DIR$/bin/generics/BoundedClassDemo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/generics/boundedgenerics/BoundedGenerics.class" afterPath="$PROJECT_DIR$/bin/generics/boundedgenerics/BoundedGenerics.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/generics/C.class" afterPath="$PROJECT_DIR$/bin/generics/C.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/misc/CharacterFrequency.class" afterPath="$PROJECT_DIR$/bin/misc/CharacterFrequency.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/encoding/CharacterMap.class" afterPath="$PROJECT_DIR$/bin/encoding/CharacterMap.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/strings/CharacterRead.class" afterPath="$PROJECT_DIR$/bin/strings/CharacterRead.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/frequencyDistribution/CharactersList.class" afterPath="$PROJECT_DIR$/bin/frequencyDistribution/CharactersList.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/generics/CompAEmp.class" afterPath="$PROJECT_DIR$/bin/generics/CompAEmp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/generics/CompBEmp.class" afterPath="$PROJECT_DIR$/bin/generics/CompBEmp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/strings/CompareStrings.class" afterPath="$PROJECT_DIR$/bin/strings/CompareStrings.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/iterator/ConcurrentHashMapExample.class" afterPath="$PROJECT_DIR$/bin/iterator/ConcurrentHashMapExample.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/operators/ConditionalOperatorDemo.class" afterPath="$PROJECT_DIR$/bin/operators/ConditionalOperatorDemo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/strings/CountSubString.class" afterPath="$PROJECT_DIR$/bin/strings/CountSubString.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/misc/CountTokens.class" afterPath="$PROJECT_DIR$/bin/misc/CountTokens.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/misc/CountTokensFromFile.class" afterPath="$PROJECT_DIR$/bin/misc/CountTokensFromFile.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/practice/Demo.class" afterPath="$PROJECT_DIR$/bin/practice/Demo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/practice/Demo1.class" afterPath="$PROJECT_DIR$/bin/practice/Demo1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/misc/Demo2.class" afterPath="$PROJECT_DIR$/bin/misc/Demo2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/generics/Demo2Generics.class" afterPath="$PROJECT_DIR$/bin/generics/Demo2Generics.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/misc/DemoClass.class" afterPath="$PROJECT_DIR$/bin/misc/DemoClass.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/misc/DistinctNumbers.class" afterPath="$PROJECT_DIR$/bin/misc/DistinctNumbers.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/evaluator/Divis.class" afterPath="$PROJECT_DIR$/bin/evaluator/Divis.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/misc/DuplicateNumbers.class" afterPath="$PROJECT_DIR$/bin/misc/DuplicateNumbers.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/generics/Emp.class" afterPath="$PROJECT_DIR$/bin/generics/Emp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/evaluator/Evaluator.class" afterPath="$PROJECT_DIR$/bin/evaluator/Evaluator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/evaluator/EvaluatorTester.class" afterPath="$PROJECT_DIR$/bin/evaluator/EvaluatorTester.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/misc/ExtremeElements.class" afterPath="$PROJECT_DIR$/bin/misc/ExtremeElements.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/misc/FibonacciSeries.class" afterPath="$PROJECT_DIR$/bin/misc/FibonacciSeries.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/practice/FinalDemo.class" afterPath="$PROJECT_DIR$/bin/practice/FinalDemo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/misc/FindBiggest.class" afterPath="$PROJECT_DIR$/bin/misc/FindBiggest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/misc/FindKthLargest.class" afterPath="$PROJECT_DIR$/bin/misc/FindKthLargest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/misc/FindLargest.class" afterPath="$PROJECT_DIR$/bin/misc/FindLargest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/misc/FindMiddleIndex.class" afterPath="$PROJECT_DIR$/bin/misc/FindMiddleIndex.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/misc/FindMissingNumber.class" afterPath="$PROJECT_DIR$/bin/misc/FindMissingNumber.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/misc/FindNumber.class" afterPath="$PROJECT_DIR$/bin/misc/FindNumber.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/frequencyDistribution/FrequencyDistribution.class" afterPath="$PROJECT_DIR$/bin/frequencyDistribution/FrequencyDistribution.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/misc/FullName.class" afterPath="$PROJECT_DIR$/bin/misc/FullName.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/generics/GenericArrayList.class" afterPath="$PROJECT_DIR$/bin/generics/GenericArrayList.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/generics/GenericBoundedDemo.class" afterPath="$PROJECT_DIR$/bin/generics/GenericBoundedDemo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/generics/GenericDemo.class" afterPath="$PROJECT_DIR$/bin/generics/GenericDemo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/generics/GenericDemo2.class" afterPath="$PROJECT_DIR$/bin/generics/GenericDemo2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/generics/GenericWildcard.class" afterPath="$PROJECT_DIR$/bin/generics/GenericWildcard.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/generics/GenericsDoubleDemo.class" afterPath="$PROJECT_DIR$/bin/generics/GenericsDoubleDemo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/generics/GenericsMethods.class" afterPath="$PROJECT_DIR$/bin/generics/GenericsMethods.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/generics/GenericsSingleDemo.class" afterPath="$PROJECT_DIR$/bin/generics/GenericsSingleDemo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/generics/GenericsType.class" afterPath="$PROJECT_DIR$/bin/generics/GenericsType.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/misc2/GrayCode.class" afterPath="$PROJECT_DIR$/bin/misc2/GrayCode.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/evaluator/Hash.class" afterPath="$PROJECT_DIR$/bin/evaluator/Hash.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/generics/boundedgenerics/HumanBeing.class" afterPath="$PROJECT_DIR$/bin/generics/boundedgenerics/HumanBeing.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/polymorphism/Humans.class" afterPath="$PROJECT_DIR$/bin/polymorphism/Humans.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/misc2/IPAddress.class" afterPath="$PROJECT_DIR$/bin/misc2/IPAddress.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/evaluator/InToPost$Stack.class" afterPath="$PROJECT_DIR$/bin/evaluator/InToPost$Stack.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/evaluator/InToPost.class" afterPath="$PROJECT_DIR$/bin/evaluator/InToPost.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/evaluator/Infix.class" afterPath="$PROJECT_DIR$/bin/evaluator/Infix.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/operators/InstanceofOperatorDemo.class" afterPath="$PROJECT_DIR$/bin/operators/InstanceofOperatorDemo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/iterable/IterableAndIterator.class" afterPath="$PROJECT_DIR$/bin/iterable/IterableAndIterator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/iterable/IteratorDemo.class" afterPath="$PROJECT_DIR$/bin/iterable/IteratorDemo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/misc2/IteratorProperties$Person.class" afterPath="$PROJECT_DIR$/bin/misc2/IteratorProperties$Person.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/misc2/IteratorProperties.class" afterPath="$PROJECT_DIR$/bin/misc2/IteratorProperties.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/practice/JavaHungry.class" afterPath="$PROJECT_DIR$/bin/practice/JavaHungry.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/search/LinearSearch.class" afterPath="$PROJECT_DIR$/bin/search/LinearSearch.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/misc/LinkedListDemo$Node.class" afterPath="$PROJECT_DIR$/bin/misc/LinkedListDemo$Node.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/misc/LinkedListDemo.class" afterPath="$PROJECT_DIR$/bin/misc/LinkedListDemo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/misc/LinkedListMiddle.class" afterPath="$PROJECT_DIR$/bin/misc/LinkedListMiddle.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/iterator/ListExample$Foo.class" afterPath="$PROJECT_DIR$/bin/iterator/ListExample$Foo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/iterator/ListExample.class" afterPath="$PROJECT_DIR$/bin/iterator/ListExample.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/iterator/ListIteratorDemo.class" afterPath="$PROJECT_DIR$/bin/iterator/ListIteratorDemo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/generics/boundedgenerics/LivingBeing.class" afterPath="$PROJECT_DIR$/bin/generics/boundedgenerics/LivingBeing.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/polymorphism/LivingBeing.class" afterPath="$PROJECT_DIR$/bin/polymorphism/LivingBeing.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/generics/boundedgenerics/LivingGenerics.class" afterPath="$PROJECT_DIR$/bin/generics/boundedgenerics/LivingGenerics.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/operators/LogicalOperatorsDemo.class" afterPath="$PROJECT_DIR$/bin/operators/LogicalOperatorsDemo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/strings/LongestSubstring.class" afterPath="$PROJECT_DIR$/bin/strings/LongestSubstring.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/misc/MatrixRotation.class" afterPath="$PROJECT_DIR$/bin/misc/MatrixRotation.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/misc/MatrixRotation1.class" afterPath="$PROJECT_DIR$/bin/misc/MatrixRotation1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/misc2/MatrixRows.class" afterPath="$PROJECT_DIR$/bin/misc2/MatrixRows.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/misc/MatrixTranspose.class" afterPath="$PROJECT_DIR$/bin/misc/MatrixTranspose.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/misc/MergeArrays.class" afterPath="$PROJECT_DIR$/bin/misc/MergeArrays.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/strings/MergeString.class" afterPath="$PROJECT_DIR$/bin/strings/MergeString.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/generics/MultipleGenerics.class" afterPath="$PROJECT_DIR$/bin/generics/MultipleGenerics.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/evaluator/Multiply.class" afterPath="$PROJECT_DIR$/bin/evaluator/Multiply.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/misc/MutableDemo.class" afterPath="$PROJECT_DIR$/bin/misc/MutableDemo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/generics/MyEmployeeUtil.class" afterPath="$PROJECT_DIR$/bin/generics/MyEmployeeUtil.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/generics/MyGenericArrayList.class" afterPath="$PROJECT_DIR$/bin/generics/MyGenericArrayList.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/misc/NthLargest.class" afterPath="$PROJECT_DIR$/bin/misc/NthLargest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/misc2/OpenNotepad.class" afterPath="$PROJECT_DIR$/bin/misc2/OpenNotepad.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/evaluator/Operand.class" afterPath="$PROJECT_DIR$/bin/evaluator/Operand.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/evaluator/Operator.class" afterPath="$PROJECT_DIR$/bin/evaluator/Operator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/misc/Palindrome.class" afterPath="$PROJECT_DIR$/bin/misc/Palindrome.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/strings/ParseString.class" afterPath="$PROJECT_DIR$/bin/strings/ParseString.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/pattern/PatternDemo.class" afterPath="$PROJECT_DIR$/bin/pattern/PatternDemo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/file/PatternMatch.class" afterPath="$PROJECT_DIR$/bin/file/PatternMatch.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/pattern/PatternMatchDemo.class" afterPath="$PROJECT_DIR$/bin/pattern/PatternMatchDemo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/misc/PerfectNumber.class" afterPath="$PROJECT_DIR$/bin/misc/PerfectNumber.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/generics/Person.class" afterPath="$PROJECT_DIR$/bin/generics/Person.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/generics/Person2.class" afterPath="$PROJECT_DIR$/bin/generics/Person2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/polymorphism/PolymorphismTest.class" afterPath="$PROJECT_DIR$/bin/polymorphism/PolymorphismTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/evaluator/Postfix.class" afterPath="$PROJECT_DIR$/bin/evaluator/Postfix.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/misc/PowerOfTwo.class" afterPath="$PROJECT_DIR$/bin/misc/PowerOfTwo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/evaluator/Prefix.class" afterPath="$PROJECT_DIR$/bin/evaluator/Prefix.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/misc/Prime.class" afterPath="$PROJECT_DIR$/bin/misc/Prime.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/practice/Question.class" afterPath="$PROJECT_DIR$/bin/practice/Question.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/misc/RandomNosPrac.class" afterPath="$PROJECT_DIR$/bin/misc/RandomNosPrac.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/operators/RelationalDemo.class" afterPath="$PROJECT_DIR$/bin/operators/RelationalDemo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/misc/RemoveCharFromString.class" afterPath="$PROJECT_DIR$/bin/misc/RemoveCharFromString.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/misc2/RemoveDuplicates.class" afterPath="$PROJECT_DIR$/bin/misc2/RemoveDuplicates.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/strings/RemoveDuplicates.class" afterPath="$PROJECT_DIR$/bin/strings/RemoveDuplicates.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/misc2/RemoveVowel.class" afterPath="$PROJECT_DIR$/bin/misc2/RemoveVowel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/strings/ReplaceWhiteSpace.class" afterPath="$PROJECT_DIR$/bin/strings/ReplaceWhiteSpace.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/misc/ReverseNumber.class" afterPath="$PROJECT_DIR$/bin/misc/ReverseNumber.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/misc/ReverseNumberStack.class" afterPath="$PROJECT_DIR$/bin/misc/ReverseNumberStack.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/evaluator/ReversePolish.class" afterPath="$PROJECT_DIR$/bin/evaluator/ReversePolish.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/misc/ReverseString.class" afterPath="$PROJECT_DIR$/bin/misc/ReverseString.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/strings/RotationString.class" afterPath="$PROJECT_DIR$/bin/strings/RotationString.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/generics/SampleGenerics.class" afterPath="$PROJECT_DIR$/bin/generics/SampleGenerics.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/practice/SimpleExplain.class" afterPath="$PROJECT_DIR$/bin/practice/SimpleExplain.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/generics/SimpleGeneric.class" afterPath="$PROJECT_DIR$/bin/generics/SimpleGeneric.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/generics/SimpleGenerics.class" afterPath="$PROJECT_DIR$/bin/generics/SimpleGenerics.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/misc/SingletonDemo.class" afterPath="$PROJECT_DIR$/bin/misc/SingletonDemo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/misc/Stack.class" afterPath="$PROJECT_DIR$/bin/misc/Stack.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/strings/StringCloning.class" afterPath="$PROJECT_DIR$/bin/strings/StringCloning.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/strings/StringCompare.class" afterPath="$PROJECT_DIR$/bin/strings/StringCompare.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/strings/StringOperations.class" afterPath="$PROJECT_DIR$/bin/strings/StringOperations.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/strings/StringPermutations.class" afterPath="$PROJECT_DIR$/bin/strings/StringPermutations.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/strings/StringReference.class" afterPath="$PROJECT_DIR$/bin/strings/StringReference.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/strings/StringToInt.class" afterPath="$PROJECT_DIR$/bin/strings/StringToInt.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/misc/StringToStringArray.class" afterPath="$PROJECT_DIR$/bin/misc/StringToStringArray.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/strings/SubstringAll.class" afterPath="$PROJECT_DIR$/bin/strings/SubstringAll.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/strings/SubstringCheck.class" afterPath="$PROJECT_DIR$/bin/strings/SubstringCheck.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/strings/SubstringDemo.class" afterPath="$PROJECT_DIR$/bin/strings/SubstringDemo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/evaluator/Subtraction.class" afterPath="$PROJECT_DIR$/bin/evaluator/Subtraction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/misc/SumOfDigits.class" afterPath="$PROJECT_DIR$/bin/misc/SumOfDigits.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/misc/SumOfPrimes.class" afterPath="$PROJECT_DIR$/bin/misc/SumOfPrimes.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/misc/SwapNumbers.class" afterPath="$PROJECT_DIR$/bin/misc/SwapNumbers.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/practice/TicTacToe.class" afterPath="$PROJECT_DIR$/bin/practice/TicTacToe.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/misc/Transpose.class" afterPath="$PROJECT_DIR$/bin/misc/Transpose.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/strings/UniqueCharacters.class" afterPath="$PROJECT_DIR$/bin/strings/UniqueCharacters.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/strings/UniqueCharsUsingCharset.class" afterPath="$PROJECT_DIR$/bin/strings/UniqueCharsUsingCharset.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/practice/Universe.class" afterPath="$PROJECT_DIR$/bin/practice/Universe.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/frequencyDistribution/WordFrequency.class" afterPath="$PROJECT_DIR$/bin/frequencyDistribution/WordFrequency.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/frequencyDistribution/WordInLine.class" afterPath="$PROJECT_DIR$/bin/frequencyDistribution/WordInLine.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/evaluator/leftpar.class" afterPath="$PROJECT_DIR$/bin/evaluator/leftpar.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/evaluator/rightpar.class" afterPath="$PROJECT_DIR$/bin/evaluator/rightpar.class" />
+    <list default="true" id="10d2fc22-35db-43f2-9e3b-cd629a85da6f" name="Default" comment="Changed the Directory Structure. Added the Threading classes and demos">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/guava/GuavaTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_18_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\encoding\AsciiToBinary.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\encoding\AsciiValueConversion.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\encoding\BinaryConversion.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\encoding\BinaryData.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\encoding\BinaryText.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\encoding\CharacterMap.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\evaluator\Addition.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\evaluator\Bang.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\evaluator\Divis.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\evaluator\Evaluator.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\evaluator\EvaluatorTester.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\evaluator\Hash.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\evaluator\InToPost$Stack.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\evaluator\InToPost.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\evaluator\Infix.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\evaluator\Multiply.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\evaluator\Operand.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\evaluator\Operator.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\evaluator\Postfix.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\evaluator\Prefix.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\evaluator\ReversePolish.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\evaluator\Subtraction.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\evaluator\leftpar.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\evaluator\rightpar.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\file\PatternMatch.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\frequencyDistribution\CharactersList.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\frequencyDistribution\FrequencyDistribution.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\frequencyDistribution\WordFrequency.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\frequencyDistribution\WordInLine.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\generics\A.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\generics\Animal.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\generics\Animal2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\generics\B.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\generics\BoundEx.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\generics\BoundedClassDemo.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\generics\C.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\generics\CompAEmp.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\generics\CompBEmp.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\generics\Demo2Generics.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\generics\Emp.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\generics\GenericArrayList.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\generics\GenericBoundedDemo.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\generics\GenericDemo.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\generics\GenericDemo2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\generics\GenericWildcard.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\generics\GenericsDoubleDemo.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\generics\GenericsMethods.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\generics\GenericsSingleDemo.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\generics\GenericsType.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\generics\MultipleGenerics.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\generics\MyEmployeeUtil.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\generics\MyGenericArrayList.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\generics\Person.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\generics\Person2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\generics\SampleGenerics.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\generics\SimpleGeneric.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\generics\SimpleGenerics.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\generics\boundedgenerics\Animal.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\generics\boundedgenerics\BoundedGenerics.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\generics\boundedgenerics\HumanBeing.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\generics\boundedgenerics\LivingBeing.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\generics\boundedgenerics\LivingGenerics.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\interfaces\AnonymousClass$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\interfaces\AnonymousClass$1EnglishGreeting.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\interfaces\AnonymousClass$DemoInterface.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\interfaces\AnonymousClass.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\iterable\Animal.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\iterable\AnimalIterator.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\iterable\IterableAndIterator.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\iterable\IteratorDemo.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\iterator\ConcurrentHashMapExample.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\iterator\ListExample$Foo.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\iterator\ListExample.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\iterator\ListIteratorDemo.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\misc2\GrayCode.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\misc2\IPAddress.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\misc2\IteratorProperties$Person.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\misc2\IteratorProperties.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\misc2\MatrixRows.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\misc2\OpenNotepad.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\misc2\RemoveDuplicates.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\misc2\RemoveVowel.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\misc\AppendNums.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\misc\Armstrong.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\misc\CharacterFrequency.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\misc\CountTokens.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\misc\CountTokensFromFile.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\misc\Demo2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\misc\DemoClass.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\misc\DistinctNumbers.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\misc\DuplicateNumbers.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\misc\ExtremeElements.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\misc\FibonacciSeries.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\misc\FindBiggest.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\misc\FindKthLargest.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\misc\FindLargest.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\misc\FindMiddleIndex.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\misc\FindMissingNumber.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\misc\FindNumber.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\misc\FullName.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\misc\LinkedListDemo$Node.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\misc\LinkedListDemo.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\misc\LinkedListMiddle.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\misc\MatrixRotation.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\misc\MatrixRotation1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\misc\MatrixTranspose.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\misc\MergeArrays.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\misc\MutableDemo.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\misc\NthLargest.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\misc\Palindrome.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\misc\PerfectNumber.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\misc\PowerOfTwo.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\misc\Prime.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\misc\RandomNosPrac.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\misc\RemoveCharFromString.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\misc\ReverseNumber.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\misc\ReverseNumberStack.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\misc\ReverseString.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\misc\SingletonDemo.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\misc\Stack.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\misc\StringToStringArray.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\misc\SumOfDigits.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\misc\SumOfPrimes.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\misc\SwapNumbers.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\misc\Transpose.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\operators\AssignmentOperatorsDemo.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\operators\BitwiseDemo.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\operators\ConditionalOperatorDemo.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\operators\InstanceofOperatorDemo.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\operators\LogicalOperatorsDemo.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\operators\RelationalDemo.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\pattern\PatternDemo.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\pattern\PatternMatchDemo.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\polymorphism\Animal.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\polymorphism\Humans.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\polymorphism\LivingBeing.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\polymorphism\PolymorphismTest.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\practice\AnotherDemo.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\practice\ArrayListDemo.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\practice\Demo.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\practice\Demo1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\practice\FinalDemo.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\practice\JavaHungry.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\practice\Question.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\practice\SimpleExplain.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\practice\TicTacToe.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\practice\Universe.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\search\BinarySearch.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\search\BinarySearchIterative.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\search\LinearSearch.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\strings\Anagrams.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\strings\AnagramsComparison.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\strings\CharacterRead.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\strings\CompareStrings.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\strings\CountSubString.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\strings\LongestSubstring.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\strings\MergeString.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\strings\ParseString.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\strings\RemoveDuplicates.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\strings\ReplaceWhiteSpace.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\strings\RotationString.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\strings\StringCloning.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\strings\StringCompare.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\strings\StringOperations.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\strings\StringPermutations.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\strings\StringReference.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\strings\StringToInt.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\strings\SubstringAll.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\strings\SubstringCheck.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\strings\SubstringDemo.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\strings\UniqueCharacters.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\bin\strings\UniqueCharsUsingCharset.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\ADTs\ListADT.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\ADTs\ListInterface.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\arrays\ParamsArray.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\bitManipulation\bitset\BitSetDemo.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\callback\CallbackDemo.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\callback\SystemTimer.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\callback\WebSiteTimeUpdater.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\callback\WebSiteTimeUpdaterCallBack.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\character\CharacterRead.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\character\CharacterToInt.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\character\CountCWL.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\character\TestCase.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\complex\FindWordInStream.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\complex\Platforms.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\concurrency\ProducerConsumer.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\datetime\DateTime.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\abstractFactoryPattern\AbstractFactoryPatternDemo.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\abstractFactoryPattern\abstractfactory\AbstractFactory.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\abstractFactoryPattern\abstractfactory\ColorFactory.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\abstractFactoryPattern\abstractfactory\ShapeFactory.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\abstractFactoryPattern\color\Blue.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\abstractFactoryPattern\color\Color.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\abstractFactoryPattern\color\Green.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\abstractFactoryPattern\color\Red.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\abstractFactoryPattern\factoryProducer\FactoryProducer.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\abstractFactoryPattern\shape\Circle.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\abstractFactoryPattern\shape\Rectangle.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\abstractFactoryPattern\shape\Shape.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\abstractFactoryPattern\shape\Square.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\adapterPattern\AdapterPatternDemo.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\adapterPattern\adapter\AudioPlayer.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\adapterPattern\adapter\MediaAdapter.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\adapterPattern\entities\VlcPlayer.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\adapterPattern\entities\Winamp.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\adapterPattern\interfaces\AdvancedMediaPlayer.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\adapterPattern\interfaces\MediaPlayer.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\bridgePattern\BridgePatternDemo.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\bridgePattern\abstraction\Shape.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\bridgePattern\entities\Circle.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\bridgePattern\entities\GreenCircle.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\bridgePattern\entities\RedCircle.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\bridgePattern\interfaces\DrawAPI.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\builderPattern\Customer.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\builderPattern\abstractentities\Burger.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\builderPattern\abstractentities\ColdDrink.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\builderPattern\entities\ChickenBurger.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\builderPattern\entities\Coke.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\builderPattern\entities\Pepsi.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\builderPattern\entities\VegBurger.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\builderPattern\interfaces\Item.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\builderPattern\interfaces\Packing.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\builderPattern\main\BuilderPatternDemo.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\builderPattern\meal\Meal.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\builderPattern\meal\MealBuilder.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\builderPattern\wrapper\Bottle.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\builderPattern\wrapper\FoodWrapper.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\compositePattern\CompositePatternDemo.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\compositePattern\Employee.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\decoratorPattern\DecoratorPatternDemo.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\decoratorPattern\abstraction\ShapeDecorator.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\decoratorPattern\entities\Circle.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\decoratorPattern\entities\Rectangle.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\decoratorPattern\entities\RedShapeDecorator.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\decoratorPattern\interfaces\Shape.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\facadePattern\Circle.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\facadePattern\FacadePatternDemo.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\facadePattern\Rectangle.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\facadePattern\Shape.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\facadePattern\ShapeMaker.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\facadePattern\Square.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\factoryPattern\FactoryDemo.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\factoryPattern\HumanFactory.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\factoryPattern\cars\AboutMe" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\factoryPattern\cars\Car.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\factoryPattern\cars\CarFactory.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\factoryPattern\cars\CarType.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\factoryPattern\cars\LuxuryCar.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\factoryPattern\cars\SedanCar.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\factoryPattern\cars\SmallCar.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\factoryPattern\cars\TestFactoryPattern.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\filterPattern\CriteriaPatternDemo.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\filterPattern\entities\AndCriteria.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\filterPattern\entities\CriteriaFemale.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\filterPattern\entities\CriteriaMale.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\filterPattern\entities\CriteriaSingle.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\filterPattern\entities\OrCriteria.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\filterPattern\entities\Person.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\filterPattern\interfaces\Criteria.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\flyweightPattern\Circle.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\flyweightPattern\FlyweightPatternDemo.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\flyweightPattern\Shape.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\flyweightPattern\ShapeFactory.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\flyweightPattern\coffeeFlavour\CoffeeShop.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\iteratorPattern\Container.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\iteratorPattern\Iterator.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\iteratorPattern\IteratorPatternDemo.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\iteratorPattern\NameRepository.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\mediatorPattern\ChatRoom.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\mediatorPattern\MediatorPatternDemo.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\mediatorPattern\User.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\mementoPattern\CareTaker.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\mementoPattern\Memento.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\mementoPattern\MementoPatternDemo.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\mementoPattern\Originator.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\nullPattern\AbstractCustomer.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\nullPattern\CustomerFactory.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\nullPattern\NullCustomer.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\nullPattern\NullPatternDemo.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\nullPattern\RealCustomer.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\observerPattern\ObserverDemo.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\prototypePattern\Circle.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\prototypePattern\PrototypePatternDemo.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\prototypePattern\PrototypeTest.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\prototypePattern\ReadMe" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\prototypePattern\Rectangle.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\prototypePattern\Shape.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\prototypePattern\ShapeCache.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\prototypePattern\Square.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\singletonPattern\ReadMe" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\singletonPattern\SingleObject.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\singletonPattern\SinglePatternDemo.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\statePattern\Context.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\statePattern\StartState.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\statePattern\State.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\statePattern\StatePatternDemo.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\statePattern\StopState.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\strategyPattern\Context.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\strategyPattern\OperationAdd.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\strategyPattern\OperationMultiply.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\strategyPattern\OperationSubstract.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\strategyPattern\Strategy.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\strategyPattern\StrategyPatternDemo.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\templatePattern\Cricket.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\templatePattern\Football.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\templatePattern\Game.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\templatePattern\TemplatePatternDemo.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\visitorPattern\Computer.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\visitorPattern\ComputerPart.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\visitorPattern\ComputerPartDisplayVisitor.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\visitorPattern\ComputerPartVisitor.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\visitorPattern\Keyboard.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\visitorPattern\Monitor.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\visitorPattern\Mouse.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\designPattern\visitorPattern\VisitorPatternDemo.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\encoding\AsciiToBinary.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\encoding\AsciiValueConversion.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\encoding\BinaryConversion.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\encoding\BinaryData.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\encoding\BinaryText.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\encoding\CharacterMap.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\encoding\package-info.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\evaluator\Evaluator.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\evaluator\EvaluatorTester.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\evaluator\InToPost.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\evaluator\Infix.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\evaluator\Postfix.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\evaluator\Prefix.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\evaluator\ReversePolish.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\file\PatternMatch.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\frequencyDistribution\CharactersList.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\frequencyDistribution\FrequencyDistribution.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\frequencyDistribution\WordFrequency.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\frequencyDistribution\WordInLine.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\generics\BoundedClassDemo.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\generics\Demo2Generics.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\generics\GenDemo.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\generics\GenericBoundedDemo.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\generics\GenericDemo.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\generics\GenericDemo2.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\generics\GenericWildcard.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\generics\GenericsDoubleDemo.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\generics\GenericsMethods.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\generics\GenericsSingleDemo.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\generics\MyGenericArrayList.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\generics\SimpleGenerics.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\generics\boundedgenerics\Animal.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\generics\boundedgenerics\BoundedGenerics.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\generics\boundedgenerics\HumanBeing.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\generics\boundedgenerics\LivingBeing.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\inheritance\Circle.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\inheritance\InheritanceVsComposition\FruitInheritance.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\inheritance\InheritanceVsComposition\InheritanceDemo.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\inheritance\InheritanceVsComposition\InheritanceExample.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\inheritance\InheritanceVsComposition\InheritanceVSComposition.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\inheritance\InheritanceVsComposition\TalkativeInheritance.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\inheritance\Rectangle.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\inheritance\RollShape.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\inheritance\Shape.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\inheritance\Square.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\interfaces\practice\AnonymousClass.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\interfaces\practice\InterfaceTypeResolution.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\io\StdIn.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\io\StdInTest.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\io\StdOut.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\iterable\Animal.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\iterable\AnimalIterator.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\iterable\IterableAndIterator.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\iterable\IteratorDemo.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\iterator\Bag.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\iterator\BagDemo.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\iterator\ConcurrentHashMapExample.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\iterator\ListExample.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\iterator\ListIteratorDemo.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\maze\Maze.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\maze\MazeGenerator.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\memory\PerformanceTest.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\memory\RuntimeDemo.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\misc\AppendNums.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\misc\Armstrong.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\misc\CharacterFrequency.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\misc\CountTokens.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\misc\CountTokensFromFile.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\misc\DemoClass.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\misc\DistinctNumbers.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\misc\DuplicateNumbers.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\misc\ExtremeElements.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\misc\FibonacciSeries.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\misc\FindBiggest.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\misc\FindKthLargest.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\misc\FindLargest.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\misc\FindMiddleIndex.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\misc\FindMissingNumber.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\misc\FindNumber.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\misc\FullName.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\misc\GrayCode.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\misc\IPAddress.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\misc\IteratorProperties.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\misc\LinkedListMiddle.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\misc\MatrixRotation.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\misc\MatrixRotation1.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\misc\MatrixRows.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\misc\MatrixTranspose.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\misc\MergeArrays.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\misc\MutableDemo.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\misc\NthLargest.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\misc\OpenNotepad.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\misc\Palindrome.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\misc\PerfectNumber.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\misc\PowerOfTwo.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\misc\Prime.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\misc\RandomNosPrac.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\misc\RangeOfPrime.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\misc\RemoveCharFromString.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\misc\RemoveDuplicates.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\misc\RemoveVowel.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\misc\ReverseNumber.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\misc\ReverseNumberStack.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\misc\ReverseString.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\misc\SingletonDemo.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\misc\StringToStringArray.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\misc\SumDigitsInString.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\misc\SumOfDigits.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\misc\SumOfPrimes.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\misc\SwapNumbers.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\misc\Transpose.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\objectTricks\ObjectSharingDemo.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\operators\AssignmentOperatorsDemo.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\operators\BitwiseDemo.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\operators\ConditionalOperatorDemo.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\operators\InstanceofOperatorDemo.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\operators\LogicalOperatorsDemo.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\operators\RelationalDemo.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\operators\package-info.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\parser\html\HTMLIconParser.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\parser\html\HTMLImagesParser.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\parser\html\HTMLMetaParser.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\parser\html\HTMLParser.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\pattern\PatternDemo.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\pattern\PatternMatchDemo.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\pattern\package-info.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\polymorphism\Animal.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\polymorphism\Humans.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\polymorphism\LivingBeing.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\polymorphism\PolymorphismTest.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\practice\AnotherDemo.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\practice\ArrayListDemo.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\practice\CountingFactorizer.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\practice\Demo.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\practice\Demo1.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\practice\FinalDemo.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\practice\HashMapDem.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\practice\HashMapDemo.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\practice\JavaHungry.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\practice\ListDemo.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\practice\ListStaticType.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\practice\LongDemo.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\practice\PolyTest.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\practice\Q2.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\practice\RequestParams.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\practice\SetDemo.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\practice\SimpleExplain.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\practice\TicTacToe.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\practice\Universe.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\search\BinarySearch.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\search\BinarySearchIterative.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\search\LinearSearch.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\strings\Anagrams.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\strings\AnagramsComparison.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\strings\CharacterRead.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\strings\CompareStrings.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\strings\CountSubString.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\strings\LongestSubstring.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\strings\MergeString.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\strings\ParseString.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\strings\RemoveDuplicates.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\strings\ReplaceWhiteSpace.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\strings\RotationString.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\strings\StringCloning.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\strings\StringCompare.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\strings\StringOperations.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\strings\StringPermutations.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\strings\StringReference.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\strings\StringTimeComplexity.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\strings\StringToInt.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\strings\SubstringAll.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\strings\SubstringCheck.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\strings\SubstringDemo.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\strings\UniqueCharacters.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\strings\UniqueCharsUsingCharset.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\threading\ReturnValueFromThread.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\threading\executorService\MyMonitorThread.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\threading\executorService\RejectedExecutionHandlerImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\threading\executorService\WorkerPool.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\threading\executorService\WorkerThread.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\threading\threadOperations\DoSomeTask.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\threading\threadOperations\dao\EmployeeDao.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\threading\threadOperations\domain\Employee.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\threading\threadOperations\threads\MainClass.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\threading\threadOperations\threads\TasksAsCallable.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Pavitra\Documents\JAVA\Ocean\src\threading\threadpool\SimpleThreadPool.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ocean.iml" afterPath="$PROJECT_DIR$/Ocean.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Ocean.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/bin/" />
     <ignored path=".idea/dataSources.local.xml" />
+    <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -196,78 +534,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="DoSomeTask.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/threading/threadOperations/DoSomeTask.java">
+      <file leaf-file-name="CheckSites.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/threading/parallel/CheckSites.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="12" column="48" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
+              <caret line="87" column="14" selection-start-line="87" selection-start-column="14" selection-end-line="87" selection-end-column="15" />
               <folding>
-                <element signature="e#343#344#0" expanded="true" />
-                <element signature="e#400#401#0" expanded="true" />
+                <element signature="imports" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Employee.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/threading/threadOperations/domain/Employee.java">
+      <file leaf-file-name="GuavaTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/guava/GuavaTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="59" column="9" selection-start-line="59" selection-start-column="9" selection-end-line="59" selection-end-column="9" />
-              <folding>
-                <element signature="e#423#424#0" expanded="true" />
-                <element signature="e#448#449#0" expanded="true" />
-                <element signature="e#481#482#0" expanded="true" />
-                <element signature="e#509#510#0" expanded="true" />
-                <element signature="e#540#541#0" expanded="true" />
-                <element signature="e#567#568#0" expanded="true" />
-                <element signature="e#607#608#0" expanded="true" />
-                <element signature="e#639#640#0" expanded="true" />
-                <element signature="e#674#675#0" expanded="true" />
-                <element signature="e#705#706#0" expanded="true" />
-                <element signature="e#753#754#0" expanded="true" />
-                <element signature="e#793#794#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EmployeeDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/threading/threadOperations/dao/EmployeeDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.845614">
+              <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#705#706#0" expanded="true" />
-                <element signature="e#743#744#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TasksAsCallable.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/threading/threadOperations/threads/TasksAsCallable.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="20" column="53" selection-start-line="20" selection-start-column="53" selection-end-line="20" selection-end-column="53" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#355#356#0" expanded="true" />
-                <element signature="e#389#390#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainClass.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/threading/threadOperations/threads/MainClass.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3631579">
-              <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#487#507#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -299,6 +584,38 @@
         <option value="$PROJECT_DIR$/src/threading/threadOperations/dao/EmployeeDao.java" />
         <option value="$PROJECT_DIR$/src/threading/threadOperations/threads/TasksAsCallable.java" />
         <option value="$PROJECT_DIR$/src/threading/threadOperations/threads/MainClass.java" />
+        <option value="$PROJECT_DIR$/src/timeStamp/CurrentTimeStamp.java" />
+        <option value="$PROJECT_DIR$/src/assignment/SimpleStatistics.java" />
+        <option value="$PROJECT_DIR$/src/practice/NthPower.java" />
+        <option value="$PROJECT_DIR$/src/strings/StringList.java" />
+        <option value="$PROJECT_DIR$/src/file/BufferedReaderDemo.java" />
+        <option value="$PROJECT_DIR$/src/bools/BooleanMatrix.java" />
+        <option value="$PROJECT_DIR$/src/datetime/DateTime.java" />
+        <option value="$PROJECT_DIR$/src/enumDemo/EnumTest.java" />
+        <option value="$PROJECT_DIR$/src/maze/MazeGame.java" />
+        <option value="$PROJECT_DIR$/src/maze/game/MazeGame.java" />
+        <option value="$PROJECT_DIR$/src/maze/game/Vertex.java" />
+        <option value="$PROJECT_DIR$/src/maze/game/Edge.java" />
+        <option value="$PROJECT_DIR$/src/maze/game/Graph.java" />
+        <option value="$PROJECT_DIR$/src/maze/game/DijkstraAlgp.java" />
+        <option value="$PROJECT_DIR$/src/maze/game/DijkstraAlgo.java" />
+        <option value="$PROJECT_DIR$/src/maze/game/TestDijkstraAlgo.java" />
+        <option value="$PROJECT_DIR$/src/maze/game/solution" />
+        <option value="$PROJECT_DIR$/src/strings/AllSubstrings.java" />
+        <option value="$PROJECT_DIR$/src/strings/StringPermutations.java" />
+        <option value="$PROJECT_DIR$/src/strings/SubstringAll.java" />
+        <option value="$PROJECT_DIR$/src/strings/SubstringPermutations.java" />
+        <option value="$PROJECT_DIR$/src/uuid/GenerateUUID.java" />
+        <option value="$PROJECT_DIR$/src/interfaces/InterfaceExample.java" />
+        <option value="$PROJECT_DIR$/src/interfaces/practice/InterfaceTypeResolution.java" />
+        <option value="$PROJECT_DIR$/src/interfaces/generics/InterfaceExample.java" />
+        <option value="$PROJECT_DIR$/src/threading/CalculatePI.java" />
+        <option value="$PROJECT_DIR$/src/numbers/LargestProduct.java" />
+        <option value="$PROJECT_DIR$/src/threading/io/ReadingFile.java" />
+        <option value="$PROJECT_DIR$/src/threading/parallel/CheckSites.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/threading/parallel/CheckSites.java" />
+        <option value="$PROJECT_DIR$/src/main/java/guava/GuavaTest.java" />
       </list>
     </option>
   </component>
@@ -311,6 +628,12 @@
       <MavenGeneralSettings>
         <option name="mavenHome" value="Bundled (Maven 3)" />
       </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="downloadDocsAutomatically" value="true" />
+        <option name="downloadSourcesAutomatically" value="true" />
+      </MavenImportingSettings>
     </option>
   </component>
   <component name="NamedScopeManager">
@@ -345,7 +668,34 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Ocean" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Ocean" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="Scope">
+        <subPane subId="Changed Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Ocean">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
         <subPane subId="Project Files">
           <PATH>
             <PATH_ELEMENT USER_OBJECT="Root">
@@ -366,11 +716,7 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="src">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="threading">
+            <PATH_ELEMENT USER_OBJECT="src/main/java">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -384,115 +730,17 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="src">
+            <PATH_ELEMENT USER_OBJECT="src/main/java">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="threading">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="threadOperations">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Ocean">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="src">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="threading">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="threadOperations">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="threads">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Ocean">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="src">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="threading">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="threadOperations">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="domain">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Ocean">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="src">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="threading">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="threadOperations">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="dao">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Ocean">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="src">
+            <PATH_ELEMENT USER_OBJECT="guava">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -516,7 +764,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.file-colors" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -525,16 +773,106 @@
     <property name="OverrideImplement.overriding.sorted" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="dynamic.classpath" value="false" />
+    <property name="FullScreen" value="false" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="Application.MainClass">
-    <configuration default="false" name="MainClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Pavitra\Documents\JAVA\Ocean\src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.GuavaTest">
+    <configuration default="false" name="CalculatePI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="threading.threadOperations.threads.*" />
+          <option name="PATTERN" value="threading.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="threading.threadOperations.threads.MainClass" />
+      <option name="MAIN_CLASS_NAME" value="threading.CalculatePI" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Ocean" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="ReadingFile" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="threading.io.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="threading.io.ReadingFile" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Ocean" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="CheckSites" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="threading.parallel.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="threading.parallel.CheckSites" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Ocean" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="All in Ocean" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="Ocean" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="GuavaTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="guava.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="guava.GuavaTest" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -782,6 +1120,12 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <pass-parent-envs>true</pass-parent-envs>
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="osgi.bnd.run" factoryName="Run Launcher">
@@ -790,16 +1134,27 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
-    <list size="1">
-      <item index="0" class="java.lang.String" itemvalue="Application.MainClass" />
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="Application.CalculatePI" />
+      <item index="1" class="java.lang.String" itemvalue="Application.ReadingFile" />
+      <item index="2" class="java.lang.String" itemvalue="Application.CheckSites" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.All in Ocean" />
+      <item index="4" class="java.lang.String" itemvalue="Application.GuavaTest" />
     </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Application.MainClass" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Application.GuavaTest" />
+        <item index="1" class="java.lang.String" itemvalue="Application.CheckSites" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.All in Ocean" />
+        <item index="3" class="java.lang.String" itemvalue="Application.ReadingFile" />
+        <item index="4" class="java.lang.String" itemvalue="Application.CalculatePI" />
       </list>
     </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="10d2fc22-35db-43f2-9e3b-cd629a85da6f" name="Default" comment="" />
@@ -807,7 +1162,27 @@
       <option name="number" value="Default" />
       <updated>1446273085148</updated>
       <workItem from="1446273087967" duration="46000" />
-      <workItem from="1446424346217" duration="2383000" />
+      <workItem from="1446424346217" duration="3034000" />
+      <workItem from="1446538107376" duration="924000" />
+      <workItem from="1446678115547" duration="1128000" />
+      <workItem from="1446708149849" duration="3146000" />
+      <workItem from="1446767389752" duration="2385000" />
+      <workItem from="1446799357901" duration="2417000" />
+      <workItem from="1446931167521" duration="6081000" />
+      <workItem from="1447015177038" duration="1103000" />
+      <workItem from="1447022831617" duration="1022000" />
+      <workItem from="1447023932309" duration="1606000" />
+      <workItem from="1447142423192" duration="1829000" />
+      <workItem from="1447381365923" duration="1104000" />
+      <workItem from="1447383001568" duration="2463000" />
+      <workItem from="1447391972314" duration="2797000" />
+      <workItem from="1447606121676" duration="1310000" />
+      <workItem from="1447667656503" duration="1277000" />
+      <workItem from="1447703861893" duration="1249000" />
+      <workItem from="1447740918774" duration="2502000" />
+      <workItem from="1447976352700" duration="778000" />
+      <workItem from="1448004192308" duration="3520000" />
+      <workItem from="1448207302637" duration="6319000" />
     </task>
     <task id="LOCAL-00001" summary="Changed the Directory Structure. Added the Threading classes and demos">
       <created>1446437394033</created>
@@ -819,36 +1194,36 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2429000" />
+    <option name="totallyTimeSpent" value="48040000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24973261" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24919786" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32444444" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -868,7 +1243,9 @@
     <option name="LAST_COMMIT_MESSAGE" value="Changed the Directory Structure. Added the Threading classes and demos" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -876,94 +1253,483 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/threading/threadpool/SimpleThreadPool.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/threading/threadOperations/threads/TasksAsCallable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25374857">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="53" selection-start-line="20" selection-start-column="53" selection-end-line="20" selection-end-column="53" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/arrays/ParamsArray.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/threading/threadOperations/threads/MainClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/threading/threadOperations/DoSomeTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="48" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/threading/threadOperations/domain/Employee.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="59" column="9" selection-start-line="59" selection-start-column="9" selection-end-line="59" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/threading/threadOperations/dao/EmployeeDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/threading/threadOperations/threads/TasksAsCallable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="53" selection-start-line="20" selection-start-column="53" selection-end-line="20" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/threading/threadOperations/threads/MainClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/arrays/ParamsArray.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2283737">
           <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/threading/threadOperations/domain/Employee.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="59" column="9" selection-start-line="59" selection-start-column="9" selection-end-line="59" selection-end-column="9" />
-          <folding>
-            <element signature="e#423#424#0" expanded="true" />
-            <element signature="e#448#449#0" expanded="true" />
-            <element signature="e#481#482#0" expanded="true" />
-            <element signature="e#509#510#0" expanded="true" />
-            <element signature="e#540#541#0" expanded="true" />
-            <element signature="e#567#568#0" expanded="true" />
-            <element signature="e#607#608#0" expanded="true" />
-            <element signature="e#639#640#0" expanded="true" />
-            <element signature="e#674#675#0" expanded="true" />
-            <element signature="e#705#706#0" expanded="true" />
-            <element signature="e#753#754#0" expanded="true" />
-            <element signature="e#793#794#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/threading/threadOperations/dao/EmployeeDao.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/threading/threadOperations/dao/EmployeeDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#705#706#0" expanded="true" />
-            <element signature="e#743#744#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/threading/threadOperations/threads/TasksAsCallable.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/threading/threadOperations/DoSomeTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.12687428">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/threading/threadOperations/domain/Employee.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="53" selection-start-line="20" selection-start-column="53" selection-end-line="20" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#355#356#0" expanded="true" />
-            <element signature="e#389#390#0" expanded="true" />
-          </folding>
+          <caret line="59" column="9" selection-start-line="59" selection-start-column="9" selection-end-line="59" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/threading/ReturnValueFromThread.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/threading/threadOperations/threads/MainClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.1964912">
-          <caret line="36" column="6" selection-start-line="36" selection-start-column="6" selection-end-line="36" selection-end-column="6" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="36" column="5" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/threading/threadOperations/threads/TasksAsCallable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/misc/CharacterFrequency.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/timeStamp/CurrentTimeStamp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6597462">
+          <caret line="26" column="37" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/assignment/SimpleStatistics.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6561403">
+          <caret line="105" column="43" selection-start-line="105" selection-start-column="43" selection-end-line="105" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/practice/NthPower.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30877194">
+          <caret line="8" column="54" selection-start-line="8" selection-start-column="54" selection-end-line="8" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_45/src.zip!/java/io/InputStreamReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.7658594">
+          <caret line="1" column="50" selection-start-line="1" selection-start-column="49" selection-end-line="1" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/bools/BooleanMatrix.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8119954">
+          <caret line="40" column="40" selection-start-line="40" selection-start-column="40" selection-end-line="40" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/datetime/DateTime.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.50749713">
+          <caret line="20" column="45" selection-start-line="11" selection-start-column="10" selection-end-line="20" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/enumDemo/EnumTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35524797">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/maze/game/solution">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27912343">
+          <caret line="8" column="238" selection-start-line="8" selection-start-column="238" selection-end-line="8" selection-end-column="238" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/maze/Maze.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6851211">
+          <caret line="173" column="29" selection-start-line="173" selection-start-column="29" selection-end-line="173" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/maze/game/MazeGame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2283737">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/maze.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/strings/StringList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17762399">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/misc/GrayCode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.05074971">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/misc/IPAddress.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17762399">
+          <caret line="7" column="61" selection-start-line="7" selection-start-column="61" selection-end-line="7" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/misc/OpenNotepad.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.61937714">
+          <caret line="29" column="41" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/designPattern/iteratorPattern/Iterator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.05074971">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/strings/StringPermutations.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="39" selection-start-line="24" selection-start-column="39" selection-end-line="24" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/strings/SubstringAll.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/strings/SubstringPermutations.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48558247">
+          <caret line="83" column="36" selection-start-line="83" selection-start-column="36" selection-end-line="83" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/strings/AllSubstrings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6089965">
+          <caret line="24" column="44" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/threading/threadpool/SimpleThreadPool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="37" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/uuid/GenerateUUID.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="36" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/interfaces/practice/InterfaceTypeResolution.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20299885">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/interfaces/generics/InterfaceExample.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.2537485">
+          <caret line="85" column="30" selection-start-line="85" selection-start-column="30" selection-end-line="85" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/threading/CalculatePI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.88811994">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/threading/threadOperations/DoSomeTask.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/threading/ReturnValueFromThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2283737">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/threading/executorService/WorkerPool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.76124567">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/numbers/LargestProduct.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="48" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/threading/executorService/WorkerThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="42" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
           <folding>
-            <element signature="e#343#344#0" expanded="true" />
-            <element signature="e#400#401#0" expanded="true" />
+            <element signature="e#141#142#0" expanded="false" />
+            <element signature="e#173#174#0" expanded="false" />
+            <element signature="e#632#633#0" expanded="false" />
+            <element signature="e#667#668#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/threading/threadOperations/threads/MainClass.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/threading/io/ReadingFile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3631579">
-          <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ocean.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.8523645">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.54035085">
+          <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/file/BufferedReaderDemo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.55824685">
+          <caret line="25" column="41" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/generics/GenericsMethods.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="55" selection-start-line="27" selection-start-column="55" selection-end-line="27" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/practice/ArrayListDemo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23157895">
+          <caret line="6" column="51" selection-start-line="6" selection-start-column="51" selection-end-line="6" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/threading/parallel/CheckSites.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="87" column="14" selection-start-line="87" selection-start-column="14" selection-end-line="87" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/guava/GuavaTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.845614">
+          <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#487#507#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>Ocean</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: com.google.guava:guava:18.0</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
