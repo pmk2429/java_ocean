@@ -1,21 +1,13 @@
 package practice;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.text.Format;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class SetDemo {
 	public static void main(String[] args) {
-		Set<String> shots = new HashSet<String>();
-
-		shots.add("add");
-		shots.add("subtract");
-		shots.add("divide");
-		shots.add("multiply");
-		shots.add("zero");
-
-		if (shots.contains("dcjk")) {
-			System.out.println("Yeah baby");
-		}
-
+		Format formatter = new SimpleDateFormat("EEEE, dd MMMM yyyy, hh:mm:ss.SSS a");
+    	String today = formatter.format(new Date());
+    	System.out.println("Today : " + today);
 	}
 }

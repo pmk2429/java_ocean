@@ -22,7 +22,7 @@
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
-    <orderEntry type="module-library" exported="">
+    <orderEntry type="module-library">
       <library name="commons-net-3.3-sources.jar">
         <CLASSES>
           <root url="jar://$MODULE_DIR$/libs/commons-net-3.3-sources.jar!/" />
@@ -31,7 +31,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library" exported="">
+    <orderEntry type="module-library">
       <library name="commons-net-3.3.jar">
         <CLASSES>
           <root url="jar://$MODULE_DIR$/libs/commons-net-3.3.jar!/" />
@@ -40,7 +40,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library" exported="">
+    <orderEntry type="module-library">
       <library name="commons-net-examples-3.3.jar">
         <CLASSES>
           <root url="jar://$MODULE_DIR$/libs/commons-net-examples-3.3.jar!/" />
@@ -49,7 +49,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library" exported="">
+    <orderEntry type="module-library">
       <library name="jsoup-1.8.2.jar">
         <CLASSES>
           <root url="jar://$MODULE_DIR$/libs/jsoup-1.8.2.jar!/" />
@@ -58,15 +58,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library" exported="">
-      <library name="junit4">
-        <CLASSES>
-          <root url="jar://$APPLICATION_HOME_DIR$/lib/junit-4.11.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="library" exported="" name="Maven: com.google.guava:guava:18.0" level="project" />
+    <orderEntry type="library" name="Maven: com.google.guava:guava:18.0" level="project" />
+    <orderEntry type="library" name="Maven: joda-time:joda-time:2.0" level="project" />
   </component>
 </module>

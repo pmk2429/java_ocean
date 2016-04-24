@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * Find all unique letter combinations within the word “digital” that are 3 letters or more.
+ * Find all unique letter combinations within the word ï¿½digitalï¿½ that are 3 letters or more.
  * <p>
  * This program will find all possible subsets of a Particular String and then will find all possible permutations
  * of a each substring
@@ -98,7 +98,7 @@ public class SubstringPermutations {
         for (int i = 0; i < substrings.size(); i++) {
             // get permutations for corresponding substring.
             temp = new SubstringPermutations().stringPermutation(substrings.get(i));
-//            // finally add all element of Temp set to the uniqueCombinationStrings Set.
+//            // finally add all element of LongestContinuousNumber set to the uniqueCombinationStrings Set.
             uniqueCombinationStrings.addAll(temp);
 
 //            System.out.println(substrings.get(i));
