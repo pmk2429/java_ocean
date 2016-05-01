@@ -22,7 +22,7 @@ class RequestHandler {
     public static final Method[] apiMethods = ApiService.class.getDeclaredMethods();
 
     public static HashMap<String, String> getActivityMethodsMap() {
-        HashMap<String, String> activityMap = new HashMap<>();
+        HashMap<String, String> activityMap = new HashMap();
         String[] methods = getMethodNames(ActivityApiService.class.getDeclaredMethods());
         for (String methodName : methods) {
             activityMap.put(methodName + "_method", methodName);

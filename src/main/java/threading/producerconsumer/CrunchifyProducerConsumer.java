@@ -7,7 +7,7 @@ import java.util.Vector;
  * Created by Pavitra on 11/22/2015.
  */
 public class CrunchifyProducerConsumer {
-    private static Vector<Object> data = new Vector<>();
+    private static Vector<Object> data = new Vector();
 
     public static void main(String[] args) {
         new Producer().start();
