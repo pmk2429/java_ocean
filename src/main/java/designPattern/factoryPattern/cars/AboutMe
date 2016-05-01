@@ -23,7 +23,7 @@ E.g.: JDBC is a good example for this pattern; application code doesn't need to 
 
 
 Some more advantages of factory method design pattern is:
-1. Static factory method used in factory design pattern enforces use of Interface than implementation which itself a good practice. for example:
+1. Static factory method used in factory design pattern enforces use of Interface than implementation which itself a good statictypes. for example:
 
 
 Read more: http://javarevisited.blogspot.com/2011/12/factory-design-pattern-java-example.html#ixzz3ZRCp5d8b

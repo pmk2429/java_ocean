@@ -5,6 +5,7 @@ import org.apache.commons.lang3.SerializationUtils;
 import java.io.Serializable;
 
 /**
+ * Makes Shallow and Deep copies of Object for comparison
  * Created by Pavitra on 4/29/2016.
  */
 public class ObjectComparison {
