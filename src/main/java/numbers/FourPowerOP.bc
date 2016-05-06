@@ -1,0 +1,64 @@
+Compiled from "FourPower.java"
+public class numbers.FourPower {
+  public numbers.FourPower();
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: return
+
+  public static void main(java.lang.String[]);
+    Code:
+       0: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;
+       3: bipush        16
+       5: invokestatic  #3                  // Method isPowerOfFour:(I)Z
+       8: invokevirtual #4                  // Method java/io/PrintStream.println:(Z)V
+      11: return
+
+  public static boolean isPowerOfFour(int);
+    Code:
+       0: iload_0
+       1: iconst_1
+       2: if_icmpne     7
+       5: iconst_1
+       6: ireturn
+       7: iload_0
+       8: iconst_4
+       9: irem
+      10: ifeq          15
+      13: iconst_0
+      14: ireturn
+      15: iconst_0
+      16: istore_1
+      17: iload_0
+      18: bipush        10
+      20: irem
+      21: bipush        6
+      23: if_icmpeq     34
+      26: iload_0
+      27: bipush        10
+      29: irem
+      30: iconst_4
+      31: if_icmpne     64
+      34: iload_0
+      35: iconst_4
+      36: irem
+      37: ifne          64
+      40: iconst_4
+      41: istore_2
+      42: iload_2
+      43: iload_0
+      44: if_icmpgt     64
+      47: iload_2
+      48: iload_0
+      49: if_icmpne     57
+      52: iconst_1
+      53: istore_1
+      54: goto          64
+      57: iload_2
+      58: iconst_4
+      59: imul
+      60: istore_2
+      61: goto          42
+      64: iload_1
+      65: ireturn
+}
