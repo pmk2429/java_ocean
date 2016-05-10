@@ -1,4 +1,4 @@
-# Java_Master
+# java_ocean
 A repository for all the basic Programs and Code snippets in Java useful for Developers and Interview preparations.
 
 #### Contains bunch of small code snipptes from 
