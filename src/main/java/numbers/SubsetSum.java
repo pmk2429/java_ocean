@@ -46,8 +46,8 @@ public class SubsetSum {
     }
 
     public static void main(String[] args) {
-        int values[] = {2, 3, 4, 5};
+        int values[] = {2, 3, 4, 5, 6, 7, 8};
         System.out.println(Arrays.toString(values));
-        System.out.println(findSubsetSum(values, 5));
+        System.out.println(findSubsetSum(values, 15));
     }
 }

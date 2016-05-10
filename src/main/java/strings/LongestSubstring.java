@@ -23,7 +23,7 @@ public class LongestSubstring {
 	 * findLongestDistinctString() is used to find the longest string in the
 	 * given string.
 	 * 
-	 * @param String
+	 * @param str
 	 * @return the longest distinct substring
 	 */
 	public String findLongestDistinctString(String str) {

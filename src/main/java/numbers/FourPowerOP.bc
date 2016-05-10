@@ -1,6 +1,6 @@
 Compiled from "FourPower.java"
-public class numbers.FourPower {
-  public numbers.FourPower();
+public class numbers.PowerOfFour {
+  public numbers.PowerOfFour();
     Code:
        0: aload_0
        1: invokespecial #1                  // Method java/lang/Object."<init>":()V
