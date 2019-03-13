@@ -1,48 +1,54 @@
 package search;
 
-import java.util.Scanner;
+import java.util.Arrays;
 
 public class BinarySearch {
-	public static void main(String[] args) {
-		int c, first, last, middle, n, search, array[];
 
-		Scanner in = new Scanner(System.in);
-		System.out.println("Enter number of elements:");
-		System.out.print("> ");
-		n = in.nextInt();
-		array = new int[n];
+  private static int bst(int[] arr, int key, int start) {
+    int L = start;
+    int R = arr.length - 1;
+    int index = -1;
 
-		System.out.println();
-		System.out.println("Enter " + n + " integers:");
-		System.out.print("> ");
+    while (L <= R) {
+      int M = (L + R) / 2;
+      if (arr[M] < key) {
+        L = M + 1;
+      } else if (arr[M] > key) {
+        R = M - 1;
+      } else if (arr[M] == key) {
+        index = M;
+        break;
+      }
+    }
+    return index;
+  }
 
-		for (c = 0; c < n; c++) {
-			array[c] = in.nextInt();
-		}
+  // Returns index of x if it is present in arr[l..r], else return -1
+  private static int myBinarySearch(int arr[], int l, int r, int x) {
+    if (r >= l) {
+      int mid = l + (r - l) / 2;
 
-		System.out.println();
-		System.out.println("Enter value to find:");
-		System.out.print("> ");
-		search = in.nextInt();
+      // If the element is present at the middle itself
+      if (arr[mid] == x)
+        return mid;
 
-		first = 0;
-		last = n - 1;
-		middle = (first + last) / 2;
+      // If element is smaller than mid, then
+      // it can only be present in left subarray
+      if (arr[mid] > x)
+        return myBinarySearch(arr, l, mid - 1, x);
 
-		while (first <= last) {
-			if (array[middle] < search) {
-				first = middle + 1;
-			} else if (array[middle] == search) {
-				System.out.println(search + " found at location " + (middle + 1) + ".");
-				break;
-			} else {
-				last = middle - 1;
-			}
-			middle = (first + last) / 2;
-		}
-		System.out.println();
-		if (first > last) {
-			System.out.println("->" + search + " is not present in the list.\n");
-		}
-	}
+      // Else the element can only be present in right subarray
+      return myBinarySearch(arr, mid + 1, r, x);
+    }
+
+    // We reach here when element is not present in array
+    return -1;
+  }
+
+  public static void main(String[] args) {
+    int[] arr = {2, 7, 9, 8, 4, 15, 17};
+    Arrays.sort(arr);
+    System.out.println(Arrays.toString(arr));
+    System.out.println(bst(arr, 7, 0));
+  }
 }

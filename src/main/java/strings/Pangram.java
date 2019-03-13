@@ -1,0 +1,37 @@
+package strings;
+
+/**
+ * WAP to find Given a string check if it is Pangram or not.
+ * A pangram is a sentence containing every letter in the English Alphabet.
+ * <p>
+ * Examples : The quick brown fox jumps over the lazy dog ” is a Pangram [Contains all the characters from ‘a’ to ‘z’]
+ * “The quick brown fox jumps over the dog” is not a Pangram
+ * [Doesn’t contains all the characters from ‘a’ to ‘z’, as ‘l’, ‘z’, ‘y’ are missing]
+ * <p>
+ */
+public class Pangram {
+
+  private static boolean isPangram(String str) {
+    str = str.toLowerCase();
+    char[] alphabets = new char[256];
+    // build the list of char arrays
+    for (int i = 0; i < str.length(); i++) {
+      char c = str.charAt(i);
+      int ascii = (int) c;
+      alphabets[ascii]++;
+    }
+
+    boolean charsAvailable = true;
+    for (int i = 97; i <= 122; i++) {
+      if (alphabets[i] == 0) {
+        charsAvailable = false;
+      }
+    }
+    return charsAvailable;
+  }
+
+  public static void main(String[] args) {
+    String str = "The quick brown fox jump over the lazy dog";
+    System.out.println(isPangram(str));
+  }
+}

@@ -4,30 +4,29 @@ import java.io.*;
 
 public class CountTokens {
 
-		public static void main(String []args) throws IOException{
-			CountTokens ct = new CountTokens();
-			if(args.length == 0){
-				System.out.println("File not found");
-			}
-			/**
-			 *  This might cause change in GIT
-			 */
-			if(args.length > 0){
-				System.out.println("Input file: " + args[0]);
-				ct.countAll(args[0]);
-			}
-			
-		}
+  public static void main(String[] args) throws IOException {
+    CountTokens ct = new CountTokens();
+    if (args.length == 0) {
+      System.out.println("File not found");
+    }
+    /**
+     *  This might cause change in GIT
+     */
+    if (args.length > 0) {
+      System.out.println("Input file: " + args[0]);
+      ct.countAll(args[0]);
+    }
 
-		private void countAll(String inputFile) {
-			
-		}
+  }
+
+  private void countAll(String inputFile) {
+
+  }
 }
 
 
-
 /**
- *  Another implementation of File
+ * Another implementation of File
  */
 /*import java.util.*;
 import java.io.*;

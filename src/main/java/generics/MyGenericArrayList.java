@@ -21,7 +21,7 @@ class GenericArrayList<E> {
 	private int size;
 	private Object[] elements;
 
-	public GenericArrayList() {
+	GenericArrayList() {
 		elements = new Object[10];
 		size = 0;
 	}
