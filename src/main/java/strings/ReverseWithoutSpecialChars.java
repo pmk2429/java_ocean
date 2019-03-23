@@ -1,4 +1,4 @@
-package arrays;
+package strings;
 
 /**
  * Reverse an array without affecting special characters
@@ -40,8 +40,7 @@ public class ReverseWithoutSpecialChars {
     return String.valueOf(rev);
   }
 
-  /*
-  Algo to swap values of letters while traversing the array from start and back simultaneously.
+  /* Algo to swap values of letters while traversing the array from start and back simultaneously.
    */
   private static String reverseOnlyChars(String str) {
     char[] res = str.toCharArray();

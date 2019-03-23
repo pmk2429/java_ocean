@@ -5,8 +5,6 @@ import java.util.HashSet;
 
 /**
  * WAP to find intersecting elements from two arrays and return a new array.
- * <p>
- * WAP to find intersecting elements from three arrays and returns a new array.
  */
 public class Intersection {
 

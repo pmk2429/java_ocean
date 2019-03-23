@@ -50,8 +50,8 @@ public class PlaceFlowers {
   }
 
   public static void main(String[] args) {
-    int[] flowerbed = {1, 0, 0, 0, 1};
-    int n = 1;
+    int[] flowerbed = {1, 0, 0, 0, 0, 1};
+    int n = 2;
     System.out.println(plantFlowers(flowerbed, n));
   }
 }

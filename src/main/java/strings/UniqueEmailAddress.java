@@ -29,4 +29,12 @@ package strings;
  */
 public class UniqueEmailAddress {
 
+  private static int uniqueEmailAddresses(String[] emails) {
+    return 0;
+  }
+
+  public static void main(String[] args) {
+    String[] emails = {"test.email+alex@leetcode.com", "test.e.mail+bob.cathy@leetcode.com", "testemail+david@lee.tcode.com"};
+    System.out.println(uniqueEmailAddresses(emails));
+  }
 }

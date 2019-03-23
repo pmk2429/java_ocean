@@ -26,6 +26,38 @@ public class RotateArray {
 
   }
 
+  private static void reverse(int[] arr, int left, int right) {
+    if (arr == null || arr.length <= 0) {
+      return;
+    }
+
+    while (left < right) {
+      int temp = arr[left];
+      arr[left] = arr[right];
+      arr[right] = temp;
+      left++;
+      right--;
+    }
+  }
+
+  private static int[] rotate(int[] arr, int degree) {
+    if (arr == null || arr.length <= 0 || degree <= 0) {
+      throw new IllegalArgumentException("Array Invalid");
+    }
+
+    if (degree > arr.length) {
+      degree = degree % arr.length;
+    }
+
+    int partition = arr.length - degree - 1;
+
+    reverse(arr, 0, partition - 1);
+    reverse(arr, partition, arr.length - 1);
+    reverse(arr, 0, arr.length - 1);
+
+    return arr;
+  }
+
   private static void rotateArray(int[] arr, int distance) {
     // distance iteration
     for (int i = 0; i < distance; i++) {
@@ -44,5 +76,7 @@ public class RotateArray {
   public static void main(String[] args) {
     int[] arr = new int[]{1, 2, 3, 4, 5};
     rotateArray(arr, 2);
+    int[] arr1 = new int[]{1, 2, 3, 4, 5};
+    System.out.println(Arrays.toString(rotate(arr1, 2)));
   }
 }
