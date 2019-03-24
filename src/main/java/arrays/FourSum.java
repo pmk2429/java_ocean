@@ -22,7 +22,7 @@ import java.util.List;
  */
 public class FourSum {
   private static List<List<Integer>> fourSum(int[] nums, int target) {
-
+    return null;
   }
 
   public static void main(String[] args) {
