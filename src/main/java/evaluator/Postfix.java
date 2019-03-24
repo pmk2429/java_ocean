@@ -1,7 +1,7 @@
 package evaluator;
 
-import java.util.Stack;
 import java.util.Scanner;
+import java.util.Stack;
 import java.util.StringTokenizer;
 
 public class Postfix {
@@ -27,18 +27,18 @@ public class Postfix {
 			while (strToken.hasMoreTokens()) {
 				token = strToken.nextToken();
 				if (isOperator(token)) {
-					op2 = ((Integer) stack.pop()).intValue();
-					op1 = ((Integer) stack.pop()).intValue();
+					op2 = stack.pop();
+					op1 = stack.pop();
 					result = evaluateSingleOperation(token.charAt(0), op1, op2);
-					stack.push(new Integer(result));
+					stack.push(result);
 				} else {
-					stack.push(new Integer(Integer.parseInt(token)));
+					stack.push(Integer.parseInt(token));
 				}
 			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
-		result = ((Integer) stack.pop()).intValue();
+		result = stack.pop().intValue();
 		return result;
 	}
 

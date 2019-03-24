@@ -1,8 +1,8 @@
-bin/
 bin/*
 target/*
-.classpath/
-.project/*
-.idea/
+classpath/
+project/*
 .idea/*
-Ocean.iml
+*.iml
+*.iws
+

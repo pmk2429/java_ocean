@@ -20,7 +20,7 @@ package arrays;
 public class AlternatePosNeg {
 
   private static void alternate(int[] arr) {
-    
+
   }
 
   public static void main(String[] args) {
