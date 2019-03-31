@@ -86,4 +86,14 @@ public class CharacterFrequency {
       System.out.println(mapCharacters.getKey() + "\t\t:\t\t" + mapCharacters.getValue());
     }
   }
+
+  // Capital case characters
+  private static void charFrequency(String str) {
+    char[] allchars = str.toCharArray();
+    int[] charFreq = new int[26];
+    for (char c : allchars) {
+      charFreq[c - 'A']++;
+    }
+    Arrays.sort(charFreq);
+  }
 }

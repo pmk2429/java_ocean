@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class RemoveDuplicates {
   public static void main(String[] args) {
-    List<Character> noDuplicate = new ArrayList<Character>();
+    List<Character> noDuplicate;
     System.out.println("Enter the String:");
     System.out.print("> ");
     Scanner input = new Scanner(System.in);

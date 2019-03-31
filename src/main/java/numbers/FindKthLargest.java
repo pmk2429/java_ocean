@@ -62,19 +62,18 @@ public class FindKthLargest {
       return findKthLargest(nums, start, right - 1, k);
     }
   }
-  
+
   private static void swap(int[] nums, int a, int b) {
     int temp = nums[a];
     nums[a] = nums[b];
     nums[b] = temp;
   }
 
-  // Using PriorityQueue
+  // Uses PriorityQueue
   private static int kthLargestUsingHeap(int[] nums, int k) {
     PriorityQueue<Integer> q = new PriorityQueue<>(k);
     for (int i : nums) {
       q.offer(i);
-
       if (q.size() > k) {
         q.poll();
       }

@@ -1,5 +1,8 @@
 package strings;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * Every email consists of a local name and a domain name, separated by the @ sign.
  * For example, in alice@leetcode.com, alice is the local name, and leetcode.com is the domain name.
@@ -30,7 +33,37 @@ package strings;
 public class UniqueEmailAddress {
 
   private static int uniqueEmailAddresses(String[] emails) {
-    return 0;
+    // rationale - to avoid adding duplicated
+    Set<String> uniqueEmails = new HashSet<>();
+
+    String ignore = "+";
+    String period = ".";
+
+    for (int i = 0; i < emails.length; i++) {
+      StringBuilder sb = new StringBuilder();
+
+      String email = emails[i];
+
+      // split the email in to local name and domain name using @ symbol
+      String[] metadata = email.split("@");
+      String localName = metadata[0];
+      String domainName = metadata[1];
+
+      // check if localName contains period or ignore char
+      if (localName.contains(period)) {
+        localName = localName.replace(".", "");
+      }
+
+      if (localName.contains(ignore)) {
+        int index = localName.indexOf(ignore);
+        localName = localName.substring(0, index);
+      }
+
+      sb.append(localName).append("@").append(domainName);
+      uniqueEmails.add(sb.toString());
+    }
+
+    return uniqueEmails.size();
   }
 
   public static void main(String[] args) {

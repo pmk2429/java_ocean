@@ -1,56 +1,86 @@
 package strings;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.Set;
+import java.util.Arrays;
 
 public class UniqueCharacters {
 
+  private final static int MAX_CHAR = 256;
+
+  private static boolean containsUniqueChar(String str) {
+    char[] chArray = str.toCharArray();
+
+    // Using sorting
+    // Arrays.sort() uses binarySort in the background
+    // for non-primitives which is of O(nlogn) time complexity
+    Arrays.sort(chArray);
+
+    for (int i = 0; i < chArray.length - 1; i++) {
+      // if the adjacent elements are not
+      // equal, move to next element
+      if (chArray[i] != chArray[i + 1]) {
+        continue;
+      }
+
+      // if at any time, 2 adjacent elements
+      // become equal, return false
+      else {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  private static boolean isStringUnique(String str) {
+    // If length is greater than 256,
+    // some characters must have been repeated
+    if (str.length() > MAX_CHAR) {
+      return false;
+    }
+
+    boolean[] chars = new boolean[MAX_CHAR];
+    Arrays.fill(chars, false);
+
+    for (int i = 0; i < str.length(); i++) {
+      int index = (int) str.charAt(i);
+
+     /* If the value is already true, string
+     has duplicate characters, return false */
+      if (chars[index] == true) {
+        return false;
+      }
+
+      chars[index] = true;
+    }
+
+    /* No duplicates encountered, return true */
+    return true;
+  }
+
+  private static boolean isUnique(String str) {
+    // Assuming string can have characters a-z
+    // this has 32 bits set to 0
+    int checker = 0;
+
+    for (int i = 0; i < str.length(); i++) {
+      int bitAtIndex = str.charAt(i) - 'a';
+
+      // if that bit is already set in checker,
+      // return false
+      if ((checker & (1 << bitAtIndex)) > 0) {
+        return false;
+      }
+
+      // otherwise update and continue by
+      // setting that bit in the checker
+      checker = checker | (1 << bitAtIndex);
+    }
+
+    // no duplicates encountered, return true
+    return true;
+  }
+
+
   public static void main(String[] args) {
-    Scanner input = new Scanner(System.in);
-    String inputString = input.nextLine();
-    input.close();
 
-    UniqueCharacters uniqueObj = new UniqueCharacters();
-    Map<Character, Integer> mapUniqueChars = new HashMap<Character, Integer>();
-
-    mapUniqueChars = uniqueObj.findUniqueCharacters(inputString);
-    uniqueObj.printUniqueCharacters(mapUniqueChars);
   }
-
-  @SuppressWarnings("unchecked")
-  private void printUniqueCharacters(Map<Character, Integer> mapUniqueChars) {
-    Set<?> setMap = mapUniqueChars.entrySet();
-    Iterator<?> iter = setMap.iterator();
-    while (iter.hasNext()) {
-      Map.Entry<Character, Integer> entryMap = (Map.Entry<Character, Integer>) iter
-              .next();
-      if ((Integer) (entryMap.getValue()) == 1) {
-        System.out.print(entryMap.getKey() + ", ");
-      }
-    }
-
-    // OR
-
-    // for (Map.Entry<Character, Integer> entry : mapUniqueChars.entrySet())
-    // {
-    // System.out.println(entry.getKey() + " : " + entry.getValue());
-    // }
-  }
-
-  private Map<Character, Integer> findUniqueCharacters(String inputString) {
-    Map<Character, Integer> mapUniqueChars = new HashMap<Character, Integer>();
-    for (int i = 0; i < inputString.length(); i++) {
-      if (mapUniqueChars.containsKey(inputString.charAt(i))) {
-        mapUniqueChars.put(inputString.charAt(i),
-                mapUniqueChars.get(inputString.charAt(i)) + 1);
-      } else {
-        mapUniqueChars.put(inputString.charAt(i), 1);
-      }
-    }
-    return mapUniqueChars;
-  }
-
 }
