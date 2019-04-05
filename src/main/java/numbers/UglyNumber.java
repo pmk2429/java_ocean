@@ -2,7 +2,7 @@ package numbers;
 
 /**
  * WAP to find nth ugly number.
- * Ugly number is the one whose prime factors are 2,3  or 5.
+ * Ugly number is the one whose prime factors are 2, 3 or 5.
  */
 public class UglyNumber {
   private static int nthUglyNumber(int n) {

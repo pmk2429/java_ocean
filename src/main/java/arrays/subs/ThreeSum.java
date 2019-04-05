@@ -1,4 +1,4 @@
-package arrays;
+package arrays.subs;
 
 public class ThreeSum {
 

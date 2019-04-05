@@ -1,4 +1,4 @@
-package strings;
+package arrays.subs;
 
 import java.util.Set;
 import java.util.TreeSet;

@@ -1,4 +1,4 @@
-package strings;
+package arrays.subs;
 
 import java.util.ArrayList;
 
@@ -10,14 +10,6 @@ import java.util.ArrayList;
  */
 
 public class LongestSubstring {
-  public static void main(String[] args) {
-    // String str = "a b c def ghi jkl mno pqrstu vw xyz";
-    String str = "the quick brown fox";
-    LongestSubstring substringObj = new LongestSubstring();
-    String subString = substringObj.findLongestDistinctString(str);
-    System.out.println(subString);
-  }
-
   /**
    * findLongestDistinctString() is used to find the longest string in the
    * given string.
@@ -25,9 +17,9 @@ public class LongestSubstring {
    * @param str
    * @return the longest distinct substring
    */
-  public String findLongestDistinctString(String str) {
-    ArrayList<Character> subStrList = new ArrayList<Character>();
-    String uniqueString = "";
+  private static String findLongestDistinctString(String str) {
+    ArrayList<Character> subStrList = new ArrayList<>();
+    StringBuilder unique = new StringBuilder();
     for (int i = 0; i < str.length(); i++) {
       if (subStrList.contains(str.charAt(i))) {
         if (Character.isWhitespace(str.charAt(i))) {
@@ -38,8 +30,14 @@ public class LongestSubstring {
       } else {
         subStrList.add(str.charAt(i));
       }
-      uniqueString += subStrList.get(i).toString();
+      unique.append(subStrList.get(i).toString());
     }
-    return uniqueString;
+    return unique.toString();
+  }
+
+  public static void main(String[] args) {
+    // String str = "a b c def ghi jkl mno pqrstu vw xyz";
+    String str = "the quick brown fox";
+    System.out.println(findLongestDistinctString(str));
   }
 }

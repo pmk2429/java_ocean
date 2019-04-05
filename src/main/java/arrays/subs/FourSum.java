@@ -1,4 +1,4 @@
-package arrays;
+package arrays.subs;
 
 import java.util.List;
 

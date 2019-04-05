@@ -1,4 +1,4 @@
-package strings;
+package arrays.subs;
 
 /**
  * Created by Pavitra on 11/12/2015.
