@@ -1,5 +1,6 @@
 package arrays;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 
@@ -21,13 +22,41 @@ public class Intersection {
       }
     }
 
-    int[] result = new int[set2.size()];
-    int i = 0;
-    for (int n : set2) {
-      result[i++] = n;
-    }
+    int[] result = set2.stream().mapToInt(i -> i).toArray();
 
     return result;
+  }
+
+  /**
+   * Intersection  of two unsorted arrays
+   *
+   * @param a
+   * @param b
+   * @return
+   */
+  private static int[] intersection(int[] a, int[] b) {
+    if (a.length == 0 || b.length == 0) {
+      return null;
+    }
+    int i = 0, j = 0;
+    int n = a.length;
+    int m = b.length;
+
+    ArrayList<Integer> intersection = new ArrayList<>();
+
+    while (i < n && j < m) {
+      if (a[i] > b[j]) {
+        j++;
+      } else if (b[j] > a[i]) {
+        i++;
+      } else {
+        // when both are equal
+        intersection.add(a[i]);
+        i++;
+        j++;
+      }
+    }
+    return intersection.stream().mapToInt(val -> val).toArray();
   }
 
   public static void main(String[] args) {
@@ -35,5 +64,7 @@ public class Intersection {
     int[] arr2 = new int[]{4, 5, 6, 7, 8};
     int[] intersection = findIntersection(arr1, arr2);
     System.out.println(Arrays.toString(intersection));
+    System.out.println("Without using Set: ");
+    System.out.println(Arrays.toString(intersection(arr1, arr2)));
   }
 }
