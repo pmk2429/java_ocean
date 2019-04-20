@@ -9,12 +9,12 @@ package search;
  * <p>
  * mid1 = l + (r-l)/3
  * mid2 = r – (r-l)/3
- * <p>
  * Note: Array needs to be sorted to perform ternary search on it.
  * <p>
  * Ternary Search Algo:
  * --------------------
- * First, we compare the key with the element at mid1. If found equal, we return mid1.
+ * First, we compare the key with the element at mid1
+ * <p>. If found equal, we return mid1.
  * If not, then we compare the key with the element at mid2. If found equal, we return mid2.
  * If not, then we check whether the key is less than the element at mid1. If yes, then recur to the first part.
  * If not, then we check whether the key is greater than the element at mid2. If yes, then recur to the third part.

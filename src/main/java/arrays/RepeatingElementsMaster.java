@@ -35,7 +35,7 @@ public class RepeatingElementsMaster {
   }
 
   // works only if max(arr[]) < size(arr[])
-  private static void findRepeating(int arr[]) {
+  private static void findRepeating(int[] arr) {
     int size = arr.length;
     int i;
     System.out.println("The repeating elements are : ");
@@ -49,7 +49,7 @@ public class RepeatingElementsMaster {
   }
 
   // works only if max(arr[]) < size(arr[])
-  private static void findRepeatingSameSpace(int arr[]) {
+  private static void findRepeatingSameSpace(int[] arr) {
     // First check all the values that are present in an array then go to that values as indexes and increment by
     // the size of array
     int n = arr.length;
@@ -89,11 +89,10 @@ public class RepeatingElementsMaster {
     int arr[] = {1, 6, 3, 1, 3, 6, 5};
     //findRepeating(arr);
     int arr1[] = {1, 6, 3, 1, 3, 6, 6};
-    //findRepeatingSameSpace(arr1);
+    findRepeatingSameSpace(arr1);
     int arr2[] = {4, 2, 4, 5, 2, 3, 1, 27, 29, 27};
     //findNonRepeatingElement(arr2);
     int arr3[] = {4, 2, 4, 5, 2, 3, 1, 27, 29, 27};
-
     findRepeatingMaxElementSameSpace(arr3);
   }
 }

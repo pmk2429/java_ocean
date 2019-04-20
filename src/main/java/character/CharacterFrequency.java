@@ -16,7 +16,7 @@ import java.util.*;
 public class CharacterFrequency {
 
   @SuppressWarnings("resource")
-  public static void main(String[] args) {
+  public static void main1(String[] args) {
     System.out.println("Enter the string to count frequency of each characters:");
     System.out.print("> ");
     Scanner input = new Scanner(System.in);
@@ -95,5 +95,21 @@ public class CharacterFrequency {
       charFreq[c - 'A']++;
     }
     Arrays.sort(charFreq);
+  }
+
+  private static void test(String str) {
+    int[] freq = new int[256];
+    char[] allChars = str.toCharArray();
+    for (char c : allChars) {
+      int position = (int) c;
+      freq[position]++;
+    }
+
+    Arrays.stream(freq).filter(i -> i > 0).forEach(i -> System.out.println((char) i + " -> " + i));
+  }
+
+  public static void main(String[] args) {
+    String pavitra = "pavitra";
+    test(pavitra);
   }
 }

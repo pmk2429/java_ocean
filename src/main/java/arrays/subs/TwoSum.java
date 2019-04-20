@@ -58,7 +58,7 @@ public class TwoSum {
   }
 
   public static void main(String[] args) {
-    int[] a = {2, 7, 9, 8, 15};
+    int[] a = {2, 7, 6, 8, 15};
     Arrays.sort(a);
     int target = 8;
     System.out.println(Arrays.toString(twoSum(a, target)));
