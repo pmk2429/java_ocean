@@ -1,6 +1,8 @@
 package arrays;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * Given a non-empty array of digits representing a non-negative integer, plus one to the integer.
@@ -27,7 +29,7 @@ public class PlusOne {
     // start with the reverse loop
     for (int i = (length - 1); i >= 0; i--) {
       int lastSum = arr[i] + 1;
-      if (lastSum >= 10) {
+      if (lastSum > 9) {
         int lastDigit = lastSum % 10;
         arr[i] = lastDigit;
         carry = 1;
@@ -41,17 +43,31 @@ public class PlusOne {
     // and at the same time have to increase the # of digits count in array.So create a new array
     if (carry != 0) {
       int[] retArr = new int[length + 1];
-      retArr[0] = carry; // can be any digit from 1-9
-      for (int i = 0; i < length; i++) {
-        retArr[i + 1] = arr[i];
-      }
+      retArr[0] = carry;
+      System.arraycopy(arr, 0, retArr, 1, arr.length);
       return retArr;
     }
     return arr;
   }
 
+  private static List<Integer> plusOne(List<Integer> digits) {
+    for (int i = digits.size() - 1; i >= 0; i--) {
+      int digit = digits.get(i);
+      if (digit < 9) {
+        digits.set(i, digit + 1);
+        return null;
+      } else {
+        digits.set(i, 0);
+      }
+    }
+    digits.add(0);
+    digits.set(0, 1);
+
+    return digits;
+  }
+
   public static void main(String[] args) {
-    int[] arr = new int[]{9, 9};
+    int[] arr = new int[]{4, 9};
     System.out.println(Arrays.toString(plusOne(arr)));
   }
 }

@@ -34,9 +34,26 @@ public class MRUApps {
    * @param apps
    * @return
    */
-  private static int[] MRU(int[] apps, int tab) {
-    return null;
+  private static int[] MRU(int[] apps, int tabs) {
+    int N = apps.length;
+    int switchToIndex = 0;
+
+    // Finding the end index after K presses
+    switchToIndex = (tabs % N);
+
+    // Shifting elements by 1 towards the found index
+    // on which the K press ends
+    int x = switchToIndex, switchToApp = apps[switchToIndex];
+    while (x > 0) {
+      apps[x] = apps[--x];
+    }
+
+    // Update the current active app
+    apps[0] = switchToApp;
+
+    return apps;
   }
+
 
   public static void main(String[] args) {
     int[] arr = {3, 5, 2, 4, 1};

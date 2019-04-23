@@ -1,29 +1,35 @@
 package numbers;
 
-import java.util.Scanner;
-
 public class ReverseNumber {
-	public static void main(String[] args) {
-		System.out.println("Enter the number to Reverse:");
-		System.out.print("> ");
-		Scanner input = new Scanner(System.in);
-		int number = input.nextInt();
-		input.close();
-		ReverseNumber reverseObj = new ReverseNumber();
-		int reversedNumber = reverseObj.reverseNumber(number);
-		System.out.println("\nReverse of entered number is: " + reversedNumber);
-	}
+  private static int reverseNumber(int number) {
+    int reverse = 0;
+    int remainder;
 
-	private int reverseNumber(int number) {
-		int reverse = 0;
-		int remainder = 0;
+    do {
+      remainder = number % 10;
+      reverse = reverse * 10 + remainder;
+      number = number / 10;
 
-		do {
-			remainder = number % 10;
-			reverse = reverse * 10 + remainder;
-			number = number / 10;
+    } while (number > 0);
+    return reverse;
+  }
 
-		} while (number > 0);
-		return reverse;
-	}
+  private static int reverse(int x) {
+    int ret = 0;
+    while (x != 0) {
+      // handle overflow/underflow
+      if (Math.abs(ret) > Integer.MAX_VALUE / 10) {
+        return 0;
+      }
+      ret = ret * 10 + x % 10;
+      x /= 10;
+    }
+    return ret;
+  }
+
+  public static void main(String[] args) {
+    int reversedNumber = reverse(-321);
+    System.out.println(Integer.MAX_VALUE);
+    System.out.println("\nReverse of entered number is: " + reversedNumber);
+  }
 }

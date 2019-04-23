@@ -38,7 +38,7 @@ public class LongestCommonSubstring {
           longest = table[i][j];
           result.clear();
         }
-        
+
         if (table[i][j] == longest) {
           result.add(s.substring(i - longest + 1, i + 1));
         }
