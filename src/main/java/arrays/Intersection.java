@@ -45,10 +45,10 @@ public class Intersection {
     ArrayList<Integer> intersection = new ArrayList<>();
 
     while (i < n && j < m) {
-      if (a[i] > b[j]) {
-        j++;
-      } else if (b[j] > a[i]) {
+      if (a[i] < b[j]) {
         i++;
+      } else if (b[j] < a[i]) {
+        j++;
       } else {
         // when both are equal
         intersection.add(a[i]);
