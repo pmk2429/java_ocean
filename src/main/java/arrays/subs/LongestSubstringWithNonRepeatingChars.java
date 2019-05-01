@@ -76,8 +76,7 @@ public class LongestSubstringWithNonRepeatingChars {
       }
     }
 
-    // Compare length of last substring with maxlen and
-    // update maxlen and start accordingly
+    // Compare length of last substring with maxlen and update maxlen and start accordingly
     if (maxlen < i - st) {
       maxlen = i - st;
       start = st;

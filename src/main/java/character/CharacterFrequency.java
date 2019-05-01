@@ -90,11 +90,15 @@ public class CharacterFrequency {
   // Capital case characters
   private static void charFrequency(String str) {
     char[] allchars = str.toCharArray();
-    int[] charFreq = new int[26];
+    int[] charFreq = new int[256];
     for (char c : allchars) {
-      charFreq[c - 'A']++;
+      charFreq[(int) c]++;
     }
-    Arrays.sort(charFreq);
+    for (int i = 0; i < charFreq.length; i++) {
+      if (charFreq[i] > 0) {
+        System.out.println((char) i + " -> " + charFreq[i]);
+      }
+    }
   }
 
   private static void test(String str) {
@@ -110,6 +114,6 @@ public class CharacterFrequency {
 
   public static void main(String[] args) {
     String pavitra = "pavitra";
-    test(pavitra);
+    charFrequency(pavitra);
   }
 }

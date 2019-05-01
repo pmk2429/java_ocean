@@ -1,37 +1,63 @@
 package hard;
 
+import java.util.Deque;
+import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.Iterator;
-import java.util.LinkedHashMap;
 
 public class LRUCache {
+  // store keys of cache
+  static Deque<Integer> dq;
+  // store references of key in cache
+  static HashSet<Integer> map;
+  //maximum capacity of cache
+  static int csize;
 
-  private int capacity;
-  private LinkedHashMap<Integer, Integer> map;
-
-  public LRUCache(int capacity) {
-    this.capacity = capacity;
-    this.map = new LinkedHashMap<>();
+  LRUCache(int n) {
+    dq = new LinkedList<>();
+    map = new HashSet<>();
+    csize = n;
   }
 
-  public int get(int key) {
-    Integer value = this.map.get(key);
-    if (value == null) {
-      value = -1;
+  /* Refers key x with in the LRU cache */
+  private void refer(int x) {
+    if (!map.contains(x)) {
+      if (dq.size() == csize) {
+        int last = dq.removeLast();
+        map.remove(last);
+      }
     } else {
-      this.set(key, value);
+      int index = 0, i = 0;
+      for (Integer integer : dq) {
+        if (integer == x) {
+          index = i;
+          break;
+        }
+        i++;
+      }
+      dq.remove(index);
     }
-    return value;
+    dq.push(x);
+    map.add(x);
   }
 
-  public void set(int key, int value) {
-    if (this.map.containsKey(key)) {
-      this.map.remove(key);
-    } else if (this.map.size() == this.capacity) {
-      Iterator<Integer> it = this.map.keySet().iterator();
-      it.next();
-      it.remove();
+  // display contents of cache
+  private void display() {
+    for (Integer integer : dq) {
+      System.out.print(integer + " ");
     }
-    map.put(key, value);
+  }
+
+
+  public static void main(String[] args) {
+    LRUCache ca = new LRUCache(4);
+    ca.refer(1);
+    ca.refer(2);
+    ca.refer(3);
+    ca.refer(1);
+    ca.refer(4);
+    ca.refer(5);
+    ca.display();
   }
 }
 

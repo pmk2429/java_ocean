@@ -2,6 +2,7 @@ package arrays.subs;
 
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.Set;
 
 public class ThreeSum {
 
@@ -14,12 +15,12 @@ public class ThreeSum {
     for (int i = 0; i < size - 2; i++) {
       // Find pair in subarray A[i+1..n-1] with sum equal to sum - A[i]
       HashSet<Integer> s = new HashSet<>();
-      int curr_sum = target - arr[i];
+      int complement = target - arr[i];
       three[0] = arr[i];
       for (int j = i + 1; j < size; j++) {
-        if (s.contains(curr_sum - arr[j]) && curr_sum - arr[j] != (int) s.toArray()[s.size() - 1]) {
+        if (s.contains(complement - arr[j]) && complement - arr[j] != (int) s.toArray()[s.size() - 1]) {
           three[1] = arr[j];
-          three[2] = curr_sum - arr[j];
+          three[2] = complement - arr[j];
           found = true;
           break;
         }
@@ -30,6 +31,32 @@ public class ThreeSum {
       }
     }
 
+    return three;
+  }
+
+  private static int[] threeSum(int[] arr, int target) {
+    int length = arr.length;
+    int[] three = new int[3];
+    boolean found = false;
+    Set<Integer> uniqueThree = new HashSet<>();
+
+    for (int i = 0; i < length - 2; i++) {
+      int complement = target - arr[i];
+      three[0] = arr[i];
+      for (int j = i + 1; j < length; j++) {
+        int threeDiff = complement - arr[j];
+        if (uniqueThree.contains(threeDiff) && threeDiff != (int) uniqueThree.toArray()[uniqueThree.size() - 1]) {
+          three[1] = arr[j];
+          three[2] = threeDiff;
+          found = true;
+          break;
+        }
+        uniqueThree.add(arr[j]);
+      }
+      if (found) {
+        break;
+      }
+    }
     return three;
   }
 
