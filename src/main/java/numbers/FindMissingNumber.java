@@ -21,8 +21,9 @@ public class FindMissingNumber {
     for (int i = start; i <= end; i++) {
       actualSum = actualSum + i;
     }
-    for (int i = 0; i < missingArray.length; i++) {
-      arrayTotal = arrayTotal + missingArray[i];
+
+    for (int value : missingArray) {
+      arrayTotal = arrayTotal + value;
     }
 
     int missingNumber = actualSum - arrayTotal;

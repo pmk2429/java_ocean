@@ -82,8 +82,8 @@ public class CutOffTrees {
         return cur[2];
       }
       for (int di = 0; di < 4; ++di) {
-        int r = cur[0];// + dr[di];
-        int c = cur[1]; // + dc[di];
+        int r = cur[0] + sr;
+        int c = cur[1] + sc;
         if (0 <= r && r < R && 0 <= c && c < C && !seen[r][c] && forest.get(r).get(c) > 0) {
           seen[r][c] = true;
           queue.add(new int[]{r, c, cur[2] + 1});

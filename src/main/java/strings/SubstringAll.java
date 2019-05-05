@@ -1,42 +1,29 @@
 package strings;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.Set;
 
 public class SubstringAll {
-  public static void main(String[] args) {
-    String string, sub;
-    int i, c, length, count = 0;
 
-    Scanner in = new Scanner(System.in);
-    System.out.println("Enter a string to print it's all substrings");
-    string = in.nextLine();
+  private static Set<String> allSubstrings(String str) {
+    Set<String> allSubs = new HashSet<>();
+    int i, j, length, count = 0;
+    length = str.length();
 
-    length = string.length();
+    System.out.println("Substrings of \"" + str + "\" are :-");
 
-    System.out.println("Substrings of \"" + string + "\" are :-");
-
-    for (c = 0; c < length; c++) {
-      for (i = 1; i <= length - c; i++) {
-        sub = string.substring(c, c + i);
+    for (i = 0; i < length; i++) {
+      for (j = 1; j <= length - i; j++) {
+        allSubs.add(str.substring(i, i + j));
         count++;
-        System.out.print(sub + " ");
       }
     }
-    System.out.println();
-    System.out.println(count);
 
-    String str = "helloslkhellodjladfj";
-    String findStr = "hello";
-    int lastIndex = 0;
-    int count1 = 0;
+    return allSubs;
+  }
 
-    while (lastIndex != -1) {
-      lastIndex = str.indexOf(findStr, lastIndex);
-      if (lastIndex != -1) {
-        count1++;
-        lastIndex += findStr.length();
-      }
-    }
-    System.out.println(count1);
+  public static void main(String[] args) {
+    String str = "226";
+    System.out.println(allSubstrings(str));
   }
 }

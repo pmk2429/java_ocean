@@ -14,7 +14,6 @@ package numbers;
  */
 public class AddTwoNumbers {
 
-
   private ListNode addTwoNumbers(ListNode l1, ListNode l2) {
     ListNode dummy = new ListNode(0);
     ListNode p = l1, q = l2, curr = dummy;
@@ -23,7 +22,7 @@ public class AddTwoNumbers {
     while (p != null || q != null) {
       int x = p != null ? p.val : 0;
       int y = q != null ? p.val : 0;
-      int sum = x + y;
+      int sum = carry + x + y;
       carry = sum / 10;
       curr.next = new ListNode(sum % 10);
       curr = curr.next;

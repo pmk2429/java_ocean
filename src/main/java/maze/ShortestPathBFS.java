@@ -34,7 +34,7 @@ class ShortestPathBFS {
 
   // Find Shortest Possible Route in a matrix mat from source
   // cell (i, j) to destination cell (x, y)
-  private static void BFS(int mat[][], int i, int j, int x, int y) {
+  private static void BFS(int[][] mat, int i, int j, int x, int y) {
     // construct a matrix to keep track of visited cells
     boolean[][] visited = new boolean[M][N];
 

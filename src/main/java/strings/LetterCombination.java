@@ -17,8 +17,47 @@ import java.util.*;
  * Although the above answer is in lexicographical order, your answer could be in any order you want.
  */
 public class LetterCombination {
+
+  // using backtracking
+  private static Map<String, String> phone = new HashMap<String, String>() {{
+    put("2", "abc");
+    put("3", "def");
+    put("4", "ghi");
+    put("5", "jkl");
+    put("6", "mno");
+    put("7", "pqrs");
+    put("8", "tuv");
+    put("9", "wxyz");
+  }};
+
+  private static List<String> output = new ArrayList<>();
+
+  private static void backtrack(String combination, String next_digits) {
+    // if there is no more digits to check
+    if (next_digits.length() == 0) {
+      // the combination is done
+      output.add(combination);
+    } else { // if there are still digits to check
+      // iterate over all letters which map the next available digit
+      String digit = next_digits.substring(0, 1);
+      String letters = phone.get(digit);
+      for (int i = 0; i < letters.length(); i++) {
+        String letter = phone.get(digit).substring(i, i + 1);
+        // append the current letter to the combination and proceed to the next digits
+        backtrack(combination + letter, next_digits.substring(1));
+      }
+    }
+  }
+
+  private static List<String> letterCombinations(String digits) {
+    if (digits.length() != 0) {
+      backtrack("", digits);
+    }
+    return output;
+  }
+
   // Classic substring problem
-  private static List<String> letterCombinations(String num) {
+  private static List<String> letterCombinationsSubstr(String num) {
     Set<String> combos = new TreeSet<>();
     Map<Integer, String> code = new HashMap<>();
     code.put(2, "abc");
@@ -45,6 +84,6 @@ public class LetterCombination {
 
   public static void main(String[] args) {
     String str = "23";
-    System.out.println(letterCombinations(str));
+    System.out.println(letterCombinationsSubstr(str));
   }
 }

@@ -1,9 +1,5 @@
 package strings;
 
-/**
- * StringPermutations class is used to find all PERMUTATIONS of a given string
- */
-
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
@@ -11,23 +7,28 @@ import java.util.Set;
 /**
  * @author Pavitra
  */
-
 public class StringPermutations {
 
-  public static void main(String[] args) {
-    String s = "digital";
-//        String s1 = "ABC";
-//        String s2 = "PMK";
-    System.out.println("\nString " + s + ":\nPermutations: ");
-    Set<String> allStringPermutationsSet = stringPermutation(s);
-    Iterator<String> setIterator = allStringPermutationsSet.iterator();
+  private static String swap(String a, int i, int j) {
+    char temp;
+    char[] charArray = a.toCharArray();
+    temp = charArray[i];
+    charArray[i] = charArray[j];
+    charArray[j] = temp;
+    return String.valueOf(charArray);
+  }
 
-    while (setIterator.hasNext()) {
-      if (setIterator.next().length() > 3) {
-        System.out.println(setIterator.next());
+  private static void permute(String str, int l, int r) {
+    if (l == r) {
+      // print or add to list
+      System.out.println(str);
+    } else {
+      for (int i = l; i <= r; i++) {
+        str = swap(str, l, i);
+        permute(str, l + 1, r);
+        str = swap(str, l, i);
       }
     }
-
   }
 
   /**
@@ -70,4 +71,9 @@ public class StringPermutations {
     return first + c + last;
   }
 
+  public static void main(String[] args) {
+    String str = "ABC";
+    int n = str.length();
+    permute(str, 0, n - 1);
+  }
 }

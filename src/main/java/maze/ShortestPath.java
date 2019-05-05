@@ -33,26 +33,22 @@ public class ShortestPath {
 
     // go to bottom cell
     if (isValid(i + 1, j) && isSafe(mat, visited, i + 1, j)) {
-      min_dist = findShortestPath(mat, visited, i + 1, j, x, y,
-          min_dist, dist + 1);
+      min_dist = findShortestPath(mat, visited, i + 1, j, x, y, min_dist, dist + 1);
     }
 
     // go to right cell
     if (isValid(i, j + 1) && isSafe(mat, visited, i, j + 1)) {
-      min_dist = findShortestPath(mat, visited, i, j + 1, x, y,
-          min_dist, dist + 1);
+      min_dist = findShortestPath(mat, visited, i, j + 1, x, y, min_dist, dist + 1);
     }
 
     // go to top cell
     if (isValid(i - 1, j) && isSafe(mat, visited, i - 1, j)) {
-      min_dist = findShortestPath(mat, visited, i - 1, j, x, y,
-          min_dist, dist + 1);
+      min_dist = findShortestPath(mat, visited, i - 1, j, x, y, min_dist, dist + 1);
     }
 
     // go to left cell
     if (isValid(i, j - 1) && isSafe(mat, visited, i, j - 1)) {
-      min_dist = findShortestPath(mat, visited, i, j - 1, x, y,
-          min_dist, dist + 1);
+      min_dist = findShortestPath(mat, visited, i, j - 1, x, y, min_dist, dist + 1);
     }
 
     // Backtrack - Remove (i, j) from visited matrix

@@ -58,12 +58,16 @@ public class RepeatingElementsMaster {
       arr[index] += n;
     }
 
+    System.out.println("Updated Arr:");
+    System.out.println(Arrays.toString(arr));
+
     // Now check which value exists more than once by dividing with the size of array
     for (int i = 0; i < n; i++) {
       if ((arr[i] / n) > 1) {
-        System.out.println(i + " ");
+        System.out.print(i + " ");
       }
     }
+    System.out.println();
   }
 
   // applies to max(arr) > size(arr) and O(N) - O(1) space complexity

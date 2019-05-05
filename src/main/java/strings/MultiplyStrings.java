@@ -37,7 +37,7 @@ public class MultiplyStrings {
   }
 
   public static void main(String[] args) {
-    String x = "12";
+    String x = "126";
     String y = "34";
     System.out.println(multiply(x, y));
   }
