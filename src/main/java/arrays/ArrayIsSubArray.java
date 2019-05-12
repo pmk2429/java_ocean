@@ -23,8 +23,6 @@ public class ArrayIsSubArray {
       if (main[i] == sub[j]) {
         i++;
         j++;
-
-
         // if entire B is traversed, return true
         if (j == n) {
           isSubArray = true;

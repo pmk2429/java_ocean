@@ -1,6 +1,7 @@
 package arrays;
 
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Find if there is a subarray with 0 sum
@@ -41,7 +42,7 @@ public class SubArrayWithZeroSum {
   Since prefix sum 1 repeats, we have a subarray with 0 sum.
    */
   private static boolean subArrayExists(int[] arr) {
-    HashMap<Integer, Integer> prevSum = new HashMap<>();
+    Map<Integer, Integer> prevSum = new HashMap<>();
     int sum = 0;
 
     for (int i = 0; i < arr.length; i++) {
@@ -61,8 +62,8 @@ public class SubArrayWithZeroSum {
   }
 
   public static void main(String[] args) {
-    int arr[] = {-3, 2, 3, 1, 6};
-    int arr1[] = {1, 4, -2, -2, 5, -4, 3};
+    int[] arr = {-3, 2, 3, 1, 6};
+    int[] arr1 = {1, 4, -2, -2, 5, -4, 3};
     System.out.println("Subarray with 0 sum exists - " + subArrayExists(arr1));
   }
 }

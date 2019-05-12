@@ -4,9 +4,20 @@ public class StringToInt {
 
   private static final int maxDiv10 = Integer.MAX_VALUE / 10;
 
+  /**
+   * Convert String to Integer
+   *
+   * @param str
+   * @return
+   */
   private static int atoi(String str) {
     int i = 0, n = str.length();
-    while (i < n && Character.isWhitespace(str.charAt(i))) i++;
+
+    // trim whitespaces
+    while (i < n && Character.isWhitespace(str.charAt(i))) {
+      i++;
+    }
+    // sign used to indicate what number it is.
     int sign = 1;
     if (i < n && str.charAt(i) == '+') {
       i++;
@@ -14,18 +25,29 @@ public class StringToInt {
       sign = -1;
       i++;
     }
+    // the conversion
     int num = 0;
     while (i < n && Character.isDigit(str.charAt(i))) {
       int digit = Character.getNumericValue(str.charAt(i));
+
+      // handle the case where the number doesnt exceed the max limit
       if (num > maxDiv10 || num == maxDiv10 && digit >= 8) {
         return sign == 1 ? Integer.MAX_VALUE : Integer.MIN_VALUE;
       }
+
+      // basic math
       num = num * 10 + digit;
       i++;
     }
     return sign * num;
   }
 
+  /**
+   * Convert String to Integer
+   *
+   * @param str
+   * @return
+   */
   private static int strToInt(String str) {
     int i = 0;
     int conversion = 0;
@@ -50,6 +72,12 @@ public class StringToInt {
     return conversion;
   }
 
+  /**
+   * Integer to String
+   *
+   * @param n
+   * @return
+   */
   private static String intToString(int n) {
     // get total length of the numerical digit value
     int length = (int) (Math.log10(n) + 1);
@@ -64,6 +92,48 @@ public class StringToInt {
     }
 
     return String.valueOf(strArr);
+  }
+
+  private static boolean isValidNumber(String input) {
+    if (input == null || input.length() == 0) {
+      return false;
+    }
+
+    // get rid of whitespaces
+    input = input.trim();
+
+    boolean decimalSeen = false;
+    boolean exponentialSeen = false;
+    boolean numberSeen = false;
+    boolean numberAfterExponential = true;
+
+    // loop each digit in String
+    for (int i = 0; i < input.length(); i++) {
+      char curr = input.charAt(i);
+      if (curr >= '0' && curr <= '9') {
+        numberSeen = true;
+        numberAfterExponential = true;
+      } else if (curr == '.') {
+        if (decimalSeen || exponentialSeen) {
+          return false;
+        }
+        decimalSeen = true;
+      } else if (curr == 'e') {
+        if (exponentialSeen || !numberSeen) {
+          return false;
+        }
+        numberAfterExponential = false;
+        exponentialSeen = true;
+      } else if (curr == '-' || curr == '+') {
+        if (i != 0 && input.charAt(i - 1) != 'e') {
+          return false;
+        }
+      } else {
+        return false;
+      }
+    }
+
+    return numberSeen && numberAfterExponential;
   }
 
   public static void main(String[] args) {

@@ -48,7 +48,7 @@ public class AllSubsets {
     }
 
     //add empty set
-    result.add(new ArrayList<Integer>());
+    result.add(new ArrayList<>());
 
     ArrayList<ArrayList<Integer>> finalSubsets = new ArrayList<>();
     for (int i = 0; i < result.size(); i++) {

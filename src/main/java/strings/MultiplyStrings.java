@@ -23,8 +23,8 @@ public class MultiplyStrings {
 
         int sum = mul + pos[p2];
 
-        pos[p1] += sum / 10;
         pos[p2] = sum % 10;
+        pos[p1] += sum / 10;
       }
     }
 

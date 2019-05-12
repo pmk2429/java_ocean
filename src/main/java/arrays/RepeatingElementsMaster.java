@@ -13,6 +13,29 @@ import java.util.Map;
  */
 public class RepeatingElementsMaster {
 
+  // using binary search and DP
+  private static int findRepeating(int[] arr, int low, int high) {
+    // low = 0 , high = n-1;
+    if (low > high) {
+      return -1;
+    }
+
+    int mid = (low + high) / 2;
+
+    // Check if the mid element is the repeating one
+    if (arr[mid] != mid + 1) {
+      if (mid > 0 && arr[mid] == arr[mid - 1]) {
+        return mid;
+      }
+
+      // If mid element is not at its position that means the repeated element is in left
+      return findRepeating(arr, low, mid - 1);
+    }
+
+    // If mid is at proper position then repeated one is in right.
+    return findRepeating(arr, mid + 1, high);
+  }
+
   // works when max(arr) is > size(arr) and Auxiliary space is not O(1)
   private static void findNonRepeatingElement(int[] arr) {
     int count = 1;
@@ -98,5 +121,11 @@ public class RepeatingElementsMaster {
     //findNonRepeatingElement(arr2);
     int arr3[] = {4, 2, 4, 5, 2, 3, 1, 27, 29, 27};
     findRepeatingMaxElementSameSpace(arr3);
+
+    int[] bx = {1, 2, 3, 4, 5, 6, 6, 7};
+    int index = findRepeating(bx, 0, bx.length - 1);
+    if (index != -1) {
+      System.out.println(bx[index]);
+    }
   }
 }

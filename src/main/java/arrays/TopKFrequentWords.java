@@ -102,6 +102,7 @@ public class TopKFrequentWords {
 
   private static List<String> topKFrequentHeap(String[] words, int k) {
     Map<String, Integer> count = new HashMap<>();
+
     for (String word : words) {
       count.put(word, count.getOrDefault(word, 0) + 1);
     }

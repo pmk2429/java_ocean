@@ -5,7 +5,7 @@ import java.util.BitSet;
 
 /**
  * Find Missing Number(s)
- *
+ * <p>
  * - WAP to find one missing number in an array
  * - WAP to find more than one missing numbers in continuous array of sorted numbers
  * - WAP to find missing numbers from an array of duplicates
@@ -55,15 +55,15 @@ public class MissingNumber {
   }
 
   public static void main(String[] args) {
-    int a[] = new int[]{1,2,3,4,6,7,8,9,10};
+    int a[] = new int[]{1, 2, 3, 4, 6, 7, 8, 9, 10};
     System.out.println("Missing # in an array:");
     System.out.println(findMissing(a, 10));
 
-    int b[] = new int[]{1,2,3,4,6,7,9,10};
+    int b[] = new int[]{1, 2, 3, 4, 6, 7, 9, 10};
     System.out.println("\nAll missing #s in an array:");
     findMultipleMissing(b, 10);
 
-    int[] input = { 1, 1, 2, 3, 5, 5, 7, 9, 9, 9 };
+    int[] input = {1, 1, 2, 3, 5, 5, 7, 9, 9, 9};
     System.out.println("\nMissing #s in an array of duplicates:");
     findMissingFromDuplicates(input);
   }

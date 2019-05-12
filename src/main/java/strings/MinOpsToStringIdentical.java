@@ -5,15 +5,13 @@ import java.util.stream.IntStream;
 public class MinOpsToStringIdentical {
   private static int minOps(String A, String B) {
 
-    // This parts checks whether conversion is
-    // possible or not
-    if (A.length() != B.length())
+    // This parts checks whether conversion is possible or not
+    if (A.length() != B.length()) {
       return -1;
+    }
 
     int i, j, res = 0;
-    int count[] = new int[256];
-
-    // count characters in A
+    int[] count = new int[256];
 
     // subtract count for every character in B
     for (i = 0; i < A.length(); i++) {

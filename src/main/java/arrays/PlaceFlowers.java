@@ -27,6 +27,7 @@ public class PlaceFlowers {
     if (n < 0 || n > 20000) {
       return false;
     }
+
     // check the value of n relative to size of flowerbed
     if (n > flowerbed.length) {
       return false;
@@ -35,8 +36,8 @@ public class PlaceFlowers {
     int maxAvailable = 0;
     int potsAvailable = 0;
     // find # of pots empty according to the no-adjacent-rule
-    for (int i = 0; i < flowerbed.length; i++) {
-      if (flowerbed[i] == 0) {
+    for (int value : flowerbed) {
+      if (value == 0) {
         maxAvailable++;
         if (maxAvailable == 3 || (potsAvailable > 0 && maxAvailable == 2)) {
           potsAvailable++;

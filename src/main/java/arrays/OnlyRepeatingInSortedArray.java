@@ -29,8 +29,7 @@ public class OnlyRepeatingInSortedArray {
         return mid;
       }
 
-      // If mid element is not at its position that means
-      // the repeated element is in left
+      // If mid element is not at its position that means the repeated element is in left
       return findRepeating(arr, low, mid - 1);
     }
 
@@ -39,9 +38,10 @@ public class OnlyRepeatingInSortedArray {
   }
 
   public static void main(String[] args) {
-    int arr[] = {1, 2, 3, 4, 5, 6, 6, 7};
+    int[] arr = {1, 2, 3, 4, 5, 6, 6, 7};
     int index = findRepeating(arr, 0, arr.length - 1);
-    if (index != -1)
+    if (index != -1) {
       System.out.println(arr[index]);
+    }
   }
 }

@@ -46,7 +46,9 @@ public class SortColors {
         tmp = nums[curr];
         nums[curr] = nums[y];
         nums[y--] = tmp;
-      } else curr++;
+      } else {
+        curr++;
+      }
     }
     return nums;
   }

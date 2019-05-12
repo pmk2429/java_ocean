@@ -51,15 +51,20 @@ public class AlienDictionary {
   private static String alienOrder(String[] words) {
     Map<Character, Set<Character>> map = new HashMap<>();
     Map<Character, Integer> degree = new HashMap<>();
+
     StringBuilder order = new StringBuilder();
     if (words == null || words.length == 0) {
       return order.toString();
     }
+
+    // create a degree of all unique chars
     for (String s : words) {
       for (char c : s.toCharArray()) {
         degree.put(c, 0);
       }
     }
+
+    // build relationship with neighbors
     for (int i = 0; i < words.length - 1; i++) {
       String cur = words[i];
       String next = words[i + 1];
@@ -83,26 +88,36 @@ public class AlienDictionary {
         }
       }
     }
-    System.out.println();
+
+    // BFS
     Queue<Character> q = new LinkedList<>();
     for (char c : degree.keySet()) {
       if (degree.get(c) == 0) {
         q.offer(c);
       }
     }
+
+    // Loop through the Queue, pop the top element, see if map contains the elements, if it does,
+    // get all its neighbors , backtrack (decrement the degree because already processed and then
+    // if the degree is 0, add it to queue for processing. This way each character is processed along
+    // with its neighbors
     while (!q.isEmpty()) {
       char c = q.remove();
       order.append(c);
       if (map.containsKey(c)) {
         for (char c2 : map.get(c)) {
           degree.put(c2, degree.get(c2) - 1); // backtracking because solution is found
-          if (degree.get(c2) == 0) q.add(c2);
+          if (degree.get(c2) == 0) {
+            q.add(c2);
+          }
         }
       }
     }
+    // String base case
     if (order.length() != degree.size()) {
       return "";
     }
+
     return order.toString();
   }
 

@@ -15,7 +15,7 @@ public class IndexOrSubString {
 
   public static void main(String[] args) {
     String str = "Hello, how are you <@Pavitra Kansara>? Let's plan a trip together at <^Yellowstone NP.pdf> and in " +
-            "parallel, create a task <%trip_planing> to keep track of the progress.";
+        "parallel, create a task <%trip_planing> to keep track of the progress.";
     getIndex(str);
   }
 }
