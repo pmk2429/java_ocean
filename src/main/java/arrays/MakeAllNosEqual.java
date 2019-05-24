@@ -22,6 +22,7 @@ public class MakeAllNosEqual {
   private static boolean canConvertToEqual(int[] a) {
     int n = a.length;
     for (int i = 0; i < n; i++) {
+
       // Divide number by 2
       while (a[i] % 2 == 0) {
         a[i] /= 2;

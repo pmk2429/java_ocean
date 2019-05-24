@@ -91,9 +91,11 @@ public class CharacterFrequency {
   private static void charFrequency(String str) {
     char[] allchars = str.toCharArray();
     int[] charFreq = new int[256];
+
     for (char c : allchars) {
       charFreq[(int) c]++;
     }
+
     for (int i = 0; i < charFreq.length; i++) {
       if (charFreq[i] > 0) {
         System.out.println((char) i + " -> " + charFreq[i]);

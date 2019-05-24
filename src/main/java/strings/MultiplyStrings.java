@@ -23,6 +23,7 @@ public class MultiplyStrings {
 
         int sum = mul + pos[p2];
 
+        // start filling spaces from end
         pos[p2] = sum % 10;
         pos[p1] += sum / 10;
       }

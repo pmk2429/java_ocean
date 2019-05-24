@@ -1,5 +1,7 @@
 package arrays;
 
+import java.util.Arrays;
+
 /**
  * Rearrange array in alternating positive and negative number.
  * <p>
@@ -19,11 +21,43 @@ package arrays;
  */
 public class AlternatePosNeg {
 
-  private static void alternate(int[] arr) {
+  // move all negative integers to end of array
+  private static int[] segregate(int[] arr) {
+    int j = 0;
+    for (int i = 0; i < arr.length; i++) {
+      if (arr[i] < 0) {
+        // swap
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+        j++;
+      }
+    }
+    return arr;
+  }
 
+  private static int[] alternate(int[] arr) {
+    int length = arr.length;
+    int[] segArr = segregate(arr);
+    int neg = 0;
+    int pos = 0;
+
+    while (arr[pos] < 0) {
+      pos++;
+    }
+
+    int[] res = new int[arr.length];
+
+    int i = 0;
+    while (i < length) {
+      res[i++] = segArr[neg++];
+      res[i++] = segArr[pos++];
+    }
+
+    return res;
   }
 
   public static void main(String[] args) {
-    alternate(new int[]{1, 2, 3, -4, -1, 4});
+    System.out.println(Arrays.toString(alternate(new int[]{1, 2, 3, -4, -1, 4})));
   }
 }

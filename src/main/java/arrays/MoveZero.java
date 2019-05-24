@@ -3,7 +3,8 @@ package arrays;
 import java.util.Arrays;
 
 /**
- * Given an array nums, write a function to move all 0's to the end of it while maintaining the relative order of the non-zero elements.
+ * Given an array nums, write a function to move all 0's to the end of it while maintaining the relative order of
+ * the non-zero elements.
  * <p>
  * Example:
  * Input: [0,1,0,3,12]
@@ -14,6 +15,26 @@ import java.util.Arrays;
  * Minimize the total number of operations.
  */
 public class MoveZero {
+
+  private static int[] moveZeroesWithoutSort(int[] arr) {
+    int i = 0;
+    int j = arr.length - 1;
+    int n = arr.length;
+
+    while (i < n && j > 0) {
+      if (arr[i] == 0) {
+        // swap elements
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+        j--;
+      }
+      i++;
+    }
+
+    return arr;
+  }
+
   private static void moveZeroes(int[] arr) {
     Arrays.sort(arr);
     // distance is total number of zeroes to move left(end) of array
@@ -40,5 +61,6 @@ public class MoveZero {
   public static void main(String[] args) {
     int[] arr = new int[]{0, 1, 0, 3, 12};
     moveZeroes(arr);
+    System.out.println(Arrays.toString(moveZeroesWithoutSort(arr)));
   }
 }

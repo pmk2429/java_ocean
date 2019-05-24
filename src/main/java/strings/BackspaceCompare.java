@@ -74,8 +74,6 @@ public class BackspaceCompare {
       }
     }
 
-    System.out.println(sSb.toString());
-    System.out.println(tSb.toString());
     return sSb.toString().equals(tSb.toString());
   }
 

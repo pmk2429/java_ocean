@@ -3,42 +3,42 @@ package hard;
 import java.util.Deque;
 import java.util.HashSet;
 import java.util.LinkedList;
-import java.util.Iterator;
 
 public class LRUCache {
   // store keys of cache
   static Deque<Integer> dq;
   // store references of key in cache
-  static HashSet<Integer> map;
+  static HashSet<Integer> set;
   //maximum capacity of cache
   static int csize;
 
   LRUCache(int n) {
     dq = new LinkedList<>();
-    map = new HashSet<>();
+    set = new HashSet<>();
     csize = n;
   }
 
   /* Refers key x with in the LRU cache */
   private void refer(int x) {
-    if (!map.contains(x)) {
+    if (!set.contains(x)) {
       if (dq.size() == csize) {
         int last = dq.removeLast();
-        map.remove(last);
+        set.remove(last);
       }
     } else {
-      int index = 0, i = 0;
-      for (Integer integer : dq) {
-        if (integer == x) {
-          index = i;
+      // dq.contains(x);
+      for (Integer elem : dq) {
+        if (elem == x) {
           break;
         }
-        i++;
       }
-      dq.remove(index);
+      // remove the matched element from the Queue
+      dq.remove(x);
+      //dq.removeLast();
     }
+    // keep adding elements to the Head of the Queue
     dq.push(x);
-    map.add(x);
+    set.add(x);
   }
 
   // display contents of cache

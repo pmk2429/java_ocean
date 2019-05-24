@@ -2,7 +2,7 @@ package numbers;
 
 import java.util.*;
 
-public class ThreeSum {
+public class ThreeSumZero {
 
   private static List<List<Integer>> threeSum(int[] nums) {
     Set<List<Integer>> res = new HashSet<>();
@@ -11,6 +11,7 @@ public class ThreeSum {
     }
     // sort array
     Arrays.sort(nums);
+
     for (int i = 0; i < nums.length - 2; i++) {
       int j = i + 1;
       int k = nums.length - 1;
@@ -20,7 +21,7 @@ public class ThreeSum {
           res.add(Arrays.asList(nums[i], nums[j++], nums[k--]));
         } else if (sum > 0) {
           k--;
-        } else if (sum < 0) {
+        } else {
           j++;
         }
       }

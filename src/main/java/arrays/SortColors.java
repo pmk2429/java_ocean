@@ -35,14 +35,12 @@ public class SortColors {
     int tmp;
     while (curr <= y) {
       if (nums[curr] == 0) {
-        // swap p0-th and curr-th elements
-        // i++ and j++
+        // swap p0-th and curr-th elements i++ and j++
         tmp = nums[x];
         nums[x++] = nums[curr];
         nums[curr++] = tmp;
       } else if (nums[curr] == 2) {
-        // swap k-th and curr-th elements
-        // p2--
+        // swap k-th and curr-th elements p2--
         tmp = nums[curr];
         nums[curr] = nums[y];
         nums[y--] = tmp;

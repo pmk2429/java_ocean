@@ -36,14 +36,14 @@ public class MRUApps {
    */
   private static int[] MRU(int[] apps, int tabs) {
     int N = apps.length;
-    int switchToIndex = 0;
 
     // Finding the end index after K presses
-    switchToIndex = (tabs % N);
+    int switchToIndex = (tabs % N);
 
-    // Shifting elements by 1 towards the found index
-    // on which the K press ends
-    int x = switchToIndex, switchToApp = apps[switchToIndex];
+    // Shifting elements by 1 towards the found index on which the K press ends
+    int x = switchToIndex;
+    int switchToApp = apps[switchToIndex];
+
     while (x > 0) {
       apps[x] = apps[--x];
     }

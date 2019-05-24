@@ -8,7 +8,7 @@ import java.util.Collections;
  */
 public class LongestContinuousNumber {
   public static void main(String[] args) {
-    int largest = longest_flat(new int[]{1, 1, 1, 2, 2, 2, 2});
+    int largest = longest_flat(new int[]{1, 1, 1, 2, 2, 2, 2, 3, 4});
     System.out.println(largest);
   }
 

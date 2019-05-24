@@ -33,7 +33,7 @@ public class MaximumDistance {
   // Group by zeroes
   private static int maxClosestDistance(int[] seats) {
     int N = seats.length;
-    int K = 0; //current longest group of empty seats
+    int K = 0; // current longest group of empty seats
     int ans = 0;
 
     for (int i = 0; i < N; ++i) {
@@ -46,11 +46,12 @@ public class MaximumDistance {
     }
 
     // OR
-    for (int i = 0; i < N; ++i)
+    for (int i = 0; i < N; ++i) {
       if (seats[i] == 1) {
         ans = Math.max(ans, i);
         break;
       }
+    }
 
     // OR
     for (int i = N - 1; i >= 0; --i)

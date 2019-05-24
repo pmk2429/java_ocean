@@ -78,8 +78,8 @@ public class FindElementInRotatedArray {
     int rotate_index = find_rotate_index(0, n - 1);
 
     // if target is the smallest element
-      if (nums[rotate_index] == target) {
-        return rotate_index;
+    if (nums[rotate_index] == target) {
+      return rotate_index;
     }
     // if array is not rotated, search in the entire array
     if (rotate_index == 0)

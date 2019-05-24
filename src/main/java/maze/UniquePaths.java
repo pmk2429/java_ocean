@@ -12,8 +12,7 @@ class UniquePaths {
   }
 
   private static int countPaths(int[][] maze, int x, int y, boolean[][] visited, int count) {
-    // if destination (bottom-rightmost cell) is found,
-    // increment the path count
+    // if destination (bottom-rightmost cell) is found, increment the path count
     if (x == N - 1 && y == N - 1) {
       count++;
       return count;
@@ -53,7 +52,7 @@ class UniquePaths {
   }
 
   public static void main(String[] args) {
-    int maze[][] = {
+    int[][] maze = {
         {1, 1, 1, 1},
         {1, 1, 0, 1},
         {0, 1, 0, 1},

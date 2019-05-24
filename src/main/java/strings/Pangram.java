@@ -11,8 +11,40 @@ package strings;
  */
 public class Pangram {
 
+  private static boolean checkPangram(String str) {
+    // Create a hash table to mark the characters present in the string
+    // By default all the elements of mark would be false.
+    boolean[] mark = new boolean[26];
+
+    // For indexing in mark[]
+    int index = 0;
+
+    // Traverse all characters
+    for (int i = 0; i < str.length(); i++) {
+      // If uppercase character, subtract 'A' to find index.
+      if ('A' <= str.charAt(i) && str.charAt(i) <= 'Z') {
+        index = str.charAt(i) - 'A';
+      } else if ('a' <= str.charAt(i) && str.charAt(i) <= 'z') {
+        // If lowercase character, subtract 'a' to find index.
+        index = str.charAt(i) - 'a';
+      }
+
+      // Mark current character
+      mark[index] = true;
+    }
+
+    // Return false if any character is unmarked
+    for (int i = 0; i <= 25; i++) {
+      if (!mark[i]) {
+        return false;
+      }
+    }
+
+    // If all characters were present
+    return true;
+  }
+
   private static boolean isPangram(String str) {
-    str = str.toLowerCase();
     char[] alphabets = new char[256];
     // build the list of char arrays
     for (int i = 0; i < str.length(); i++) {
@@ -22,8 +54,8 @@ public class Pangram {
     }
 
     boolean charsAvailable = true;
-    for (int i = 97; i <= 122; i++) {
-      if (alphabets[i] == 0) {
+    for (int i = 65; i < 91; i++) {
+      if (alphabets[i] == 0 || alphabets[i + 32] == 0) {
         charsAvailable = false;
       }
     }

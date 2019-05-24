@@ -32,7 +32,7 @@ public class CombinationSum {
   }
 
   public static void main(String[] args) {
-    int[] candidates = {2, 3, 6, 7};
+    int[] candidates = {2, 3, 6, 7, 7, 11, 5};
     int target = 7;
 
     List<List<Integer>> res = combinationSum(candidates, target);

@@ -23,7 +23,6 @@ public class InsertIntervals {
 
   private static int[][] insert(int[][] intervals, int[] newInterval) {
     int M = intervals.length;
-    int N = intervals[0].length;
 
     // Time : O(n) Space : O(n)
     if (newInterval == null) return intervals;

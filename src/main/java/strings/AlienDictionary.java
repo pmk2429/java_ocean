@@ -49,12 +49,15 @@ import java.util.*;
 public class AlienDictionary {
 
   private static String alienOrder(String[] words) {
+    // adjacency list
     Map<Character, Set<Character>> map = new HashMap<>();
+    // degree of each vertex(char)
     Map<Character, Integer> degree = new HashMap<>();
 
-    StringBuilder order = new StringBuilder();
+    StringBuilder letterOrder = new StringBuilder();
+
     if (words == null || words.length == 0) {
-      return order.toString();
+      return letterOrder.toString();
     }
 
     // create a degree of all unique chars
@@ -64,7 +67,7 @@ public class AlienDictionary {
       }
     }
 
-    // build relationship with neighbors
+    // build relationship(adjacency list) with neighbors
     for (int i = 0; i < words.length - 1; i++) {
       String cur = words[i];
       String next = words[i + 1];
@@ -82,7 +85,7 @@ public class AlienDictionary {
           if (!set.contains(c2)) {
             set.add(c2);
             map.put(c1, set);
-            degree.put(c2, degree.get(c2) + 1);
+            degree.put(c2, degree.getOrDefault(c2, 0) + 1);
           }
           break;
         }
@@ -103,7 +106,7 @@ public class AlienDictionary {
     // with its neighbors
     while (!q.isEmpty()) {
       char c = q.remove();
-      order.append(c);
+      letterOrder.append(c);
       if (map.containsKey(c)) {
         for (char c2 : map.get(c)) {
           degree.put(c2, degree.get(c2) - 1); // backtracking because solution is found
@@ -114,11 +117,11 @@ public class AlienDictionary {
       }
     }
     // String base case
-    if (order.length() != degree.size()) {
+    if (letterOrder.length() != degree.size()) {
       return "";
     }
 
-    return order.toString();
+    return letterOrder.toString();
   }
 
   public static void main(String[] args) {

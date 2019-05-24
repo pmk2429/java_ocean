@@ -31,14 +31,12 @@ public class FirstMissingPositive {
     int possibleMaxNum = nums.length;
 
     for (int i = 0; i < nums.length; i++) {
-      if (nums[i] > 0 && nums[i] <= possibleMaxNum) {
-        int idx = nums[i];
-        while (idx > 0 && idx <= possibleMaxNum && nums[idx - 1] != idx) {
-          // In place sorting of all numbers using an index based sorting technique, which operates in time O(N).
-          int temp = nums[idx - 1];
-          nums[idx - 1] = idx;
-          idx = temp;
-        }
+      int idx = nums[i];
+      while (idx > 0 && idx <= possibleMaxNum && nums[idx - 1] != idx) {
+        // In place sorting of all numbers using an index based sorting technique, which operates in time O(N).
+        int temp = nums[idx - 1];
+        nums[idx - 1] = idx;
+        idx = temp;
       }
     }
 
@@ -54,6 +52,7 @@ public class FirstMissingPositive {
   public static void main(String[] args) {
     int[] a = {3, 4, -1, 1};
     int[] b = {7, 8, 9, 11, 12};
-    System.out.println("Smallest missing - " + smallestMissingPositive(b));
+    int[] arr = {2, 3, 7, 6, 8, -1, -10, 15, 1};
+    System.out.println("Smallest missing : " + smallestMissingPositive(arr));
   }
 }

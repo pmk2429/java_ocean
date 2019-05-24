@@ -38,6 +38,7 @@ public class LongPressedName {
 
   private static boolean isLongPressedName(String name, String typed) {
     boolean isLongPressed = true;
+
     if (name.equals(typed)) {
       return true;
     }

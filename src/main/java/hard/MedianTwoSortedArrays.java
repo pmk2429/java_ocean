@@ -35,7 +35,7 @@ public class MedianTwoSortedArrays {
         union[k++] = a[i++];
       } else if (b[j] < a[i]) {
         union[k++] = b[j++];
-      } else if (a[i] == b[j]) { // handles the case where there are duplicates
+      } else { // handles the case where there are duplicates
         union[k] = a[i];
         k++;
         i++;

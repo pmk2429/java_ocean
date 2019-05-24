@@ -21,8 +21,8 @@ public class HiddenNumber {
     int hiddenNumber = -1;
     int x = 2;
     int sum = 0;
-    for (int i = 0; i < arr.length; i++) {
-      sum += x - arr[i];
+    for (int value : arr) {
+      sum += x - value;
     }
     return sum == 0 ? sum : hiddenNumber;
   }

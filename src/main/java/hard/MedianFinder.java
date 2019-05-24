@@ -1,7 +1,9 @@
 package hard;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.PriorityQueue;
 
 /**
  * Median is the middle value in an ordered integer list. If the size of the list is even, there is no middle value.
@@ -30,15 +32,15 @@ public class MedianFinder {
 
   private List<Integer> vals;
 
-  public MedianFinder() {
+  private MedianFinder() {
     vals = new ArrayList<>();
   }
 
-  public void addNum(int num) {
+  private void addNum(int num) {
     vals.add(num);
   }
 
-  public double findMedian() {
+  private double findMedian() {
     int size = vals.size();
     double median;
     int middleIndex = (size - 1) / 2;
@@ -48,6 +50,29 @@ public class MedianFinder {
       median = vals.get(middleIndex);
     }
     return median;
+  }
+
+  // max queue is always larger or equal to min queue
+  PriorityQueue<Integer> min = new PriorityQueue<>();
+  PriorityQueue<Integer> max = new PriorityQueue<>(1000, Collections.reverseOrder());
+
+  // Adds a number into the data structure.
+  public void addNumPQ(int num) {
+    max.offer(num);
+    min.offer(max.poll());
+
+    if (max.size() < min.size()) {
+      max.offer(min.poll());
+    }
+  }
+
+  // Returns the median of current data stream
+  public double findMedianPQ() {
+    if (max.size() == min.size()) {
+      return (max.peek() + min.peek()) / 2.0;
+    } else {
+      return max.peek();
+    }
   }
 
   /**
@@ -66,5 +91,10 @@ public class MedianFinder {
     System.out.println(m.findMedian());
     m.addNum(4);
     System.out.println(m.findMedian());
+
+    m.addNumPQ(1);
+    m.addNumPQ(1);
+    m.addNumPQ(1);
+    System.out.println();
   }
 }
