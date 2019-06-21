@@ -31,6 +31,37 @@ import java.util.*;
  */
 public class WordBreak {
 
+  private static List<String> wordBreak(String s, String[] words) {
+    Set<String> wordDictSet = new HashSet<>(Arrays.asList(words));
+    Queue<Integer> queue = new LinkedList<>();
+    int[] visited = new int[s.length()];
+    queue.add(0);
+    int length = s.length();
+
+    List<String> res = new ArrayList<>();
+
+    while (!queue.isEmpty()) {
+      int start = queue.remove();
+      // if not visited
+      if (visited[start] == 0) {
+        for (int end = start + 1; end <= length; end++) {
+          String subStr = s.substring(start, end);
+          if (wordDictSet.contains(subStr)) {
+            res.add(subStr);
+          } else {
+            res.remove(subStr);
+          }
+          if (end == length) {
+            break;
+          }
+          queue.add(end);
+        }
+        visited[start] = 1;
+      }
+    }
+    return res;
+  }
+
   private static boolean wordBreak(String s, List<String> wordDict) {
     Set<String> wordDictSet = new HashSet<>(wordDict);
     Queue<Integer> queue = new LinkedList<>();
@@ -55,7 +86,11 @@ public class WordBreak {
     }
     return false;
   }
-  public static void main(String[] args) {
 
+  public static void main(String[] args) {
+    String s = "nota";
+    String[] wordDict = {"a", "no", "not", "to", "fala", "eat", "alligator", "yahoo"};
+
+    System.out.println(wordBreak(s, wordDict));
   }
 }

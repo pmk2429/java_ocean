@@ -28,4 +28,10 @@ public class SubArraySumK {
     }
     return count;
   }
+
+  public static void main(String[] args) {
+    int[] nums = {1, 1, 1};
+    int k = 2;
+    System.out.println(subarraySum(nums, k));
+  }
 }

@@ -28,26 +28,26 @@ public class BurstBalloons {
     return nums[i];
   }
 
-  private static int maxCoins(int[] nums, int[][] dp, int start, int end) {
+  private static int maxCoins(int[] nums, int[][] table, int start, int end) {
     if (start > end) {
       return 0;
     }
 
-    if (dp[start][end] != 0) {
-      return dp[start][end];
+    if (table[start][end] != 0) {
+      return table[start][end];
     }
 
     int max = nums[start];
 
     for (int i = start; i <= end; i++) {
-      int val = maxCoins(nums, dp, start, i - 1)
-          + get(nums, i) * get(nums, start - 1) * get(nums, end + 1)
-          + maxCoins(nums, dp, i + 1, end);
+      int val = maxCoins(nums, table, start, i - 1)
+          + (get(nums, start - 1) * get(nums, i) * get(nums, end + 1))
+          + maxCoins(nums, table, i + 1, end);
 
       max = Math.max(max, val);
     }
 
-    dp[start][end] = max;
+    table[start][end] = max;
 
     return max;
   }

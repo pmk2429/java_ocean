@@ -1,8 +1,6 @@
 package arrays;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 /**
  * Minimum array element changes to make its elements 1 to N

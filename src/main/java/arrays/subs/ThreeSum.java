@@ -18,7 +18,8 @@ public class ThreeSum {
       int complement = target - arr[i];
       three[0] = arr[i];
       for (int j = i + 1; j < size; j++) {
-        if (s.contains(complement - arr[j]) && complement - arr[j] != (int) s.toArray()[s.size() - 1]) {
+        int threeComplement = complement - arr[j];
+        if (s.contains(threeComplement) && threeComplement != (int) s.toArray()[s.size() - 1]) {
           three[1] = arr[j];
           three[2] = complement - arr[j];
           found = true;

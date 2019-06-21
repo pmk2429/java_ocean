@@ -62,7 +62,7 @@ public class CheckConsecutive {
   }
 
   public static void main(String[] args) {
-    int[] arr = {5, 2, 3, 1, 4};
+    int[] arr = {86, 89, 88, 85, 87};
     System.out.println(isConsecutive(arr));
   }
 }

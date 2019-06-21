@@ -15,16 +15,16 @@ public class ReverseNumber {
   }
 
   private static int reverse(int x) {
-    int ret = 0;
+    int rev = 0;
     while (x != 0) {
       // handle overflow/underflow
-      if (Math.abs(ret) > Integer.MAX_VALUE / 10) {
+      if (Math.abs(rev) > Integer.MAX_VALUE / 10) {
         return 0;
       }
-      ret = ret * 10 + x % 10;
+      rev = (rev * 10) + (x % 10);
       x /= 10;
     }
-    return ret;
+    return rev;
   }
 
   public static void main(String[] args) {

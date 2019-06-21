@@ -23,7 +23,7 @@ import java.util.Arrays;
  */
 public class ReplaceWithSmallestOnLeft {
 
-  // O(1) Auxiliary space and O(n) space
+  // O(1) Auxiliary space and O(n) time
   private static int[] replaceWithSmallestOnLeft(int[] arr) {
     // MIN value initialised to element at 0th index
     int min_ele = arr[0];

@@ -55,7 +55,7 @@ public class MinimumRemove {
         j++;
       }
     }
-    minRemove = intersection.stream().mapToInt(val -> val).toArray().length;
+    minRemove = intersection.size();
 
     return minRemove;
   }

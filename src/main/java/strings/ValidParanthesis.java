@@ -40,7 +40,7 @@ public class ValidParanthesis {
     int lo = 0, hi = 0;
     for (char c : paren.toCharArray()) {
       lo += c == '(' ? 1 : -1;
-      hi += c != ')' ? 1 : -1;
+      hi += c == ')' ? -1 : 1;
       if (hi < 0) {
         break;
       }
@@ -50,7 +50,7 @@ public class ValidParanthesis {
   }
 
   public static void main(String[] args) {
-    String str = ")))*(((";
+    String str = "(*))";
     System.out.println(isValid(str));
   }
 }
