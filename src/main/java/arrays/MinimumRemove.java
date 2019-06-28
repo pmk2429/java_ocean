@@ -9,14 +9,14 @@ import java.util.ArrayList;
  * <p>
  * Example 1:
  * ----------
- * Input : A[] = { 1, 2, 3, 4}
+ * Input : A[] = {1, 2, 3, 4}
  * B[] = { 2, 3, 4, 5, 8 }
  * Output : 3
  * We need to remove 2, 3 and 4 from any array.
  * <p>
  * Example 2:
  * ----------
- * Input : A[] = { 4, 2, 4, 4}
+ * Input : A[] = {4, 2, 4, 4}
  * B[] = { 4, 3 }
  * Output : 1
  * We need to remove 4 from from B[]

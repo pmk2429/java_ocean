@@ -25,11 +25,13 @@ public class MedianTwoSortedArrays {
     if (a == null || b == null || a.length == 0 || b.length == 0) {
       return -1;
     }
+
     int[] union = new int[a.length + b.length];
 
     int m = a.length;
     int n = b.length;
     int i = 0, j = 0, k = 0;
+
     while (i < m && j < n) {
       if (a[i] < b[j]) {
         union[k++] = a[i++];
@@ -62,6 +64,7 @@ public class MedianTwoSortedArrays {
     } else {
       median = union[mid];
     }
+
     System.out.println(Arrays.toString(union));
     return median;
   }

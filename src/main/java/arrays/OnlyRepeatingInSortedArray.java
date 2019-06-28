@@ -24,7 +24,7 @@ public class OnlyRepeatingInSortedArray {
     int mid = (low + high) / 2;
 
     // Check if the mid element is the repeating one
-    if (arr[mid] != mid + 1) {
+    if (arr[mid] != arr[mid + 1]) {
       if (mid > 0 && arr[mid] == arr[mid - 1]) {
         return mid;
       }

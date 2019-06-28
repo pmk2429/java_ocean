@@ -21,7 +21,7 @@ public class ThreeSum {
         int threeComplement = complement - arr[j];
         if (s.contains(threeComplement) && threeComplement != (int) s.toArray()[s.size() - 1]) {
           three[1] = arr[j];
-          three[2] = complement - arr[j];
+          three[2] = threeComplement;
           found = true;
           break;
         }

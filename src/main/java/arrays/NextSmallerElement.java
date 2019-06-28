@@ -24,8 +24,8 @@ import java.util.Arrays;
  * Element       NSE
  * 13      -->    7
  * 7       -->    6
- * 6       -->    -1
- * 12      -->     -1
+ * 6       -->   -1
+ * 12      -->   -1
  */
 public class NextSmallerElement {
 
@@ -43,7 +43,7 @@ public class NextSmallerElement {
         if (arr[i] > arr[j]) {
           nse[i] = arr[j];
         } else {
-          while (j < length - 1 && arr[i] < arr[j]) {
+          while (j < lastIndex && arr[i] < arr[j]) {
             j++;
           }
           nse[i] = (j == lastIndex) ? -1 : arr[j];

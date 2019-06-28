@@ -6,35 +6,28 @@ import java.util.LinkedList;
 
 public class LRUCache {
   // store keys of cache
-  static Deque<Integer> dq;
+  private Deque<Integer> dq;
   // store references of key in cache
-  static HashSet<Integer> set;
+  private HashSet<Integer> set;
   //maximum capacity of cache
-  static int csize;
+  private int CAPACITY;
 
-  LRUCache(int n) {
+  private LRUCache(int n) {
     dq = new LinkedList<>();
     set = new HashSet<>();
-    csize = n;
+    CAPACITY = n;
   }
 
   /* Refers key x with in the LRU cache */
   private void refer(int x) {
     if (!set.contains(x)) {
-      if (dq.size() == csize) {
+      if (dq.size() == CAPACITY) {
         int last = dq.removeLast();
         set.remove(last);
       }
     } else {
-      // dq.contains(x);
-      for (Integer elem : dq) {
-        if (elem == x) {
-          break;
-        }
-      }
       // remove the matched element from the Queue
       dq.remove(x);
-      //dq.removeLast();
     }
     // keep adding elements to the Head of the Queue
     dq.push(x);

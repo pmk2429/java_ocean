@@ -33,12 +33,13 @@ public class MinChangesFor1ToN {
     int max = arr[length - 1];
 
     // this indicates that 1 to N are present
-    if (max - min == length) {
+    if (max - min + 1 == length) {
       return 0;
     }
 
     int count = 0;
     int i = 0;
+
     while (i < length) {
       int j = i + 1;
       if (j < length) {

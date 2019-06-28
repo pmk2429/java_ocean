@@ -32,7 +32,7 @@ public class ReplaceWithSmallestOnLeft {
     for (int i = 1; i < arr.length; ++i) {
       if (min_ele < arr[i]) {
         arr[i] = min_ele;
-      } else if (min_ele >= arr[i]) {
+      } else {
         int temp = arr[i];
         arr[i] = min_ele;
         min_ele = temp;
