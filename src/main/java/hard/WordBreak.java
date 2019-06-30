@@ -48,8 +48,6 @@ public class WordBreak {
           String subStr = s.substring(start, end);
           if (wordDictSet.contains(subStr)) {
             res.add(subStr);
-          } else {
-            res.remove(subStr);
           }
           if (end == length) {
             break;

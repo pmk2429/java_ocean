@@ -57,10 +57,8 @@ public class RemoveInvalidParentheses {
         }
       }
     } else {
-
       char currentCharacter = s.charAt(index);
       int length = expression.length();
-
       // If the current character is neither an opening bracket nor a closing one,
       // simply recurse further by adding it to the expression StringBuilder
       if (currentCharacter != '(' && currentCharacter != ')') {
