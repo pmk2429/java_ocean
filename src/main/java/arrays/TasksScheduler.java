@@ -49,18 +49,19 @@ public class TasksScheduler {
       List<Integer> temp = new ArrayList<>();
       while (i <= n) {
         if (!queue.isEmpty()) {
-          if (queue.peek() > 1)
+          if (queue.peek() > 1) {
             temp.add(queue.poll() - 1);
-          else
+          } else {
             queue.poll();
+          }
         }
         time++;
-        if (queue.isEmpty() && temp.size() == 0)
+        if (queue.isEmpty() && temp.size() == 0) {
           break;
+        }
         i++;
       }
-      for (int l : temp)
-        queue.add(l);
+      queue.addAll(temp);
     }
     return time;
   }

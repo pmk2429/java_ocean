@@ -45,4 +45,10 @@ package hard;
  * Each asteroid will be a non-zero integer in the range [-1000, 1000]..
  */
 public class AsteroidCollision {
+
+
+
+  public static void main(String[] args) {
+
+  }
 }
