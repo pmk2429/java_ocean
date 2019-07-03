@@ -1,7 +1,5 @@
 package intervals;
 
-import hard.Interval;
-
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.PriorityQueue;
@@ -38,7 +36,7 @@ public class MeetingRooms {
    * Definition for an interval. public class Interval { int start; int end; Interval() { start = 0;
    * end = 0; } Interval(int s, int e) { start = s; end = e; } }
    */
-  public int minMeetingRooms(hard.Interval[] intervals) {
+  public int minMeetingRooms(Interval[] intervals) {
 
     // Check for the base case. If there are no intervals, return 0
     if (intervals.length == 0) {
@@ -56,8 +54,8 @@ public class MeetingRooms {
 
     // Sort the intervals by start time
     Arrays.sort(intervals,
-        new Comparator<hard.Interval>() {
-          public int compare(hard.Interval a, Interval b) {
+        new Comparator<Interval>() {
+          public int compare(Interval a, Interval b) {
             return a.start - b.start;
           }
         });
@@ -80,6 +78,10 @@ public class MeetingRooms {
 
     // The size of the heap tells us the minimum rooms required for all the meetings.
     return allocator.size();
+  }
+
+  public static void main(String[] args) {
+    
   }
 }
 
