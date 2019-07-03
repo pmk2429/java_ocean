@@ -13,7 +13,7 @@ public class NeedleInHaystack {
     }
   }
 
-  private static int strStr(String haystack, String needle) {
+  private static int strStrON2(String haystack, String needle) {
     for (int i = 0; ; i++) {
       for (int j = 0; ; j++) {
         if (j == needle.length()) return i;
@@ -21,6 +21,25 @@ public class NeedleInHaystack {
         if (needle.charAt(j) != haystack.charAt(i + j)) break;
       }
     }
+  }
+
+  private static int strStr(String haystack, String needle) {
+    if (needle == null || needle.length() == 0) {
+      return 0;
+    }
+    int nL = needle.length();
+    int i = 0;
+    int j = i + nL;
+
+    while (j <= haystack.length()) {
+      if ((haystack.substring(i, j)).equals(needle)) {
+        return i;
+      }
+      i++;
+      j++;
+    }
+
+    return -1;
   }
 
   public static void main(String[] args) {

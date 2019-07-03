@@ -12,8 +12,8 @@ import java.util.Queue;
  * <p>
  * 0 represents the obstacle can't be reached.
  * 1 represents the ground can be walked through.
- * The place with number bigger than 1 represents a tree can be walked through, and this positive number represents the tree's height.
- * You are asked to cut off all the trees in this forest in the order of tree's height - always cut off the tree
+ * The place with number bigger than 1 represents a tree can be walked through, and this positive number represents the tree'addStr height.
+ * You are asked to cut off all the trees in this forest in the order of tree'addStr height - always cut off the tree
  * with lowest height first. And after cutting, the original place has the tree will become a grass (value 1).
  * You will start from the point (0, 0) and you should output the minimum steps you need to walk to cut off all the trees.
  * If you can't cut off all the trees, output -1 in that situation.
@@ -57,7 +57,7 @@ public class CutOffTrees {
   /**
    * We perform a breadth-first-search, processing nodes (grid positions) in a queue. seen keeps track of nodes that
    * have already been added to the queue at some point - those nodes will be already processed or are in the queue awaiting processing.
-   * For each node that is next to be processed, we look at it's neighbors. If they are in the forest (grid),
+   * For each node that is next to be processed, we look at it'addStr neighbors. If they are in the forest (grid),
    * they haven't been enqueued, and they aren't an obstacle, we will enqueue that neighbor.
    * We also keep a side count of the distance travelled for each node. If the node we are processing is our
    * destination 'target' (tr, tc), we'll return the answer.

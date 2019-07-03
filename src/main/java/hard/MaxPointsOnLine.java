@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Given n points on a 2D plane, find the maximum number of points that lie on the same straight line.
+ * Given length points on a 2D plane, find the maximum number of points that lie on the same straight line.
  * <p>
  * Example 1:
  * ----------

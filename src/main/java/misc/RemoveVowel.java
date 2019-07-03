@@ -1,20 +1,26 @@
 package misc;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class RemoveVowel {
 
-  public static void main(String[] args) {
-    String vowels = "aeiou";
-    String test = new String("pavitra kansara is my name");
+  static String remVowel(String str) {
+    Character[] vowels = {'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'};
+    List<Character> al = Arrays.asList(vowels);
+    StringBuffer sb = new StringBuffer(str);
 
-    for (int i = 0; i < test.length(); i++) {
-      char ch = test.charAt(i);
-      for (int j = 0; j < vowels.length(); j++) {
-        if (ch == vowels.charAt(j)) {
-          test = test.replace(ch, '_');
-        }
+    for (int i = 0; i < sb.length(); i++) {
+      if (al.contains(sb.charAt(i))) {
+        sb.replace(i, i + 1, "");
+        i--;
       }
     }
-    System.out.println(test);
+    return sb.toString();
+  }
 
+  public static void main(String[] args) {
+    String str = "Square - A FinTech Company for digital age";
+    System.out.println(remVowel(str));
   }
 }

@@ -71,7 +71,7 @@ public class RemoveInvalidParentheses {
         this.recurse(s, index + 1, leftCount, rightCount, expression, removedCount + 1);
         expression.append(currentCharacter);
 
-        // If it's an opening parenthesis, consider it and recurse
+        // If it'addStr an opening parenthesis, consider it and recurse
         if (currentCharacter == '(') {
           this.recurse(s, index + 1, leftCount + 1, rightCount, expression, removedCount);
         } else if (rightCount < leftCount) {

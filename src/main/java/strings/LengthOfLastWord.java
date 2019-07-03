@@ -20,10 +20,21 @@ public class LengthOfLastWord {
     // trim whitespaces
     str.trim();
 
-    String[] words = str.split(" ");
-    int wordsLength = words.length;
-    return words[wordsLength - 1].length();
+    // String[] words = str.split(" ");
+    // int wordsLength = words.length;
+    // return words[wordsLength - 1].length()
+
+    int lastWordLength = 0;
+    for (int i = str.length() - 1; i >= 0 && str.charAt(i) != ' '; i--) {
+      if (str.charAt(i) == '.') {
+        continue;
+      }
+      lastWordLength++;
+    }
+
+    return lastWordLength;
   }
+
 
   public static void main(String[] args) {
     String str = "Given a string s consists of upper/lower-case alphabets and empty space characters ' ', return the " +

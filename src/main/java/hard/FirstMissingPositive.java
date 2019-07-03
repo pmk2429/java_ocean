@@ -19,7 +19,7 @@ package hard;
  * Output: 1
  * Note:
  * <p>
- * Your algorithm should run in O(n) time and uses constant extra space.
+ * Your algorithm should run in O(length) time and uses constant extra space.
  */
 public class FirstMissingPositive {
 

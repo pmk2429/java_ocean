@@ -1,4 +1,4 @@
-package hard;
+package intervals;
 
 import java.util.Comparator;
 import java.util.LinkedList;
@@ -22,19 +22,11 @@ public class MergeIntervals {
       // interval does not overlap with the previous, simply append it.
       if (merged.isEmpty() || merged.getLast().end < interval.start) {
         merged.add(interval);
-      }
-
-      // otherwise, there is overlap, so we merge the current and previous intervals.
-      else {
+      } else { // otherwise, there is overlap, so we merge the current and previous intervals.
         merged.getLast().end = Math.max(merged.getLast().end, interval.end);
       }
     }
 
     return merged;
   }
-}
-
-class Interval {
-  int start;
-  int end;
 }

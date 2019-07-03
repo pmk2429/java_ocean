@@ -6,8 +6,8 @@ public class LoadBalancer {
 //  public static void main(String[] args) {
 //
 //    int m = Integer.parseInt(args[0]);
-//    int n = Integer.parseInt(args[1]);
-//    int s = Integer.parseInt(args[2]);
+//    int length = Integer.parseInt(args[1]);
+//    int addStr = Integer.parseInt(args[2]);
 //
 //    // Create server queues.
 //    RandomQueue<Queue<Integer>> servers = new RandomQueue<Queue<Integer>>();
@@ -17,11 +17,11 @@ public class LoadBalancer {
 //    }
 //
 //    // Assign an item to a server
-//    for (int j = 0; j < n; j++) {
+//    for (int j = 0; j < length; j++) {
 //
 //      // Pick a random server, update if new min.
 //      Queue<Integer> min = servers.sample();
-//      for (int k = 1; k < s; k++) {
+//      for (int k = 1; k < addStr; k++) {
 //        Queue<Integer> queue = servers.sample();
 //        if (queue.length() < min.length()) min = queue;
 //      }
@@ -34,7 +34,7 @@ public class LoadBalancer {
 //    double[] lengths = new double[m];
 //    for (Queue<Integer> queue : servers) {
 //      lengths[i++] = queue.length();
-//      StdDraw.setYscale(0, 2.0*n/m);
+//      StdDraw.setYscale(0, 2.0*length/m);
 //      StdStats.plotBars(lengths);
 //    }
 //  }

@@ -1,7 +1,7 @@
 package hard;
 
 /**
- * Given an array nums containing n + 1 integers where each integer is between 1 and n (inclusive), prove that
+ * Given an array nums containing length + 1 integers where each integer is between 1 and length (inclusive), prove that
  * at least one duplicate number must exist. Assume that there is only one duplicate number, find the duplicate one.
  * <p>
  * Example 1:
@@ -24,7 +24,7 @@ package hard;
 public class FindOnlyRepeatingO1ON {
 
   /**
-   * Floyd's Tortoise and Hare (Cycle Detection)
+   * Floyd'addStr Tortoise and Hare (Cycle Detection)
    * <p>
    * First off, we can easily show that the constraints of the problem imply that a cycle must exist.
    * Because each number in nums is between 11 and nn, it will necessarily point to an index that exists.
