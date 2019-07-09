@@ -28,7 +28,9 @@ public class MinChangesFor1ToN {
     }
 
     int length = arr.length;
+
     Arrays.sort(arr);
+
     int min = arr[0];
     int max = arr[length - 1];
 

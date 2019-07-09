@@ -27,22 +27,29 @@ package hard;
  * Output: 28
  */
 public class UniquePaths {
-  public int uniquePaths(int m, int n) {
 
-    int totalStep = m + n - 2;
-    int small = m > n ? (n - 1) : (m - 1);
-    int i = 0;
-    long x = 1;
-    while (i < small) {
-      x = x * (totalStep - i);
-      i++;
-    }
-    long y = 1;
-    while (small > 1) {
-      y = y * small;
-      small--;
+  private static int uniquePaths(int m, int n) {
+    int[][] memo = new int[m][n];
+    for (int i = 0; i < memo[0].length; i++) {
+      memo[0][i] = 1; // 1 path to any grid on first row
     }
 
-    return (int) (x / y);
+    for (int i = 0; i < memo.length; i++) {
+      memo[i][0] = 1; // 1 path to any grid on first column
+    }
+
+    for (int row = 1; row < memo.length; row++) {
+      for (int col = 1; col < memo[0].length; col++) {
+        // number of paths to grid(row, col) is the sum of number of paths to grid to the left
+        // and number of paths to grid above
+        memo[row][col] = memo[row][col - 1] + memo[row - 1][col];
+      }
+    }
+    return memo[m - 1][n - 1];//number of paths to finish point
+  }
+
+  public static void main(String[] args) {
+    int m = 7, n = 3;
+    System.out.println(uniquePaths(m, n));
   }
 }

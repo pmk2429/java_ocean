@@ -44,21 +44,10 @@ public class MeetingRooms {
     }
 
     // Min heap
-    PriorityQueue<Integer> scheduler = new PriorityQueue<>(
-        intervals.length,
-        new Comparator<Integer>() {
-          public int compare(Integer a, Integer b) {
-            return a - b;
-          }
-        });
+    PriorityQueue<Integer> scheduler = new PriorityQueue<>(intervals.length, Comparator.comparingInt(a -> a));
 
     // Sort the intervals by start time
-    Arrays.sort(intervals,
-        new Comparator<Interval>() {
-          public int compare(Interval a, Interval b) {
-            return a.start - b.start;
-          }
-        });
+    Arrays.sort(intervals, Comparator.comparingInt(a -> a.start));
 
     // Add the first meeting
     scheduler.add(intervals[0].end);

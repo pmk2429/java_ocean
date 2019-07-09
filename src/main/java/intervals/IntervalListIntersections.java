@@ -50,10 +50,9 @@ public class IntervalListIntersections {
       }
     }
 
-    return ans.toArray(new Interval[ans.size()]);
+    return ans.toArray(new Interval[0]);
   }
 
   public static void main(String[] args) {
-
   }
 }

@@ -101,8 +101,8 @@ public class DistinctChars {
 
   public static void main(String[] args) {
     String str = "Geeks for Geeks";
-    System.out.println(distinctChars(str.toLowerCase()));
-    System.out.println(distinctCharsConstantSpace(str.toLowerCase()));
+    //System.out.println(distinctChars(str.toLowerCase()));
+    //System.out.println(distinctCharsConstantSpace(str.toLowerCase()));
     System.out.println(distinctCharsSingleLoop(str.toLowerCase()));
   }
 }
