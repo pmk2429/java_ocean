@@ -21,12 +21,13 @@ public class Pangram {
 
     // Traverse all characters
     for (int i = 0; i < str.length(); i++) {
+      char c = str.charAt(i);
       // If uppercase character, subtract 'A' to find index.
-      if ('A' <= str.charAt(i) && str.charAt(i) <= 'Z') {
-        index = str.charAt(i) - 'A';
-      } else if ('a' <= str.charAt(i) && str.charAt(i) <= 'z') {
+      if ('A' <= c && c <= 'Z') {
+        index = c - 'A';
+      } else if ('a' <= c && c <= 'z') {
         // If lowercase character, subtract 'a' to find index.
-        index = str.charAt(i) - 'a';
+        index = c - 'a';
       }
 
       // Mark current character

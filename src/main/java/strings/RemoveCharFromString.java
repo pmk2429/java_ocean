@@ -35,13 +35,10 @@ public class RemoveCharFromString {
 
   private static String removeChar(String original, char character) {
     StringBuilder sb = new StringBuilder();
-    int j = 0, count = 0;
     char[] sArr = original.toCharArray();
     for (int i = 0; i < sArr.length; i++) {
       if (character != sArr[i]) {
         sb.append(sArr[i]);
-      } else {
-        count++;
       }
     }
 

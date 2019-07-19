@@ -40,6 +40,8 @@ public class EditDistance {
   }
 
   public static void main(String[] args) {
-
+    String word1 = "COLD";
+    String word2 = "WARM";
+    System.out.println(editDistance(word1, word2));
   }
 }

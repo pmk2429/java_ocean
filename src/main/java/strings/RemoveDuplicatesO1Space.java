@@ -40,8 +40,22 @@ public class RemoveDuplicatesO1Space {
     return newStr.toString();
   }
 
+  public String removeDuplicatesON(String S) {
+    StringBuilder sb = new StringBuilder();
+    int sbLength = 0;
+    for (char character : S.toCharArray()) {
+      if (sbLength != 0 && character == sb.charAt(sbLength - 1))
+        sb.deleteCharAt(sbLength-- - 1);
+      else {
+        sb.append(character);
+        sbLength++;
+      }
+    }
+    return sb.toString();
+  }
+
   public static void main(String[] args) {
     String str = "characters";
-    System.out.println(removeDuplicates(str));
+    System.out.println(removeDuplicatesAllChars(str));
   }
 }

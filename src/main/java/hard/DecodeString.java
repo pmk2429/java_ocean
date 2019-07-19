@@ -24,7 +24,7 @@ public class DecodeString {
 
     int n = s.length();
     Stack<Integer> countStack = new Stack<>();
-    Stack<String> charStack = new Stack<>();
+    Stack<String> wordStack = new Stack<>();
     int num = 0;
     for (int i = 0; i < n; i++) {
       char c = s.charAt(i);
@@ -32,30 +32,30 @@ public class DecodeString {
         num = num * 10 + c - '0';
       } else if (c == '[') {
         countStack.push(num);
-        charStack.push("");
+        wordStack.push("");
         num = 0;
       } else if (c == ']') {
         int iter = countStack.pop();
-        String poppedChar = charStack.pop();
+        String poppedChar = wordStack.pop();
         StringBuilder next = new StringBuilder();
         while (iter-- > 0) {
           next.append(poppedChar);
         }
-        if (!charStack.isEmpty()) {
-          charStack.push(charStack.pop() + next.toString());
+        if (!wordStack.isEmpty()) {
+          wordStack.push(wordStack.pop() + next.toString());
         } else {
-          charStack.push(next.toString());
+          wordStack.push(next.toString());
         }
       } else {
-        if (!charStack.isEmpty()) {
-          charStack.push(charStack.pop() + c);
+        if (!wordStack.isEmpty()) {
+          wordStack.push(wordStack.pop() + c);
         } else {
-          charStack.push("" + c);
+          wordStack.push("" + c);
         }
       }
     }
 
-    return charStack.peek();
+    return wordStack.peek();
   }
 }
 

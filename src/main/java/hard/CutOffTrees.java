@@ -71,11 +71,16 @@ public class CutOffTrees {
    */
   public int bfs(List<List<Integer>> forest, int sr, int sc, int tr, int tc) {
 
-    int R = forest.size(), C = forest.get(0).size();
+    int R = forest.size();
+    int C = forest.get(0).size();
+
     Queue<int[]> queue = new LinkedList<>();
     queue.add(new int[]{sr, sc, 0});
+
     boolean[][] seen = new boolean[R][C];
+
     seen[sr][sc] = true;
+
     while (!queue.isEmpty()) {
       int[] cur = queue.poll();
       if (cur[0] == tr && cur[1] == tc) {

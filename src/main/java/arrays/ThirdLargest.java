@@ -33,8 +33,7 @@ public class ThirdLargest {
       System.out.println("Invalid Input");
       return third;
     }
-
-
+    
     for (int i = 0; i < arr.length; i++) {
       if (arr[i] > first) {
         third = second;

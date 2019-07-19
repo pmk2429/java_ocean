@@ -114,6 +114,36 @@ public class PathExists {
     return pathExists;
   }
 
+  // recursive solution for going in only one direction until bounds is reached or 1.
+  private static int[][] dir = new int[][]{{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
+
+  private static boolean hasPathDFS(int[][] maze, int[] start, int[] destination) {
+    boolean[][] visited = new boolean[maze.length][maze[0].length];
+    return dfs(maze, visited, start, destination);
+  }
+
+  private static boolean dfs(int[][] maze, boolean[][] visited, int[] c, int[] des) {
+    if (visited[c[0]][c[1]]) {
+      return false;
+    }
+    if (c[0] == des[0] && c[1] == des[1]) {
+      return true;
+    }
+
+    visited[c[0]][c[1]] = true;
+    boolean result = false;
+    for (int[] d : dir) {
+      int x = c[0] + d[0];
+      int y = c[1] + d[1];
+      while (0 <= x && x < maze.length && 0 <= y && y < maze[0].length && maze[x][y] == 0) {
+        x += d[0];
+        y += d[1];
+      }
+      result = result || dfs(maze, visited, new int[]{x - d[0], y - d[1]}, des);
+    }
+    return result;
+  }
+
   private static boolean hasPath(int[][] maze, Point start, Point end) {
     int rowLength = maze.length; // row
     int colLength = maze[0].length; // column
@@ -128,8 +158,8 @@ public class PathExists {
 
   public static void main(String args[]) throws Exception {
     //System.out.println(hasPath(mazeTest, new Point(0, 0), new Point(4, 4)) ? "The maze has a valid path." : "The " +
-        //"maze" +
-        //" does NOT have a valid path."); //valid
+    //"maze" +
+    //" does NOT have a valid path."); //valid
     System.out.println(hasPath(mazeTest, new Point(0, 0), new Point(4, 2)) ? "The maze has a valid path." : "The maze does NOT have a valid path."); //valid
     // System.out.println(hasPath(maze3, new Point(0, 0), new Point(0, 0)) ? "The maze has a valid path." : "The maze does NOT have a valid path."); //valid
     // System.out.println(hasPath(maze4, new Point(0, 0), new Point(3, 3)) ? "The maze has a valid path." : "The maze does NOT have a valid path."); //invalid

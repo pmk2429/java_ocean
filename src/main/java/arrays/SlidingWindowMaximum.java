@@ -48,9 +48,10 @@ public class SlidingWindowMaximum {
         }
         j++;
       }
+
+      // add max element in current window to maxArr
       if (count < sizeOfMaxArr) {
-        maxInWindow[count] = max;
-        count++;
+        maxInWindow[count++] = max;
       }
     }
 

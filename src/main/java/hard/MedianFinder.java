@@ -1,9 +1,6 @@
 package hard;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.PriorityQueue;
+import java.util.*;
 
 /**
  * Median is the middle value in an ordered integer list. If the size of the list is even, there is no middle value.
@@ -53,8 +50,8 @@ public class MedianFinder {
   }
 
   // max queue is always larger or equal to min queue
-  PriorityQueue<Integer> min = new PriorityQueue<>();
-  PriorityQueue<Integer> max = new PriorityQueue<>(1000, Collections.reverseOrder());
+  Queue<Integer> min = new PriorityQueue<>();
+  Queue<Integer> max = new PriorityQueue<>(1000, Collections.reverseOrder());
 
   // Adds a number into the data structure.
   public void addNumPQ(int num) {

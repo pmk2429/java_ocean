@@ -46,9 +46,8 @@ public class CheckConsecutive {
     if (max - min + 1 == n) {
       // create temp array to hold visited flags for elements at specified indexes
       boolean[] visited = new boolean[n];
-      int i;
-      for (i = 0; i < n; i++) {
-        int position = arr[i] - min;
+      for (int value : arr) {
+        int position = value - min;
         // element encountered again - already visited
         if (visited[position]) {
           return false;
