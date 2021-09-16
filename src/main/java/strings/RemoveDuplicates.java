@@ -16,6 +16,14 @@ public class RemoveDuplicates {
     RemoveDuplicates removeObj = new RemoveDuplicates();
     noDuplicate = removeObj.removeDuplicates(inputString);
     removeObj.printModifiedString(noDuplicate);
+
+    List<Integer> numList = new ArrayList<>();
+    numList.add(1);
+    numList.add(2);
+    numList.add(3);
+    numList.add(1);
+
+    removeObj.findDuplicates(numList);
   }
 
   private void printModifiedString(List<Character> noDuplicate) {
@@ -34,5 +42,15 @@ public class RemoveDuplicates {
       }
     }
     return singleChars;
+  }
+
+  public void findDuplicates(List<Integer> numList) {
+    for (int i = 0; i < numList.size(); i++) {
+      for (int j = i + 1; j < numList.size(); j++) {
+        if (numList.get(i) == numList.get(j)) {
+          System.out.println(numList.get(j));
+        }
+      }
+    }
   }
 }

@@ -32,38 +32,38 @@ import java.util.List;
  */
 public class PositionOfLargeGroups {
 
-  private static List<List<Integer>> largeGroupPositions(String str) {
-    List<List<Integer>> groups = new ArrayList<>();
-    int startPos = 0;
-    int endPos = 0;
-    int i = 0, j;
-    while (i < str.length()) {
-      List<Integer> position = new ArrayList<>();
-      startPos = i;
-      j = i + 1;
-      if (j < str.length()) {
-        while (str.charAt(i) == str.charAt(j)) {
-          endPos = j;
-          j++;
+    private static List<List<Integer>> largeGroupPositions(String str) {
+        List<List<Integer>> groups = new ArrayList<>();
+        int startPos = 0;
+        int endPos = 0;
+        int i = 0, j;
+        while (i < str.length()) {
+            List<Integer> position = new ArrayList<>();
+            startPos = i;
+            j = i + 1;
+            if (j < str.length()) {
+                while (str.charAt(i) == str.charAt(j)) {
+                    endPos = j;
+                    j++;
+                }
+                if (endPos - startPos >= 2) {
+                    position.add(startPos);
+                    position.add(endPos);
+                    groups.add(position);
+                }
+            }
+            i = j;
+            j = 0;
         }
-        if (endPos - startPos >= 2) {
-          position.add(startPos);
-          position.add(endPos);
-          groups.add(position);
-        }
-      }
-      i = j;
-      j = 0;
+        return groups;
     }
-    return groups;
-  }
 
-  public static void main(String[] args) {
-    String S = "abbxxxxzzy";
-    String S1 = "abcdddeeeeaabbbcd";
-    List<List<Integer>> orderLists = largeGroupPositions(S1);
-    for (List<Integer> order : orderLists) {
-      System.out.println(order);
+    public static void main(String[] args) {
+        String S = "abbxxxxzzy";
+        String S1 = "abcdddeeeeaabbbcd";
+        List<List<Integer>> orderLists = largeGroupPositions(S1);
+        for (List<Integer> order : orderLists) {
+            System.out.println(order);
+        }
     }
-  }
 }
