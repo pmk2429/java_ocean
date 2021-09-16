@@ -14,21 +14,35 @@ package strings;
  */
 public class AllSameCharsInString {
 
-  private static boolean sameChars(String str) {
-    boolean isSame = false;
-    char[] strArr = str.toCharArray();
-    for (int i = 0, j = 1; j < strArr.length; i++, j++) {
-      isSame = strArr[i] == strArr[j];
+    private static boolean sameChars(String str) {
+        boolean isSame = false;
+        char[] strArr = str.toCharArray();
+        for (int i = 0, j = 1; j < strArr.length; i++, j++) {
+            isSame = strArr[i] == strArr[j];
+        }
+        return isSame;
     }
-    return isSame;
-  }
 
-  public static void main(String[] args) {
-    String str = "pavitra";
-    String str1 = "ppa";
-    String str2 = "ppppppp";
-    System.out.println(sameChars(str));
-    System.out.println(sameChars(str1));
-    System.out.println(sameChars(str2));
-  }
+    private static boolean areCharsSame(String str) {
+        boolean isSame = false;
+        int i = 0, j = 1;
+        while (j <= str.length()) {
+            if (str.charAt(i) == str.charAt(j)) {
+                i++;
+                j++;
+                isSame = true;
+            }
+            break;
+        }
+        return isSame;
+    }
+
+    public static void main(String[] args) {
+        String str = "pavitra";
+        String str1 = "ppppa";
+        String str2 = "ppppppp";
+        System.out.println(areCharsSame(str));
+        System.out.println(areCharsSame(str1));
+        System.out.println(areCharsSame(str2));
+    }
 }
