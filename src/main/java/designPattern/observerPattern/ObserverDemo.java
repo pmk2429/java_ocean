@@ -3,14 +3,14 @@ package designPattern.observerPattern;
 import java.util.ArrayList;
 import java.util.List;
 
-//An interface to be implemented by everyone interested in "Hello" events
+// An interface to be implemented by everyone interested in "Hello" events
 interface HelloListener {
-	public void someoneSaidHello();
+	void someoneSaidHello();
 }
 
 // Someone who says "Hello"
 class Initiater {
-	List<HelloListener> listeners = new ArrayList<HelloListener>();
+	List<HelloListener> listeners = new ArrayList<>();
 
 	public void addListener(HelloListener toAdd) {
 		listeners.add(toAdd);
@@ -20,8 +20,9 @@ class Initiater {
 		System.out.println("Hello!!");
 
 		// Notify everybody that may be interested.
-		for (HelloListener hl : listeners)
+		for (HelloListener hl : listeners) {
 			hl.someoneSaidHello();
+		}
 	}
 }
 
