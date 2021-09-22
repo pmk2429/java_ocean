@@ -21,37 +21,37 @@ package strings;
  */
 public class FindExtraChar {
 
-  private static char findExtraCharByLooping(String strA, String strB) {
-    char[] allChars = new char[256];
-    for (int i = 0; i < strA.length(); i++) {
-      int curAscii = (int) strA.charAt(i);
-      allChars[curAscii]++;
+    private static char findExtraCharByLooping(String strA, String strB) {
+        char[] allChars = new char[256];
+        for (int i = 0; i < strA.length(); i++) {
+            int curAscii = (int) strA.charAt(i);
+            allChars[curAscii]++;
+        }
+
+        for (int i = 0; i < strB.length(); i++) {
+            int bAscii = (int) strB.charAt(i);
+            if (allChars[bAscii] == 0) {
+                return strB.charAt(i);
+            }
+        }
+        return '#';
     }
 
-    for (int i = 0; i < strB.length(); i++) {
-      int bAscii = (int) strB.charAt(i);
-      if (allChars[bAscii] == 0) {
-        return strB.charAt(i);
-      }
+    private static char findExtraCharByComparison(String strA, String strB) {
+        char notPresent = '#';
+        for (int i = 0; i < strB.length(); i++) {
+            char curBChar = strB.charAt(i);
+            if (strA.indexOf(curBChar) < 0) {
+                notPresent = curBChar;
+            }
+        }
+        return notPresent;
     }
-    return '#';
-  }
 
-  private static char findExtraCharByComparison(String strA, String strB) {
-    char notPresent = '#';
-    for (int i = 0; i < strB.length(); i++) {
-      char curBChar = strB.charAt(i);
-      if (strA.indexOf(curBChar) < 0) {
-        notPresent = curBChar;
-      }
+    public static void main(String[] args) {
+        String strA = "kxlm";
+        String strB = "klxlm";
+        System.out.println(findExtraCharByLooping(strA, strB));
+        System.out.println(findExtraCharByComparison(strA, strB));
     }
-    return notPresent;
-  }
-
-  public static void main(String[] args) {
-    String strA = "kxlm";
-    String strB = "klxlm";
-    System.out.println(findExtraCharByLooping(strA, strB));
-    System.out.println(findExtraCharByComparison(strA, strB));
-  }
 }

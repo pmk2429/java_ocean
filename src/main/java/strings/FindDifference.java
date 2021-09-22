@@ -16,26 +16,30 @@ package strings;
  */
 public class FindDifference {
 
-  private static char findDifference(String main, String random) {
-    char diff = '\0';
-    for (int i = 0; i < random.length(); i++) {
-      if (!main.contains(String.valueOf(random.charAt(i)))) {
-        diff = random.charAt(i);
-      }
+    private static char findDifference(String main, String random) {
+        char diff = '\0';
+        for (int i = 0; i < random.length(); i++) {
+            char randomChar = random.charAt(i);
+            if (!main.contains(String.valueOf(randomChar))) {
+                diff = randomChar;
+            }
+        }
+        return diff;
     }
-    return diff;
-  }
 
-  private static char difference(String main, String random) {
-    int diff = 0;
-    for (char c : main.toCharArray()) diff ^= c;
-    for (char c : random.toCharArray()) diff ^= c;
-    return (char) diff;
-  }
+    /**
+     * ^= is the XOR function.
+     */
+    private static char difference(String main, String random) {
+        int diff = 0;
+        for (char c : main.toCharArray()) diff ^= c;
+        for (char c : random.toCharArray()) diff ^= c;
+        return (char) diff;
+    }
 
-  public static void main(String[] args) {
-    String s = "abcd";
-    String t = "dceba";
-    System.out.println(difference(s, t));
-  }
+    public static void main(String[] args) {
+        String s = "abcd";
+        String t = "dceba";
+        System.out.println(difference(s, t));
+    }
 }
