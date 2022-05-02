@@ -48,92 +48,92 @@ import java.util.*;
  */
 public class AlienDictionary {
 
-  private static String alienOrder(String[] words) {
-    // adjacency list
-    Map<Character, Set<Character>> map = new HashMap<>();
-    // degree of each vertex(char)
-    Map<Character, Integer> degree = new HashMap<>();
+    private static String alienOrder(String[] words) {
+        // adjacency list
+        Map<Character, Set<Character>> map = new HashMap<>();
+        // degree of each vertex(char)
+        Map<Character, Integer> degree = new HashMap<>();
 
-    StringBuilder letterOrder = new StringBuilder();
+        StringBuilder letterOrder = new StringBuilder();
 
-    if (words == null || words.length == 0) {
-      return letterOrder.toString();
-    }
-
-    // create a degree of all unique chars
-    for (String s : words) {
-      for (char c : s.toCharArray()) {
-        degree.put(c, 0);
-      }
-    }
-
-    // build relationship(adjacency list) with neighbors
-    for (int i = 0; i < words.length - 1; i++) {
-      String cur = words[i];
-      String next = words[i + 1];
-
-      int length = Math.min(cur.length(), next.length());
-
-      for (int j = 0; j < length; j++) {
-        char c1 = cur.charAt(j);
-        char c2 = next.charAt(j);
-        if (c1 != c2) {
-          Set<Character> set = new HashSet<>();
-          // build the adjacency list
-          if (map.containsKey(c1)) {
-            set = map.get(c1);
-          }
-          if (!set.contains(c2)) {
-            set.add(c2);
-            map.put(c1, set);
-            degree.put(c2, degree.getOrDefault(c2, 0) + 1);
-          }
-          break;
+        if (words == null || words.length == 0) {
+            return letterOrder.toString();
         }
-      }
-    }
 
-    // BFS
-    Queue<Character> q = new LinkedList<>();
-    for (char c : degree.keySet()) {
-      if (degree.get(c) == 0) {
-        q.offer(c);
-      }
-    }
-
-    // Loop through the Queue, pop the top element, see if map contains the elements, if it does,
-    // get all its neighbors , backtrack (decrement the degree because already processed and then
-    // if the degree is 0, add it to queue for processing. This way each character is processed along
-    // with its neighbors
-    while (!q.isEmpty()) {
-      char c = q.remove();
-      letterOrder.append(c);
-      if (map.containsKey(c)) {
-        for (char c2 : map.get(c)) {
-          degree.put(c2, degree.get(c2) - 1); // backtracking because solution is found
-          if (degree.get(c2) == 0) {
-            q.add(c2);
-          }
+        // create a degree of all unique chars
+        for (String s : words) {
+            for (char c : s.toCharArray()) {
+                degree.put(c, 0);
+            }
         }
-      }
+
+        // build relationship(adjacency list) with neighbors
+        for (int i = 0; i < words.length - 1; i++) {
+            String cur = words[i];
+            String next = words[i + 1];
+
+            int length = Math.min(cur.length(), next.length());
+
+            for (int j = 0; j < length; j++) {
+                char c1 = cur.charAt(j);
+                char c2 = next.charAt(j);
+                if (c1 != c2) {
+                    Set<Character> set = new HashSet<>();
+                    // build the adjacency list
+                    if (map.containsKey(c1)) {
+                        set = map.get(c1);
+                    }
+                    if (!set.contains(c2)) {
+                        set.add(c2);
+                        map.put(c1, set);
+                        degree.put(c2, degree.getOrDefault(c2, 0) + 1);
+                    }
+                    break;
+                }
+            }
+        }
+
+        // BFS
+        Queue<Character> q = new LinkedList<>();
+        for (char c : degree.keySet()) {
+            if (degree.get(c) == 0) {
+                q.offer(c);
+            }
+        }
+
+        // Loop through the Queue, pop the top element, see if map contains the elements, if it does,
+        // get all its neighbors , backtrack (decrement the degree because already processed and then
+        // if the degree is 0, add it to queue for processing. This way each character is processed along
+        // with its neighbors
+        while (!q.isEmpty()) {
+            char c = q.remove();
+            letterOrder.append(c);
+            if (map.containsKey(c)) {
+                for (char c2 : map.get(c)) {
+                    degree.put(c2, degree.get(c2) - 1); // backtracking because solution is found
+                    if (degree.get(c2) == 0) {
+                        q.add(c2);
+                    }
+                }
+            }
+        }
+        // String base case
+        if (letterOrder.length() != degree.size()) {
+            return "";
+        }
+
+        return letterOrder.toString();
     }
-    // String base case
-    if (letterOrder.length() != degree.size()) {
-      return "";
+
+    public static void main(String[] args) {
+        String[] input = {
+            "wrt",
+            "wrf",
+            "er",
+            "ett",
+            "rftt"
+        };
+
+        System.out.println(alienOrder(input));
     }
-
-    return letterOrder.toString();
-  }
-
-  public static void main(String[] args) {
-    String[] input = {
-        "wrt",
-        "wrf",
-        "er",
-        "ett",
-        "rftt"
-    };
-
-    System.out.println(alienOrder(input));
-  }
 }

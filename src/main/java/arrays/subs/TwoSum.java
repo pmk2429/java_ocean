@@ -11,8 +11,8 @@ import java.util.Map;
  * Example:
  * Given nums = [5, 8, 2, 7, 11, 15], target = 9,
  * <p>
- * Because nums[0] + nums[1] = 2 + 7 = 9,
- * return [0, 1].
+ * Because nums[2] + nums[3] = 2 + 7 = 9,
+ * return [2, 3].
  */
 public class TwoSum {
 
