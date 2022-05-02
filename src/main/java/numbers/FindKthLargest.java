@@ -5,13 +5,10 @@ import java.util.PriorityQueue;
 import java.util.Random;
 
 public class FindKthLargest {
-    private static int findKthLargest(int[] nums, int k) {
-        // make sure that k is valid and between 0 and nums.length - 1
-        if (k < 1 || k > nums.length) {
-            return -1;
-        }
-
-        return findKthLargest(nums, 0, nums.length - 1, k);
+    private static void swap(int[] nums, int a, int b) {
+        int temp = nums[a];
+        nums[a] = nums[b];
+        nums[b] = temp;
     }
 
     private static int findKthLargest(int[] nums, int start, int end, int k) {
@@ -65,10 +62,13 @@ public class FindKthLargest {
         }
     }
 
-    private static void swap(int[] nums, int a, int b) {
-        int temp = nums[a];
-        nums[a] = nums[b];
-        nums[b] = temp;
+    private static int findKthLargest(int[] nums, int k) {
+        // make sure that k is valid and between 0 and nums.length - 1
+        if (k < 1 || k > nums.length) {
+            return -1;
+        }
+
+        return findKthLargest(nums, 0, nums.length - 1, k);
     }
 
     // Uses PriorityQueue

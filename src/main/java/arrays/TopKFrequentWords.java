@@ -36,94 +36,90 @@ import java.util.stream.Stream;
  */
 public class TopKFrequentWords {
 
-  private static void freq(String[] wirds, int k) {
-    Stream<String> stream = Stream.of(wirds).parallel();
-    Map<String, Long> wordFreq = stream
-        .collect(Collectors.groupingBy(String::toString, Collectors.counting()));
-    System.out.println(wordFreq);
-  }
-
-  private static List<String> kFreqWords(String[] words, int k) {
-    ConcurrentMap<String, Integer> m = new ConcurrentHashMap<>();
-    m.compute("x", (j, v) -> v == null ? 1 : v + 1);
-    return null;
-  }
-
-  /**
-   * Add elements to the HashMap and then sort the map by Value using Stream API
-   *
-   * @param words
-   * @param k
-   * @return
-   */
-  private static List<String> kFrequentWords(String[] words, int k) {
-    List<String> firstKWords = new ArrayList<>();
-
-    // to maintain the natural order of insertion
-    Map<String, Integer> wordMap = new HashMap<>();
-    for (String w : words) {
-      Integer n = wordMap.get(w);
-      n = (n == null) ? 1 : ++n;
-      wordMap.put(w, n);
+    private static void freq(String[] wirds, int k) {
+        Stream<String> stream = Stream.of(wirds).parallel();
+        Map<String, Long> wordFreq = stream.collect(Collectors.groupingBy(String::toString, Collectors.counting()));
+        System.out.println(wordFreq);
     }
 
-    Map<String, Integer> sortedWords = wordMap.entrySet().stream()
-        .sorted(Entry.comparingByValue(Collections.reverseOrder()))
-        .collect(Collectors.toMap(Entry::getKey, Entry::getValue,
-            (e1, e2) -> e1, LinkedHashMap::new));
+    /**
+     * Add elements to the HashMap and then sort the map by Value using Stream API
+     *
+     * @param words
+     * @param k
+     * @return
+     */
+    private static List<String> kFrequentWords(String[] words, int k) {
+        List<String> firstKWords = new ArrayList<>();
 
-    int count = 0;
-    for (Map.Entry<String, Integer> entry : sortedWords.entrySet()) {
-      if (count >= k) {
-        break;
-      }
+        // to maintain the natural order of insertion
+        Map<String, Integer> wordMap = new HashMap<>();
+        for (String w : words) {
+            Integer n = wordMap.get(w);
+            n = (n == null) ? 1 : ++n;
+            wordMap.put(w, n);
+        }
 
-      firstKWords.add(entry.getKey());
-      count++;
-    }
-    // now considering all elements are sorted based on their natural ordering, loop through k elements
-    return firstKWords;
-  }
+        Map<String, Integer> sortedWords = wordMap.entrySet().stream()
+            .sorted(Entry.comparingByValue(Collections.reverseOrder()))
+            .collect(Collectors.toMap(Entry::getKey, Entry::getValue,
+                (e1, e2) -> e1, LinkedHashMap::new));
 
-  private static List<String> topKFrequent(String[] words, int k) {
-    Map<String, Integer> count = new HashMap<>();
-    for (String word : words) {
-      count.put(word, count.getOrDefault(word, 0) + 1);
-    }
-    List<String> candidates = new ArrayList<>(count.keySet());
-    Collections.sort(candidates,
-        (w1, w2) ->
-            count.get(w1).equals(count.get(w2))
-                ? w1.compareTo(w2)
-                : count.get(w2) - count.get(w1));
+        int count = 0;
+        for (Map.Entry<String, Integer> entry : sortedWords.entrySet()) {
+            if (count >= k) {
+                break;
+            }
 
-    return candidates.subList(0, k);
-  }
-
-  private static List<String> topKFrequentHeap(String[] words, int k) {
-    Map<String, Integer> count = new HashMap<>();
-
-    for (String word : words) {
-      count.put(word, count.getOrDefault(word, 0) + 1);
+            firstKWords.add(entry.getKey());
+            count++;
+        }
+        // now considering all elements are sorted based on their natural ordering, loop through k elements
+        return firstKWords;
     }
 
-    PriorityQueue<String> heap = new PriorityQueue<>((w1, w2) -> count.get(w1).equals(count.get(w2))
-        ? w1.compareTo(w2)
-        : count.get(w1) - count.get(w2));
+    private static List<String> topKFrequent(String[] words, int k) {
+        Map<String, Integer> count = new HashMap<>();
+        for (String word : words) {
+            count.put(word, count.getOrDefault(word, 0) + 1);
+        }
+        List<String> candidates = new ArrayList<>(count.keySet());
+        Collections.sort(candidates,
+            (w1, w2) ->
+                count.get(w1).equals(count.get(w2))
+                    ? w1.compareTo(w2)
+                    : count.get(w2) - count.get(w1));
 
-    for (String word : count.keySet()) {
-      heap.offer(word);
-      if (heap.size() > k) {
-        heap.poll();
-      }
+        return candidates.subList(0, k);
     }
 
-    return new ArrayList<>(heap);
-  }
+    private static List<String> topKFrequentHeap(String[] words, int k) {
+        Map<String, Integer> count = new HashMap<>();
 
-  public static void main(String[] args) {
-    String[] str = {"i", "love", "leetcode", "i", "love", "coding"};
-    int k = 2;
-    System.out.println(topKFrequentHeap(str, k));
-  }
+        for (String word : words) {
+            count.put(word, count.getOrDefault(word, 0) + 1);
+        }
+
+        PriorityQueue<String> heap = new PriorityQueue<>((w1, w2) -> count.get(w1).equals(count.get(w2))
+            ? w1.compareTo(w2)
+            : count.get(w2) - count.get(w1));
+
+        for (String word : count.keySet()) {
+            heap.offer(word);
+            if (heap.size() > k) {
+                heap.poll();
+            }
+        }
+
+        return new ArrayList<>(heap);
+    }
+
+    public static void main(String[] args) {
+        String[] str = {"i", "love", "leetcode", "i", "love", "coding"};
+        int k = 2;
+        System.out.println(topKFrequentHeap(str, k));
+        String[] str2 = {"the", "day", "is", "sunny", "the", "the", "the", "sunny", "is", "is"};
+        int k2 = 4;
+        System.out.println(topKFrequentHeap(str2, k2));
+    }
 }

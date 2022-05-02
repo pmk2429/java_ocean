@@ -19,42 +19,43 @@ import java.util.Arrays;
  */
 public class MaximumProfit {
 
-  private static int[] maxProfit(int[] transactions) {
-    int currProfit;
-    int maxProfit = -1;
-    int transactionFee = 2;
-    int[] transactionDays = new int[2];
-    for (int i = 0; i < transactions.length; i++) {
-      int j = i + 1;
-      while (j < transactions.length) {
-        currProfit = transactions[j] - transactions[i] - transactionFee;
-        if (currProfit > maxProfit) {
-          maxProfit = currProfit;
-          transactionDays[0] = transactions[i];
-          transactionDays[1] = transactions[j];
+    private static int[] maxProfit(int[] transactions) {
+        int currProfit;
+        int maxProfit = -1;
+        int transactionFee = 2;
+        int[] transactionDays = new int[2];
+        for (int i = 0; i < transactions.length; i++) {
+            int j = i + 1;
+            while (j < transactions.length) {
+                currProfit = transactions[j] - transactions[i] - transactionFee;
+                if (currProfit > maxProfit) {
+                    maxProfit = currProfit;
+                    transactionDays[0] = transactions[i];
+                    transactionDays[1] = transactions[j];
+                }
+                j++;
+            }
         }
-        j++;
-      }
+        return transactionDays;
     }
-    return transactionDays;
-  }
 
-  private static int maxProfitOnePass(int[] prices) {
-    int minprice = Integer.MAX_VALUE;
-    int maxprofit = 0;
-    for (int i = 0; i < prices.length; i++) {
-      if (prices[i] < minprice) {
-        minprice = prices[i];
-      } else if (prices[i] - minprice > maxprofit) {
-        maxprofit = prices[i] - minprice;
-      }
+    private static int maxProfitOnePass(int[] prices) {
+        int minprice = Integer.MAX_VALUE;
+        int maxprofit = 0;
+        for (int price : prices) {
+            if (price < minprice) {
+                minprice = price;
+            }
+            else if (price - minprice > maxprofit) {
+                maxprofit = price - minprice;
+            }
+        }
+        return maxprofit;
     }
-    return maxprofit;
-  }
 
-  public static void main(String[] args) {
-    int arr[] = {6, 1, 7, 2, 8, 4};
-    System.out.println(Arrays.toString(maxProfit(arr)));
-    System.out.println(maxProfitOnePass(arr));
-  }
+    public static void main(String[] args) {
+        int[] arr = {6, 1, 7, 2, 8, 4};
+        System.out.println(Arrays.toString(maxProfit(arr)));
+        System.out.println(maxProfitOnePass(arr));
+    }
 }

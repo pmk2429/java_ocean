@@ -25,34 +25,46 @@ import java.util.Arrays;
  */
 public class SortColors {
 
-  // Does inplace sorting of elements
-  private static int[] sortColors(int[] nums) {
-    // for all idx < i : nums[idx < i] = 0 j is an index of element under consideration
-    int x = 0, curr = 0;
-    // for all idx > k : nums[idx > k] = 2
-    int y = nums.length - 1;
-
-    int tmp;
-    while (curr <= y) {
-      if (nums[curr] == 0) {
-        // swap p0-th and curr-th elements i++ and j++
-        tmp = nums[x];
-        nums[x++] = nums[curr];
-        nums[curr++] = tmp;
-      } else if (nums[curr] == 2) {
-        // swap k-th and curr-th elements p2--
-        tmp = nums[curr];
-        nums[curr] = nums[y];
-        nums[y--] = tmp;
-      } else {
-        curr++;
-      }
+    private static void sortColors(int[] A, int n) {
+        int n0 = -1, n1 = -1, n2 = -1;
+        for (int i = 0; i < n; ++i) {
+            if (A[i] == 0) {
+                A[++n2] = 2;
+                A[++n1] = 1;
+                A[++n0] = 0;
+            }
+            else if (A[i] == 1) {
+                A[++n2] = 2;
+                A[++n1] = 1;
+            }
+            else if (A[i] == 2) {
+                A[++n2] = 2;
+            }
+            System.out.println(Arrays.toString(A));
+        }
     }
-    return nums;
-  }
 
-  public static void main(String[] args) {
-    int[] colors = {2, 0, 2, 1, 1, 0, 2, 0, 1, 2};
-    System.out.println(Arrays.toString(sortColors(colors)));
-  }
+    // Does inplace sorting of elements
+    private static int[] sortColors(int[] A) {
+        int j = 0, k = A.length - 1;
+        for (int i = 0; i <= k; i++) {
+            if (A[i] == 0) {
+                int temp = A[i];
+                A[i] = A[j];
+                A[j++] = temp;
+            }
+            else if (A[i] == 2) {
+                int temp = A[i];
+                A[i--] = A[k];
+                A[k--] = temp;
+            }
+        }
+        return A;
+    }
+
+    public static void main(String[] args) {
+        int[] colors = {2, 0, 2, 1, 1, 0, 2, 0, 1, 2};
+        //System.out.println(Arrays.toString(sortColors(colors)));
+        sortColors(colors, colors.length);
+    }
 }
