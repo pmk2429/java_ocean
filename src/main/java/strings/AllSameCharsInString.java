@@ -24,15 +24,14 @@ public class AllSameCharsInString {
     }
 
     private static boolean areCharsSame(String str) {
-        boolean isSame = false;
+        boolean isSame = true;
         int i = 0, j = 1;
-        while (j <= str.length()) {
-            if (str.charAt(i) == str.charAt(j)) {
-                i++;
-                j++;
-                isSame = true;
+        while (j < str.length()) {
+            if (str.charAt(i) != str.charAt(j)) {
+                isSame = false;
             }
-            break;
+            i++;
+            j++;
         }
         return isSame;
     }

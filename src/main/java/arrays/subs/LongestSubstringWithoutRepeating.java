@@ -1,5 +1,7 @@
 package arrays.subs;
 
+import java.util.HashMap;
+
 /**
  * Given a string, find the length of the longest substring without repeating characters.
  * <p>
@@ -24,13 +26,38 @@ package arrays.subs;
  */
 public class LongestSubstringWithoutRepeating {
 
-  private static int lengthOfLongesUniqueSubstring(String str) {
-    int length = 0;
+    public static int lengthOfLongestSubstring(String s) {
+        if (s.length() == 0) return 0;
+        HashMap<Character, Integer> map = new HashMap<>();
+        int max = 0;
+        for (int i = 0, j = 0; i < s.length(); ++i) {
+            char currChar = s.charAt(i);
+            if (map.containsKey(currChar)) {
+                // update j to right next to `currChar`  previous index + 1
+                // this will update the window size for deducing max further down below
+                j = Math.max(j, map.get(currChar) + 1);
+            }
+            map.put(currChar, i);
+            // deduce the window size
+            max = Math.max(max, i - j + 1);
+        }
+        return max;
+    }
 
-    return length;
-  }
+    public int lengthOfLongestSubstringUsingArray(String s) {
+        int result = 0;
+        int[] cache = new int[256];
+        for (int i = 0, j = 0; i < s.length(); i++) {
+            j = (cache[s.charAt(i)] > 0) ? Math.max(j, cache[s.charAt(i)]) : j;
+            cache[s.charAt(i)] = i + 1;
+            result = Math.max(result, i - j + 1);
+        }
+        return result;
+    }
 
-  public static void main(String[] args) {
-
-  }
+    public static void main(String[] args) {
+        System.out.println(lengthOfLongestSubstring("abcabcbb"));
+        System.out.println(lengthOfLongestSubstring("bbbbb"));
+        System.out.println(lengthOfLongestSubstring("pwwkew"));
+    }
 }
