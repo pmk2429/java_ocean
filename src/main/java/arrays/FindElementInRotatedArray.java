@@ -89,11 +89,11 @@ public class FindElementInRotatedArray {
         if (rotate_index == 0)
             return search(0, n - 1);
         if (target < nums[0]) {
-            // search in the right side
+            // search on the right side
             return search(rotate_index, n - 1);
         }
         else {
-            // search in the left side
+            // search on the left side
             return search(0, rotate_index);
         }
     }

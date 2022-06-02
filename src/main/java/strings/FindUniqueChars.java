@@ -20,7 +20,7 @@ import java.util.Set;
  * Output : HoGks
  * <p>
  */
-public class DistinctChars {
+public class FindUniqueChars {
 
     // Implementation using HashTable
     private static String distinctChars(String str) {

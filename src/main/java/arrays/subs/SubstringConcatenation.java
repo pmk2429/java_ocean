@@ -27,41 +27,41 @@ import java.util.Map;
  * Output: []
  */
 public class SubstringConcatenation {
-  public List<Integer> findSubstring(String s, String[] words) {
+    public List<Integer> findSubstring(String s, String[] words) {
 
-    int totalWords = words.length;
+        int totalWords = words.length;
 
-    List<Integer> ans = new ArrayList<>();
-    if (totalWords == 0) {
-      return ans;
-    }
-
-    Map<String, Integer> subStrMap = new HashMap<>();
-    for (String word : words) {
-      subStrMap.put(word, subStrMap.getOrDefault(word, 0) + 1);
-    }
-
-    int k = words[0].length() * totalWords;
-    int inc = words[0].length();
-    int n = s.length();
-
-    for (int i = 0; i < n - k + 1; i++) { // Iterate through all windows
-      Map<String, Integer> copy = new HashMap<>(subStrMap);
-      int counter = copy.size();
-      for (int j = i; j < i + k; j += inc) { // For each window, check if  each word is in the hashmap.
-        String word = s.substring(j, j + inc);
-        if (copy.containsKey(word)) {
-          if (copy.get(word) == 1) {
-            counter--;
-          }
-          copy.put(word, copy.get(word) - 1);
+        List<Integer> ans = new ArrayList<>();
+        if (totalWords == 0) {
+            return ans;
         }
-      }
-      if (counter == 0) {
-        ans.add(i);
-      }
-    }
 
-    return ans;
-  }
+        Map<String, Integer> subStrMap = new HashMap<>();
+        for (String word : words) {
+            subStrMap.put(word, subStrMap.getOrDefault(word, 0) + 1);
+        }
+
+        int k = words[0].length() * totalWords;
+        int inc = words[0].length();
+        int n = s.length();
+
+        for (int i = 0; i < n - k + 1; i++) { // Iterate through all windows
+            Map<String, Integer> copy = new HashMap<>(subStrMap);
+            int counter = copy.size();
+            for (int j = i; j < i + k; j += inc) { // For each window, check if  each word is in the hashmap.
+                String word = s.substring(j, j + inc);
+                if (copy.containsKey(word)) {
+                    if (copy.get(word) == 1) {
+                        counter--;
+                    }
+                    copy.put(word, copy.get(word) - 1);
+                }
+            }
+            if (counter == 0) {
+                ans.add(i);
+            }
+        }
+
+        return ans;
+    }
 }

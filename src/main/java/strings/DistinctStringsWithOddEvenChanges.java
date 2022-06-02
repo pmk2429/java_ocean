@@ -57,8 +57,7 @@ public class DistinctStringsWithOddEvenChanges {
   }
 
   // This function basically uses a hashing based set to
-  // store strings which are distinct according to accoding
-  // to criteria given in question.
+  // store strings which are distinct according criteria given in question.
   private static int countDistinct(String[] input, int n) {
     int countDist = 0; // Initialize result
 

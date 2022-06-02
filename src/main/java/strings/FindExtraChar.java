@@ -24,12 +24,12 @@ public class FindExtraChar {
     private static char findExtraCharByLooping(String strA, String strB) {
         char[] allChars = new char[256];
         for (int i = 0; i < strA.length(); i++) {
-            int curAscii = (int) strA.charAt(i);
+            int curAscii = strA.charAt(i);
             allChars[curAscii]++;
         }
 
         for (int i = 0; i < strB.length(); i++) {
-            int bAscii = (int) strB.charAt(i);
+            int bAscii = strB.charAt(i);
             if (allChars[bAscii] == 0) {
                 return strB.charAt(i);
             }
