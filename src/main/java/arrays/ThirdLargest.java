@@ -24,7 +24,7 @@ package arrays;
 public class ThirdLargest {
 
     private static int thirdLargest(int[] arr) {
-        int first = arr[0];
+        int first = Integer.MIN_VALUE;
         int second = Integer.MIN_VALUE;
         int third = Integer.MIN_VALUE;
 

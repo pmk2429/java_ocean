@@ -28,7 +28,7 @@ import java.util.Map;
  * nums[i] will be an integer between 0 and 49,999.
  */
 public class DegreeOfArray {
-    public int findShortestSubArray(int[] nums) {
+    public static int findShortestSubArray(int[] nums) {
         Map<Integer, Integer> left = new HashMap<>();
         Map<Integer, Integer> right = new HashMap<>();
         Map<Integer, Integer> count = new HashMap<>();
@@ -49,5 +49,10 @@ public class DegreeOfArray {
         }
 
         return ans;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 2, 3, 1, 4, 2};
+        System.out.println(findShortestSubArray(arr));
     }
 }

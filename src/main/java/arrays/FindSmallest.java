@@ -17,18 +17,18 @@ package arrays;
  */
 public class FindSmallest {
 
-  private static int findSmallestUnsorted(int[] arr) {
-    int smallestPositive = Integer.MAX_VALUE;
-    for (int i = 0; i < arr.length; i++) {
-      if (arr[i] > 0 && arr[i] < smallestPositive) {
-        smallestPositive = arr[i];
-      }
+    private static int findSmallestUnsorted(int[] arr) {
+        int smallestPositive = Integer.MAX_VALUE;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > 0 && arr[i] < smallestPositive) {
+                smallestPositive = arr[i];
+            }
+        }
+        return smallestPositive;
     }
-    return smallestPositive;
-  }
 
-  public static void main(String[] args) {
-    int[] arr = {2, 3, 7, 6, 8, -1, -10, 15};
-    System.out.println(findSmallestUnsorted(arr));
-  }
+    public static void main(String[] args) {
+        int[] arr = {2, 3, 7, 6, 8, -1, -10, 15};
+        System.out.println(findSmallestUnsorted(arr));
+    }
 }

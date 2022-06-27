@@ -36,39 +36,40 @@ import java.util.Arrays;
  */
 public class GoatLatin {
 
-  private static String getMaaString(int n) {
-    StringBuilder ma = new StringBuilder();
-    ma.append("ma");
-    for (int i = 0; i <= n; i++) {
-      ma.append("a");
-    }
-    return ma.toString();
-  }
-
-  private static String toGoatLatin(String str) {
-    StringBuilder sb = new StringBuilder();
-    String[] words = str.split(" ");
-    String vowels = "aeiou";
-
-    for (int i = 0; i < words.length; i++) {
-      String curWord = words[i];
-      // check if current word starts with vowel
-      if (vowels.indexOf(Character.toLowerCase(curWord.charAt(0))) != -1) {
-        String curr = curWord + getMaaString(i);
-        sb.append(curr).append(" ");
-      } else { // String starts with consonant
-        String curr = curWord.substring(1) + curWord.charAt(0) + getMaaString(i);
-        sb.append(curr).append(" ");
-      }
+    private static String getMaaString(int n) {
+        StringBuilder ma = new StringBuilder();
+        ma.append("ma");
+        for (int i = 0; i <= n; i++) {
+            ma.append("a");
+        }
+        return ma.toString();
     }
 
-    return sb.toString();
-  }
+    private static String toGoatLatin(String str) {
+        StringBuilder sb = new StringBuilder();
+        String[] words = str.split(" ");
+        String vowels = "aeiou";
 
-  public static void main(String[] args) {
-    String str = "I speak Goat Latin";
-    String str2 = "The quick brown fox jumped over the lazy dog";
-    System.out.println(toGoatLatin(str));
-    System.out.println(toGoatLatin(str2));
-  }
+        for (int i = 0; i < words.length; i++) {
+            String curWord = words[i];
+            // check if current word starts with vowel
+            if (vowels.indexOf(Character.toLowerCase(curWord.charAt(0))) != -1) {
+                String curr = curWord + getMaaString(i);
+                sb.append(curr).append(" ");
+            }
+            else { // String starts with consonant
+                String curr = curWord.substring(1) + curWord.charAt(0) + getMaaString(i);
+                sb.append(curr).append(" ");
+            }
+        }
+
+        return sb.toString();
+    }
+
+    public static void main(String[] args) {
+        String str = "I speak Goat Latin";
+        String str2 = "The quick brown fox jumped over the lazy dog";
+        System.out.println(toGoatLatin(str));
+        System.out.println(toGoatLatin(str2));
+    }
 }

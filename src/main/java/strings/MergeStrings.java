@@ -10,11 +10,10 @@ public class MergeStrings {
         int length2 = str2.length();
 
         // take the smaller String
-        int smallStringLength = length1 < length2 ? length1 : length2;
-        int biggerStringLength = length1 > length2 ? length1 : length2;
+        int smallStringLength = Math.min(length1, length2);
+        int biggerStringLength = Math.max(length1, length2);
         int remainingString = biggerStringLength - smallStringLength;
 
-        System.out.println(remainingString);
         StringBuilder sb = new StringBuilder();
 
         for (int i = 0; i < smallStringLength; i++) {
@@ -22,8 +21,7 @@ public class MergeStrings {
             sb.append(str2.charAt(i));
         }
 
-        String biggerString = str1.compareTo(str2) > 0 ? str2 : str1;
-        System.out.println(biggerString);
+        String biggerString = str1.compareTo(str2) < 0 ? str1 : str2;
         int startIndex = biggerString.length() - remainingString;
 
         // append the remaining pieces in the String

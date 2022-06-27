@@ -40,61 +40,46 @@ public class FirstAndLastIndex {
         return targetRange;
     }
 
-    private static int lastIndex(int[] arr, int target) {
-        int L = 0;
-        int R = arr.length - 1;
-        int lastIndex = -1;
-
-        while (L < R) {
-            int M = (L + R) / 2;
-            if (arr[M] < target) {
-                L = M;
-            }
-            else if (arr[M] > target) {
-                R = M;
+    private static int findFirst(int[] nums, int target) {
+        int firstIndex = -1;
+        int start = 0;
+        int end = nums.length - 1;
+        while (start <= end) {
+            int mid = (start + end) / 2;
+            if (target <= nums[mid]) {
+                end = mid - 1;
             }
             else {
-                L = M + 1;
-                lastIndex = M;
+                start = mid + 1;
             }
+            if (nums[mid] == target) firstIndex = mid;
+        }
+        return firstIndex;
+    }
+
+    private static int findLast(int[] nums, int target) {
+        int lastIndex = -1;
+        int start = 0;
+        int end = nums.length - 1;
+        while (start <= end) {
+            int mid = (start + end) / 2;
+            if (target >= nums[mid]) {
+                start = mid + 1;
+            }
+            else {
+                end = mid - 1;
+            }
+            if (nums[mid] == target) lastIndex = mid;
         }
         return lastIndex;
     }
 
-    private static int indexOf(int[] arr, int target) {
-        if (arr.length == 0)
-            return -1;
-
-        if (arr.length == 1 && arr[0] == target)
-            return 0;
-
-        int L = 0;
-        int R = arr.length;
-        int startIndex = -1;
-
-        while (L < R) {
-            int M = (L + R) / 2;
-            if (target < arr[M]) {
-                R = M;
-            }
-            else if (target > arr[M]) {
-                L = M;
-            }
-            else {
-                R = M - 1;
-                startIndex = M;
-            }
-        }
-
-        return startIndex;
-    }
-
     public static void main(String[] args) {
-        int[] nums = {5, 7, 7, 8, 8, 10};
+        int[] nums = {1, 2, 3, 5, 6, 8, 8, 8, 9, 10};
         int target = 8;
 
-        System.out.println(indexOf(nums, target));
-        System.out.println(lastIndex(nums, target));
+        System.out.println(findFirst(nums, target));
+        System.out.println(findLast(nums, target));
 
         System.out.println(Arrays.toString(searchRange(nums, target)));
     }

@@ -17,18 +17,18 @@ package arrays;
  */
 public class HiddenNumber {
 
-  private static int hiddenNumber(int[] arr) {
-    int hiddenNumber = -1;
-    int x = 2;
-    int sum = 0;
-    for (int value : arr) {
-      sum += x - value;
+    private static int hiddenNumber(int[] arr) {
+        int hiddenNumber = -1;
+        int x = 2;
+        int sum = 0;
+        for (int value : arr) {
+            sum += x - value;
+        }
+        return sum == 0 ? sum : hiddenNumber;
     }
-    return sum == 0 ? sum : hiddenNumber;
-  }
 
-  public static void main(String[] args) {
-    int[] arr = {1, 2, 3, 4};
-    System.out.println(hiddenNumber(arr));
-  }
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4};
+        System.out.println(hiddenNumber(arr));
+    }
 }

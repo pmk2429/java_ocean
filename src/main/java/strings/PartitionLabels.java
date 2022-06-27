@@ -24,22 +24,22 @@ import java.util.List;
  */
 public class PartitionLabels {
 
-  // based on the condition give, first find the first and last occurrence in the String. This will make sure that
-  // the partitions are divided based on the ends and not arbitrarily
-  private static List<Integer> partitionLabels(String S) {
-    List<Integer> partitions = new ArrayList<>();
+    // based on the condition give, first find the first and last occurrence in the String. This will make sure that
+    // the partitions are divided based on the ends and not arbitrarily
+    private static List<Integer> partitionLabels(String S) {
+        List<Integer> partitions = new ArrayList<>();
 
-    int start = 0, end = 0;
-    char firstChar = S.charAt(start);
+        int start = 0, end = 0;
+        char firstChar = S.charAt(start);
 
-    // find last index of 'a' in S
+        // find last index of 'a' in S
 
 
-    return partitions;
-  }
+        return partitions;
+    }
 
-  public static void main(String[] args) {
-    String str = "ababcbacadefegdehijhklij";
-    System.out.println(partitionLabels(str));
-  }
+    public static void main(String[] args) {
+        String str = "ababcbacadefegdehijhklij";
+        System.out.println(partitionLabels(str));
+    }
 }

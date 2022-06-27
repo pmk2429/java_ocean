@@ -19,65 +19,66 @@ package arrays;
  */
 public class MakeAllNosEqual {
 
-  private static boolean canConvertToEqual(int[] a) {
-    int n = a.length;
-    for (int i = 0; i < n; i++) {
+    private static boolean canConvertToEqual(int[] a) {
+        int n = a.length;
+        for (int i = 0; i < n; i++) {
 
-      // Divide number by 2
-      while (a[i] % 2 == 0) {
-        a[i] /= 2;
-      }
+            // Divide number by 2
+            while (a[i] % 2 == 0) {
+                a[i] /= 2;
+            }
 
-      // Divide number by 3
-      while (a[i] % 3 == 0) {
-        a[i] /= 3;
-      }
+            // Divide number by 3
+            while (a[i] % 3 == 0) {
+                a[i] /= 3;
+            }
+        }
+
+        // Remaining numbers
+        for (int i = 1; i < n; i++) {
+            if (a[i] != a[0]) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
-    // Remaining numbers
-    for (int i = 1; i < n; i++) {
-      if (a[i] != a[0]) {
-        return false;
-      }
+    private static int gcd(int a, int b) {
+        if (a == 0) {
+            if (b == 0) {
+                return 0;
+            }
+            return b;
+        }
+
+        // Always set to positive
+        a = (a > 0) ? a : -a;
+        b = (b > 0) ? b : -b;
+
+        while (a != b) {
+            if (a > b) {
+                a -= b;
+            }
+            else {
+                b -= a;
+            }
+        }
+        return a;
     }
 
-    return true;
-  }
+    private static int HCF(int[] arr) {
+        int result = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            result = gcd(arr[i], result);
+        }
 
-  private static int gcd(int a, int b) {
-    if (a == 0) {
-      if (b == 0) {
-        return 0;
-      }
-      return b;
+        return result;
     }
 
-    // Always set to positive
-    a = (a > 0) ? a : -a;
-    b = (b > 0) ? b : -b;
-
-    while (a != b) {
-      if (a > b) {
-        a -= b;
-      } else {
-        b -= a;
-      }
+    public static void main(String[] args) {
+        int[] a = {50, 75, 100};
+        System.out.println(canConvertToEqual(a));
+        System.out.println(HCF(a));
     }
-    return a;
-  }
-
-  private static int HCF(int[] arr) {
-    int result = arr[0];
-    for (int i = 1; i < arr.length; i++) {
-      result = gcd(arr[i], result);
-    }
-
-    return result;
-  }
-
-  public static void main(String[] args) {
-    int[] a = {50, 75, 100};
-    System.out.println(canConvertToEqual(a));
-    System.out.println(HCF(a));
-  }
 }

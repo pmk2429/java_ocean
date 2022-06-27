@@ -27,32 +27,33 @@ import java.util.List;
  */
 public class IntervalListIntersections {
 
-  private static Interval[] intervalIntersections(Interval[] A, Interval[] B) {
-    List<Interval> ans = new ArrayList<>();
-    int i = 0, j = 0;
+    private static Interval[] intervalIntersections(Interval[] A, Interval[] B) {
+        List<Interval> ans = new ArrayList<>();
+        int i = 0, j = 0;
 
-    while (i < A.length && j < B.length) {
-      // Let's check if A[i] intersects B[j].
-      // lo - the start point of the intersection
-      // hi - the end point of the intersection
-      int lo = Math.max(A[i].start, B[j].start);
-      int hi = Math.min(A[i].end, B[j].end);
+        while (i < A.length && j < B.length) {
+            // Let's check if A[i] intersects B[j].
+            // lo - the start point of the intersection
+            // hi - the end point of the intersection
+            int lo = Math.max(A[i].start, B[j].start);
+            int hi = Math.min(A[i].end, B[j].end);
 
-      if (lo <= hi) {
-        ans.add(new Interval(lo, hi));
-      }
+            if (lo <= hi) {
+                ans.add(new Interval(lo, hi));
+            }
 
-      // Remove the interval with the smallest endpoint
-      if (A[i].end < B[j].end) {
-        i++;
-      } else {
-        j++;
-      }
+            // Remove the interval with the smallest endpoint
+            if (A[i].end < B[j].end) {
+                i++;
+            }
+            else {
+                j++;
+            }
+        }
+
+        return ans.toArray(new Interval[0]);
     }
 
-    return ans.toArray(new Interval[0]);
-  }
-
-  public static void main(String[] args) {
-  }
+    public static void main(String[] args) {
+    }
 }

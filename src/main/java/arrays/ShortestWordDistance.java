@@ -17,35 +17,36 @@ package arrays;
  */
 public class ShortestWordDistance {
 
-  private static int shortestDistance(String[] words, String word1, String word2) {
-    // 1. Break down problem into shortest possible abstraction
-    // 2. Solve that unit piece using algorithm
-    // 3. Extend algorithm to entire problem space
-    // 4. Mind edges
-    // 5. Test solution
-    // 6. Optimize
+    private static int shortestDistance(String[] words, String word1, String word2) {
+        // 1. Break down problem into shortest possible abstraction
+        // 2. Solve that unit piece using algorithm
+        // 3. Extend algorithm to entire problem space
+        // 4. Mind edges
+        // 5. Test solution
+        // 6. Optimize
 
-    int shortestDistance = words.length;
-    int i1 = -1, i2 = -1;
+        int shortestDistance = words.length;
+        int i1 = -1, i2 = -1;
 
-    for (int i = 0; i < words.length; i++) {
-      if (words[i].equals(word1)) {
-        i1 = i;
-      } else if (words[i].equals(word2)) {
-        i2 = i;
-      }
-      if (i1 != -1 && i2 != -1) {
-        shortestDistance = Math.min(shortestDistance, Math.abs(i2 - i1));
-      }
+        for (int i = 0; i < words.length; i++) {
+            if (words[i].equals(word1)) {
+                i1 = i;
+            }
+            else if (words[i].equals(word2)) {
+                i2 = i;
+            }
+            if (i1 != -1 && i2 != -1) {
+                shortestDistance = Math.min(shortestDistance, Math.abs(i2 - i1));
+            }
+        }
+
+        return shortestDistance;
     }
 
-    return shortestDistance;
-  }
-
-  public static void main(String[] args) {
-    String[] words = {"practice", "makes", "perfect", "coding", "makes"};
-    String word1 = "coding";
-    String word2 = "practice";
-    System.out.println(shortestDistance(words, word1, word2));
-  }
+    public static void main(String[] args) {
+        String[] words = {"practice", "makes", "perfect", "coding", "makes"};
+        String word1 = "coding";
+        String word2 = "practice";
+        System.out.println(shortestDistance(words, word1, word2));
+    }
 }

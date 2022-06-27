@@ -25,24 +25,25 @@ package arrays;
  * Output: 0
  */
 public class SearchInsertPosition {
-  private static int searchInsert(int[] nums, int target) {
-    int L = 0;
-    int R = nums.length - 1;
+    private static int searchInsert(int[] nums, int target) {
+        int L = 0;
+        int R = nums.length - 1;
 
-    while (L < R) {
-      int M = (L + R) / 2;
-      if (nums[M] < target) {
-        L = M + 1;
-      } else {
-        R = M;
-      }
+        while (L <= R) {
+            int M = (L + R) / 2;
+            if (target > nums[M]) {
+                L = M + 1;
+            }
+            else {
+                R = M - 1;
+            }
+        }
+        return L;
     }
-    return L;
-  }
 
-  public static void main(String[] args) {
-    int[] nums = {1, 3, 5, 6};
-    int target = 2;
-    System.out.println(searchInsert(nums, target));
-  }
+    public static void main(String[] args) {
+        int[] nums = {1, 3, 5, 6};
+        int target = 7;
+        System.out.println(searchInsert(nums, target));
+    }
 }

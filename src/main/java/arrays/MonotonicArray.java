@@ -29,28 +29,28 @@ package arrays;
  */
 public class MonotonicArray {
 
-  private static boolean increasing(int[] arr) {
-    for (int i = 0; i < arr.length - 1; ++i)
-      if (arr[i] >= arr[i + 1]) {
-        return false;
-      }
-    return true;
-  }
+    private static boolean increasing(int[] arr) {
+        for (int i = 0; i < arr.length - 1; ++i)
+            if (arr[i] >= arr[i + 1]) {
+                return false;
+            }
+        return true;
+    }
 
-  private static boolean decreasing(int[] arr) {
-    for (int i = 0; i < arr.length - 1; ++i)
-      if (arr[i] <= arr[i + 1]) {
-        return false;
-      }
-    return true;
-  }
+    private static boolean decreasing(int[] arr) {
+        for (int i = 0; i < arr.length - 1; ++i)
+            if (arr[i] <= arr[i + 1]) {
+                return false;
+            }
+        return true;
+    }
 
-  private static boolean isMonotonic(int[] A) {
-    return increasing(A) || decreasing(A);
-  }
+    private static boolean isMonotonic(int[] A) {
+        return increasing(A) || decreasing(A);
+    }
 
-  public static void main(String[] args) {
-    int[] a = {1, 2, 5, 4};
-    System.out.println(isMonotonic(a));
-  }
+    public static void main(String[] args) {
+        int[] a = {1, 2, 5, 4};
+        System.out.println(isMonotonic(a));
+    }
 }

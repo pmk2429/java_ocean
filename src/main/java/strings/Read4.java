@@ -12,50 +12,50 @@ package strings;
  */
 public class Read4 {
 
-  private static int read4(char[] buf) {
-    return 0;
-  }
-
-  private static char[] buffer = new char[4];
-  private static int offset = 0, bufsize = 0;
-
-  /**
-   * @param buf Destination buffer
-   * @param n   Maximum number of characters to read
-   * @return The number of characters read
-   */
-  private static int readMultiple(char[] buf, int n) {
-    int readBytes = 0;
-    boolean eof = false;
-    while (!eof && readBytes < n) {
-      if (bufsize == 0) {
-        bufsize = read4(buffer);
-        eof = bufsize < 4;
-      }
-      int bytes = Math.min(n - readBytes, bufsize);
-      System.arraycopy(buffer /* src */, offset /* srcPos */, buf /* dest */, readBytes /* destPos */, bytes /* length */);
-      offset = (offset + bytes) % 4;
-      bufsize -= bytes;
-      readBytes += bytes;
+    private static int read4(char[] buf) {
+        return 0;
     }
-    return readBytes;
-  }
 
-  private static int read(char[] buf, int n) {
-    char[] buffer = new char[4];
-    int readBytes = 0;
-    boolean eof = false;
+    private static final char[] buffer = new char[4];
+    private static int offset = 0, bufsize = 0;
 
-    while (!eof && readBytes < n) {
-      int totalRead = read4(buffer);
-      if (totalRead < 4) {
-        eof = true; // indicates end of file
-      }
-      int bytesLeft = n - readBytes;
-      int bytesToCopy = Math.min(bytesLeft, totalRead);
-      System.arraycopy(buffer, 0, buf, readBytes, bytesToCopy);
-      readBytes += bytesToCopy;
+    /**
+     * @param buf Destination buffer
+     * @param n   Maximum number of characters to read
+     * @return The number of characters read
+     */
+    private static int readMultiple(char[] buf, int n) {
+        int readBytes = 0;
+        boolean eof = false;
+        while (!eof && readBytes < n) {
+            if (bufsize == 0) {
+                bufsize = read4(buffer);
+                eof = bufsize < 4;
+            }
+            int bytes = Math.min(n - readBytes, bufsize);
+            System.arraycopy(buffer /* src */, offset /* srcPos */, buf /* dest */, readBytes /* destPos */, bytes /* length */);
+            offset = (offset + bytes) % 4;
+            bufsize -= bytes;
+            readBytes += bytes;
+        }
+        return readBytes;
     }
-    return readBytes;
-  }
+
+    private static int read(char[] buf, int n) {
+        char[] buffer = new char[4];
+        int readBytes = 0;
+        boolean eof = false;
+
+        while (!eof && readBytes < n) {
+            int totalRead = read4(buffer);
+            if (totalRead < 4) {
+                eof = true; // indicates end of file
+            }
+            int bytesLeft = n - readBytes;
+            int bytesToCopy = Math.min(bytesLeft, totalRead);
+            System.arraycopy(buffer, 0, buf, readBytes, bytesToCopy);
+            readBytes += bytesToCopy;
+        }
+        return readBytes;
+    }
 }

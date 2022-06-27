@@ -36,45 +36,51 @@ package strings;
  */
 public class LongPressedName {
 
-  private static boolean isLongPressedName(String name, String typed) {
-    boolean isLongPressed = true;
+    private static boolean isLongPressedName(String name, String typed) {
+        if (name.equals(typed)) {
+            return true;
+        }
 
-    if (name.equals(typed)) {
-      return true;
+        if (name.length() > 1000 || typed.length() > 1000) {
+            return false;
+        }
+
+        int m = name.length(), n = typed.length();
+        int i = 0, j = 0;
+
+        while (i < m && j < n) {
+            char c1 = name.charAt(i), c2 = typed.charAt(j);
+            // we are handling different chars, no!
+            if (c1 != c2) {
+                return false;
+            }
+
+            // count of consecutive c1/c2
+            int count1 = 0;
+            while (i < m && name.charAt(i) == c1) {
+                count1++;
+                i++;
+            }
+
+            // count of consecutive c1/c2
+            int count2 = 0;
+            while (j < n && typed.charAt(j) == c2) {
+                count2++;
+                j++;
+            }
+
+            if (count2 < count1) {
+                return false;
+            }
+        }
+
+        // they both reach the end
+        return i == m && j == n;
     }
 
-    if (name.length() > 1000 || typed.length() > 1000) {
-      return false;
+    public static void main(String[] args) {
+        String name = "leelee";
+        String typed = "lleeelee";
+        System.out.println(isLongPressedName(name, typed));
     }
-
-    // specify the frequency of chars in name
-    char[] typedFreq = new char[256];
-    for (int i = 0; i < typed.length(); i++) {
-      int position = typed.charAt(i);
-      typedFreq[position]++;
-    }
-
-    // now loop through the typed chars inorder to find their frequency
-    char[] nameFreq = new char[256];
-    for (int i = 0; i < name.length(); i++) {
-      int position = name.charAt(i);
-      nameFreq[position]++;
-    }
-
-    // compare two arrays and check if the frequency of chars in typed is more than or equal to that of named array
-    for (int i = 0; i < 256; i++) {
-      if (typedFreq[i] < nameFreq[i]) {
-        isLongPressed = false;
-        break;
-      }
-    }
-
-    return isLongPressed;
-  }
-
-  public static void main(String[] args) {
-    String name = "laiden";
-    String typed = "laiden";
-    System.out.println(isLongPressedName(name, typed));
-  }
 }

@@ -31,7 +31,7 @@ public class LongestSubstring {
                 }
             }
             else {
-                subStrList.add(str.charAt(i));
+                subStrList.add(currChar);
             }
             unique.append(subStrList.get(i).toString());
         }

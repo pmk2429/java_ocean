@@ -34,41 +34,41 @@ import java.util.PriorityQueue;
  */
 public class KthElementOfTwoSortedArrays {
 
-  /**
-   * Algo
-   * - Merge two sorted arrays using PriorityQueue
-   * - Loop from reverse to find the kth element
-   *
-   * @param a
-   * @param b
-   * @return
-   */
-  private static int kthElement(int[] a, int[] b, int k) {
-    PriorityQueue<Integer> sortedElements = new PriorityQueue<>();
+    /**
+     * Algo
+     * - Merge two sorted arrays using PriorityQueue
+     * - Loop from reverse to find the kth element
+     *
+     * @param a
+     * @param b
+     * @return
+     */
+    private static int kthElement(int[] a, int[] b, int k) {
+        PriorityQueue<Integer> sortedElements = new PriorityQueue<>();
 
-    for (int elem : a) {
-      sortedElements.offer(elem);
+        for (int elem : a) {
+            sortedElements.offer(elem);
+        }
+
+        for (int elem : b) {
+            sortedElements.offer(elem);
+        }
+
+        for (int i = 0; i < sortedElements.size(); i++) {
+            if (sortedElements.size() > k) {
+                sortedElements.poll();
+            }
+        }
+
+        return sortedElements.peek();
     }
 
-    for (int elem : b) {
-      sortedElements.offer(elem);
+    public static void main(String[] args) {
+        int[] arr1 = {2, 3, 6, 7, 9};
+        int[] arr2 = {1, 4, 8, 10};
+
+        int k = 5;
+
+        System.out.println(kthElement(arr1, arr2, k));
     }
-
-    for (int i = 0; i < sortedElements.size(); i++) {
-      if (sortedElements.size() > k) {
-        sortedElements.poll();
-      }
-    }
-
-    return sortedElements.peek();
-  }
-
-  public static void main(String[] args) {
-    int[] arr1 = {2, 3, 6, 7, 9};
-    int[] arr2 = {1, 4, 8, 10};
-
-    int k = 5;
-
-    System.out.println(kthElement(arr1, arr2, k));
-  }
 }
