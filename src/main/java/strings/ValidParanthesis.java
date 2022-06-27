@@ -24,33 +24,33 @@ package strings;
  */
 public class ValidParanthesis {
 
-  private static boolean isValid(String paren) {
-    if (paren == null) {
-      return false;
+    private static boolean isValid(String paren) {
+        if (paren == null) {
+            return false;
+        }
+
+        if (paren.length() <= 1 || paren.length() > 100) {
+            return false;
+        }
+
+        if (paren.charAt(0) == ')') {
+            return false;
+        }
+
+        int lo = 0, hi = 0;
+        for (char c : paren.toCharArray()) {
+            lo += c == '(' ? 1 : -1;
+            hi += c == ')' ? -1 : 1;
+            if (hi < 0) {
+                break;
+            }
+            lo = Math.max(lo, 0);
+        }
+        return lo == 0;
     }
 
-    if (paren.length() <= 1 || paren.length() > 100) {
-      return false;
+    public static void main(String[] args) {
+        String str = "(*))";
+        System.out.println(isValid(str));
     }
-
-    if (paren.charAt(0) == ')') {
-      return false;
-    }
-
-    int lo = 0, hi = 0;
-    for (char c : paren.toCharArray()) {
-      lo += c == '(' ? 1 : -1;
-      hi += c == ')' ? -1 : 1;
-      if (hi < 0) {
-        break;
-      }
-      lo = Math.max(lo, 0);
-    }
-    return lo == 0;
-  }
-
-  public static void main(String[] args) {
-    String str = "(*))";
-    System.out.println(isValid(str));
-  }
 }

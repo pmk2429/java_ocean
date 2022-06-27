@@ -24,8 +24,7 @@ public class FindExtraChar {
     private static char findExtraCharByLooping(String strA, String strB) {
         char[] allChars = new char[256];
         for (int i = 0; i < strA.length(); i++) {
-            int curAscii = strA.charAt(i);
-            allChars[curAscii]++;
+            allChars[strA.charAt(i)]++;
         }
 
         for (int i = 0; i < strB.length(); i++) {

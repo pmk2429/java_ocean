@@ -53,6 +53,7 @@ public class CheckConsecutive {
             // create temp array to hold visited flags for elements at specified indexes
             boolean[] visited = new boolean[n];
             for (int value : arr) {
+                // gives actual index for the current value
                 int position = value - min;
                 // element encountered again - already visited
                 if (visited[position]) {

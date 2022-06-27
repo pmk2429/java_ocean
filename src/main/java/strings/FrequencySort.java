@@ -1,12 +1,13 @@
 package strings;
 
 import java.util.HashMap;
+import java.util.Map;
 import java.util.PriorityQueue;
 
 public class FrequencySort {
 
     private static String frequencySort(String s) {
-        HashMap<Character, Integer> map = new HashMap<>();
+        Map<Character, Integer> map = new HashMap<>();
 
         for (Character c : s.toCharArray()) {
             map.put(c, map.getOrDefault(c, 0) + 1);
@@ -24,6 +25,7 @@ public class FrequencySort {
             char val = pq.poll();
             int freq = map.get(val);
             for (int i = 0; i < freq; i++) {
+                // creates a string with increasing order of Frequency else
                 sb.append(val);
             }
         }
@@ -32,7 +34,6 @@ public class FrequencySort {
     }
 
     public static void main(String[] args) {
-
+        System.out.println(frequencySort("pavitra"));
     }
-
 }

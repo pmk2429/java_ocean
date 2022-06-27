@@ -19,90 +19,95 @@ package strings;
  */
 public class BinaryStringOccurrence {
 
-  private static int checkConsecutiveOccurrenceSimple(String binaryStr) {
-    int isValid = -1;
+    private static int checkConsecutiveOccurrenceSimple(String binaryStr) {
+        int isValid = -1;
 
-    if (binaryStr == null) {
-      return isValid;
-    }
-
-    if (binaryStr.length() == 0) {
-      return isValid;
-    }
-
-    String pattern = "^[a|b]*$";
-    if (!binaryStr.matches(pattern)) {
-      return isValid;
-    }
-
-    int i = 0;
-    int aLength = 0, bLength = 0;
-    while (i < binaryStr.length()) {
-      char curChar = binaryStr.charAt(i);
-      if (curChar == 'a') {
-        aLength++;
-      }
-
-      if (curChar == 'b') {
-        bLength++;
-      }
-
-      // if both are adjusted based on our needs
-      if (aLength >= 1) { // this branching will prevent compiler from running into else condition
-        if (bLength == 2) {
-          isValid = 1;
-          aLength = bLength = 0;
+        if (binaryStr == null) {
+            return isValid;
         }
-      } else {
-        isValid = -1;
-      }
-      i++;
-    }
 
-    return isValid;
-  }
-
-  private static int checkConsecutiveOccurrence(String binaryStr) {
-    int isValid = -1;
-    // 3) Consider edge/corner cases
-
-    // 1) Analyze and develop algo for smallest possible unit of problem
-    int i = 0;
-    int bLength = 0;
-    boolean aExists = false;
-    while (i < binaryStr.length()) {
-      char curChar = binaryStr.charAt(i);
-      if (curChar == 'a' || curChar == 'b') {
-        if (curChar == 'a' && !aExists) {
-          aExists = true;
-        } else if (curChar == 'b' && aExists) { // this means that we are now looking for two consecutive 'b' chars
-          if (binaryStr.charAt(i - 1) == 'b' && bLength == 1) {
-            isValid = 1;
-            aExists = false;
-            bLength = 0;
-          } else {
-            bLength++;
-            isValid = -1;
-          }
-        } else {
-          isValid = -1;
+        if (binaryStr.length() == 0) {
+            return isValid;
         }
-      } else {
-        isValid = -1;
-        break;
-      }
-      i++;
+
+        String pattern = "^[a|b]*$";
+        if (!binaryStr.matches(pattern)) {
+            return isValid;
+        }
+
+        int i = 0;
+        int aLength = 0, bLength = 0;
+        while (i < binaryStr.length()) {
+            char curChar = binaryStr.charAt(i);
+            if (curChar == 'a') {
+                aLength++;
+            }
+
+            if (curChar == 'b') {
+                bLength++;
+            }
+
+            // if both are adjusted based on our needs
+            if (aLength >= 1) { // this branching will prevent compiler from running into else condition
+                if (bLength == 2) {
+                    isValid = 1;
+                    aLength = bLength = 0;
+                }
+            }
+            else {
+                isValid = -1;
+            }
+            i++;
+        }
+
+        return isValid;
     }
 
-    // 2) Extend algo to entire problem set
+    private static int checkConsecutiveOccurrence(String binaryStr) {
+        int isValid = -1;
+        // 3) Consider edge/corner cases
 
-    // 4) Optimize
+        // 1) Analyze and develop algo for smallest possible unit of problem
+        int i = 0;
+        int bLength = 0;
+        boolean aExists = false;
+        while (i < binaryStr.length()) {
+            char curChar = binaryStr.charAt(i);
+            if (curChar == 'a' || curChar == 'b') {
+                if (curChar == 'a' && !aExists) {
+                    aExists = true;
+                }
+                else if (curChar == 'b' && aExists) { // this means that we are now looking for two consecutive 'b' chars
+                    if (binaryStr.charAt(i - 1) == 'b' && bLength == 1) {
+                        isValid = 1;
+                        aExists = false;
+                        bLength = 0;
+                    }
+                    else {
+                        bLength++;
+                        isValid = -1;
+                    }
+                }
+                else {
+                    isValid = -1;
+                }
+            }
+            else {
+                isValid = -1;
+                break;
+            }
+            i++;
+        }
 
-    return isValid;
-  }
+        // 2) Extend algo to entire problem set
 
-  public static void main(String[] args) {
-    String binaryStr = "abbaaabbabba";
-    System.out.println(checkConsecutiveOccurrenceSimple(binaryStr));
-  }
+        // 4) Optimize
+
+        return isValid;
+    }
+
+    public static void main(String[] args) {
+        String binaryStr = "abbaaabbabba";
+        System.out.println(checkConsecutiveOccurrenceSimple(binaryStr));
+    }
 }

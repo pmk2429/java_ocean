@@ -41,7 +41,7 @@ public class FindUniqueChars {
     }
 
     // Does not maintain the order of characters
-    private static String distinctCharsConstantSpace(String str) {
+    private static String distinctCharsO1Space(String str) {
         StringBuilder sbr = new StringBuilder();
         char[] allChars = new char[256];
         for (int i = 0; i < str.length(); i++) {

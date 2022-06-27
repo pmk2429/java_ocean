@@ -1,7 +1,7 @@
 package strings;
 
 /**
- * Lexicographically largest string possible consisting of at most K consecutive similar characters
+ * Lexicographically the largest string possible consisting of at most K consecutive similar characters.
  * Given a string S and an integer K, the task is to generate lexicographically the largest string possible from the
  * given string, by removing characters also, that consists of at most K consecutive similar characters.
  * <p>
@@ -20,10 +20,10 @@ public class LexicographicalOrder {
     private static String newString(String originalLabel, int charLimit) {
         int n = originalLabel.length();
         // Stores the frequency of characters
-        int[] charset = new int[26];
+        int[] charCount = new int[26];
 
         for (int i = 0; i < n; i++) {
-            charset[originalLabel.charAt(i) - 'a']++;
+            charCount[originalLabel.charAt(i) - 'a']++;
         }
 
         // Stores the resultant string
@@ -32,16 +32,16 @@ public class LexicographicalOrder {
         for (int i = 25; i >= 0; i--) {
             int count = 0;
             // Append larger character
-            while (charset[i] > 0) {
+            while (charCount[i] > 0) {
                 newString.append((char) (i + 'a'));
                 // Decrease count in charset
-                charset[i]--;
+                charCount[i]--;
                 // Increase count
                 count++;
                 // Check if count reached to charLimit
-                if (charset[i] > 0 && count == charLimit) {
+                if (charCount[i] > 0 && count == charLimit) {
                     // Find nearest lower char
-                    Character next = nextAvailableChar(charset, i);
+                    Character next = nextAvailableChar(charCount, i);
                     // If no character can be appended
                     if (next == null) {
                         return newString.toString();

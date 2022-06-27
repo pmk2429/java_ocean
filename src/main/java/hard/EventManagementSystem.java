@@ -44,99 +44,99 @@ Observable > Observer (employeed, people)
 // Subscribing parties to inform with message
 
 class Solution {
-  public static void main(String[] args) {
-    EventManagementSystem emsObservable = new EventManagementSystem();
-    emsObservable.addListener(new Listener());
+    public static void main(String[] args) {
+        EventManagementSystem emsObservable = new EventManagementSystem();
+        emsObservable.addListener(new Listener());
 
-    Event event = new Event("Traffic", 10);
-    emsObservable.addEvent(event);
-    // output Traffic
+        Event event = new Event("Traffic", 10);
+        emsObservable.addEvent(event);
+        // output Traffic
 
-    Event earthQuake = new Event("Earthquake", 100);
-    emsObservable.addEvent(earthQuake);
-    // output Earthquake
+        Event earthQuake = new Event("Earthquake", 100);
+        emsObservable.addEvent(earthQuake);
+        // output Earthquake
 
-    Event wildFire = new Event("Wild fire", 20);
-    emsObservable.addEvent(wildFire);
-    // no output
+        Event wildFire = new Event("Wild fire", 20);
+        emsObservable.addEvent(wildFire);
+        // no output
 
-    emsObservable.removeEvent(earthQuake);
-    emsObservable.removeEvent(event);
-    emsObservable.removeEvent(wildFire);
-  }
+        emsObservable.removeEvent(earthQuake);
+        emsObservable.removeEvent(event);
+        emsObservable.removeEvent(wildFire);
+    }
 }
 
 class Event {
-  String type;
-  int priority;
+    String type;
+    int priority;
 
-  public Event(String type, int priority) {
-    this.type = type;
-    this.priority = priority;
-  }
+    public Event(String type, int priority) {
+        this.type = type;
+        this.priority = priority;
+    }
 }
 
 interface EventMessage {
-  void notify(Event event);
+    void notify(Event event);
 }
 
 class Listener implements EventMessage {
-  @Override
-  public void notify(Event event) {
-    System.out.println(event.type);
-  }
+    @Override
+    public void notify(Event event) {
+        System.out.println(event.type);
+    }
 }
 
 class EventManagementSystem {
-  private static Comparator<Event> eventsComparator = Comparator.comparingInt(e1 -> -e1.priority);
+    private static Comparator<Event> eventsComparator = Comparator.comparingInt(e1 -> -e1.priority);
 
-  private static PriorityQueue<Event> eventsQueue = new PriorityQueue<>(eventsComparator);
-  private static List<Listener> eventListeners = new ArrayList<>();
+    private static PriorityQueue<Event> eventsQueue = new PriorityQueue<>(eventsComparator);
+    private static List<Listener> eventListeners = new ArrayList<>();
 
-  public void addEvent(Event newEvent) {
+    public void addEvent(Event newEvent) {
 
-    // main DNF
-    eventsQueue.offer(newEvent);
+        // main DNF
+        eventsQueue.offer(newEvent);
 
-    Event topPriorityEvent = this.getTopPriorityEvent();
-    if (topPriorityEvent.priority == newEvent.priority) {
-      notify(newEvent);
+        Event topPriorityEvent = this.getTopPriorityEvent();
+        if (topPriorityEvent.priority == newEvent.priority) {
+            notify(newEvent);
+        }
+
+        //else if (topPriorityEvent.priority < newEvent.priority) {
+        //  notify(newEvent);
+        //}
+
+        // log the output
     }
 
-    //else if (topPriorityEvent.priority < newEvent.priority) {
-    //  notify(newEvent);
-    //}
-
-    // log the output
-  }
-
-  public void addListener(Listener listener) {
-    eventListeners.add(listener);
-  }
-
-  public void notify(Event highestPriorityEvent) {
-    for (Listener listener : eventListeners) {
-      listener.notify(highestPriorityEvent);
+    public void addListener(Listener listener) {
+        eventListeners.add(listener);
     }
-  }
 
-  public Event getTopPriorityEvent() {
-    // Edge cases
-    return eventsQueue.peek();
-    // log the output
-  }
+    public void notify(Event highestPriorityEvent) {
+        for (Listener listener : eventListeners) {
+            listener.notify(highestPriorityEvent);
+        }
+    }
 
-  public Event removeEvent() {
-    // Edge cases
-    Event topEvent = eventsQueue.poll();
-    // log the output
-    return topEvent;
-  }
+    public Event getTopPriorityEvent() {
+        // Edge cases
+        return eventsQueue.peek();
+        // log the output
+    }
 
-  public boolean removeEvent(Event event) {
-    // Edge cases
-    return eventsQueue.remove(event);
-    // log the output
-  }
+    public Event removeEvent() {
+        // Edge cases
+        Event topEvent = eventsQueue.poll();
+        // log the output
+        return topEvent;
+    }
+
+    public boolean removeEvent(Event event) {
+        // Edge cases
+        return eventsQueue.remove(event);
+        // log the output
+    }
 
 }
