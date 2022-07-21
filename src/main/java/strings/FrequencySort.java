@@ -13,7 +13,10 @@ public class FrequencySort {
             map.put(c, map.getOrDefault(c, 0) + 1);
         }
 
-        PriorityQueue<Character> pq = new PriorityQueue<>((c1, c2) -> map.get(c2) - map.get(c1));
+        //PriorityQueue<Character> pq2 = new PriorityQueue<>((c1, c2) -> map.get(c2) - map.get(c1));
+        PriorityQueue<Character> pq = new PriorityQueue<>((c1, c2) -> map.get(c1).equals(map.get(c2))
+            ? c1.compareTo(c2)
+            : map.get(c2) - map.get(c1));
 
         for (Character c : map.keySet()) {
             pq.offer(c);

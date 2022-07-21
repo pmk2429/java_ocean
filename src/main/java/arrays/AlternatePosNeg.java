@@ -21,43 +21,43 @@ import java.util.Arrays;
  */
 public class AlternatePosNeg {
 
-  // move all negative integers to start of the array
-  private static int[] segregate(int[] arr) {
-    int j = 0;
-    for (int i = 0; i < arr.length; i++) {
-      if (arr[i] < 0) {
-        // swap
-        int temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
-        j++;
-      }
-    }
-    return arr;
-  }
-
-  private static int[] alternate(int[] arr) {
-    int length = arr.length;
-    int[] segArr = segregate(arr);
-    int neg = 0;
-    int pos = 0;
-
-    while (arr[pos] < 0) {
-      pos++;
+    // move all negative integers to start of the array
+    private static int[] segregate(int[] arr) {
+        int j = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] < 0) {
+                // swap
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+                j++;
+            }
+        }
+        return arr;
     }
 
-    int[] res = new int[arr.length];
+    private static int[] alternate(int[] arr) {
+        int length = arr.length;
+        int[] segArr = segregate(arr);
+        int neg = 0;
+        int pos = 0;
 
-    int i = 0;
-    while (i < length) {
-      res[i++] = segArr[neg++];
-      res[i++] = segArr[pos++];
+        while (segArr[pos] < 0) {
+            pos++;
+        }
+
+        int[] res = new int[length];
+
+        int i = 0;
+        while (i < length) {
+            res[i++] = segArr[neg++];
+            res[i++] = segArr[pos++];
+        }
+
+        return res;
     }
 
-    return res;
-  }
-
-  public static void main(String[] args) {
-    System.out.println(Arrays.toString(alternate(new int[]{1, 2, 3, -4, -1, 4})));
-  }
+    public static void main(String[] args) {
+        System.out.println(Arrays.toString(alternate(new int[]{1, 2, 3, -4, -1, 4})));
+    }
 }

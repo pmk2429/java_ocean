@@ -26,39 +26,40 @@ package numbers;
  */
 public class CountAndSay {
 
-  private static String nextString(String str) {
-    int strLen = str.length();
-    StringBuilder next = new StringBuilder();
-    int i = 0;
-    while (i < strLen) {
-      int j = i;
-      int count = 0;
-      char currentNumber = str.charAt(i);
-      while (j < strLen && str.charAt(j) == currentNumber) {
-        j++;
-        count++;
-      }
-      next.append(count).append(currentNumber);
-      i = j;
+    private static String nextString(String str) {
+        int strLen = str.length();
+        StringBuilder next = new StringBuilder();
+        int i = 0;
+        while (i < strLen) {
+            int j = i;
+            int count = 0;
+            char currentNumber = str.charAt(i);
+            while (j < strLen && str.charAt(j) == currentNumber) {
+                j++;
+                count++;
+            }
+            next.append(count).append(currentNumber);
+            i = j;
+        }
+        return next.toString();
     }
-    return next.toString();
-  }
 
-  private static String countAndSay(int num) {
-    String csStr = "1";
-    if (num <= 1) {
-      return csStr;
-    } else {
-      for (int i = 2; i <= num; i++) {
-        String next = nextString(csStr);
-        csStr = next;
-      }
+    private static String countAndSay(int num) {
+        String csStr = "1";
+        if (num <= 1) {
+            return csStr;
+        }
+        else {
+            for (int i = 2; i <= num; i++) {
+                String next = nextString(csStr);
+                csStr = next;
+            }
+        }
+        return csStr;
     }
-    return csStr;
-  }
 
-  public static void main(String[] args) {
-    int n = 4;
-    System.out.println(countAndSay(n));
-  }
+    public static void main(String[] args) {
+        int n = 4;
+        System.out.println(countAndSay(n));
+    }
 }
