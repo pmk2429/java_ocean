@@ -47,7 +47,7 @@ public class FindElementInRotatedArray {
     /**
      * Performs Binary Search
      */
-    private static int search(int left, int right) {
+    private static int binarySearchIndex(int left, int right) {
         while (left <= right) {
             int pivot = (left + right) / 2;
             if (nums[pivot] == target) {
@@ -65,7 +65,7 @@ public class FindElementInRotatedArray {
         return -1;
     }
 
-    private static int search(int[] arr, int tgt) {
+    private static int binarySearch(int[] arr, int tgt) {
         nums = arr;
         target = tgt;
 
@@ -87,18 +87,19 @@ public class FindElementInRotatedArray {
         }
         // if array is not rotated, search in the entire array
         if (rotate_index == 0)
-            return search(0, n - 1);
+            return binarySearchIndex(0, n - 1);
+
         if (target < nums[0]) {
-            return search(rotate_index, n - 1);
+            return binarySearchIndex(rotate_index, n - 1);
         }
         else {
-            return search(0, rotate_index);
+            return binarySearchIndex(0, rotate_index);
         }
     }
 
     public static void main(String[] args) {
         int[] a = {4, 5, 6, 7, 0, 1, 2};
         int target = 0;
-        System.out.println(search(a, target));
+        System.out.println(binarySearch(a, target));
     }
 }

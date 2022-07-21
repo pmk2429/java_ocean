@@ -17,45 +17,56 @@ import java.util.Stack;
  * s = "2[abc]3[cd]ef", return "abcabccdcdcdef".
  */
 public class DecodeString {
-  public String decodeString(String s) {
-    if (s == null || s.length() == 0) {
-      return "";
+    private static String decodeString(String s) {
+        if (s == null || s.length() == 0) {
+            return "";
+        }
+
+        int n = s.length();
+        Stack<Integer> countStack = new Stack<>();
+        Stack<String> wordStack = new Stack<>();
+        int num = 0;
+        for (int i = 0; i < n; i++) {
+            char c = s.charAt(i);
+            if (Character.isDigit(c)) {
+                num = num * 10 + c - '0';
+            }
+            else if (c == '[') {
+                countStack.push(num);
+                wordStack.push("");
+                num = 0;
+            }
+            else if (c == ']') {
+                int iterations = countStack.pop();
+                String poppedChar = wordStack.pop();
+                StringBuilder next = new StringBuilder();
+                while (iterations-- > 0) {
+                    next.append(poppedChar);
+                }
+                if (!wordStack.isEmpty()) {
+                    wordStack.push(wordStack.pop() + next);
+                }
+                else {
+                    wordStack.push(next.toString());
+                }
+            }
+            else {
+                if (!wordStack.isEmpty()) {
+                    wordStack.push(wordStack.pop() + c);
+                }
+                else {
+                    wordStack.push("" + c);
+                }
+            }
+        }
+
+        return wordStack.peek();
     }
 
-    int n = s.length();
-    Stack<Integer> countStack = new Stack<>();
-    Stack<String> wordStack = new Stack<>();
-    int num = 0;
-    for (int i = 0; i < n; i++) {
-      char c = s.charAt(i);
-      if (Character.isDigit(c)) {
-        num = num * 10 + c - '0';
-      } else if (c == '[') {
-        countStack.push(num);
-        wordStack.push("");
-        num = 0;
-      } else if (c == ']') {
-        int iter = countStack.pop();
-        String poppedChar = wordStack.pop();
-        StringBuilder next = new StringBuilder();
-        while (iter-- > 0) {
-          next.append(poppedChar);
-        }
-        if (!wordStack.isEmpty()) {
-          wordStack.push(wordStack.pop() + next.toString());
-        } else {
-          wordStack.push(next.toString());
-        }
-      } else {
-        if (!wordStack.isEmpty()) {
-          wordStack.push(wordStack.pop() + c);
-        } else {
-          wordStack.push("" + c);
-        }
-      }
+    public static void main(String[] args) {
+        System.out.println("3[a]2[bc]" + " --> " + decodeString("3[a]2[bc]"));
+        System.out.println("3[a2[c]]" + " --> " + decodeString("3[a2[c]]"));
+        System.out.println("2[abc]3[cd]ef" + " --> " + decodeString("2[abc]3[cd]ef"));
     }
-
-    return wordStack.peek();
-  }
 }
 

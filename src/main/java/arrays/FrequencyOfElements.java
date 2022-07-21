@@ -32,7 +32,7 @@ public class FrequencyOfElements {
 
       // If the elementIndex has an element that is not
       // processed yet, then first store that element
-      // to arr[i] so that we don't loose anything.
+      // to arr[i] so that we don't lose anything.
       if (arr[elementIndex] > 0) {
         arr[i] = arr[elementIndex];
 

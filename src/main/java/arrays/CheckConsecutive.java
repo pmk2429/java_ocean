@@ -43,8 +43,6 @@ public class CheckConsecutive {
             return false;
         }
 
-        // int min = getMin(arr);
-        // int max = getMax(arr);
         int min = Collections.min(Arrays.stream(arr).boxed().collect(Collectors.toList()));
         int max = Collections.max(Arrays.stream(arr).boxed().collect(Collectors.toList()));
 

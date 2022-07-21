@@ -9,7 +9,7 @@ import java.util.Map;
  * You may assume that each input would have exactly one solution, and you may not use the same element twice.
  * <p>
  * Example:
- * Given nums = [5, 8, 2, 7, 11, 15], target = 9,
+ * Given nums = [5, 8, 2, 7, 11, 15], target = 9
  * <p>
  * Because nums[2] + nums[3] = 2 + 7 = 9,
  * return [2, 3].

@@ -55,6 +55,20 @@ public class FirstUniqueCharacter {
         return firstUniqueIndex;
     }
 
+    public static char firstUniqueCharReturnChar(String s) {
+        int[] charCount = new int[26];
+        char[] chars = s.toCharArray();
+        for (char c : chars) {
+            charCount[c - 'a']++;
+        }
+        for (int i = 0; i < chars.length; i++) {
+            if (charCount[chars[i] - 'a'] == 1) {
+                return (char) i;
+            }
+        }
+        return '\0';
+    }
+
     public static int firstUniqueCharOptimized(String s) {
         int[] charCount = new int[26];
         char[] chars = s.toCharArray();

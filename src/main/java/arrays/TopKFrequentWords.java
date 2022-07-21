@@ -2,8 +2,6 @@ package arrays;
 
 import java.util.*;
 import java.util.Map.Entry;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -85,10 +83,9 @@ public class TopKFrequentWords {
         }
         List<String> candidates = new ArrayList<>(count.keySet());
         Collections.sort(candidates,
-            (w1, w2) ->
-                count.get(w1).equals(count.get(w2))
-                    ? w1.compareTo(w2)
-                    : count.get(w2) - count.get(w1));
+            (w1, w2) -> count.get(w1).equals(count.get(w2))
+                ? w1.compareTo(w2)
+                : count.get(w2) - count.get(w1));
 
         return candidates.subList(0, k);
     }
@@ -100,6 +97,7 @@ public class TopKFrequentWords {
             count.put(word, count.getOrDefault(word, 0) + 1);
         }
 
+        // either  by natural ordering or the ones whose count is highest
         PriorityQueue<String> heap = new PriorityQueue<>((w1, w2) -> count.get(w1).equals(count.get(w2))
             ? w1.compareTo(w2)
             : count.get(w2) - count.get(w1));

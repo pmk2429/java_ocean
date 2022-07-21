@@ -19,9 +19,9 @@ public class FindSmallest {
 
     private static int findSmallestUnsorted(int[] arr) {
         int smallestPositive = Integer.MAX_VALUE;
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] > 0 && arr[i] < smallestPositive) {
-                smallestPositive = arr[i];
+        for (int num : arr) {
+            if (num > 0 && num < smallestPositive) {
+                smallestPositive = num;
             }
         }
         return smallestPositive;

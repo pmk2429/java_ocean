@@ -58,5 +58,7 @@ public class AllSubstrings {
         allSubstrings();
         System.out.println("--------------");
         allUniqueSubstrings();
+        System.out.println("--------------");
+        System.out.println(longestUniqueSubstring());
     }
 }

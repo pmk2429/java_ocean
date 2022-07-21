@@ -21,57 +21,60 @@ import java.util.Arrays;
  */
 public class MedianTwoSortedArrays {
 
-  private static double median(int[] a, int[] b) {
-    if (a == null || b == null || a.length == 0 || b.length == 0) {
-      return -1;
+    private static double median(int[] a, int[] b) {
+        if (a == null || b == null || a.length == 0 || b.length == 0) {
+            return -1;
+        }
+
+        int[] union = new int[a.length + b.length];
+
+        int m = a.length;
+        int n = b.length;
+        int i = 0, j = 0, k = 0;
+
+        while (i < m && j < n) {
+            if (a[i] < b[j]) {
+                union[k++] = a[i++];
+            }
+            else if (b[j] < a[i]) {
+                union[k++] = b[j++];
+            }
+            else { // handles the case where there are duplicates
+                union[k] = a[i];
+                i++;
+                j++;
+                k++;
+            }
+        }
+
+        // add remaining elements
+        while (i < m) {
+            union[k++] = a[i++];
+        }
+
+        // add remaining elements
+        while (j < n) {
+            union[k++] = b[j++];
+        }
+
+        // now we have the union array so simply find the median based on length of array
+        int size = union.length;
+        int mid = (size - 1) / 2;
+        double median;
+        if (size % 2 == 0) {
+            median = (double) (union[mid] + union[mid + 1]) / 2;
+        }
+        else {
+            median = union[mid];
+        }
+
+        System.out.println(Arrays.toString(union));
+        return median;
     }
 
-    int[] union = new int[a.length + b.length];
-
-    int m = a.length;
-    int n = b.length;
-    int i = 0, j = 0, k = 0;
-
-    while (i < m && j < n) {
-      if (a[i] < b[j]) {
-        union[k++] = a[i++];
-      } else if (b[j] < a[i]) {
-        union[k++] = b[j++];
-      } else { // handles the case where there are duplicates
-        union[k] = a[i];
-        k++;
-        i++;
-        j++;
-      }
+    public static void main(String[] args) {
+        int[] a = {1, 6};
+        int[] b = {3, 20};
+        System.out.println(median(a, b));
     }
-
-    // add remaining elements
-    while (i < m) {
-      union[k++] = a[i++];
-    }
-
-    // add remaining elements
-    while (j < n) {
-      union[k++] = b[j++];
-    }
-
-    // now we have the union array so simply find the median based on length of array
-    int size = union.length;
-    int mid = (size - 1) / 2;
-    double median = 0;
-    if (size % 2 == 0) {
-      median = (double) (union[mid] + union[mid + 1]) / 2;
-    } else {
-      median = union[mid];
-    }
-
-    System.out.println(Arrays.toString(union));
-    return median;
-  }
-
-  public static void main(String[] args) {
-    int[] a = {1, 6};
-    int[] b = {3, 20};
-    System.out.println(median(a, b));
-  }
 }
