@@ -41,25 +41,25 @@ package arrays.subs;
  * ^^^
  */
 public class Subsequences {
-  private static int numDistinct(String s, String t) {
-    if (s == null || t == null || t.length() > s.length()) return 0;
-    int sLen = s.length(), tLen = t.length();
-    int[] counts = new int[sLen + 1];
-    for (int i = 0; i <= sLen; ++i) counts[i] = 1;
-    for (int ti = 1; ti <= tLen; ++ti) {
-      int pre = 0;
-      for (int si = 1; si <= sLen; ++si) {
-        int preT = counts[si];
-        if (t.charAt(ti - 1) == s.charAt(si - 1)) {
-          counts[si] = counts[si - 1] + pre;
+    private static int numDistinct(String s, String t) {
+        if (s == null || t == null || t.length() > s.length()) return 0;
+        int sLen = s.length(), tLen = t.length();
+        int[] counts = new int[sLen + 1];
+        for (int i = 0; i <= sLen; ++i) counts[i] = 1;
+        for (int ti = 1; ti <= tLen; ++ti) {
+            int pre = 0;
+            for (int si = 1; si <= sLen; ++si) {
+                int preT = counts[si];
+                if (t.charAt(ti - 1) == s.charAt(si - 1)) {
+                    counts[si] = counts[si - 1] + pre;
+                }
+                else {
+                    counts[si] = (si == 1 ? 0 : counts[si - 1]);
+                }
+                pre = preT;
+            }
+            counts[0] = 0;
         }
-        else {
-          counts[si] = (si == 1 ? 0 : counts[si - 1]);
-        }
-        pre = preT;
-      }
-      counts[0] = 0;
+        return counts[sLen];
     }
-    return counts[sLen];
-  }
 }

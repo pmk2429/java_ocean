@@ -64,6 +64,7 @@ public class DecodeString {
     }
 
     public static void main(String[] args) {
+        System.out.println("3[ac]" + " --> " + decodeString("3[ac]"));
         System.out.println("3[a]2[bc]" + " --> " + decodeString("3[a]2[bc]"));
         System.out.println("3[a2[c]]" + " --> " + decodeString("3[a2[c]]"));
         System.out.println("2[abc]3[cd]ef" + " --> " + decodeString("2[abc]3[cd]ef"));

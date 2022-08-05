@@ -1,8 +1,6 @@
 package arrays;
 
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.stream.Collectors;
 
 /**
  * Check if array elements are consecutive
@@ -43,8 +41,8 @@ public class CheckConsecutive {
             return false;
         }
 
-        int min = Collections.min(Arrays.stream(arr).boxed().collect(Collectors.toList()));
-        int max = Collections.max(Arrays.stream(arr).boxed().collect(Collectors.toList()));
+        int min = Arrays.stream(arr).min().getAsInt();
+        int max = Arrays.stream(arr).max().getAsInt();
 
         // for a consecutive array of length n, the difference between max and min should yield length of array
         if (max - min + 1 == n) {

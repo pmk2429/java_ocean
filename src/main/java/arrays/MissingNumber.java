@@ -2,7 +2,6 @@ package arrays;
 
 import java.util.Arrays;
 import java.util.BitSet;
-import java.util.stream.IntStream;
 
 /**
  * Find Missing Number(s)
@@ -16,7 +15,7 @@ public class MissingNumber {
     // missing number in an unsorted array
     private static int findMissing(int[] arr, int totalCount) {
         int nSum = totalCount * (totalCount + 1) / 2;
-        int actualSum = IntStream.of(arr).sum();
+        int actualSum = Arrays.stream(arr).sum();
         return nSum - actualSum;
     }
 
@@ -50,21 +49,37 @@ public class MissingNumber {
         }
     }
 
-    public int missingNumber(int[] nums) {
-        int a = 0, i;
+    /**
+     * findMissingNumber(int [], int, int) method is used to find the
+     * missing number from an array of integers.
+     * It does the finding by adding all the numbers in a specific range,
+     * and then it will add all the numbers in the actual array.
+     * Finally, the difference between the actual sum i.e. the total of
+     * all the numbers in the actual array(start to end) and the total
+     * of all the numbers in the array yields the missing number.
+     */
+    private static int findMissingNumber(int[] nums) {
+        int sum = nums.length;
+        for (int i = 0; i < nums.length; i++)
+            sum += i - nums[i];
+        return sum;
+    }
+
+    private static int missingNumberXOR(int[] nums) {
+        int xor = 0, i = 0;
         for (i = 0; i < nums.length; i++) {
-            a = a ^ i ^ nums[i];
+            xor = xor ^ i ^ nums[i];
         }
 
-        return a ^ i;
+        return xor ^ i;
     }
 
     public static void main(String[] args) {
-        int a[] = new int[]{1, 2, 3, 4, 6, 7, 8, 9, 10};
+        int[] a = new int[]{1, 2, 3, 4, 6, 7, 8, 9, 10};
         System.out.println("Missing # in an array:");
         System.out.println(findMissing(a, 10));
 
-        int b[] = new int[]{1, 2, 3, 4, 6, 7, 9, 10};
+        int[] b = new int[]{1, 2, 3, 4, 6, 7, 9, 10};
         System.out.println("\nAll missing #s in an array:");
         findMultipleMissing(b, 10);
 

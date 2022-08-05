@@ -23,26 +23,27 @@ import java.util.Arrays;
  */
 public class ReplaceWithSmallestOnLeft {
 
-  // O(1) Auxiliary space and O(n) time
-  private static int[] replaceWithSmallestOnLeft(int[] arr) {
-    // MIN value initialised to element at 0th index
-    int min_ele = arr[0];
-    arr[0] = -1;
+    // O(1) Auxiliary space and O(n) time
+    private static int[] replaceWithSmallestOnLeft(int[] arr) {
+        // MIN value initialised to element at 0th index
+        int minEle = arr[0];
+        arr[0] = -1;
 
-    for (int i = 1; i < arr.length; ++i) {
-      if (min_ele < arr[i]) {
-        arr[i] = min_ele;
-      } else {
-        int temp = arr[i];
-        arr[i] = min_ele;
-        min_ele = temp;
-      }
+        for (int i = 1; i < arr.length; ++i) {
+            if (minEle < arr[i]) {
+                arr[i] = minEle;
+            }
+            else {
+                int temp = arr[i];
+                arr[i] = minEle;
+                minEle = temp;
+            }
+        }
+        return arr;
     }
-    return arr;
-  }
 
-  public static void main(String[] args) {
-    int arr[] = {4, 5, 2, 1, 7, 6};
-    System.out.println(Arrays.toString(replaceWithSmallestOnLeft(arr)));
-  }
+    public static void main(String[] args) {
+        int[] arr = {4, 5, 2, 1, 7, 6};
+        System.out.println(Arrays.toString(replaceWithSmallestOnLeft(arr)));
+    }
 }

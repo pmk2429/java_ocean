@@ -25,21 +25,18 @@ import java.util.Arrays;
  */
 public class ReplaceWithSum {
 
-  private static void replaceWithSum(int[] arr) {
-    int sumArr[] = new int[arr.length];
-    int sum = 0;
-    for (int i = 0; i < arr.length; i++) {
-      sum += arr[i];
+    private static void replaceWithSum(int[] arr) {
+        int[] sumArr = new int[arr.length];
+        int sum = Arrays.stream(arr).sum();
+
+        for (int i = 0; i < arr.length; i++) {
+            sumArr[i] = sum - arr[i];
+        }
+        System.out.println(Arrays.toString(sumArr));
     }
 
-    for (int i = 0; i < arr.length; i++) {
-      sumArr[i] = sum - arr[i];
+    public static void main(String[] args) {
+        int[] arr = new int[]{6, 8, 32, 12, 14, 10, 25};
+        replaceWithSum(arr);
     }
-    System.out.println(Arrays.toString(sumArr));
-  }
-
-  public static void main(String[] args) {
-    int arr[] = new int[]{6, 8, 32, 12, 14, 10, 25};
-    replaceWithSum(arr);
-  }
 }

@@ -20,7 +20,6 @@ public class ClosestGreaterElement {
     /**
      * An efficient solution is to use Self Balancing BST.
      * In a Self Balancing BST, we can do both insert and closest greater operations in O(Log n) time.
-     *
      */
     private static int[] closestGreater(int[] arr) {
         int[] ans = new int[arr.length];

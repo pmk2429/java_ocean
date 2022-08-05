@@ -63,9 +63,9 @@ public class LetterCombination {
         String s1 = phone.get(num.substring(0, 1));
         String s2 = phone.get(num.substring(1));
 
-        for (int c = 0; c < s1.length(); c++) {
-            for (int i = 0; i < s2.length(); i++) {
-                String sub = String.valueOf(s1.charAt(c)) + String.valueOf(s2.charAt(i));
+        for (int i = 0; i < s1.length(); i++) {
+            for (int j = 0; j < s2.length(); j++) {
+                String sub = String.valueOf(s1.charAt(i)) + String.valueOf(s2.charAt(j));
                 combos.add(sub);
             }
         }

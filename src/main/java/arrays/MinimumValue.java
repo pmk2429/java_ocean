@@ -18,30 +18,31 @@ package arrays;
  */
 public class MinimumValue {
 
-  // the point at which arr[j] < arr[i], return arr[j]
-  private static int findSmallestInRotatedSortedArray(int[] arr) {
-    int smallest = Integer.MAX_VALUE;
-    int i = 0, j;
-    while (i < arr.length) {
-      j = i + 1;
-      if (j < arr.length) {
-        if (arr[i] > arr[j]) {
-          smallest = arr[j];
-        } else if (arr[i] < arr[j] && arr[i] < smallest) {
-          smallest = arr[i];
+    // the point at which arr[j] < arr[i], return arr[j]
+    private static int findSmallestInRotatedSortedArray(int[] arr) {
+        int smallest = Integer.MAX_VALUE;
+        int i = 0, j;
+        while (i < arr.length) {
+            j = i + 1;
+            if (j < arr.length) {
+                if (arr[i] > arr[j]) {
+                    smallest = arr[j];
+                }
+                else if (arr[i] < arr[j] && arr[i] < smallest) {
+                    smallest = arr[i];
+                }
+            }
+            i++;
         }
-      }
-      i++;
+        return smallest;
     }
-    return smallest;
-  }
 
-  public static void main(String[] args) {
-    int arr[] = {5, 6, 1, 2, 3, 4};
-    int arr1[] = {4, 3, 2};
-    int arr2[] = {1, 2, 3, 4};
-    System.out.println(findSmallestInRotatedSortedArray(arr));
-    System.out.println(findSmallestInRotatedSortedArray(arr1));
-    System.out.println(findSmallestInRotatedSortedArray(arr2));
-  }
+    public static void main(String[] args) {
+        int[] arr = {5, 6, 1, 2, 3, 4};
+        int[] arr1 = {4, 3, 2};
+        int[] arr2 = {1, 2, 3, 4};
+        System.out.println(findSmallestInRotatedSortedArray(arr));
+        System.out.println(findSmallestInRotatedSortedArray(arr1));
+        System.out.println(findSmallestInRotatedSortedArray(arr2));
+    }
 }

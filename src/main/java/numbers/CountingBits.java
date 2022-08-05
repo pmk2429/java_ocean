@@ -4,10 +4,13 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 /**
- * Given a non negative integer number num. For every numbers i in the range 0 ≤ i ≤ num calculate the number of 1's in their binary representation and return them as an array.
+ * Given a non-negative integer number num.
+ * For every number i in the range 0 ≤ i ≤ num, calculate the number of 1's
+ * in their binary representation and return them as an array.
  * <p>
  * Example:
  * For num = 5 you should return [0,1,1,2,1,2].
+ * <p>
  * Created by Pavitra on 5/6/2016.
  */
 public class CountingBits {
@@ -16,16 +19,11 @@ public class CountingBits {
         int num = scanner.nextInt();
 
         System.out.println(Arrays.toString(countBits(num)));
-
-        // finally close the scanner
         scanner.close();
     }
 
     /**
      * Returns the total ones for each binary representation
-     *
-     * @param num
-     * @return
      */
     public static int[] countBits(int num) {
         int[] arrayOnes = new int[num + 1];
@@ -33,7 +31,8 @@ public class CountingBits {
         for (int i = 0; i <= num; i++) {
             if (i == 0) {
                 arrayOnes[i] = i;
-            } else {
+            }
+            else {
                 int sumOfOnes = 0;
                 int loopNum = i;
                 while (loopNum > 0) {

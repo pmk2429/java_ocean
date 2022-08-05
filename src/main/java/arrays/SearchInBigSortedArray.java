@@ -12,24 +12,24 @@ package arrays;
  */
 public class SearchInBigSortedArray {
 
-  private static int search(int[] arr, int target) {
-    int targetIndex = -1;
-    if (arr == null || arr.length == 0) {
-      return targetIndex;
+    private static int search(int[] arr, int target) {
+        int targetIndex = -1;
+        if (arr == null || arr.length == 0) {
+            return targetIndex;
+        }
+
+        int i = 0;
+        while (i < arr.length) {
+            if (arr[i] == target) {
+                targetIndex = i;
+            }
+            i++;
+        }
+        return targetIndex;
     }
 
-    int i = 0;
-    while (i < arr.length) {
-      if (arr[i] == target) {
-        targetIndex = i;
-      }
-      i++;
+    public static void main(String[] args) {
+        int[] a = {1, 3, 6, 9};
+        System.out.println(search(a, 3));
     }
-    return targetIndex;
-  }
-
-  public static void main(String[] args) {
-    int[] a = {1, 3, 6, 9};
-    System.out.println(search(a, 3));
-  }
 }

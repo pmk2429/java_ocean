@@ -34,26 +34,25 @@ import java.util.Hashtable;
  */
 public class ExcelSheetColumnNumber {
 
-  private static int getColNumber(String colName) {
-    // considering length = 2 for colName that is a String of multiple chars
-    int length = colName.length();
-    int[] charValue = new int[length];
-    for (int i = 0; i < length; i++) {
-      char alphabet = colName.charAt(i);
-      charValue[i] = (int) alphabet - 64;
-    }
-    int constant = 26;
-    int colNumber = 0;
-    for (int i = 0, j = 1; i < length - 1; i++, j = i + 1) {
-      int multiplier = (colNumber == 0) ? charValue[i] : colNumber;
-      colNumber = multiplier * constant + charValue[j];
+    private static int getColNumber(String colName) {
+        // considering length = 2 for colName that is a String of multiple chars
+        int length = colName.length();
+        int[] charValue = new int[length];
+        for (int i = 0; i < length; i++) {
+            charValue[i] = colName.charAt(i) - 'A';
+        }
+        int constant = 26;
+        int colNumber = 0;
+        for (int i = 0, j = 1; i < length - 1; i++, j = i + 1) {
+            int multiplier = (colNumber == 0) ? charValue[i] : colNumber;
+            colNumber = multiplier * constant + charValue[j];
+        }
+
+        return colNumber;
     }
 
-    return colNumber;
-  }
-
-  public static void main(String[] args) {
-    String colName = "PMK";
-    System.out.println(getColNumber(colName));
-  }
+    public static void main(String[] args) {
+        String colName = "PMK";
+        System.out.println(getColNumber(colName));
+    }
 }

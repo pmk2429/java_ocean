@@ -42,6 +42,7 @@ public class FindExtraChar {
             char curBChar = strB.charAt(i);
             if (strA.indexOf(curBChar) < 0) {
                 notPresent = curBChar;
+                break;
             }
         }
         return notPresent;
@@ -49,7 +50,7 @@ public class FindExtraChar {
 
     public static void main(String[] args) {
         String strA = "kxlm";
-        String strB = "klxlm";
+        String strB = "kxlmkamxlp";
         System.out.println(findExtraCharByLooping(strA, strB));
         System.out.println(findExtraCharByComparison(strA, strB));
     }

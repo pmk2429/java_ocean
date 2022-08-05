@@ -55,65 +55,65 @@ import java.util.TreeMap;
  */
 public class IntToRoman {
 
-  private static String intToRomanDefined(int num) {
-    String M[] = {"", "M", "MM", "MMM"};
-    String C[] = {"", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"};
-    String X[] = {"", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"};
-    String I[] = {"", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"};
-    return M[num / 1000] + C[(num % 1000) / 100] + X[(num % 100) / 10] + I[num % 10];
-  }
-
-  private static Map<Character, Integer> map =
-      new HashMap<Character, Integer>() {{
-        put('I', 1);
-        put('V', 5);
-        put('X', 10);
-        put('L', 50);
-        put('C', 100);
-        put('D', 500);
-        put('M', 1000);
-      }};
-
-  private static int romanToInt(String s) {
-    int prev = 0, total = 0;
-    for (char c : s.toCharArray()) {
-      int curr = map.get(c);
-      total += (curr > prev) ? (curr - 2 * prev) : curr;
-      prev = curr;
+    private static String intToRomanDefined(int num) {
+        String[] M = {"", "M", "MM", "MMM"};
+        String[] C = {"", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"};
+        String[] X = {"", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"};
+        String[] I = {"", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"};
+        return M[num / 1000] + C[(num % 1000) / 100] + X[(num % 100) / 10] + I[num % 10];
     }
-    return total;
-  }
 
-  private static String intToRoman(int num) {
-    TreeMap<Integer, String> map = new TreeMap<>();
-    map.put(1, "I");
-    map.put(4, "IV");
-    map.put(5, "V");
-    map.put(9, "IX");
-    map.put(10, "X");
-    map.put(40, "XL");
-    map.put(50, "L");
-    map.put(90, "XC");
-    map.put(100, "C");
-    map.put(400, "CD");
-    map.put(500, "D");
-    map.put(900, "CM");
-    map.put(1000, "M");
+    private static final Map<Character, Integer> map =
+        new HashMap<Character, Integer>() {{
+            put('I', 1);
+            put('V', 5);
+            put('X', 10);
+            put('L', 50);
+            put('C', 100);
+            put('D', 500);
+            put('M', 1000);
+        }};
 
-    StringBuilder sb = new StringBuilder();
-
-    while (num != 0) {
-      // get the next biggest key off the current key
-      int key = map.floorKey(num);
-      sb.append(map.get(key));
-      num -= key;
+    private static int romanToInt(String s) {
+        int prev = 0, total = 0;
+        for (char c : s.toCharArray()) {
+            int curr = map.get(c);
+            total += (curr > prev) ? (curr - 2 * prev) : curr;
+            prev = curr;
+        }
+        return total;
     }
-    return sb.toString();
-  }
 
-  public static void main(String[] args) {
-    int a = 4;
-    System.out.println(intToRoman(a));
-    System.out.println(intToRomanDefined(a));
-  }
+    private static String intToRoman(int num) {
+        TreeMap<Integer, String> map = new TreeMap<>();
+        map.put(1, "I");
+        map.put(4, "IV");
+        map.put(5, "V");
+        map.put(9, "IX");
+        map.put(10, "X");
+        map.put(40, "XL");
+        map.put(50, "L");
+        map.put(90, "XC");
+        map.put(100, "C");
+        map.put(400, "CD");
+        map.put(500, "D");
+        map.put(900, "CM");
+        map.put(1000, "M");
+
+        StringBuilder sb = new StringBuilder();
+
+        while (num != 0) {
+            // get the next biggest key off the current key
+            int key = map.floorKey(num);
+            sb.append(map.get(key));
+            num -= key;
+        }
+        return sb.toString();
+    }
+
+    public static void main(String[] args) {
+        int a = 4;
+        System.out.println(intToRoman(a));
+        System.out.println(intToRomanDefined(a));
+    }
 }

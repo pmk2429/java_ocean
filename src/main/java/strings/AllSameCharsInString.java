@@ -29,6 +29,7 @@ public class AllSameCharsInString {
         while (j < str.length()) {
             if (str.charAt(i) != str.charAt(j)) {
                 isSame = false;
+                break;
             }
             i++;
             j++;

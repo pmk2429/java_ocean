@@ -54,47 +54,40 @@ import java.util.Queue;
  */
 public class CutOffTrees {
 
-  /**
-   * We perform a breadth-first-search, processing nodes (grid positions) in a queue. seen keeps track of nodes that
-   * have already been added to the queue at some point - those nodes will be already processed or are in the queue awaiting processing.
-   * For each node that is next to be processed, we look at it'addStr neighbors. If they are in the forest (grid),
-   * they haven't been enqueued, and they aren't an obstacle, we will enqueue that neighbor.
-   * We also keep a side count of the distance travelled for each node. If the node we are processing is our
-   * destination 'target' (tr, tc), we'll return the answer.
-   *
-   * @param forest
-   * @param sr
-   * @param sc
-   * @param tr
-   * @param tc
-   * @return
-   */
-  public int bfs(List<List<Integer>> forest, int sr, int sc, int tr, int tc) {
+    /**
+     * We perform a breadth-first-search, processing nodes (grid positions) in a queue. seen keeps track of nodes that
+     * have already been added to the queue at some point - those nodes will be already processed or are in the queue awaiting processing.
+     * For each node that is next to be processed, we look at it'addStr neighbors. If they are in the forest (grid),
+     * they haven't been enqueued, and they aren't an obstacle, we will enqueue that neighbor.
+     * We also keep a side count of the distance travelled for each node. If the node we are processing is our
+     * destination 'target' (tr, tc), we'll return the answer.
+     */
+    public int bfs(List<List<Integer>> forest, int sr, int sc, int tr, int tc) {
 
-    int R = forest.size();
-    int C = forest.get(0).size();
+        int R = forest.size();
+        int C = forest.get(0).size();
 
-    Queue<int[]> queue = new LinkedList<>();
-    queue.add(new int[]{sr, sc, 0});
+        Queue<int[]> queue = new LinkedList<>();
+        queue.add(new int[]{sr, sc, 0});
 
-    boolean[][] seen = new boolean[R][C];
+        boolean[][] seen = new boolean[R][C];
 
-    seen[sr][sc] = true;
+        seen[sr][sc] = true;
 
-    while (!queue.isEmpty()) {
-      int[] cur = queue.poll();
-      if (cur[0] == tr && cur[1] == tc) {
-        return cur[2];
-      }
-      for (int di = 0; di < 4; ++di) {
-        int r = cur[0] + sr;
-        int c = cur[1] + sc;
-        if (0 <= r && r < R && 0 <= c && c < C && !seen[r][c] && forest.get(r).get(c) > 0) {
-          seen[r][c] = true;
-          queue.add(new int[]{r, c, cur[2] + 1});
+        while (!queue.isEmpty()) {
+            int[] cur = queue.poll();
+            if (cur[0] == tr && cur[1] == tc) {
+                return cur[2];
+            }
+            for (int di = 0; di < 4; ++di) {
+                int r = cur[0] + sr;
+                int c = cur[1] + sc;
+                if (0 <= r && r < R && 0 <= c && c < C && !seen[r][c] && forest.get(r).get(c) > 0) {
+                    seen[r][c] = true;
+                    queue.add(new int[]{r, c, cur[2] + 1});
+                }
+            }
         }
-      }
+        return -1;
     }
-    return -1;
-  }
 }

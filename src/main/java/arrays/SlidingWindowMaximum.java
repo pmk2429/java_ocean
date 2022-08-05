@@ -1,7 +1,6 @@
 package arrays;
 
 import java.util.Arrays;
-import java.util.Stack;
 
 /**
  * Given an array nums, there is a sliding window of size k which is moving from the very left of the array
@@ -15,7 +14,7 @@ import java.util.Stack;
  * Explanation:
  * <p>
  * Window position                Max
- * ---------------               -----
+ * -------------------------     -----
  * [1  3  -1] -3  5  3  6  7      3
  * 1 [3  -1  -3] 5  3  6  7       3
  * 1  3 [-1  -3  5] 3  6  7       5
@@ -33,70 +32,36 @@ import java.util.Stack;
  */
 public class SlidingWindowMaximum {
 
-  private static int[] maxSlidingWindow(int[] nums, int k) {
-    int sizeOfMaxArr = nums.length - k + 1;
-    // contains max at each window
-    int[] maxInWindow = new int[sizeOfMaxArr];
+    private static int[] maxSlidingWindow(int[] nums, int k) {
+        int length = nums.length;
+        int sizeOfMaxArr = length - k + 1;
+        // contains max at each window
+        int[] maxInWindow = new int[sizeOfMaxArr];
 
-    int count = 0;
-    for (int i = 0; i < nums.length; i++) {
-      int j = i;
-      int max = Integer.MIN_VALUE;
-      while (j < i + 3 && j < nums.length) {
-        if (nums[j] > max) {
-          max = nums[j];
+        int count = 0;
+        for (int i = 0; i < length; i++) {
+            int j = i;
+            int max = Integer.MIN_VALUE;
+            while (j < i + 3 && j < length) {
+                if (nums[j] > max) {
+                    max = nums[j];
+                }
+                j++;
+            }
+
+            // add max element in current window to maxArr
+            if (count < sizeOfMaxArr) {
+                maxInWindow[count++] = max;
+            }
         }
-        j++;
-      }
 
-      // add max element in current window to maxArr
-      if (count < sizeOfMaxArr) {
-        maxInWindow[count++] = max;
-      }
+        return maxInWindow;
     }
 
-    return maxInWindow;
-  }
+    public static void main(String[] args) {
+        int[] nums = {1, 3, -1, -3, 5, 3, 6, 7};
+        int k = 3;
 
-  // Function to print the maximum for every k size sub-array
-  private static void printMaxInSlidingWindow(int[] a, int n, int k) {
-    // max_upto array stores the index
-    // upto which the maximum element is a[i]
-    // i.e. max(a[i], a[i + 1], ... a[max_upto[i]]) = a[i]
-
-    int[] max_upto = new int[n];
-
-    // Update max_upto array similar to
-    // finding next greater element
-    Stack<Integer> s = new Stack<>();
-    s.push(0);
-    for (int i = 1; i < n; i++) {
-      while (!s.empty() && a[s.peek()] < a[i]) {
-        max_upto[s.peek()] = i - 1;
-        s.pop();
-      }
-      s.push(i);
+        System.out.println(Arrays.toString(maxSlidingWindow(nums, k)));
     }
-    while (!s.empty()) {
-      max_upto[s.peek()] = n - 1;
-      s.pop();
-    }
-    int j = 0;
-    for (int i = 0; i <= n - k; i++) {
-      // j < i is to check whether the
-      // jth element is outside the window
-      while (j < i || max_upto[j] < i + k - 1) {
-        j++;
-      }
-      System.out.print(a[j] + " ");
-    }
-    System.out.println();
-  }
-
-  public static void main(String[] args) {
-    int[] nums = {1, 3, -1, -3, 5, 3, 6, 7};
-    int k = 3;
-
-    System.out.println(Arrays.toString(maxSlidingWindow(nums, k)));
-  }
 }

@@ -1,8 +1,6 @@
 package arrays;
 
 import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
 
 /**
  * Remove minimum number of elements such that no common element exist in both array
@@ -34,66 +32,36 @@ import java.util.Set;
  */
 public class RemoveMinimumForUnique {
 
-  // To find no elements to remove so no common element exist
-  private static int minRemove(int a[], int b[], int n, int m) {
-    // To store count of array element
-    HashMap<Integer, Integer> countA = new HashMap<>();
-    HashMap<Integer, Integer> countB = new HashMap<>();
+    private static int minRemove(int[] a, int[] b, int n, int m) {
+        HashMap<Integer, Integer> countA = new HashMap<>();
+        HashMap<Integer, Integer> countB = new HashMap<>();
 
-    // Count elements of a
-    for (int i = 0; i < n; i++) {
-      if (countA.containsKey(a[i])) {
-        countA.put(a[i], countA.get(a[i]) + 1);
-      } else {
-        countA.put(a[i], 1);
-      }
+        for (int i = 0; i < n; i++) {
+            int temp = a[i];
+            countA.put(temp, countA.getOrDefault(temp, 0) + 1);
+        }
+
+        for (int i = 0; i < m; i++) {
+            int temp = b[i];
+            countB.put(temp, countB.getOrDefault(temp, 0) + 1);
+        }
+
+        int res = 0;
+        for (Integer x : countA.keySet()) {
+            if (countB.containsKey(x)) {
+                res += Math.min(countA.get(x), countB.get(x));
+            }
+        }
+
+        return res;
     }
 
-    // Count elements of b
-    for (int i = 0; i < m; i++) {
-      if (countB.containsKey(b[i])) {
-        countB.put(b[i], countB.get(b[i]) + 1);
-      } else {
-        countB.put(b[i], 1);
-      }
+    public static void main(String[] args) {
+        int[] a = {1, 2, 3, 4};
+        int[] b = {2, 3, 4, 5, 8, 4, 8, 7, 9, 3, 4};
+        int n = a.length;
+        int m = b.length;
+
+        System.out.println(minRemove(a, b, n, m));
     }
-
-    // Traverse through all common element, and
-    // pick minimum occurrence from two arrays
-    int res = 0;
-
-    Set<Integer> s = countA.keySet();
-
-    for (int x : s) {
-      if (countB.containsKey(x)) {
-        res += Math.min(countB.get(x), countA.get(x));
-      }
-    }
-
-    // To return count of minimum elements
-    return res;
-  }
-
-  private static void testMap(int[] arr) {
-    Map<Integer, Integer> countMap = new HashMap<>();
-    for (int i = 0; i < arr.length; i++) {
-      countMap.put(arr[i], countMap.getOrDefault(arr[i], 0) + 1);
-    }
-
-    for (Map.Entry<Integer, Integer> entry : countMap.entrySet()) {
-      System.out.println(entry.getKey() + " - " + entry.getValue());
-    }
-  }
-
-  /* Driver program to test above function */
-  public static void main(String[] args) {
-
-    int a[] = {1, 2, 3, 4};
-    int b[] = {2, 3, 4, 5, 8, 4, 8, 7, 9, 3, 4};
-    int n = a.length;
-    int m = b.length;
-
-    System.out.println(minRemove(a, b, n, m));
-    testMap(b);
-  }
 }

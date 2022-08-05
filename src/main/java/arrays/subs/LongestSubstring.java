@@ -1,6 +1,7 @@
 package arrays.subs;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * LongestSubstring class is used to find the longest substring without
@@ -10,15 +11,9 @@ import java.util.ArrayList;
  */
 
 public class LongestSubstring {
-    /**
-     * findLongestDistinctString() is used to find the longest string in the
-     * given string.
-     *
-     * @param str
-     * @return the longest distinct substring
-     */
+
     private static String findLongestDistinctSubString(String str) {
-        ArrayList<Character> subStrList = new ArrayList<>();
+        List<Character> subStrList = new ArrayList<>();
         StringBuilder unique = new StringBuilder();
         for (int i = 0; i < str.length(); i++) {
             char currChar = str.charAt(i);
@@ -39,8 +34,9 @@ public class LongestSubstring {
     }
 
     public static void main(String[] args) {
-        // String str = "a b c def ghi jkl mno pqrstu vw xyz";
-        String str = "the quick brown fox";
+        String str = "a b c def ghi jkl mno pqrstu vw xyz";
+        String strm = "the quick brown fox";
         System.out.println(findLongestDistinctSubString(str));
+        System.out.println(findLongestDistinctSubString(strm));
     }
 }
