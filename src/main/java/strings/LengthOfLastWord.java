@@ -25,7 +25,8 @@ public class LengthOfLastWord {
         // return words[wordsLength - 1].length()
 
         int lastWordLength = 0;
-        for (int i = str.length() - 1; i >= 0 && str.charAt(i) != ' '; i--) {
+        int length = str.length();
+        for (int i = length - 1; i >= 0 && str.charAt(i) != ' '; i--) {
             if (str.charAt(i) == '.') {
                 continue;
             }

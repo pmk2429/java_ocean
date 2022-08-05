@@ -1,80 +1,62 @@
 package encoding;
 
-import java.util.*;
+import java.util.Scanner;
+import java.util.Stack;
 
 public class BinaryConversion {
-	public static void main(String[] args) {
-		BinaryConversion dtb = new BinaryConversion();
-		// List<Integer> binary = new ArrayList<Integer>();
-		Stack<Integer> binaryData = new Stack<Integer>();
+    public static void main(String[] args) {
+        BinaryConversion dtb = new BinaryConversion();
 
-		System.out.println("Enter Decimal number: ");
-		System.out.print("> ");
-		Scanner input = new Scanner(System.in);
-		int decimalNumber = input.nextInt();
-		input.close();
+        System.out.println("Enter Decimal number: ");
+        System.out.print("> ");
+        Scanner input = new Scanner(System.in);
+        int decimalNumber = input.nextInt();
+        input.close();
 
-		binaryData = dtb.convertToBinary(decimalNumber);
-		dtb.printBinary(binaryData);
-	}
+        Stack<Integer> binaryData = dtb.convertToBinary(decimalNumber);
+        dtb.printBinary(binaryData);
+    }
 
-	/**
-	 * convertToBinary(int) method receives integer as an input parameter and
-	 * converts the number to its equivalent binary representation.
-	 * 
-	 * @param decimalNumber
-	 * @return
-	 */
-	public Stack<Integer> convertToBinary(int decimalNumber) {
-		int remainder = 0;
-		Stack<Integer> binaryData = new Stack<Integer>();
+    /**
+     * convertToBinary(int) method receives integer as an input parameter and
+     * converts the number to its equivalent binary representation.
+     */
+    public Stack<Integer> convertToBinary(int decimalNumber) {
+        int remainder;
+        Stack<Integer> binaryData = new Stack<>();
 
-		do {
-			remainder = decimalNumber % 2;
-			decimalNumber = decimalNumber / 2;
-			// binary.add(remainder);
-			binaryData.push(remainder);
-		} while (decimalNumber >= 1);
+        do {
+            remainder = decimalNumber % 2;
+            decimalNumber = decimalNumber / 2;
+            binaryData.push(remainder);
+        } while (decimalNumber >= 1);
 
-		// return reverseBinaryList(binary);
-		return binaryData;
-	}
+        return binaryData;
+    }
 
-	/**
-	 * convertToBinary(String) method receives String as an input parameter and
-	 * converts the String to its equivalent binary conversion.
-	 * 
-	 * @param str
-	 * @return
-	 */
-	public String convertToBinary(String simpleText) {
-		String s = simpleText;
-		byte[] bytes = s.getBytes();
-		StringBuilder binary = new StringBuilder();
-		for (byte b : bytes) {
-			int val = b;
-			for (int i = 0; i < 8; i++) {
-				binary.append((val & 128) == 0 ? 0 : 1);
-				val <<= 1;
-			}
-			binary.append(' ');
-		}
-		return binary.toString();
-	}
+    /**
+     * convertToBinary(String) method receives String as an input parameter and
+     * converts the String to its equivalent binary conversion.
+     */
+    public String convertToBinary(String simpleText) {
+        byte[] bytes = simpleText.getBytes();
+        StringBuilder binary = new StringBuilder();
+        for (byte b : bytes) {
+            int val = b;
+            for (int i = 0; i < 8; i++) {
+                binary.append((val & 128) == 0 ? 0 : 1);
+                val <<= 1;
+            }
+            binary.append(' ');
+        }
+        return binary.toString();
+    }
 
-	// print the Binary data.
-	private void printBinary(Stack<Integer> binaryInfo) {
-
-		System.out.println("\nThe Binary representation of number is:");
-		// for (int i = 0; i < binaryInfo.size() - 1; i++) {
-		// int data = binaryInfo.pop();
-		// System.out.print(data);
-		// }
-		while (!binaryInfo.isEmpty()) {
-			int data = binaryInfo.pop();
-			System.out.print(data);
-		}
-
-	}
-
+    private void printBinary(Stack<Integer> binaryInfo) {
+        System.out.println("\nThe Binary representation of number is:");
+        while (!binaryInfo.isEmpty()) {
+            int data = binaryInfo.pop();
+            System.out.print(data);
+        }
+    }
 }

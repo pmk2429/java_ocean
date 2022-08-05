@@ -28,7 +28,7 @@ public class Union {
         int m = a.length;
         int n = b.length;
 
-        int minLength = n < m ? n : m;
+        int minLength = Math.min(n, m);
 
         List<Integer> union = new ArrayList<>();
 

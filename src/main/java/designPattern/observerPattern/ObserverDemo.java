@@ -5,42 +5,44 @@ import java.util.List;
 
 // An interface to be implemented by everyone interested in "Hello" events
 interface HelloListener {
-	void someoneSaidHello();
-}
-
-// Someone who says "Hello"
-class Initiater {
-	List<HelloListener> listeners = new ArrayList<>();
-
-	public void addListener(HelloListener toAdd) {
-		listeners.add(toAdd);
-	}
-
-	public void sayHello() {
-		System.out.println("Hello!!");
-
-		// Notify everybody that may be interested.
-		for (HelloListener hl : listeners) {
-			hl.someoneSaidHello();
-		}
-	}
+    void someoneSaidHello();
 }
 
 // Someone interested in "Hello" events
 class Responder implements HelloListener {
-	@Override
-	public void someoneSaidHello() {
-		System.out.println("Hello there...");
-	}
+
+    @Override
+    public void someoneSaidHello() {
+        System.out.println("Hello there...");
+    }
+}
+
+// Someone who says "Hello"
+class Initiater {
+    List<HelloListener> listeners = new ArrayList<>();
+
+    public void addListener(HelloListener toAdd) {
+        listeners.add(toAdd);
+    }
+
+    public void sayHello() {
+        System.out.println("Hello!!");
+
+        // Notify everybody that may be interested.
+        for (HelloListener hl : listeners) {
+            hl.someoneSaidHello();
+        }
+    }
 }
 
 public class ObserverDemo {
-	public static void main(String[] args) {
-		Initiater initiater = new Initiater();
-		Responder responder = new Responder();
 
-		initiater.addListener(responder);
+    public static void main(String[] args) {
+        Initiater initiater = new Initiater();
+        Responder responder = new Responder();
 
-		initiater.sayHello(); // Prints "Hello!!!" and "Hello there..."
-	}
+        initiater.addListener(responder);
+
+        initiater.sayHello(); // Prints "Hello!!!" and "Hello there..."
+    }
 }

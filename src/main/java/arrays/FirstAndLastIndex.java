@@ -46,13 +46,13 @@ public class FirstAndLastIndex {
         int end = nums.length - 1;
         while (start <= end) {
             int mid = (start + end) / 2;
+            if (nums[mid] == target) firstIndex = mid;
             if (target <= nums[mid]) {
                 end = mid - 1;
             }
             else {
                 start = mid + 1;
             }
-            if (nums[mid] == target) firstIndex = mid;
         }
         return firstIndex;
     }
@@ -63,13 +63,13 @@ public class FirstAndLastIndex {
         int end = nums.length - 1;
         while (start <= end) {
             int mid = (start + end) / 2;
+            if (nums[mid] == target) lastIndex = mid;
             if (target >= nums[mid]) {
                 start = mid + 1;
             }
             else {
                 end = mid - 1;
             }
-            if (nums[mid] == target) lastIndex = mid;
         }
         return lastIndex;
     }

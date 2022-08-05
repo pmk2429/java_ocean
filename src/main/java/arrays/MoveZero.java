@@ -16,51 +16,29 @@ import java.util.Arrays;
  */
 public class MoveZero {
 
-  private static int[] moveZeroesWithoutSort(int[] arr) {
-    int i = 0;
-    int j = arr.length - 1;
-    int n = arr.length;
+    private static int[] moveZeroesWithoutSort(int[] nums) {
+        if (nums == null || nums.length <= 1) {
+            return null;
+        }
 
-    while (i < n && j > 0) {
-      if (arr[i] == 0) {
-        // swap elements
-        int temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
-        j--;
-      }
-      i++;
+        int lastNonZeroIndex = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != 0) {
+                swap(nums, lastNonZeroIndex++, i);
+            }
+        }
+
+        return nums;
     }
 
-    return arr;
-  }
-
-  private static void moveZeroes(int[] arr) {
-    Arrays.sort(arr);
-    // distance is total number of zeroes to move left(end) of array
-    int distance = 0;
-    int length = arr.length;
-    for (int anArr : arr) {
-      if (anArr == 0) {
-        distance++;
-      }
+    private static void swap(int[] nums, int i, int j) {
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
     }
 
-    for (int j = 0; j < distance; j++) {
-      // arr iteration
-      int temp = arr[0];
-      for (int d = 0; d < length - 1; d++) {
-        arr[d] = arr[d + 1];
-      }
-      arr[length - 1] = temp;
+    public static void main(String[] args) {
+        int[] arr = new int[]{0, 1, 0, 3, 12};
+        System.out.println(Arrays.toString(moveZeroesWithoutSort(arr)));
     }
-
-    System.out.println(Arrays.toString(arr));
-  }
-
-  public static void main(String[] args) {
-    int[] arr = new int[]{0, 1, 0, 3, 12};
-    moveZeroes(arr);
-    System.out.println(Arrays.toString(moveZeroesWithoutSort(arr)));
-  }
 }

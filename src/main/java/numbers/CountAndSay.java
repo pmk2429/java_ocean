@@ -51,15 +51,14 @@ public class CountAndSay {
         }
         else {
             for (int i = 2; i <= num; i++) {
-                String next = nextString(csStr);
-                csStr = next;
+                csStr = nextString(csStr);
             }
         }
         return csStr;
     }
 
     public static void main(String[] args) {
-        int n = 4;
+        int n = 5;
         System.out.println(countAndSay(n));
     }
 }

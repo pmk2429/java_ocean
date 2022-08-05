@@ -31,30 +31,31 @@ package arrays;
  */
 public class ValidMountainArray {
 
-  private static boolean validMountainArray(int[] A) {
-    if (A.length <= 2 || A.length > 1000) {
-      return false;
+    private static boolean validMountainArray(int[] A) {
+        int N = A.length;
+        if (N <= 2 || N > 1000) {
+            return false;
+        }
+
+        int i = 0;
+
+        // climb up
+        while (i + 1 < N && A[i] < A[i + 1]) {
+            i++;
+        }
+
+        // climb down
+        while (i + 1 < N && A[i] > A[i + 1]) {
+            i++;
+        }
+
+        return i == N - 1;
     }
 
-    int i = 0;
-    int N = A.length;
-    // climb up
-    while (i + 1 < N && A[i] < A[i + 1]) {
-      i++;
+    public static void main(String[] args) {
+        int[] arr = {0, 2, 4, 6, 5, 3, 2, 1};
+        int[] arr1 = {0, 3, 2, 6, 5, 3, 2, 1};
+        int[] arr2 = {0, 2, 4, 5, 1, 7, 6, 3};
+        System.out.println(validMountainArray(arr1));
     }
-
-    // climb down
-    while (i + 1 < N && A[i] > A[i + 1]) {
-      i++;
-    }
-
-    return i == N - 1;
-  }
-
-  public static void main(String[] args) {
-    int[] arr = {0, 2, 4, 6, 5, 3, 2, 1};
-    int[] arr1 = {0, 3, 2, 6, 5, 3, 2, 1};
-    int[] arr2 = {0, 2, 4, 5, 1, 7, 6, 3};
-    System.out.println(validMountainArray(arr1));
-  }
 }

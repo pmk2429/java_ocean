@@ -1,7 +1,5 @@
 package strings;
 
-import java.util.Arrays;
-
 /**
  * A sentence S is given, composed of words separated by spaces. Each word consists of lowercase and uppercase letters only.
  * <p>
@@ -52,15 +50,16 @@ public class GoatLatin {
 
         for (int i = 0; i < words.length; i++) {
             String curWord = words[i];
+            String curr;
+            char firstChar = curWord.charAt(0);
             // check if current word starts with vowel
-            if (vowels.indexOf(Character.toLowerCase(curWord.charAt(0))) != -1) {
-                String curr = curWord + getMaaString(i);
-                sb.append(curr).append(" ");
+            if (vowels.indexOf(Character.toLowerCase(firstChar)) != -1) {
+                curr = curWord + getMaaString(i);
             }
             else { // String starts with consonant
-                String curr = curWord.substring(1) + curWord.charAt(0) + getMaaString(i);
-                sb.append(curr).append(" ");
+                curr = curWord.substring(1) + firstChar + getMaaString(i);
             }
+            sb.append(curr).append(" ");
         }
 
         return sb.toString();

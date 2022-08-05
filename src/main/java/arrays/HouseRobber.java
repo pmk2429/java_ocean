@@ -3,7 +3,7 @@ package arrays;
 /**
  * You are a professional robber planning to rob houses along a street. Each house has a certain amount of money
  * stashed, the only constraint stopping you from robbing each of them is that adjacent houses have security system
- * connected and it will automatically contact the police if two adjacent houses were broken into on the same night.
+ * connected, and it will automatically contact the police if two adjacent houses were broken into on the same night.
  * <p>
  * Given a list of non-negative integers representing the amount of money of each house, determine the maximum
  * amount of money you can rob tonight without alerting the police.
@@ -24,23 +24,23 @@ package arrays;
  */
 public class HouseRobber {
 
-  // alternate elements subset problem
-  private static int maxToRob(int[] arr) {
-    int sum1 = 0, sum2 = 0, j;
-    for (int i = 0; i < arr.length; i = i + 2) {
-      sum1 += arr[i];
-      j = i + 1;
-      if (j < arr.length) {
-        sum2 += arr[j];
-      }
+    // alternate elements subset problem
+    private static int maxToRob(int[] arr) {
+        int sum1 = 0, sum2 = 0, j;
+        for (int i = 0; i < arr.length; i = i + 2) {
+            sum1 += arr[i];
+            j = i + 1;
+            if (j < arr.length) {
+                sum2 += arr[j];
+            }
+        }
+        return Math.max(sum1, sum2);
     }
-    return sum1 > sum2 ? sum1 : sum2;
-  }
 
-  public static void main(String[] args) {
-    int[] arr = {1, 2, 3, 1};
-    int[] arr1 = {2, 7, 9, 3, 1};
-    System.out.println(maxToRob(arr));
-    System.out.println(maxToRob(arr1));
-  }
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 1};
+        int[] arr1 = {2, 7, 9, 3, 1};
+        System.out.println(maxToRob(arr));
+        System.out.println(maxToRob(arr1));
+    }
 }

@@ -33,26 +33,28 @@ import java.util.List;
  */
 public class FizzBuzz {
 
-  private static List<String> fizzBuzz(int n) {
-    List<String> fb = new ArrayList<>();
-    for (int i = 1; i <= n; i++) {
-      if (i % 3 == 0) {
-        if (i % 5 == 0) {
-          fb.add("FizzBuzz");
+    private static List<String> fizzBuzz(int n) {
+        List<String> fb = new ArrayList<>();
+        for (int i = 1; i <= n; i++) {
+            if (i % 3 == 0) {
+                if (i % 5 == 0) {
+                    fb.add("FizzBuzz");
+                }
+                fb.add("Fizz");
+            }
+            else if (i % 5 == 0) {
+                fb.add("Buzz");
+            }
+            else {
+                fb.add(Integer.toString(i));
+            }
         }
-        fb.add("Fizz");
-      } else if (i % 5 == 0) {
-        fb.add("Buzz");
-      } else {
-        fb.add(Integer.toString(i));
-      }
+        fb.remove(n);
+        return fb;
     }
-    fb.remove(n);
-    return fb;
-  }
 
-  public static void main(String[] args) {
-    int n = 15;
-    System.out.println(fizzBuzz(n));
-  }
+    public static void main(String[] args) {
+        int n = 15;
+        System.out.println(fizzBuzz(n));
+    }
 }

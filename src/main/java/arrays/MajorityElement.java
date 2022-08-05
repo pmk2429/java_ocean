@@ -17,68 +17,14 @@ import java.util.Arrays;
  */
 public class MajorityElement {
 
-    // O*log(n)
-    private static int majorityElement(int[] nums) {
-        int n = nums.length;
-        // safety measures
-        if (nums.length == 1) {
-            return nums[0];
-        }
-
-        if (nums.length == 0) {
-            return 0;
-        }
-        // sort the array
+    public static int majorityElement(int[] nums) {
         Arrays.sort(nums);
-        int prev = nums[0];
-        int count = 0;
-        for (int i = 1; i < nums.length; i++) {
-            if (nums[i] == prev) {
-                count++;
-                if (count > n / 2) {
-                    return nums[i];
-                }
-            }
-            else {
-                count = 1;
-                prev = nums[i];
-            }
-        }
-        return -1;
-    }
-
-    // O(n)
-    public int majorityElement3(int[] nums) {
-        if (nums.length == 1) {
-            return nums[0];
-        }
-
-        int count = 0;
-        Integer candidate = null;
-
-        for (int num : nums) {
-            if (count == 0) {
-                candidate = num;
-            }
-            count += (num == candidate) ? 1 : -1;
-        }
-
-        return candidate;
-    }
-
-    // O(nlogn) mostly because of sorting
-    private static int majorityElement2(int[] num) {
-        if (num.length == 1) {
-            return num[0];
-        }
-
-        Arrays.sort(num);
-        return num[num.length / 2];
+        return nums[nums.length / 2];
     }
 
     public static void main(String[] args) {
         int[] arr = new int[]{2, 2, 1, 1, 1, 2, 2, 4, 3};
-        System.out.println(majorityElement2(arr));
+        System.out.println(majorityElement(arr));
     }
 
 }

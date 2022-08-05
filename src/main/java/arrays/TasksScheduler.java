@@ -43,7 +43,6 @@ public class TasksScheduler {
         }
 
         int time = 0;
-
         while (!queue.isEmpty()) {
             int i = 0;
             List<Integer> temp = new ArrayList<>();

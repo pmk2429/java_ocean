@@ -10,12 +10,12 @@ public class FrequencyOfSubstring {
     }
 
     /* Counts how many times the substring appears in the larger string. */
-    public static int countMatches(String text, String str) {
-        if (isEmpty(text) || isEmpty(str)) {
+    public static int countMatches(String text, String sub) {
+        if (isEmpty(text) || isEmpty(sub)) {
             return 0;
         }
 
-        Matcher matcher = Pattern.compile(str).matcher(text);
+        Matcher matcher = Pattern.compile(sub).matcher(text);
 
         int count = 0;
         while (matcher.find()) {
@@ -32,6 +32,7 @@ public class FrequencyOfSubstring {
 
         for (int i = 0; i <= m - n; i++) {
             int j;
+            // inner loop for pattern finding of sub text
             for (j = 0; j < n; j++) {
                 if (text.charAt(i + j) != sub.charAt(j)) {
                     break;

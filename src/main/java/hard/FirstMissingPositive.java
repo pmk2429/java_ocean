@@ -23,36 +23,36 @@ package hard;
  */
 public class FirstMissingPositive {
 
-  private static int smallestMissingPositive(int[] nums) {
-    if (null == nums || nums.length == 0) {
-      return 1;
+    private static int smallestMissingPositive(int[] nums) {
+        if (null == nums || nums.length == 0) {
+            return 1;
+        }
+
+        int possibleMaxNum = nums.length;
+
+        for (int i = 0; i < nums.length; i++) {
+            int index = nums[i];
+            while (index > 0 && index <= possibleMaxNum && nums[index - 1] != index) {
+                // In place sorting of all numbers using an index based sorting technique, which operates in time O(N).
+                int temp = nums[index - 1];
+                nums[index - 1] = index;
+                index = temp;
+            }
+        }
+
+        // now loop through the sorted array and check which element is missing
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != i + 1) {
+                return i + 1;
+            }
+        }
+        return possibleMaxNum + 1;
     }
 
-    int possibleMaxNum = nums.length;
-
-    for (int i = 0; i < nums.length; i++) {
-      int idx = nums[i];
-      while (idx > 0 && idx <= possibleMaxNum && nums[idx - 1] != idx) {
-        // In place sorting of all numbers using an index based sorting technique, which operates in time O(N).
-        int temp = nums[idx - 1];
-        nums[idx - 1] = idx;
-        idx = temp;
-      }
+    public static void main(String[] args) {
+        int[] a = {3, 4, -1, 1};
+        int[] b = {7, 8, 9, 11, 12};
+        int[] arr = {2, 3, 7, 6, 8, -1, -10, 15, 1};
+        System.out.println("Smallest missing : " + smallestMissingPositive(arr));
     }
-
-    // now loop through the sorted array and check which element is missing
-    for (int i = 0; i < nums.length; i++) {
-      if (nums[i] != i + 1) {
-        return i + 1;
-      }
-    }
-    return possibleMaxNum + 1;
-  }
-
-  public static void main(String[] args) {
-    int[] a = {3, 4, -1, 1};
-    int[] b = {7, 8, 9, 11, 12};
-    int[] arr = {2, 3, 7, 6, 8, -1, -10, 15, 1};
-    System.out.println("Smallest missing : " + smallestMissingPositive(arr));
-  }
 }
