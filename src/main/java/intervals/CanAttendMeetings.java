@@ -7,8 +7,7 @@ import java.util.Comparator;
 public class CanAttendMeetings {
 
     private boolean overlap(Interval i1, Interval i2) {
-        return ((i1.start >= i2.start && i1.start < i2.end)
-            || (i2.start >= i1.start && i2.start < i1.end));
+        return ((i1.start >= i2.start && i1.start < i2.end) || (i2.start >= i1.start && i2.start < i1.end));
     }
 
     // method 1

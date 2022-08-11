@@ -1,5 +1,7 @@
 package hard;
 
+import java.util.PriorityQueue;
+
 /**
  * Suppose LeetCode will start its IPO soon. In order to sell a good price of its shares to Venture Capital,
  * LeetCode would like to work on some projects to increase its capital before the IPO. Since it has limited
@@ -32,4 +34,35 @@ package hard;
  * The answer is guaranteed to fit in a 32-bit signed integer.
  */
 public class IPO {
+    private static int findMaximizedCapital(int k, int W, int[] Profits, int[] Capital) {
+        PriorityQueue<int[]> pqCap = new PriorityQueue<>((a, b) -> (a[0] - b[0]));
+        // PriorityQueue<int[]> pqCap = new PriorityQueue<>(Comparator.comparingInt(a -> a[0]));
+        PriorityQueue<int[]> pqPro = new PriorityQueue<>((a, b) -> (b[1] - a[1]));
+
+        for (int i = 0; i < Profits.length; i++) {
+            pqCap.add(new int[]{Capital[i], Profits[i]});
+        }
+
+        for (int i = 0; i < k; i++) {
+            while (!pqCap.isEmpty() && pqCap.peek()[0] <= W) {
+                pqPro.add(pqCap.poll());
+            }
+
+            if (pqPro.isEmpty()) {
+                break;
+            }
+
+            W += pqPro.poll()[1];
+        }
+
+        return W;
+    }
+
+    public static void main(String[] args) {
+        int k = 2;
+        int W = 0;
+        int[] profits = {1, 2, 3};
+        int[] capital = {0, 1, 1};
+        System.out.println(findMaximizedCapital(k, W, profits, capital));
+    }
 }

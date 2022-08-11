@@ -49,65 +49,71 @@ import java.util.Stack;
  */
 public class AsteroidCollision {
 
-  private static int helper(int[] as, int a, int b) {
-    if (as.length <= 1) return as.length;
-    while (b < as.length) {
-      if (a < 0 || as[a] < 0 || as[b] > 0) {
-        as[++a] = as[b++];  // Win-Win (both are survived)
-      } else if (as[a] == -1 * as[b]) {
-        a--;
-        b++;           // Lost-Lost (both are destroyed)
-      } else if (as[a] < -1 * as[b]) {
-        a--;                // Win (b replace a, a go back)
-      } else {
-        b++;                // Lost (b goes on, a stay)
-      }
-    }
-    return a;
-  }
-
-  public static int[] asteroidCollision2(int[] asteroids) {
-    int len = helper(asteroids, 0, 1) + 1;
-    return Arrays.copyOfRange(asteroids, 0, len);
-  }
-
-
-  private static Integer[] asteroidCollision(int[] asteroids) {
-    if (asteroids == null || asteroids.length == 0) {
-      return null;
-    }
-
-    Stack<Integer> collisionDetector = new Stack<>();
-
-    for (int currAsteroid : asteroids) {
-      if (collisionDetector.isEmpty() || currAsteroid * collisionDetector.peek() > 0) {
-        collisionDetector.push(currAsteroid);
-      } else {
-        boolean push = true;
-        while (!collisionDetector.isEmpty() || currAsteroid < 0 && collisionDetector.peek() > 0) {
-          if (Math.abs(collisionDetector.peek()) > Math.abs(currAsteroid)) {
-            push = false;
-            break;
-          } else if (Math.abs(collisionDetector.peek()) == Math.abs(currAsteroid)) {
-            push = false;
-            collisionDetector.pop();
-            break;
-          } else {
-            collisionDetector.pop();
-          }
+    private static int helper(int[] as, int a, int b) {
+        if (as.length <= 1) return as.length;
+        while (b < as.length) {
+            if (a < 0 || as[a] < 0 || as[b] > 0) {
+                as[++a] = as[b++];  // Win-Win (both are survived)
+            }
+            else if (as[a] == -1 * as[b]) {
+                a--;
+                b++; // Lost-Lost (both are destroyed)
+            }
+            else if (as[a] < -1 * as[b]) {
+                a--; // Win (b replace a, a go back)
+            }
+            else {
+                b++; // Lost (b goes on, a stay)
+            }
         }
-        if (push) {
-          collisionDetector.push(currAsteroid);
-        }
-      }
+        return a;
     }
 
-    return collisionDetector.toArray(new Integer[0]);
-  }
+    public static int[] asteroidCollision2(int[] asteroids) {
+        int len = helper(asteroids, 0, 1) + 1;
+        return Arrays.copyOfRange(asteroids, 0, len);
+    }
 
-  public static void main(String[] args) {
-    int[] arr = {10, 2, -5};
-    int[] arr1 = {-8, 8};
-    System.out.println(Arrays.toString(asteroidCollision(arr1)));
-  }
+
+    private static Integer[] asteroidCollision(int[] asteroids) {
+        if (asteroids == null || asteroids.length == 0) {
+            return null;
+        }
+
+        Stack<Integer> collisionDetector = new Stack<>();
+
+        for (int currAsteroid : asteroids) {
+            if (collisionDetector.isEmpty() || currAsteroid * collisionDetector.peek() > 0) {
+                collisionDetector.push(currAsteroid);
+            }
+            else {
+                boolean push = true;
+                while (!collisionDetector.isEmpty() || currAsteroid < 0 && collisionDetector.peek() > 0) {
+                    if (Math.abs(collisionDetector.peek()) > Math.abs(currAsteroid)) {
+                        push = false;
+                        break;
+                    }
+                    else if (Math.abs(collisionDetector.peek()) == Math.abs(currAsteroid)) {
+                        push = false;
+                        collisionDetector.pop();
+                        break;
+                    }
+                    else {
+                        collisionDetector.pop();
+                    }
+                }
+                if (push) {
+                    collisionDetector.push(currAsteroid);
+                }
+            }
+        }
+
+        return collisionDetector.toArray(new Integer[0]);
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {10, 2, -5};
+        int[] arr1 = {-8, 8};
+        System.out.println(Arrays.toString(asteroidCollision(arr1)));
+    }
 }

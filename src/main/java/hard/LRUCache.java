@@ -1,8 +1,8 @@
 package hard;
 
+import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.HashSet;
-import java.util.LinkedList;
 
 public class LRUCache {
 
@@ -14,7 +14,7 @@ public class LRUCache {
     private final int CAPACITY;
 
     private LRUCache(int n) {
-        dq = new LinkedList<>();
+        dq = new ArrayDeque<>();
         set = new HashSet<>();
         CAPACITY = n;
     }
@@ -32,7 +32,7 @@ public class LRUCache {
             dq.remove(x);
         }
         // keep adding elements to the Head of the Queue
-        dq.push(x);
+        dq.push(x); //dq.addFirst(x);
         set.add(x);
     }
 

@@ -21,45 +21,45 @@ package hard;
  */
 public class BurstBalloons {
 
-  private static int get(int[] nums, int i) {
-    if (i == -1 || i == nums.length) {
-      return 1;
-    }
-    return nums[i];
-  }
-
-  private static int maxCoins(int[] nums, int[][] table, int start, int end) {
-    if (start > end) {
-      return 0;
+    private static int get(int[] nums, int i) {
+        if (i == -1 || i == nums.length) {
+            return 1;
+        }
+        return nums[i];
     }
 
-    if (table[start][end] != 0) {
-      return table[start][end];
+    private static int maxCoins(int[] nums, int[][] table, int start, int end) {
+        if (start > end) {
+            return 0;
+        }
+
+        if (table[start][end] != 0) {
+            return table[start][end];
+        }
+
+        int max = nums[start];
+
+        for (int i = start; i <= end; i++) {
+            int val = maxCoins(nums, table, start, i - 1)
+                + (get(nums, start - 1) * get(nums, i) * get(nums, end + 1))
+                + maxCoins(nums, table, i + 1, end);
+
+            max = Math.max(max, val);
+        }
+
+        table[start][end] = max;
+
+        return max;
     }
 
-    int max = nums[start];
-
-    for (int i = start; i <= end; i++) {
-      int val = maxCoins(nums, table, start, i - 1)
-          + (get(nums, start - 1) * get(nums, i) * get(nums, end + 1))
-          + maxCoins(nums, table, i + 1, end);
-
-      max = Math.max(max, val);
+    private static int maxCoins(int[] nums) {
+        int[][] dp = new int[nums.length][nums.length];
+        return maxCoins(nums, dp, 0, nums.length - 1);
     }
 
-    table[start][end] = max;
-
-    return max;
-  }
-
-  private static int maxCoins(int[] nums) {
-    int[][] dp = new int[nums.length][nums.length];
-    return maxCoins(nums, dp, 0, nums.length - 1);
-  }
-
-  public static void main(String[] args) {
-    int[] ballons = {3, 1, 5, 8};
-    System.out.println(maxCoins(ballons));
-  }
+    public static void main(String[] args) {
+        int[] ballons = {3, 1, 5, 8};
+        System.out.println(maxCoins(ballons));
+    }
 
 }

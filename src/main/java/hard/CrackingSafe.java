@@ -28,50 +28,50 @@ import java.util.Set;
  */
 public class CrackingSafe {
 
-  static Set<String> seen;
-  static StringBuilder ans;
+    static Set<String> seen;
+    static StringBuilder ans;
 
-  private static void dfs(String node, int k) {
-    for (int x = 0; x < k; ++x) {
-      String neighbor = node + x;
-      if (!seen.contains(neighbor)) {
-        seen.add(neighbor);
-        dfs(neighbor.substring(1), k);
-        ans.append(x);
-      }
-    }
-  }
-
-  private static String crackSafe(int n, int k) {
-    if (n < 0 || n > 4) {
-      return "0";
+    private static void dfs(String node, int k) {
+        for (int x = 0; x < k; ++x) {
+            String neighbor = node + x;
+            if (!seen.contains(neighbor)) {
+                seen.add(neighbor);
+                dfs(neighbor.substring(1), k);
+                ans.append(x);
+            }
+        }
     }
 
-    if (k < 0 || k > 10) {
-      return "0";
+    private static String crackSafe(int n, int k) {
+        if (n < 0 || n > 4) {
+            return "0";
+        }
+
+        if (k < 0 || k > 10) {
+            return "0";
+        }
+
+        if (n == 1 && k == 1) {
+            return "0";
+        }
+
+        seen = new HashSet<>();
+        ans = new StringBuilder();
+
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < n - 1; ++i) {
+            sb.append("0");
+        }
+        String start = sb.toString();
+
+        dfs(start, k);
+        ans.append(start);
+        return new String(ans);
     }
 
-    if (n == 1 && k == 1) {
-      return "0";
+    public static void main(String[] args) {
+        int n = 2;
+        int k = 5;
+        System.out.println(crackSafe(n, k));
     }
-
-    seen = new HashSet<>();
-    ans = new StringBuilder();
-
-    StringBuilder sb = new StringBuilder();
-    for (int i = 0; i < n - 1; ++i) {
-      sb.append("0");
-    }
-    String start = sb.toString();
-
-    dfs(start, k);
-    ans.append(start);
-    return new String(ans);
-  }
-
-  public static void main(String[] args) {
-    int n = 2;
-    int k = 5;
-    System.out.println(crackSafe(n, k));
-  }
 }

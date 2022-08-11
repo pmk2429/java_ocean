@@ -37,11 +37,12 @@ import java.util.Map;
  * url is guranteed to be a valid URL.
  */
 public class TinyUrl {
+
     private final static String BASE_HOST = "http://tinyurl.com/";
+    private final static int URL_SHORTENER_LENGTH = 6;
 
     private final Map<String, String> index = new HashMap<>();
     private final Map<String, String> revIndex = new HashMap<>();
-    private final int URL_SHORTENER_LENGTH = 6;
 
     // Decodes a shortened URL to its original URL.
     public String decode(String shortUrl) {
@@ -54,7 +55,7 @@ public class TinyUrl {
             return BASE_HOST + revIndex.get(longUrl);
         }
 
-        String charSet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        String charSet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789~@#^*";
         String key;
         do {
             StringBuilder sb = new StringBuilder();

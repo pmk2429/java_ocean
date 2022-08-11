@@ -5,10 +5,10 @@ package numbers;
  */
 public class LargestPower {
     public static void main(String[] args) {
-        System.out.println(nearest_power_of_two(64));
+        System.out.println(nearestPowerOfTwo(64));
     }
 
-    public static int nearest_power_of_two(int number) {
+    public static int nearestPowerOfTwo(int number) {
         int powerNum = 2;
         int finalNum = 0;
 

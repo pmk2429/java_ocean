@@ -25,7 +25,8 @@ import java.util.TreeMap;
  * MyCalendar.book(25, 55); // returns true
  * Explanation:
  * ----------
- * The first two events can be booked. The third event can be double booked.
+ * The first two events can be booked.
+ * The third event can be double booked.
  * The fourth event (5, 15) can't be booked, because it would result in a triple booking.
  * The fifth event (5, 10) can be booked, as it does not use time 10 which is already double booked.
  * The sixth event (25, 55) can be booked, as the time in [25, 40) will be double booked with the third event;
@@ -38,27 +39,38 @@ import java.util.TreeMap;
  */
 public class MyCalendar {
 
-  private TreeMap<Integer, Integer> delta;
+    private final TreeMap<Integer, Integer> delta;
 
-  public MyCalendar() {
-    delta = new TreeMap<>();
-  }
-
-  public boolean book(int start, int end) {
-    delta.put(start, delta.getOrDefault(start, 0) + 1);
-    delta.put(end, delta.getOrDefault(end, 0) - 1);
-
-    int active = 0;
-    for (int d : delta.values()) {
-      active += d;
-      if (active >= 3) {
-        delta.put(start, delta.get(start) - 1);
-        delta.put(end, delta.get(end) + 1);
-        if (delta.get(start) == 0)
-          delta.remove(start);
-        return false;
-      }
+    public MyCalendar() {
+        delta = new TreeMap<>();
     }
-    return true;
-  }
+
+    public boolean book(int start, int end) {
+        delta.put(start, delta.getOrDefault(start, 0) + 1);
+        delta.put(end, delta.getOrDefault(end, 0) - 1);
+
+        int active = 0;
+        for (int d : delta.values()) {
+            active += d;
+            if (active >= 3) {
+                delta.put(start, delta.get(start) - 1);
+                delta.put(end, delta.get(end) + 1);
+                if (delta.get(start) == 0) {
+                    delta.remove(start);
+                }
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        MyCalendar myCalendar = new MyCalendar();
+        System.out.println(myCalendar.book(10, 20)); // returns true
+        System.out.println(myCalendar.book(50, 60)); // returns true
+        System.out.println(myCalendar.book(10, 40)); // returns true
+        System.out.println(myCalendar.book(5, 15)); // returns false
+        System.out.println(myCalendar.book(5, 10)); // returns true
+        System.out.println(myCalendar.book(25, 55)); // returns true
+    }
 }

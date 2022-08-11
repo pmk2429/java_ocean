@@ -63,61 +63,62 @@ import java.util.List;
  */
 public class TextJustification {
 
-  public List<String> fullJustify(String[] words, int maxWidth) {
-    if (words == null || words.length == 0) {
-      return null;
+    public List<String> fullJustify(String[] words, int maxWidth) {
+        if (words == null || words.length == 0) {
+            return null;
+        }
+
+        if (maxWidth <= 0) {
+            return null;
+        }
+
+        List<String> res = new ArrayList<>();
+
+        int start = 0; //inclusive
+
+        while (start < words.length) {
+            int len = words[start].length();
+            int end = start + 1; //exclusive
+            while (end < words.length) {
+                if (len + 1 + words[end].length() > maxWidth) break;
+                len += 1 + words[end].length();
+                end++;
+            }
+
+            // build the line
+            StringBuilder sb = new StringBuilder(words[start++]);
+            if (end == words.length) { //left justify with single " "
+                while (start < end) sb.append(" ").append(words[start++]);
+            }
+            else {
+                int wordCount = end > start ? end - start : 1;
+                int extra = (maxWidth - len) % wordCount;
+                String evenly = getSpaceStr((maxWidth - len) / wordCount);
+                while (start < end) sb.append(" ").append(evenly).append(extra-- > 0 ? " " : "").append(words[start++]);
+            }
+
+            int lineLen = sb.length();
+
+            // add extra padding
+            while (lineLen++ < maxWidth) {
+                sb.append(" ");
+            }
+
+            res.add(sb.toString());
+
+            // set the pointer
+            start = end;
+        }
+        return res;
     }
 
-    if (maxWidth <= 0) {
-      return null;
+    private String getSpaceStr(int count) {
+        StringBuilder sb = new StringBuilder();
+        while (count-- > 0) sb.append(" ");
+        return sb.toString();
     }
 
-    List<String> res = new ArrayList<>();
+    public static void main(String[] args) {
 
-    int start = 0; //inclusive
-
-    while (start < words.length) {
-      int len = words[start].length();
-      int end = start + 1; //exclusive
-      while (end < words.length) {
-        if (len + 1 + words[end].length() > maxWidth) break;
-        len += 1 + words[end].length();
-        end++;
-      }
-
-      // build the line
-      StringBuilder sb = new StringBuilder(words[start++]);
-      if (end == words.length) {//left justify with single " "
-        while (start < end) sb.append(" ").append(words[start++]);
-      } else {
-        int wordCount = end > start ? end - start : 1;
-        int extra = (maxWidth - len) % wordCount;
-        String evenly = getSpaceStr((maxWidth - len) / wordCount);
-        while (start < end) sb.append(" ").append(evenly).append(extra-- > 0 ? " " : "").append(words[start++]);
-      }
-
-      int lineLen = sb.length();
-
-      // add extra padding
-      while (lineLen++ < maxWidth) {
-        sb.append(" ");
-      }
-
-      res.add(sb.toString());
-
-      // set the pointer
-      start = end;
     }
-    return res;
-  }
-
-  private String getSpaceStr(int count) {
-    StringBuilder sb = new StringBuilder();
-    while (count-- > 0) sb.append(" ");
-    return sb.toString();
-  }
-
-  public static void main(String[] args) {
-
-  }
 }
