@@ -35,11 +35,11 @@ package hard;
  * It is guaranteed that graph[2] contains a non-zero element.
  */
 public class CatAndMouse {
-  private static int catMouseGame(int[][] graph) {
-    return -1;
-  }
+    private static int catMouseGame(int[][] graph) {
+        return -1;
+    }
 
-  public static void main(String[] args) {
+    public static void main(String[] args) {
 
-  }
+    }
 }

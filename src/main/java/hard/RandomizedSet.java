@@ -30,46 +30,46 @@ import java.util.*;
  */
 public class RandomizedSet {
 
-  private Set<Integer> randomSet;
-  private List<Integer> randomList;
-  private Random random;
+    private final Set<Integer> randomSet;
+    private final List<Integer> randomList;
+    private final Random random;
 
-  /**
-   * Initialize your data structure here.
-   */
-  public RandomizedSet() {
-    randomSet = new HashSet<>();
-    randomList = new ArrayList<>();
-    random = new Random();
-  }
-
-  /**
-   * Inserts a value to the set. Returns true if the set did not already contain the specified element.
-   */
-  public boolean insert(int val) {
-    if (randomSet.contains(val)) {
-      return false;
+    /**
+     * Initialize your data structure here.
+     */
+    public RandomizedSet() {
+        randomSet = new HashSet<>();
+        randomList = new ArrayList<>();
+        random = new Random();
     }
-    randomList.add(val);
-    return randomSet.add(val);
-  }
 
-  /**
-   * Removes a value from the set. Returns true if the set contained the specified element.
-   */
-  public boolean remove(int val) {
-    if (!randomSet.contains(val)) {
-      return false;
+    /**
+     * Inserts a value to the set. Returns true if the set did not already contain the specified element.
+     */
+    public boolean insert(int val) {
+        if (randomSet.contains(val)) {
+            return false;
+        }
+        randomList.add(val);
+        return randomSet.add(val);
     }
-    randomList.remove(val);
-    return randomSet.remove(val);
-  }
 
-  /**
-   * Get a random element from the set.
-   */
-  public int getRandom() {
-    int n = random.nextInt(randomList.size());
-    return randomList.get(n);
-  }
+    /**
+     * Removes a value from the set. Returns true if the set contained the specified element.
+     */
+    public boolean remove(int val) {
+        if (!randomSet.contains(val)) {
+            return false;
+        }
+        randomList.remove(val);
+        return randomSet.remove(val);
+    }
+
+    /**
+     * Get a random element from the set.
+     */
+    public int getRandom() {
+        int n = random.nextInt(randomList.size());
+        return randomList.get(n);
+    }
 }

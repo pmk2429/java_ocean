@@ -39,26 +39,26 @@ package hard;
  */
 public class RaceCar {
 
-  private int racecar(int target) {
+    private int racecar(int target) {
 
-    int position = 0;
-    int speed = 1;
+        int position = 0;
+        int speed = 1;
 
-    // 1. Design algo for smallest solvable unit of problem
+        // 1. Design algo for smallest solvable unit of problem
 
 
-    // 2. Extend the algo to entire problem set
+        // 2. Extend the algo to entire problem set
 
-    // 3. Mind your edge cases
+        // 3. Mind your edge cases
 
-    // 4. Test
+        // 4. Test
 
-    // 5. Optimize
+        // 5. Optimize
 
-    return -1;
-  }
+        return -1;
+    }
 
-  public static void main(String[] args) {
+    public static void main(String[] args) {
 
-  }
+    }
 }

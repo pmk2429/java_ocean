@@ -26,38 +26,35 @@ import java.util.Arrays;
  */
 public class MRUApps {
 
-  /**
-   * Approach: Get the index of the app to which the user wants to switch i.e. appIndex = K % N.
-   * Now, the current active app will be arr[appIndex] and all the other apps in the index range [0, appIndex – 1]
-   * will have to be shifted by 1 element towards the right.
-   *
-   * @param apps
-   * @return
-   */
-  private static int[] MRU(int[] apps, int tabs) {
-    int N = apps.length;
+    /**
+     * Approach: Get the index of the app to which the user wants to switch i.e. appIndex = K % N.
+     * Now, the current active app will be arr[appIndex] and all the other apps in the index range [0, appIndex – 1]
+     * will have to be shifted by 1 element towards the right.
+     */
+    private static int[] MRU(int[] apps, int tabs) {
+        int N = apps.length;
 
-    // Finding the end index after K presses
-    int switchToIndex = (tabs % N);
+        // Finding the end index after K presses
+        int switchToIndex = (tabs % N);
 
-    // Shifting elements by 1 towards the found index on which the K press ends
-    int x = switchToIndex;
-    int switchToApp = apps[switchToIndex];
+        // Shifting elements by 1 towards the found index on which the K press ends
+        int x = switchToIndex;
+        int switchToApp = apps[switchToIndex];
 
-    while (x > 0) {
-      apps[x] = apps[--x];
+        while (x > 0) {
+            apps[x] = apps[--x];
+        }
+
+        // Update the current active app
+        apps[0] = switchToApp;
+
+        return apps;
     }
 
-    // Update the current active app
-    apps[0] = switchToApp;
 
-    return apps;
-  }
-
-
-  public static void main(String[] args) {
-    int[] arr = {3, 5, 2, 4, 1};
-    int k = 3;
-    System.out.println(Arrays.toString(MRU(arr, k)));
-  }
+    public static void main(String[] args) {
+        int[] arr = {3, 5, 2, 4, 1};
+        int k = 3;
+        System.out.println(Arrays.toString(MRU(arr, k)));
+    }
 }

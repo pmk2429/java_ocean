@@ -27,71 +27,73 @@ import java.util.*;
  */
 public class MedianFinder {
 
-  private List<Integer> vals;
+    private List<Integer> vals;
 
-  private MedianFinder() {
-    vals = new ArrayList<>();
-  }
-
-  private void addNum(int num) {
-    vals.add(num);
-  }
-
-  private double findMedian() {
-    int size = vals.size();
-    double median;
-    int middleIndex = (size - 1) / 2;
-    if (size % 2 == 0) {
-      median = (double) (vals.get(middleIndex) + vals.get(middleIndex + 1)) / 2;
-    } else {
-      median = vals.get(middleIndex);
+    private MedianFinder() {
+        vals = new ArrayList<>();
     }
-    return median;
-  }
 
-  // max queue is always larger or equal to min queue
-  Queue<Integer> min = new PriorityQueue<>();
-  Queue<Integer> max = new PriorityQueue<>(1000, Collections.reverseOrder());
-
-  // Adds a number into the data structure.
-  public void addNumPQ(int num) {
-    max.offer(num);
-    min.offer(max.poll());
-
-    if (max.size() < min.size()) {
-      max.offer(min.poll());
+    private void addNum(int num) {
+        vals.add(num);
     }
-  }
 
-  // Returns the median of current data stream
-  public double findMedianPQ() {
-    if (max.size() == min.size()) {
-      return (max.peek() + min.peek()) / 2.0;
-    } else {
-      return max.peek();
+    private double findMedian() {
+        int size = vals.size();
+        double median;
+        int middleIndex = (size - 1) / 2;
+        if (size % 2 == 0) {
+            median = (double) (vals.get(middleIndex) + vals.get(middleIndex + 1)) / 2;
+        }
+        else {
+            median = vals.get(middleIndex);
+        }
+        return median;
     }
-  }
 
-  /**
-   * Your MedianFinder object will be instantiated and called as such:
-   * MedianFinder obj = new MedianFinder();
-   * obj.addNum(num);
-   * double param_2 = obj.findMedian();
-   */
+    // max queue is always larger or equal to min queue
+    Queue<Integer> min = new PriorityQueue<>();
+    Queue<Integer> max = new PriorityQueue<>(1000, Collections.reverseOrder());
 
-  public static void main(String[] args) {
-    MedianFinder m = new MedianFinder();
-    m.addNum(1);
-    m.addNum(2);
-    System.out.println(m.findMedian());
-    m.addNum(3);
-    System.out.println(m.findMedian());
-    m.addNum(4);
-    System.out.println(m.findMedian());
+    // Adds a number into the data structure.
+    public void addNumPQ(int num) {
+        max.offer(num);
+        min.offer(max.poll());
 
-    m.addNumPQ(1);
-    m.addNumPQ(1);
-    m.addNumPQ(1);
-    System.out.println();
-  }
+        if (max.size() < min.size()) {
+            max.offer(min.poll());
+        }
+    }
+
+    // Returns the median of current data stream
+    public double findMedianPQ() {
+        if (max.size() == min.size()) {
+            return (max.peek() + min.peek()) / 2.0;
+        }
+        else {
+            return max.peek();
+        }
+    }
+
+    /**
+     * Your MedianFinder object will be instantiated and called as such:
+     * MedianFinder obj = new MedianFinder();
+     * obj.addNum(num);
+     * double param_2 = obj.findMedian();
+     */
+
+    public static void main(String[] args) {
+        MedianFinder m = new MedianFinder();
+        m.addNum(1);
+        m.addNum(2);
+        System.out.println(m.findMedian());
+        m.addNum(3);
+        System.out.println(m.findMedian());
+        m.addNum(4);
+        System.out.println(m.findMedian());
+
+        m.addNumPQ(1);
+        m.addNumPQ(1);
+        m.addNumPQ(1);
+        System.out.println();
+    }
 }

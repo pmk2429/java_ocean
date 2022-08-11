@@ -39,7 +39,7 @@ public class PerfectNumber {
         int sum = 0;
         for (int divisor = 1; divisor < number; divisor++) {
             if ((number % divisor) == 0) {
-                sum = sum + divisor;
+                sum += divisor;
             }
         }
         return sum == number;

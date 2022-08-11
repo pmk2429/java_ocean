@@ -23,35 +23,37 @@ package hard;
  */
 public class FindOnlyRepeatingO1ON {
 
-  /**
-   * Floyd'addStr Tortoise and Hare (Cycle Detection)
-   * <p>
-   * First off, we can easily show that the constraints of the problem imply that a cycle must exist.
-   * Because each number in nums is between 11 and nn, it will necessarily point to an index that exists.
-   * Therefore, the list can be traversed infinitely, which implies that there is a cycle. Additionally,
-   * because 00 cannot appear as a value in nums, nums[0] cannot be part of the cycle. Therefore, traversing
-   * the array in this manner from nums[0] is equivalent to traversing a cyclic linked list.
-   *
-   * @param nums
-   * @return
-   */
-  public int findDuplicate(int[] nums) {
-    // Find the intersection point of the two runners.
-    int tortoise = nums[0];
-    int hare = nums[0];
-    do {
-      tortoise = nums[tortoise];
-      hare = nums[nums[hare]];
-    } while (tortoise != hare);
+    /**
+     * Floyd'addStr Tortoise and Hare (Cycle Detection)
+     * <p>
+     * First off, we can easily show that the constraints of the problem imply that a cycle must exist.
+     * Because each number in nums is between 11 and nn, it will necessarily point to an index that exists.
+     * Therefore, the list can be traversed infinitely, which implies that there is a cycle. Additionally,
+     * because 00 cannot appear as a value in nums, nums[0] cannot be part of the cycle. Therefore, traversing
+     * the array in this manner from nums[0] is equivalent to traversing a cyclic linked list.
+     */
+    private static int findDuplicate(int[] nums) {
+        // Find the intersection point of the two runners.
+        int tortoise = nums[0];
+        int hare = nums[0];
+        do {
+            tortoise = nums[tortoise];
+            hare = nums[nums[hare]];
+        } while (tortoise != hare);
 
-    // Find the "entrance" to the cycle.
-    int ptr1 = nums[0];
-    int ptr2 = tortoise;
-    while (ptr1 != ptr2) {
-      ptr1 = nums[ptr1];
-      ptr2 = nums[ptr2];
+        // Find the "entrance" to the cycle.
+        int ptr1 = nums[0];
+        int ptr2 = tortoise;
+        while (ptr1 != ptr2) {
+            ptr1 = nums[ptr1];
+            ptr2 = nums[ptr2];
+        }
+
+        return ptr1;
     }
 
-    return ptr1;
-  }
+    public static void main(String[] args) {
+        int[] input = {1, 3, 4, 2, 2};
+        System.out.println(findDuplicate(input));
+    }
 }
