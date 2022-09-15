@@ -11,11 +11,7 @@ package arrays;
  */
 public class InplaceMergeSort {
 
-    // Merges two subarrays of arr[].
-    // First subarray is arr[l..m]
-    // Second subarray is arr[m+1..r]
-    // Inplace Implmentation
-    static void merge(int arr[], int start, int mid, int end) {
+    static void merge(int[] arr, int start, int mid, int end) {
         int start2 = mid + 1;
 
         // If the direct merge is already sorted
@@ -50,7 +46,7 @@ public class InplaceMergeSort {
 
     /* l is for left index and r is right index of the
        sub-array of arr to be sorted */
-    static void mergeSort(int arr[], int l, int r) {
+    static void mergeSort(int[] arr, int l, int r) {
         if (l < r) {
 
             // Same as (l + r) / 2, but avoids overflow
@@ -65,8 +61,6 @@ public class InplaceMergeSort {
         }
     }
 
-    /* UTILITY FUNCTIONS */
-    /* Function to print an array */
     static void printArray(int A[], int size) {
         int i;
         for (i = 0; i < size; i++)
@@ -75,7 +69,7 @@ public class InplaceMergeSort {
     }
 
     public static void main(String[] args) {
-        int arr[] = {12, 11, 13, 5, 6, 7};
+        int[] arr = {12, 11, 13, 5, 6, 7};
         int arr_size = arr.length;
         mergeSort(arr, 0, arr_size - 1);
         printArray(arr, arr_size);

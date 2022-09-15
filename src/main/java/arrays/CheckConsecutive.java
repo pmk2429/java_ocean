@@ -12,6 +12,8 @@ import java.util.Arrays;
  * b) If array is {83, 78, 80, 81, 79, 82}, then the function should return true because the array has consecutive numbers from 78 to 83.
  * c) If the array is {34, 23, 52, 12, 3 }, then the function should return false because the elements are not consecutive.
  * d) If the array is {7, 6, 5, 5, 3, 4}, then the function should return false because 5 and 5 are not consecutive.
+ * <p>
+ * This problem related to {@link MinChangesFor1ToN}
  */
 public class CheckConsecutive {
 

@@ -12,13 +12,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
-import java.util.concurrent.Callable;
-import java.util.concurrent.CompletionService;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorCompletionService;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
+import java.util.concurrent.*;
 
 /**
  * Ping N web sites in parallel.
@@ -113,8 +107,8 @@ public final class CheckSites {
     // PRIVATE
 
     private static final List<String> URLs = Arrays.asList(
-            "http://www.youtube.com/", "http://www.google.ca/",
-            "http://www.date4j.net", "http://www.web4j.com"
+        "http://www.youtube.com/", "http://www.google.ca/",
+        "http://www.date4j.net", "http://www.web4j.com"
     );
 
     private static void log(Object aMsg) {

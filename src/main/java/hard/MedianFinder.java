@@ -27,25 +27,25 @@ import java.util.*;
  */
 public class MedianFinder {
 
-    private List<Integer> vals;
+    private final List<Integer> numbers;
 
     private MedianFinder() {
-        vals = new ArrayList<>();
+        numbers = new ArrayList<>();
     }
 
     private void addNum(int num) {
-        vals.add(num);
+        numbers.add(num);
     }
 
     private double findMedian() {
-        int size = vals.size();
+        int size = numbers.size();
         double median;
         int middleIndex = (size - 1) / 2;
         if (size % 2 == 0) {
-            median = (double) (vals.get(middleIndex) + vals.get(middleIndex + 1)) / 2;
+            median = (double) (numbers.get(middleIndex) + numbers.get(middleIndex + 1)) / 2;
         }
         else {
-            median = vals.get(middleIndex);
+            median = numbers.get(middleIndex);
         }
         return median;
     }

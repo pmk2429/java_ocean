@@ -35,6 +35,8 @@ import java.util.Map;
  * ==========
  * 1 <= url.length <= 104
  * url is guranteed to be a valid URL.
+ *
+ *  ~!@#HARD:REVISE
  */
 public class TinyUrl {
 

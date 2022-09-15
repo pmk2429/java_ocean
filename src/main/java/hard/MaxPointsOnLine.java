@@ -32,33 +32,16 @@ import java.util.Map;
  * |  o        o
  * +------------------->
  * 0  1  2  3  4  5  6
+ * <p>
+ * ~!@#HARD:REVISE
  */
 public class MaxPointsOnLine {
-
-    class Point {
-        int x;
-        int y;
-
-        Point() {
-            x = 0;
-            y = 0;
-        }
-
-        Point(int a, int b) {
-            x = a;
-            y = b;
-        }
-    }
-
 
     /**
      * Layout all the point on a 2D plane using Table and store each value using Memoization in DP.
      * Memoization will help find the diagonal sequence of positions in 2D plane.
-     *
-     * @param points
-     * @return
      */
-    public int maxPoints(Point[] points) {
+    private static int maxPoints(Point[] points) {
         if (points == null) return 0;
 
         int solution = 0;
@@ -98,6 +81,25 @@ public class MaxPointsOnLine {
     }
 
     public static void main(String[] args) {
-        int[][] input = {{1, 1}, {2, 2}, {3, 3}};
+        Point a = new Point(1, 1);
+        Point b = new Point(2, 2);
+        Point c = new Point(3, 3);
+        Point[] points = {a, b, c};
+        System.out.println(maxPoints(points));
+    }
+}
+
+class Point {
+    int x;
+    int y;
+
+    Point() {
+        x = 0;
+        y = 0;
+    }
+
+    Point(int a, int b) {
+        x = a;
+        y = b;
     }
 }

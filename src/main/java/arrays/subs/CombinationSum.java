@@ -2,38 +2,12 @@ package arrays.subs;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * ~!@#HARD:REVISE
+ */
 public class CombinationSum {
-
-    private static void backtrack(int[] candidates, int target, List<Integer> combination, List<List<Integer>> res,
-                                  int start, int k) {
-        if (0 == target && combination.size() == k) {
-            res.add(new ArrayList<>(combination));
-        }
-        else if (target > 0) {
-            for (int i = start; i < candidates.length; i++) {
-                if (target < candidates[i]) {
-                    return;
-                }
-                combination.add(candidates[i]);
-                backtrack(candidates, target - candidates[i], combination, res, i, k);
-                combination.remove(combination.size() - 1);
-            }
-        }
-    }
-
-    private static List<List<Integer>> combinationSum(int[] candidates, int target) {
-        List<List<Integer>> res = new ArrayList<>();
-        if (candidates == null || candidates.length == 0 || target <= 0) {
-            return res;
-        }
-        Arrays.sort(candidates);
-        int k = 3;
-        backtrack(candidates, target, new ArrayList<>(), res, 0, k);
-        return res;
-    }
 
     public static void backtrack(List<List<Integer>> res, List<Integer> lst, int start, int k, int target) {
         if (k < 0 && target < 1) {
@@ -56,13 +30,38 @@ public class CombinationSum {
         return res;
     }
 
+    private static void backtrack(int[] candidates, int target, List<Integer> combination, List<List<Integer>> res, int start, int k) {
+        if (target == 0 && combination.size() == k) {
+            res.add(new ArrayList<>(combination));
+        }
+        else if (target > 0) {
+            for (int i = start; i < candidates.length; i++) {
+                if (target < candidates[i]) {
+                    return;
+                }
+                combination.add(candidates[i]); // add current element
+                backtrack(candidates, target - candidates[i], combination, res, i, k);
+                combination.remove(combination.size() - 1); // remove last element
+            }
+        }
+    }
+
+    private static List<List<Integer>> combinationSum(int[] candidates, int target, int k) {
+        List<List<Integer>> res = new ArrayList<>();
+        if (candidates == null || candidates.length == 0 || target <= 0) {
+            return res;
+        }
+        Arrays.sort(candidates);
+        backtrack(candidates, target, new ArrayList<>(), res, 0, k);
+        return res;
+    }
+
     public static void main(String[] args) {
-        //int[] candidates = {2, 3, 6, 7, 7, 11, 5};
         int[] candidates = {4, 5, 10, 7, 3, 4, 7, 4, 1, 8};
         int target = 20;
         int k = 3;
 
-        List<List<Integer>> res = combinationSumIndex(k, 10);
+        List<List<Integer>> res = combinationSum(candidates, target, k);
         for (List<Integer> list : res) {
             System.out.println(list);
         }

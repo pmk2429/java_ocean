@@ -1,6 +1,7 @@
 package hard;
 
 import java.util.ArrayList;
+import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -12,12 +13,14 @@ import java.util.List;
  * --------
  * Input: "25525511135"
  * Output: ["255.255.11.135", "255.255.111.35"]
+ * <p>
+ * ~!@#HARD:REVISE
  */
 public class RestoreIpAddresses {
 
     private int length;
-    private String addStr;
-    private final LinkedList<String> segments = new LinkedList<>();
+    private String inputAddressString;
+    private final Deque<String> segments = new LinkedList<>();
     private final List<String> output = new ArrayList<>();
 
     /**
@@ -39,7 +42,7 @@ public class RestoreIpAddresses {
      * to the list of solutions
      */
     private void updateOutput(int currDotPos) {
-        String curSegment = addStr.substring(currDotPos + 1, length);
+        String curSegment = inputAddressString.substring(currDotPos + 1, length);
         if (valid(curSegment)) {
             segments.add(curSegment);
             output.add(String.join(".", segments));
@@ -52,20 +55,18 @@ public class RestoreIpAddresses {
      * dots : number of dots to place
      */
     private void backtrack(int prevDotPos, int dots) {
-        // The current dot curr_pos could be placed
-        // in a range from prev_pos + 1 to prev_pos + 4.
-        // The dot couldn't be placed
-        // after the last character in the string.
+        // The current dot currPos could be placed in a range from prevDotPos + 1 to prevDotPos + 4.
+        // The dot couldn't be placed after the last character in the string.
         int maxPos = Math.min(length - 1, prevDotPos + 4);
         for (int currPos = prevDotPos + 1; currPos < maxPos; currPos++) {
-            String segment = addStr.substring(prevDotPos + 1, currPos + 1);
+            String segment = inputAddressString.substring(prevDotPos + 1, currPos + 1);
             if (valid(segment)) {
                 segments.add(segment);  // place dot
                 if (dots - 1 == 0) {     // if all 3 dots are placed
                     updateOutput(currPos);  // add the solution to output
                 }
                 else {
-                    backtrack(currPos, dots - 1);  // continue to place dots
+                    backtrack(currPos, dots - 1); // continue to place dots
                 }
                 segments.removeLast();  // remove the last placed dot
             }
@@ -74,7 +75,7 @@ public class RestoreIpAddresses {
 
     private List<String> restoreIpAddresses(String input) {
         length = input.length();
-        addStr = input;
+        inputAddressString = input;
         backtrack(-1, 3);
         return output;
     }
@@ -82,7 +83,7 @@ public class RestoreIpAddresses {
     public static void main(String[] args) {
         String inputStr = "";
         RestoreIpAddresses addresses = new RestoreIpAddresses();
-        List<String> ipAddrs = addresses.restoreIpAddresses(inputStr);
-        System.out.println(ipAddrs);
+        List<String> ipAddress = addresses.restoreIpAddresses(inputStr);
+        System.out.println(ipAddress);
     }
 }

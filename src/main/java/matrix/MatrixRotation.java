@@ -18,14 +18,13 @@ public class MatrixRotation {
 	}
 
 	public int[][] rotateMatrix(int[][] mainMatrix) {
-		int[][] matrix = mainMatrix;
-		int rows = matrix.length;
-		int columns = matrix[0].length;
+		int rows = mainMatrix.length;
+		int columns = mainMatrix[0].length;
 		int [][]rotateMatrix = new int[rows][columns];
 		
 		for (int i = 0; i < rows; i++) {
 			for (int j = 0; j < columns; j++) {
-				rotateMatrix[j][rows - 1 - i] = matrix[i][j];
+				rotateMatrix[j][rows - 1 - i] = mainMatrix[i][j];
 			}
 		}
 		return rotateMatrix;
@@ -34,12 +33,12 @@ public class MatrixRotation {
 	public static void printMatrix(int[][] matrix) {
         int columns = matrix[0].length;
         int rows = matrix.length;
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < columns; j++) {
-                System.out.print(matrix[i][j] + " ");
-            }
-            System.out.println();
-        }
+		for (int[] ints : matrix) {
+			for (int j = 0; j < columns; j++) {
+				System.out.print(ints[j] + " ");
+			}
+			System.out.println();
+		}
     }
 
 }

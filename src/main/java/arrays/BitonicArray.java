@@ -55,29 +55,24 @@ public class BitonicArray {
         return -1;
     }
 
-    // finding bitonic point
-    private static int findBitonicPoint(int[] arr, int n, int l, int r) {
+    // finding Bitonic point
+    private static int findBitonicPoint(int[] arr, int l, int r) {
         int mid;
 
         mid = (r + l) / 2;
-        if (arr[mid] > arr[mid - 1] && arr[mid] > arr[mid + 1]) {
+        if (arr[mid - 1] < arr[mid] && arr[mid] > arr[mid + 1]) {
             return mid;
         }
-        else {
-            if (arr[mid] > arr[mid - 1] && arr[mid] < arr[mid + 1]) {
-                findBitonicPoint(arr, n, mid, r);
-            }
-            else {
-                if (arr[mid] < arr[mid - 1] && arr[mid] > arr[mid + 1]) {
-                    findBitonicPoint(arr, n, l, mid);
-                }
-            }
+        else if (arr[mid - 1] > arr[mid] && arr[mid] > arr[mid + 1]) {
+            findBitonicPoint(arr, l, mid);
         }
-
+        else if (arr[mid - 1] < arr[mid] && arr[mid] < arr[mid + 1]) {
+            findBitonicPoint(arr, mid, r);
+        }
         return mid;
     }
 
-    private static int findElement(int arr[], int n, int key, int index) {
+    private static int findElement(int[] arr, int n, int key, int index) {
         if (key > arr[index]) {
             return -1;
         }
@@ -105,7 +100,8 @@ public class BitonicArray {
         l = 0;
         r = n - 1;
         int index;
-        index = findBitonicPoint(arr1, n, l, r);
+        index = findBitonicPoint(arr1, l, r);
+        System.out.println(arr1[index]);
 
         int x = findElement(arr1, n, key, index);
     }

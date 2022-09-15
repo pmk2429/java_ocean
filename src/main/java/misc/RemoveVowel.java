@@ -1,17 +1,18 @@
 package misc;
 
 import java.util.Arrays;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public class RemoveVowel {
 
     static String remVowel(String str) {
         Character[] vowels = {'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'};
-        List<Character> al = Arrays.asList(vowels);
+        Set<Character> set = new HashSet<>(Arrays.asList(vowels));
         StringBuilder sb = new StringBuilder(str);
 
         for (int i = 0; i < sb.length(); i++) {
-            if (al.contains(sb.charAt(i))) {
+            if (set.contains(sb.charAt(i))) {
                 sb.replace(i, i + 1, "");
                 i--;
             }

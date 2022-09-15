@@ -14,6 +14,8 @@ import java.util.*;
  * --------
  * FOOL to SAGE
  * FOOL -> POOL -> POLL -> POLE -> PALE -> SALE -> SAGE (length = 7)
+ *
+ *  ~!@#HARD:REVISE
  */
 public class WordLadder {
 

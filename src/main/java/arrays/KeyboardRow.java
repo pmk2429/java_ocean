@@ -21,24 +21,27 @@ public class KeyboardRow {
         for (int i = 0; i < words.length; i++) {
             boolean validWord = true;
             String curWord = words[i].toLowerCase();
-            if (firstRow.contains(curWord.substring(0, 1))) {
-                for (int j = 0; j < curWord.length(); j++) {
+            String firstChar = curWord.substring(0, 1);
+            int currLength = curWord.length();
+
+            if (firstRow.contains(firstChar)) {
+                for (int j = 1; j < currLength; j++) {
                     if (!firstRow.contains(String.valueOf(curWord.charAt(j)))) {
                         validWord = false;
                         break;
                     }
                 }
             }
-            else if (secondRow.contains(curWord.substring(0, 1))) {
-                for (int j = 0; j < curWord.length(); j++) {
+            else if (secondRow.contains(firstChar)) {
+                for (int j = 1; j < currLength; j++) {
                     if (!secondRow.contains(String.valueOf(curWord.charAt(j)))) {
                         validWord = false;
                         break;
                     }
                 }
             }
-            else if (thirdRow.contains(curWord.substring(0, 1))) {
-                for (int j = 0; j < curWord.length(); j++) {
+            else if (thirdRow.contains(firstChar)) {
+                for (int j = 1; j < currLength; j++) {
                     if (!thirdRow.contains(String.valueOf(curWord.charAt(j)))) {
                         validWord = false;
                         break;

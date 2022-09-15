@@ -15,6 +15,9 @@ package maze;
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 */
 
+/**
+ * ~!@#HARD:REVISE
+ */
 class Point {
     int row;
     int column;
@@ -41,6 +44,7 @@ class Point {
 
 public class PathExists {
 
+    private static int M, N;
     private static int[][] mazeTest = {
         {1, 1, 1, 1, 0},
         {0, 1, 0, 0, 0},
@@ -48,27 +52,14 @@ public class PathExists {
         {0, 1, 1, 1, 1},
         {0, 0, 0, 0, 1}};
 
-    // check the validity of cell
+
     private static boolean isValid(int[][] maze, Point curr, int[][] visited) {
-        if (maze[curr.row][curr.column] != 0 && visited[curr.row][curr.column] == 0) {
-            return true;
-        }
-        return false;
+        return maze[curr.row][curr.column] != 0 && visited[curr.row][curr.column] == 0;
     }
 
-    // checks bounds
     private static boolean isNavigable(Point cell) {
-        if (cell.row >= 0 && cell.row < M && cell.column >= 0 && cell.column < N) {
-            return true;
-        }
-        return false;
+        return cell.row >= 0 && cell.row < M && cell.column >= 0 && cell.column < N;
     }
-
-    private static boolean isValid(int x, int y) {
-        return (x < M && y < N && x >= 0 && y >= 0);
-    }
-
-    private static int M, N;
 
     private static boolean hasPath(int[][] maze, Point start, Point end, int[][] visited) {
         // Your solution goes here

@@ -1,7 +1,6 @@
 package threading.io;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.concurrent.*;
@@ -26,9 +25,7 @@ public class ReadingFile {
         // Wait til FileTask completes
         try {
             service.submit(new FileTask(queue)).get();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
+        } catch (InterruptedException | ExecutionException e) {
             e.printStackTrace();
         }
 
@@ -62,14 +59,11 @@ class FileTask implements Runnable {
                 // block if the queue is full
                 queue.put(line);
             }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
+        } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         } finally {
             try {
+                assert br != null;
                 br.close();
             } catch (IOException e) {
                 e.printStackTrace();

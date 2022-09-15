@@ -20,15 +20,14 @@ public class FindMiddleIndex {
                     break;
                 }
                 else {
-                    throw new Exception(
-                        "Please pass proper array to match the requirement");
+                    throw new Exception("Please pass proper array to match the requirement");
                 }
             }
         }
         return endIndex;
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] a) {
         int[] num = {2, 4, 4, 5, 4, 1, 6, 4};
         try {
             System.out.println("Starting from index 0, adding numbers till index " + findMiddleIndex(num) + " and");

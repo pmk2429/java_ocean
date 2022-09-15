@@ -1,5 +1,7 @@
 package strings;
 
+import java.util.Stack;
+
 /**
  * Given a string S of lowercase letters, a duplicate removal consists of choosing two adjacent and equal letters, and removing them.
  * We repeatedly make duplicate removals on S until we no longer can.
@@ -22,11 +24,20 @@ package strings;
  */
 public class RemoveAdjacentDuplicates {
 
-  public String removeDuplicates(String S) {
-    return null;
-  }
+    private static String removeDuplicates(String S) {
+        Stack<Character> stack = new Stack<>();
+        for (char s : S.toCharArray()) {
+            if (!stack.isEmpty() && stack.peek() == s)
+                stack.pop();
+            else
+                stack.push(s);
+        }
+        StringBuilder sb = new StringBuilder();
+        for (char s : stack) sb.append(s);
+        return sb.toString();
+    }
 
-  public static void main(String[] args) {
-
-  }
+    public static void main(String[] args) {
+        System.out.println("abbaca -> " + removeDuplicates("abbaca"));
+    }
 }

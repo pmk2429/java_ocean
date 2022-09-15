@@ -19,6 +19,8 @@ import java.util.Arrays;
  * ----------
  * Input : arr[] = {8 55 22 1 3 22 4 5}
  * Output :3
+ * <p>
+ * This problem related to {@link CheckConsecutive}
  */
 public class MinChangesFor1ToN {
 
@@ -29,10 +31,13 @@ public class MinChangesFor1ToN {
 
         int length = arr.length;
 
-        Arrays.sort(arr);
+        //Arrays.sort(arr);
 
-        int min = arr[0];
-        int max = arr[length - 1];
+        //int min = arr[0];
+        //int max = arr[length - 1];
+
+        int min = Arrays.stream(arr).min().getAsInt();
+        int max = Arrays.stream(arr).max().getAsInt();
 
         // this indicates that 1 to N are present
         if (max - min + 1 == length) {

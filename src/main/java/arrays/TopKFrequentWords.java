@@ -90,7 +90,7 @@ public class TopKFrequentWords {
         return candidates.subList(0, k);
     }
 
-    private static List<String> topKFrequentHeap(String[] words, int k) {
+    private static List<String> topKFrequentWordsUsingHeap(String[] words, int k) {
         Map<String, Integer> count = new HashMap<>();
 
         for (String word : words) {
@@ -115,9 +115,9 @@ public class TopKFrequentWords {
     public static void main(String[] args) {
         String[] str = {"i", "love", "leetcode", "i", "love", "coding"};
         int k = 2;
-        System.out.println(topKFrequentHeap(str, k));
+        System.out.println(topKFrequentWordsUsingHeap(str, k));
         String[] str2 = {"the", "day", "is", "sunny", "the", "the", "the", "sunny", "is", "is"};
         int k2 = 4;
-        System.out.println(topKFrequentHeap(str2, k2));
+        System.out.println(topKFrequentWordsUsingHeap(str2, k2));
     }
 }

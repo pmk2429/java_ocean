@@ -3,6 +3,14 @@ package numbers;
 import java.util.Scanner;
 
 public class AppendNums {
+
+    private long appendNumbers(long number1, long number2) {
+        long numOfDigits = (long) (Math.log10(number2) + 1);
+        long multiplier = (long) Math.pow(10, numOfDigits);
+        long appendedNumber = (number1 * multiplier) + number2;
+        return appendedNumber;
+    }
+
     public static void main(String[] args) {
         long number1 = 0, number2 = 0;
         System.out.println("Enter 2 numbers:");
@@ -20,13 +28,5 @@ public class AppendNums {
         // Append 2 numbers.
         long appendedNumber = appendObj.appendNumbers(number1, number2);
         System.out.println("\nAppended number: " + appendedNumber);
-
-    }
-
-    private long appendNumbers(long number1, long number2) {
-        long numOfDigits = (long) (Math.log10(number2) + 1);
-        long multiplier = (long) Math.pow(10, numOfDigits);
-        long appendedNumber = (number1 * multiplier) + number2;
-        return appendedNumber;
     }
 }

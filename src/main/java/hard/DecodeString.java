@@ -44,7 +44,7 @@ public class DecodeString {
                     next.append(poppedChar);
                 }
                 if (!wordStack.isEmpty()) {
-                    wordStack.push(wordStack.pop() + next);
+                    wordStack.push(wordStack.pop() + next.toString());
                 }
                 else {
                     wordStack.push(next.toString());

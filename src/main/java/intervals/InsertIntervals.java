@@ -16,6 +16,8 @@ import java.util.Arrays;
  * Input: intervals = [[1,2],[3,5],[6,7],[8,10],[12,16]], newInterval = [4,8]
  * Output: [[1,2],[3,10],[12,16]]
  * Explanation: Because the new interval [4,8] overlaps with [3,5],[6,7],[8,10].
+ *
+ * ~!@#HARD:REVISE
  */
 public class InsertIntervals {
 
@@ -25,17 +27,17 @@ public class InsertIntervals {
         // Time : O(n) Space : O(n)
         if (newInterval == null) return intervals;
 
-        int[][] list = new int[M + 1][2];
+        int[][] ans = new int[M + 1][2];
 
         int i = 0;
-        int idx = 0;
+        int idx = 0; // keeps track of total newly built rows of intervals
 
         int start = newInterval[0];
         int end = newInterval[1];
 
         while (i < M && intervals[i][1] < start) {
-            list[idx][0] = intervals[i][0];
-            list[idx][1] = intervals[i][1];
+            ans[idx][0] = intervals[i][0];
+            ans[idx][1] = intervals[i][1];
             idx++;
             i++;
         }
@@ -47,13 +49,13 @@ public class InsertIntervals {
             i++;
         }
 
-        list[idx][0] = newInterval[0];
-        list[idx][1] = newInterval[1];
+        ans[idx][0] = newInterval[0];
+        ans[idx][1] = newInterval[1];
         idx++;
 
         while (i < M) {
-            list[idx][0] = intervals[i][0];
-            list[idx][1] = intervals[i][1];
+            ans[idx][0] = intervals[i][0];
+            ans[idx][1] = intervals[i][1];
             idx++;
             i++;
         }
@@ -61,8 +63,8 @@ public class InsertIntervals {
         // create a 2D array that doesn't contain extra spaces
         int[][] res = new int[idx][2];
         for (int j = 0; j < idx; j++) {
-            res[j][0] = list[j][0];
-            res[j][1] = list[j][1];
+            res[j][0] = ans[j][0];
+            res[j][1] = ans[j][1];
         }
 
         return res;
@@ -75,8 +77,8 @@ public class InsertIntervals {
         System.out.println(Arrays.deepToString(updatedInterval));
 
         int[][] ints = {{1, 2}, {3, 5}, {6, 7}, {8, 10}, {12, 16}};
-        int[] newints = {4, 8};
-        int[][] updsints = insert(ints, newints);
-        System.out.println(Arrays.deepToString(updsints));
+        int[] newIntervals = {4, 8};
+        int[][] updatedIntervals = insert(ints, newIntervals);
+        System.out.println(Arrays.deepToString(updatedIntervals));
     }
 }

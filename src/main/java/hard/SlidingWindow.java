@@ -15,17 +15,22 @@ import java.util.Map;
  * -----
  * If there is no such window in S that covers all characters in T, return the empty string "".
  * If there is such window, you are guaranteed that there will always be only one unique minimum window in S.
+ * <p>
+ * ~!@#HARD:REVISE
  */
 public class SlidingWindow {
-    public String minWindow(String s, String t) {
+
+    private static String minWindow(String s, String t) {
 
         if (s.length() == 0 || t.length() == 0) {
             return "";
         }
+        int tLen = t.length();
+        int sLen = s.length();
 
         // Dictionary which keeps a count of all the unique characters in t.
-        Map<Character, Integer> dictT = new HashMap<Character, Integer>();
-        for (int i = 0; i < t.length(); i++) {
+        Map<Character, Integer> dictT = new HashMap<>();
+        for (int i = 0; i < tLen; i++) {
             int count = dictT.getOrDefault(t.charAt(i), 0);
             dictT.put(t.charAt(i), count + 1);
         }
@@ -43,12 +48,12 @@ public class SlidingWindow {
         int formed = 0;
 
         // Dictionary which keeps a count of all the unique characters in the current window.
-        Map<Character, Integer> windowCounts = new HashMap<Character, Integer>();
+        Map<Character, Integer> windowCounts = new HashMap<>();
 
         // ans list of the form (window length, left, right)
         int[] ans = {-1, 0, 0};
 
-        while (r < s.length()) {
+        while (r < sLen) {
             // Add one character from the right to the window
             char c = s.charAt(r);
             int count = windowCounts.getOrDefault(c, 0);
@@ -86,5 +91,10 @@ public class SlidingWindow {
         }
 
         return ans[0] == -1 ? "" : s.substring(ans[1], ans[2] + 1);
+    }
+
+    public static void main(String[] args) {
+        String S = "ADOBECODEBANC", T = "ABC";
+        System.out.println(minWindow(S, T));
     }
 }

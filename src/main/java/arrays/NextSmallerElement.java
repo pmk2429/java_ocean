@@ -30,10 +30,10 @@ import java.util.Arrays;
 public class NextSmallerElement {
 
     private static void nextSmallerElement(int[] arr) {
-        int j;
         int length = arr.length;
         int lastIndex = length - 1;
-        int[] nse = new int[arr.length];
+        int[] nse = new int[length];
+        int j;
         for (int i = 0; i < length; i++) {
             if (i == lastIndex) {
                 nse[i] = -1;

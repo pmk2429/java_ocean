@@ -1,8 +1,6 @@
 package numbers;
 
 
-import java.util.Hashtable;
-
 /**
  * Given a column title as appear in an Excel sheet, return its corresponding column number.
  * <p>

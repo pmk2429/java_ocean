@@ -8,8 +8,7 @@ import java.util.TimerTask;
  */
 public class TimerExample {
 
-
-    static Timer timer = new Timer();
+    private static final Timer timer = new Timer();
 
     // runs only once
     public static void main(String[] args) {

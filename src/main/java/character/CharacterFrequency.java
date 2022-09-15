@@ -97,22 +97,7 @@ public class CharacterFrequency {
             charFreq[c]++;
         }
 
-        for (int i = 0; i < charFreq.length; i++) {
-            if (charFreq[i] > 0) {
-                System.out.println((char) i + " -> " + charFreq[i]);
-            }
-        }
-    }
-
-    private static void test(String str) {
-        int[] freq = new int[256];
-        char[] allChars = str.toCharArray();
-        for (char c : allChars) {
-            int position = (int) c;
-            freq[position]++;
-        }
-
-        Arrays.stream(freq).filter(i -> i > 0).forEach(i -> System.out.println((char) i + " -> " + i));
+        Arrays.stream(charFreq).filter(i -> i > 0).forEach(System.out::println);
     }
 
     public static void main(String[] args) {

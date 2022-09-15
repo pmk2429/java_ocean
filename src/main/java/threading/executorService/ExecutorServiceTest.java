@@ -3,11 +3,8 @@ package threading.executorService;
 /**
  * Created by Pavitra on 5/8/2016.
  */
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-import java.util.concurrent.TimeUnit;
+
+import java.util.concurrent.*;
 
 public class ExecutorServiceTest {
 
@@ -33,13 +30,15 @@ public class ExecutorServiceTest {
             // if null the task has finished
             if (taskTwo.get() == null) {
                 System.out.println(i + 1 + ") TaskTwo terminated successfully");
-            } else {
+            }
+            else {
                 // if it doesn't finished, cancel it
                 taskTwo.cancel(true);
             }
             if (taskThree.get() == null) {
                 System.out.println(i + 1 + ") TaskThree terminated successfully");
-            } else {
+            }
+            else {
                 taskThree.cancel(true);
             }
         }
@@ -48,7 +47,6 @@ public class ExecutorServiceTest {
         // wait until all tasks are finished
         executor.awaitTermination(1, TimeUnit.SECONDS);
         System.out.println("All tasks are finished!");
-
     }
 
 }

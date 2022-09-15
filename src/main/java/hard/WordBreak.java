@@ -28,23 +28,27 @@ import java.util.*;
  * ----------
  * Input: addStr = "catsandog", wordDict = ["cats", "dog", "sand", "and", "cat"]
  * Output: false
+ * <p>
+ * ~!@#HARD:REVISE
  */
 public class WordBreak {
 
     private static List<String> wordBreak(String s, String[] words) {
-        Set<String> wordDictSet = new HashSet<>(Arrays.asList(words));
-        Queue<Integer> queue = new LinkedList<>();
-        int[] visited = new int[s.length()];
-        queue.add(0);
         int length = s.length();
-
+        Set<String> wordDictSet = new HashSet<>(Arrays.asList(words));
+        Deque<Integer> queue = new LinkedList<>();
         List<String> res = new ArrayList<>();
+        int[] visited = new int[length];
+
+        queue.add(0);
 
         while (!queue.isEmpty()) {
-            int start = queue.remove();
+            // int start = queue.poll();
+            int start = queue.remove(); // start of the current word
             // if not visited
             if (visited[start] == 0) {
                 for (int end = start + 1; end <= length; end++) {
+                    // end measures end of the current word
                     String subStr = s.substring(start, end);
                     if (wordDictSet.contains(subStr)) {
                         res.add(subStr);
@@ -54,6 +58,7 @@ public class WordBreak {
                     }
                     queue.add(end);
                 }
+                // mark visited
                 visited[start] = 1;
             }
         }

@@ -22,13 +22,13 @@ package hard;
  * https://leetcode.com/problems/container-with-most-water/
  */
 public class ContainMostWater {
-    private static int maxArea(int[] height) {
-        int left = 0, right = height.length - 1;
+    private static int maxArea(int[] heights) {
+        int left = 0, right = heights.length - 1;
         int maxArea = 0;
 
         while (left < right) {
-            maxArea = Math.max(maxArea, Math.min(height[left], height[right]) * (right - left));
-            if (height[left] < height[right]) {
+            maxArea = Math.max(maxArea, Math.min(heights[left], heights[right]) * (right - left));
+            if (heights[left] < heights[right]) {
                 left++;
             }
             else {
