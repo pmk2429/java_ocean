@@ -1,5 +1,6 @@
 package hard;
 
+import java.util.Map;
 import java.util.TreeMap;
 
 /**
@@ -36,10 +37,12 @@ import java.util.TreeMap;
  * -----
  * The number of calls to MyCalendar.book per test case will be at most 1000.
  * In calls to MyCalendar.book(start, end), start and end are integers in the range [0, 10^9].
+ * <p>
+ * ~!@#HARD:REVISE
  */
 public class MyCalendar {
 
-    private final TreeMap<Integer, Integer> delta;
+    private final Map<Integer, Integer> delta;
 
     public MyCalendar() {
         delta = new TreeMap<>();

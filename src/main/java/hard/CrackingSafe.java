@@ -28,11 +28,11 @@ import java.util.Set;
  */
 public class CrackingSafe {
 
-    static Set<String> seen;
-    static StringBuilder ans;
+    private static Set<String> seen;
+    private static StringBuilder ans;
 
     private static void dfs(String node, int k) {
-        for (int x = 0; x < k; ++x) {
+        for (int x = 0; x < k; x++) {
             String neighbor = node + x;
             if (!seen.contains(neighbor)) {
                 seen.add(neighbor);

@@ -22,18 +22,9 @@ public class Intersection {
             }
         }
 
-        int[] result = set2.stream().mapToInt(i -> i).toArray();
-
-        return result;
+        return set2.stream().mapToInt(i -> i).toArray();
     }
 
-    /**
-     * Intersection  of two unsorted arrays
-     *
-     * @param a
-     * @param b
-     * @return
-     */
     private static int[] intersection(int[] a, int[] b) {
         if (a.length == 0 || b.length == 0) {
             return null;

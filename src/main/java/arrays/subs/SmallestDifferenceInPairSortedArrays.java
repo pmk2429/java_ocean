@@ -19,7 +19,7 @@ import java.util.Arrays;
  * Output : 10
  * That is, the pair (40, 50)
  */
-public class SmallestDifferenceInPairnsortedArrays {
+public class SmallestDifferenceInPairSortedArrays {
 
   private static int findSmallestDifference(int[] A, int[] B, int m, int n) {
     Arrays.sort(A);

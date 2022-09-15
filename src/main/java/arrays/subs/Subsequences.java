@@ -1,5 +1,7 @@
 package arrays.subs;
 
+import java.util.Arrays;
+
 /**
  * Given a string S and a string T, count the number of distinct subsequences of S which equals T.
  * <p>
@@ -21,6 +23,7 @@ package arrays.subs;
  * ^^ ^^^^
  * rabbbit
  * ^^^ ^^^
+ * <p>
  * Example 2:
  * ----------
  * Input: S = "babgbag", T = "bag"
@@ -39,27 +42,44 @@ package arrays.subs;
  * ^  ^^
  * babgbag
  * ^^^
+ * <p>
+ * This problem is simiar to {@link strings.FrequencyOfSubstring}
+ *
+ * ~!@#HARD:REVISE
  */
 public class Subsequences {
-    private static int numDistinct(String s, String t) {
-        if (s == null || t == null || t.length() > s.length()) return 0;
-        int sLen = s.length(), tLen = t.length();
-        int[] counts = new int[sLen + 1];
-        for (int i = 0; i <= sLen; ++i) counts[i] = 1;
-        for (int ti = 1; ti <= tLen; ++ti) {
+    private static int numDistinct(String str, String sub) {
+        if (str == null || sub == null || sub.length() > str.length())
+            return 0;
+        int strLength = str.length(), subLength = sub.length();
+        int[] counts = new int[strLength + 1];
+        Arrays.fill(counts, 1);
+        // starting with 1
+        for (int i = 1; i <= subLength; i++) {
             int pre = 0;
-            for (int si = 1; si <= sLen; ++si) {
-                int preT = counts[si];
-                if (t.charAt(ti - 1) == s.charAt(si - 1)) {
-                    counts[si] = counts[si - 1] + pre;
+            // starting with 1
+            for (int j = 1; j <= strLength; j++) {
+                int preSub = counts[j];
+                // compare one character to the left
+                if (sub.charAt(i - 1) == str.charAt(j - 1)) {
+                    counts[j] = counts[j - 1] + pre;
                 }
                 else {
-                    counts[si] = (si == 1 ? 0 : counts[si - 1]);
+                    counts[j] = (j == 1 ? 0 : counts[j - 1]);
                 }
-                pre = preT;
+                pre = preSub;
             }
             counts[0] = 0;
         }
-        return counts[sLen];
+        return counts[strLength];
+    }
+
+    public static void main(String[] args) {
+        String S = "rabbbit";
+        String T = "rabbit";
+        System.out.println(numDistinct(S, T));
+        String S1 = "babgbag";
+        String T1 = "bag";
+        System.out.println(numDistinct(S1, T1));
     }
 }

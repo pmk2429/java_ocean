@@ -18,8 +18,7 @@ public class SumOfDigits {
     }
 
     private void printTotal(int sumOfDigits) {
-        System.out.println("\nTotal of " + SumOfDigits.inputNumber + "(each digit) is: "
-            + sumOfDigits);
+        System.out.println("\nTotal of " + SumOfDigits.inputNumber + "(each digit) is: " + sumOfDigits);
     }
 
     private int calculateSumOfDigits(int inputNumber, int total) {
@@ -35,5 +34,36 @@ public class SumOfDigits {
             return sumOfDigits;
         }
 
+    }
+
+    private int length(int num) {
+        int length = 0;
+        long temp = 1;
+        while (temp <= num) {
+            length++;
+            temp *= 10;
+        }
+        return length;
+    }
+
+    private int addDigits(int num) {
+        int finalSum = 0;
+        while (length(num) != 1) {
+            finalSum = 0;
+            while (num % 10 != 0) {
+                finalSum += num % 10;
+                num = num / 10;
+            }
+            finalSum += num;
+            num = finalSum;
+        }
+        return finalSum;
+    }
+
+    /**
+     * #SHORTCUT - Sum of Digits
+     */
+    private int addAllDigits(int num) {
+        return 1 + (num - 1) % 9;
     }
 }

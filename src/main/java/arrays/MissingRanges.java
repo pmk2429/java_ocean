@@ -1,9 +1,7 @@
 package arrays;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 /**
  * Given a sorted integer array where the range of elements are [0, 99] inclusive, return its missing ranges.
@@ -16,27 +14,27 @@ import java.util.Set;
  */
 public class MissingRanges {
 
-  private static List<String> findMissingRanges(int[] vals) {
-    List<String> ranges = new ArrayList<>();
-    int start = vals[0];
-    int end = vals[vals.length - 1];
-    int prev = start - 1;
-    for (int i = 0; i <= vals.length; i++) {
-      int curr = (i == vals.length) ? end + 1 : vals[i];
-      if (curr - prev >= 2) {
-        ranges.add(getRange(prev + 1, curr - 1));
-      }
-      prev = curr;
+    private static List<String> findMissingRanges(int[] vals) {
+        List<String> ranges = new ArrayList<>();
+        int start = vals[0];
+        int end = vals[vals.length - 1];
+        int prev = start - 1;
+        for (int i = 0; i <= vals.length; i++) {
+            int curr = (i == vals.length) ? end + 1 : vals[i];
+            if (curr - prev >= 2) {
+                ranges.add(getRange(prev + 1, curr - 1));
+            }
+            prev = curr;
+        }
+        return ranges;
     }
-    return ranges;
-  }
 
-  private static String getRange(int from, int to) {
-    return (from == to) ? String.valueOf(from) : from + "->" + to;
-  }
+    private static String getRange(int from, int to) {
+        return (from == to) ? String.valueOf(from) : from + "->" + to;
+    }
 
-  public static void main(String[] args) {
-    int[] arr = {1, 2, 3, 7};
-    System.out.println(findMissingRanges(arr));
-  }
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 7};
+        System.out.println(findMissingRanges(arr));
+    }
 }

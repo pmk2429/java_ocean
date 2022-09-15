@@ -4,11 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Given an array of words and a width maxWidth, format the text such that each line has exactly maxWidth characters and is fully (left and right) justified.
- * <p>
- * You should pack your words in a greedy approach; that is, pack as many words as you can in each line. Pad extra spaces ' ' when necessary so that each line has exactly maxWidth characters.
- * <p>
- * Extra spaces between words should be distributed as evenly as possible. If the number of spaces on a line do not divide evenly between words, the empty slots on the left will be assigned more spaces than the slots on the right.
+ * Given an array of words and a width maxWidth, format the text such that each line has exactly maxWidth characters
+ * and is fully (left and right) justified.
+ * You should pack your words in a greedy approach; that is, pack as many words as you can in each line.
+ * Pad extra spaces ' ' when necessary so that each line has exactly maxWidth characters.
+ * Extra spaces between words should be distributed as evenly as possible.
+ * If the number of spaces on a line do not divide evenly between words, the empty slots on the left will be
+ * assigned more spaces than the slots on the right.
  * <p>
  * For the last line of text, it should be left justified and no extra space is inserted between words.
  * <p>
@@ -43,7 +45,7 @@ import java.util.List;
  * ]
  * Explanation: Note that the last line is "shall be    " instead of "shall     be",
  * because the last line must be left-justified instead of fully-justified.
- * Note that the second line is also left-justified becase it contains only one word.
+ * Note that the second line is also left-justified because it contains only one word.
  * <p>
  * Example 3:
  * ----------
@@ -60,10 +62,18 @@ import java.util.List;
  * "everything  else  we",
  * "do                  "
  * ]
+ *
+ * ~!@#HARD:REVISE
  */
 public class TextJustification {
 
-    public List<String> fullJustify(String[] words, int maxWidth) {
+    private static String getSpaceStr(int count) {
+        StringBuilder sb = new StringBuilder();
+        while (count-- > 0) sb.append(" ");
+        return sb.toString();
+    }
+
+    private static List<String> fullJustify(String[] words, int maxWidth) {
         if (words == null || words.length == 0) {
             return null;
         }
@@ -74,27 +84,36 @@ public class TextJustification {
 
         List<String> res = new ArrayList<>();
 
-        int start = 0; //inclusive
+        int start = 0; // inclusive
 
         while (start < words.length) {
-            int len = words[start].length();
-            int end = start + 1; //exclusive
+            int currWordLength = words[start].length();
+            int end = start + 1; // exclusive
             while (end < words.length) {
-                if (len + 1 + words[end].length() > maxWidth) break;
-                len += 1 + words[end].length();
+                int nextWordLength = words[end].length();
+                if (currWordLength + 1 + nextWordLength > maxWidth) break;
+                currWordLength += 1 + nextWordLength;
                 end++;
             }
 
             // build the line
             StringBuilder sb = new StringBuilder(words[start++]);
-            if (end == words.length) { //left justify with single " "
-                while (start < end) sb.append(" ").append(words[start++]);
+            if (end == words.length) { // left justify with single " "
+                while (start < end) {
+                    sb.append(" ").append(words[start++]);
+                }
             }
             else {
+                // spread out evenly
                 int wordCount = end > start ? end - start : 1;
-                int extra = (maxWidth - len) % wordCount;
-                String evenly = getSpaceStr((maxWidth - len) / wordCount);
-                while (start < end) sb.append(" ").append(evenly).append(extra-- > 0 ? " " : "").append(words[start++]);
+                int extra = (maxWidth - currWordLength) % wordCount;
+                String evenly = getSpaceStr((maxWidth - currWordLength) / wordCount);
+                while (start < end) {
+                    sb.append(" ")
+                        .append(evenly)
+                        .append(extra-- > 0 ? " " : "")
+                        .append(words[start++]);
+                }
             }
 
             int lineLen = sb.length();
@@ -112,13 +131,12 @@ public class TextJustification {
         return res;
     }
 
-    private String getSpaceStr(int count) {
-        StringBuilder sb = new StringBuilder();
-        while (count-- > 0) sb.append(" ");
-        return sb.toString();
-    }
-
     public static void main(String[] args) {
-
+        String[] words1 = {"What", "must", "be", "acknowledgment", "shall", "be"};
+        int maxWidth1 = 16;
+        System.out.println(fullJustify(words1, maxWidth1));
+        String[] words2 = {"This", "is", "an", "example", "of", "text", "justification."};
+        int maxWidth2 = 16;
+        System.out.println(fullJustify(words2, maxWidth2));
     }
 }

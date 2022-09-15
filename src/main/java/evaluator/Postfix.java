@@ -18,12 +18,11 @@ public class Postfix {
 	}
 
 	public int evaluatePostfixExpression(String inputExpression) {
-		Stack<Integer> stack = new Stack<Integer>();
-		int op1 = 0, op2 = 0, result = 0;
+		Stack<Integer> stack = new Stack<>();
+		int op1, op2, result;
 		String token;
 		StringTokenizer strToken = new StringTokenizer(inputExpression);
 		try {
-
 			while (strToken.hasMoreTokens()) {
 				token = strToken.nextToken();
 				if (isOperator(token)) {
@@ -38,28 +37,27 @@ public class Postfix {
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
-		result = stack.pop().intValue();
-		return result;
+		return stack.pop();
 	}
 
-	private int evaluateSingleOperation(char operation, int op1, int op2) {
+	private int evaluateSingleOperation(char operator, int op1, int op2) {
 		int result = 0;
 
-		if (operation == '+') {
+		if (operator == '+') {
 			result = op1 + op2;
-		} else if (operation == '-') {
+		} else if (operator == '-') {
 			result = op1 - op2;
-		} else if (operation == '*') {
+		} else if (operator == '*') {
 			result = op1 * op2;
-		} else if (operation == '/') {
+		} else if (operator == '/') {
 			result = op1 / op2;
-		} else if (operation == '^') {
+		} else if (operator == '^') {
 			result = op1 ^ op2;
 		}
 		return result;
 	}
 
 	private boolean isOperator(String token) {
-		return (token.equals("+") || token.equals("-") || token.equals("/") || token.equals("*"));
+		return (token.equals("+") || token.equals("-") || token.equals("/") || token.equals("*") || token.equals("^"));
 	}
 }

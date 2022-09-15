@@ -45,11 +45,11 @@ public class CouplesHoldingHands {
         index = 0;
         while (index < row.length) {
             if (map.get(index) != index + 1) {
-                int nextvalue = map.get(index + 1);
-                int currentvalue = map.get(index);
+                int nextValue = map.get(index + 1);
+                int currentValue = map.get(index);
                 map.put(index, index + 1);
-                map.put(currentvalue, nextvalue);
-                map.put(nextvalue, currentvalue);
+                map.put(currentValue, nextValue);
+                map.put(nextValue, currentValue);
                 res++;
             }
             index = index + 2;

@@ -37,6 +37,13 @@ import java.util.Map;
  * 1 <= ages[i] <= 120.
  */
 public class FriendRequest {
+
+    private boolean request(int a, int b) {
+        return !((b <= 0.5 * a + 7)
+            || (b > a)
+            || (b > 100 && a < 100));
+    }
+
     public int numFriendRequests(int[] ages) {
         Map<Integer, Integer> count = new HashMap<>();
         for (int age : ages) {
@@ -51,10 +58,6 @@ public class FriendRequest {
             }
         }
         return res;
-    }
-
-    private boolean request(int a, int b) {
-        return !((b <= 0.5 * a + 7) || (b > a) || (b > 100 && a < 100));
     }
 
 }

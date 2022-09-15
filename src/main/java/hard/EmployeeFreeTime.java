@@ -2,8 +2,14 @@ package hard;
 
 import java.util.*;
 
+/**
+ * ~!@#HARD:REVISE
+ */
 public class EmployeeFreeTime {
 
+    /**
+     * If both start times are equal then compare end times, else compare start times.
+     */
     private static final Comparator<Time> timeComparator = (t1, t2) -> {
         if (t1.start == t2.start) {
             return t1.end - t2.end;
@@ -11,7 +17,7 @@ public class EmployeeFreeTime {
         return t1.start - t2.start;
     };
 
-    private static List<Time> findFreeTime(List<List<Time>> times, int dayStart, int dayEnd) {
+    private static List<Time> findFreeTime(List<List<Time>> times) {
         List<Time> availableTimes = new ArrayList<>();
 
         if (times == null) {
@@ -50,7 +56,7 @@ public class EmployeeFreeTime {
         int dayStart = 9;
         int dayEnd = 19;
 
-        findFreeTime(times, dayStart, dayEnd);
+        findFreeTime(times);
     }
 }
 

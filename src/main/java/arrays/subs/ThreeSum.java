@@ -6,59 +6,30 @@ import java.util.Set;
 
 public class ThreeSum {
 
-    private static int[] threeSumUsingHashSet(int[] arr, int target) {
-        int size = arr.length;
-        int[] three = new int[3];
-        boolean found = false;
-
-        // Fix the first element as A[i]
-        for (int i = 0; i < size - 2; i++) {
-            // Find pair in subarray A[i+1..n-1] with sum equal to sum - A[i]
-            HashSet<Integer> s = new HashSet<>();
-            int complement = target - arr[i];
-            three[0] = arr[i];
-            for (int j = i + 1; j < size; j++) {
-                int threeComplement = complement - arr[j];
-                if (s.contains(threeComplement) && threeComplement != (int) s.toArray()[s.size() - 1]) {
-                    three[1] = arr[j];
-                    three[2] = threeComplement;
-                    found = true;
-                    break;
-                }
-                s.add(arr[j]);
-            }
-            if (found) {
-                break;
-            }
-        }
-
-        return three;
-    }
-
     private static int[] threeSum(int[] arr, int target) {
         int length = arr.length;
-        int[] three = new int[3];
+        int[] threeSum = new int[3];
         boolean found = false;
-        Set<Integer> uniqueThree = new HashSet<>();
+        Set<Integer> set = new HashSet<>();
 
         for (int i = 0; i < length - 2; i++) {
+            threeSum[0] = arr[i];
             int complement = target - arr[i];
-            three[0] = arr[i];
             for (int j = i + 1; j < length; j++) {
                 int threeDiff = complement - arr[j];
-                if (uniqueThree.contains(threeDiff) && threeDiff != (int) uniqueThree.toArray()[uniqueThree.size() - 1]) {
-                    three[1] = arr[j];
-                    three[2] = threeDiff;
+                if (set.contains(threeDiff) && threeDiff != (int) set.toArray()[set.size() - 1]) {
+                    threeSum[1] = arr[j];
+                    threeSum[2] = threeDiff;
                     found = true;
                     break;
                 }
-                uniqueThree.add(arr[j]);
+                set.add(arr[j]);
             }
             if (found) {
                 break;
             }
         }
-        return three;
+        return threeSum;
     }
 
     // Sort the array and find the sum incrementally
@@ -103,9 +74,9 @@ public class ThreeSum {
     }
 
     public static void main(String[] args) {
-        int A[] = {1, 4, 45, 6, 10, 8};
+        int[] A = {1, 4, 45, 6, 10, 8};
         int sum = 22;
         System.out.println(Arrays.toString(threeSumUsingSort(A, sum)));
-        System.out.println(Arrays.toString(threeSumUsingHashSet(A, sum)));
+        System.out.println(Arrays.toString(threeSum(A, sum)));
     }
 }

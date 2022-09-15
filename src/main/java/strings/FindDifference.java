@@ -31,15 +31,15 @@ public class FindDifference {
      * ^= is the XOR function.
      */
     private static char difference(String main, String random) {
-        int diff = 0;
+        char diff = '\0';
         for (char c : main.toCharArray()) diff ^= c;
         for (char c : random.toCharArray()) diff ^= c;
-        return (char) diff;
+        return diff;
     }
 
     public static void main(String[] args) {
         String s = "abcd";
-        String t = "dceba";
+        String t = "dcpba";
         System.out.println(difference(s, t));
     }
 }

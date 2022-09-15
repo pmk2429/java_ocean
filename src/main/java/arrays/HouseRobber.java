@@ -26,11 +26,12 @@ public class HouseRobber {
 
     // alternate elements subset problem
     private static int maxToRob(int[] arr) {
+        int n = arr.length;
         int sum1 = 0, sum2 = 0, j;
-        for (int i = 0; i < arr.length; i = i + 2) {
+        for (int i = 0; i < n; i = i + 2) {
             sum1 += arr[i];
             j = i + 1;
-            if (j < arr.length) {
+            if (j < n) {
                 sum2 += arr[j];
             }
         }

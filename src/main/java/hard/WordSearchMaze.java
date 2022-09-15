@@ -19,12 +19,20 @@ package hard;
  * Given word = "ABCB", return false.
  */
 public class WordSearchMaze {
+
+    private static int M;
+    private static int N;
+
+    private static boolean isValid(int row, int col) {
+        return row < 0 || col < 0 || row == M || col == N;
+    }
+
     private static boolean exist(char[][] board, int row, int col, char[] word, int i) {
         if (i == word.length) {
             return true;
         }
 
-        if (row < 0 || col < 0 || row == board.length || col == board[row].length) {
+        if (!isValid(row, col)) {
             return false;
         }
 
@@ -64,6 +72,9 @@ public class WordSearchMaze {
             {'S', 'F', 'C', 'S'},
             {'A', 'D', 'E', 'E'}
         };
+
+        M = board.length;
+        N = board[0].length;
 
         String a = "ABCCED";
         System.out.println(exist(board, a));

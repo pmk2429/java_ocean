@@ -22,12 +22,14 @@ import java.util.Arrays;
  * Bonus
  * ------
  * Could you come up with a one-pass algorithm using only constant space?
+ *
+ * ~!@#HARD:REVISE
  */
 public class SortColors {
 
     private static void sortColors(int[] A, int n) {
         int n0 = -1, n1 = -1, n2 = -1;
-        for (int i = 0; i < n; ++i) {
+        for (int i = 0; i < n; i++) {
             if (A[i] == 0) {
                 A[++n2] = 2;
                 A[++n1] = 1;
@@ -64,7 +66,6 @@ public class SortColors {
 
     public static void main(String[] args) {
         int[] colors = {2, 0, 2, 1, 1, 0, 2, 0, 1, 2};
-        //System.out.println(Arrays.toString(sortColors(colors)));
         sortColors(colors, colors.length);
     }
 }

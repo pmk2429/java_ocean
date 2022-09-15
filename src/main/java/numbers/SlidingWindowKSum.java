@@ -1,5 +1,8 @@
 package numbers;
 
+/**
+ * Same as {@link arrays.SlidingWindowMaximum}
+ */
 public class SlidingWindowKSum {
 
     /**
@@ -7,8 +10,9 @@ public class SlidingWindowKSum {
      */
     private static int maxSum(int[] arr, int n, int k) {
         int maxSum = Integer.MIN_VALUE;
+        int iteratorIndex = n - k + 1;
         // Consider all blocks starting with 'i'.
-        for (int i = 0; i < n - k + 1; i++) {
+        for (int i = 0; i < iteratorIndex; i++) {
             int currentSum = 0;
             for (int j = 0; j < k; j++) {
                 currentSum += arr[i + j];

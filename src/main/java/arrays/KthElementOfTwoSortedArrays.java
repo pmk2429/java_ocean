@@ -38,10 +38,6 @@ public class KthElementOfTwoSortedArrays {
      * Algo
      * - Merge two sorted arrays using PriorityQueue
      * - Loop from reverse to find the kth element
-     *
-     * @param a
-     * @param b
-     * @return
      */
     private static int kthElement(int[] a, int[] b, int k) {
         PriorityQueue<Integer> sortedElements = new PriorityQueue<>();

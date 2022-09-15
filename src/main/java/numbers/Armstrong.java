@@ -3,7 +3,7 @@ package numbers;
 import java.util.Scanner;
 
 public class Armstrong {
-    static int inputNumber;
+    private static int inputNumber;
 
     public static void main(String[] args) {
         System.out.println("Enter the number to check whether it is Armstrong or not:");
@@ -27,7 +27,7 @@ public class Armstrong {
     }
 
     private boolean isArmstrong(int inputNumber) {
-        int div = 0, sum = 0, divCubed = 0;
+        int div, sum = 0, divCubed;
         int originalNumber = inputNumber;
         while (originalNumber > 0) {
             div = originalNumber % 10;

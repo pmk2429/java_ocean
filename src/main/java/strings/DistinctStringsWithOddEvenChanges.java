@@ -40,7 +40,6 @@ public class DistinctStringsWithOddEvenChanges {
                 hashOdd[c - 'a']++;
             else
                 hashEven[c - 'a']++;
-
         }
 
         // For every character from 'a' to 'z', we store its

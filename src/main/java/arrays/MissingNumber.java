@@ -59,9 +59,11 @@ public class MissingNumber {
      * of all the numbers in the array yields the missing number.
      */
     private static int findMissingNumber(int[] nums) {
-        int sum = nums.length;
-        for (int i = 0; i < nums.length; i++)
+        int n = nums.length;
+        int sum = n;
+        for (int i = 0; i < n; i++) {
             sum += i - nums[i];
+        }
         return sum;
     }
 

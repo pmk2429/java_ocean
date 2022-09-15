@@ -34,6 +34,7 @@ public class ReplaceWithSmallestOnLeft {
                 arr[i] = minEle;
             }
             else {
+                // replace `minEle` with new smallest element and swap arr[i] with prev `minEle`
                 int temp = arr[i];
                 arr[i] = minEle;
                 minEle = temp;

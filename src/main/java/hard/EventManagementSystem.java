@@ -88,26 +88,19 @@ class Listener implements EventMessage {
 }
 
 class EventManagementSystem {
-    private static Comparator<Event> eventsComparator = Comparator.comparingInt(e1 -> -e1.priority);
+    // sort the events in the reverse order of priority
+    private static final Comparator<Event> eventsComparator = Comparator.comparingInt(event -> -event.priority);
 
-    private static PriorityQueue<Event> eventsQueue = new PriorityQueue<>(eventsComparator);
-    private static List<Listener> eventListeners = new ArrayList<>();
+    private static final PriorityQueue<Event> eventsQueue = new PriorityQueue<>(eventsComparator);
+    private static final List<Listener> eventListeners = new ArrayList<>();
 
     public void addEvent(Event newEvent) {
-
-        // main DNF
         eventsQueue.offer(newEvent);
 
         Event topPriorityEvent = this.getTopPriorityEvent();
         if (topPriorityEvent.priority == newEvent.priority) {
             notify(newEvent);
         }
-
-        //else if (topPriorityEvent.priority < newEvent.priority) {
-        //  notify(newEvent);
-        //}
-
-        // log the output
     }
 
     public void addListener(Listener listener) {
@@ -120,23 +113,19 @@ class EventManagementSystem {
         }
     }
 
+    /**
+     * Returns the top most event stored in the Queue which is sorted by priority.
+     */
     public Event getTopPriorityEvent() {
-        // Edge cases
         return eventsQueue.peek();
-        // log the output
     }
 
     public Event removeEvent() {
-        // Edge cases
-        Event topEvent = eventsQueue.poll();
-        // log the output
-        return topEvent;
+        return eventsQueue.poll();
     }
 
     public boolean removeEvent(Event event) {
-        // Edge cases
         return eventsQueue.remove(event);
-        // log the output
     }
 
 }

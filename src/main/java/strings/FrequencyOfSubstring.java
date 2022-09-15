@@ -3,6 +3,9 @@ package strings;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * This problem is simiar to {@link arrays.subs.Subsequences}
+ */
 public class FrequencyOfSubstring {
 
     public static boolean isEmpty(String s) {

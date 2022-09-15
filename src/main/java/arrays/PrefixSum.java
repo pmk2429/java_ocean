@@ -16,24 +16,24 @@ package arrays;
  * prefixSum[2] = prefixSum[1] + arr[2] = 40 and so on.
  */
 public class PrefixSum {
-  // Fills prefix sum array
-  private static void fillPrefixSum(int[] arr, int[] prefixSum) {
-    prefixSum[0] = arr[0];
+    // Fills prefix sum array
+    private static void fillPrefixSum(int[] arr, int[] prefixSum) {
+        prefixSum[0] = arr[0];
 
-    for (int i = 1; i < arr.length; ++i) {
-      prefixSum[i] = prefixSum[i - 1] + arr[i];
+        for (int i = 1; i < arr.length; ++i) {
+            prefixSum[i] = prefixSum[i - 1] + arr[i];
+        }
     }
-  }
 
-  public static void main(String[] args) {
-    int[] arr = {10, 4, 16, 20};
-    int[] prefixSum = new int[arr.length];
+    public static void main(String[] args) {
+        int[] arr = {10, 4, 16, 20};
+        int[] prefixSum = new int[arr.length];
 
-    fillPrefixSum(arr, prefixSum);
+        fillPrefixSum(arr, prefixSum);
 
-    for (int i = 0; i < prefixSum.length; i++) {
-      System.out.print(prefixSum[i] + " ");
+        for (int j : prefixSum) {
+            System.out.print(j + " ");
+        }
+        System.out.println();
     }
-    System.out.println();
-  }
 }
