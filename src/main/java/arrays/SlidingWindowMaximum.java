@@ -44,7 +44,7 @@ public class SlidingWindowMaximum {
         for (int i = 0; i < length; i++) {
             int j = i;
             int max = Integer.MIN_VALUE;
-            while (j < i + 3 && j < length) {
+            while (j < i + k && j < length) {
                 if (nums[j] > max) {
                     max = nums[j];
                 }

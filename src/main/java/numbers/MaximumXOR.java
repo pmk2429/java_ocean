@@ -17,6 +17,8 @@ package numbers;
  * ----------
  * Input:  X = 200
  * Output: 55
+ * <p>
+ * ~!@#HARD:REVISE
  */
 public class MaximumXOR {
 
@@ -32,9 +34,9 @@ public class MaximumXOR {
         // represent the number in 8 bits - 256
         int movedBits = (1 << numOfBits);
         // subtract 1 to get complement of the number in bits
-        int subtractBits = (movedBits - 1);
+        int complementBits = (movedBits - 1);
         // perform XOR operation
-        int xorOp = subtractBits ^ X;
+        int xorOp = complementBits ^ X;
         return xorOp;
     }
 

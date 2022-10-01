@@ -16,6 +16,7 @@ package arrays;
  * prefixSum[2] = prefixSum[1] + arr[2] = 40 and so on.
  */
 public class PrefixSum {
+
     // Fills prefix sum array
     private static void fillPrefixSum(int[] arr, int[] prefixSum) {
         prefixSum[0] = arr[0];
