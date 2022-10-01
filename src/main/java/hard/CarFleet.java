@@ -32,6 +32,8 @@ import java.util.Comparator;
  * 0 < speed[i] <= 10 ^ 6
  * 0 <= position[i] < target
  * All initial positions are different.
+ *
+ * ~!@#HARD:REVISE
  */
 public class CarFleet {
     private static int carFleet(int target, int[] position, int[] speed) {

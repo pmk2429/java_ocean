@@ -14,6 +14,8 @@ package numbers;
  * <p>
  * output
  * 7 (1+1+2+1+2)
+ * <p>
+ * ~!@#HARD:REVISE
  */
 
 public class NumberOfOnes {

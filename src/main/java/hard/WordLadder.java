@@ -24,6 +24,12 @@ public class WordLadder {
         int steps;
         List<String> neighbors; // separated by distance of 1 char delta
 
+        public WordObj(String word, int steps, List<String> neighbors) {
+            this.word = word;
+            this.steps = steps;
+            this.neighbors = neighbors;
+        }
+
         public WordObj(String word, int steps) {
             this.word = word;
             this.steps = steps;
@@ -57,7 +63,7 @@ public class WordLadder {
 
             // base case
             if (startWord.equals(target)) {
-                //return totalSteps;
+                // return totalSteps;
                 return allNeighbors;
             }
 
@@ -71,7 +77,9 @@ public class WordLadder {
                         wordArr[i] = c;
                     }
 
-                    // COLD -> AOLD x -> backtrack(remove from queue) -> BOLD
+                    // COLD -> AOLD x -> backtrack -> if match -> getNeighbors OR -> remove from queue -> start with
+                    // next character
+                    // -> COLD -> AOLD -> BOLD -> DOLD -> EOLD
                     String tmpWord = new String(wordArr);
                     // if dict contains the new word then add it to Queue and do BFS on that word with count + 1
                     if (wordDict.contains(tmpWord)) {
@@ -81,6 +89,7 @@ public class WordLadder {
                         WordObj ladderWord = new WordObj(tmpWord, tmpNeighbors);
                         wordQueue.add(ladderWord);
                     }
+                    // restore the character back in the word
                     wordArr[i] = cTemp;
                 }
             }

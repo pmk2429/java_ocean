@@ -3,13 +3,17 @@ package hard;
 import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.HashSet;
+import java.util.Set;
 
+/**
+ * ~!@#HARD:REVISE
+ */
 public class LRUCache {
 
     // store keys of cache
     private final Deque<Integer> dq;
     // store references of key in cache
-    private final HashSet<Integer> set;
+    private final Set<Integer> set;
     //maximum capacity of cache
     private final int CAPACITY;
 
