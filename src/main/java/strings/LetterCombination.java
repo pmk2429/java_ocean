@@ -58,7 +58,7 @@ public class LetterCombination {
 
     // Classic substring problem
     private static List<String> letterCombinationsSubstr(String num) {
-        Set<String> combos = new TreeSet<>();
+        Set<String> combos = new HashSet<>();
 
         String s1 = phone.get(num.substring(0, 1));
         String s2 = phone.get(num.substring(1));

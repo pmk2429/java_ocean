@@ -40,16 +40,13 @@ public class ArrayIsSubArray {
         return isSubArray;
     }
 
-    /*
-    binarySearch() can ONLY be used on sorted arrays.
-    If the array is sorted, you can use the following code to search the target element:
-    */
+    /**
+     * binarySearch() can ONLY be used on sorted arrays.
+     * If the array is sorted, you can use the following code to search the target element:
+     */
     public static boolean useArraysBinarySearch(String[] arr, String targetValue) {
         int a = Arrays.binarySearch(arr, targetValue);
-        if (a > 0)
-            return true;
-        else
-            return false;
+        return a > 0;
     }
 
     public static void main(String[] args) {

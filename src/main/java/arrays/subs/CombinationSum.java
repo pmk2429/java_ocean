@@ -9,7 +9,7 @@ import java.util.List;
  */
 public class CombinationSum {
 
-    public static void backtrack(List<List<Integer>> res, List<Integer> lst, int start, int k, int target) {
+    public static void backtrackUsingDFS(List<List<Integer>> res, List<Integer> lst, int start, int k, int target) {
         if (k < 0 && target < 1) {
             return;
         }
@@ -19,18 +19,19 @@ public class CombinationSum {
         }
         for (; start <= 9; start++) {
             lst.add(start);
-            backtrack(res, lst, start + 1, k - 1, target - start);
+            backtrackUsingDFS(res, lst, start + 1, k - 1, target - start);
             lst.remove(lst.size() - 1);
         }
     }
 
     private static List<List<Integer>> combinationSumIndex(int k, int n) {
         List<List<Integer>> res = new ArrayList<>();
-        backtrack(res, new ArrayList<>(), 1, k, n);
+        backtrackUsingDFS(res, new ArrayList<>(), 1, k, n);
         return res;
     }
 
-    private static void backtrack(int[] candidates, int target, List<Integer> combination, List<List<Integer>> res, int start, int k) {
+    private static void backtrackUsingDFS(int[] candidates, int target, List<Integer> combination, List<List<Integer>> res, int start, int k) {
+        // base case to add the solution set to result
         if (target == 0 && combination.size() == k) {
             res.add(new ArrayList<>(combination));
         }
@@ -40,7 +41,7 @@ public class CombinationSum {
                     return;
                 }
                 combination.add(candidates[i]); // add current element
-                backtrack(candidates, target - candidates[i], combination, res, i, k);
+                backtrackUsingDFS(candidates, target - candidates[i], combination, res, i, k);
                 combination.remove(combination.size() - 1); // remove last element
             }
         }
@@ -52,7 +53,7 @@ public class CombinationSum {
             return res;
         }
         Arrays.sort(candidates);
-        backtrack(candidates, target, new ArrayList<>(), res, 0, k);
+        backtrackUsingDFS(candidates, target, new ArrayList<>(), res, 0, k);
         return res;
     }
 

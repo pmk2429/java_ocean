@@ -36,14 +36,14 @@ public class WordBreak {
     private static List<String> wordBreak(String s, String[] words) {
         int length = s.length();
         Set<String> wordDictSet = new HashSet<>(Arrays.asList(words));
-        Deque<Integer> queue = new LinkedList<>();
+        Deque<Integer> queue = new ArrayDeque<>();
         List<String> res = new ArrayList<>();
         int[] visited = new int[length];
 
         queue.add(0);
 
         while (!queue.isEmpty()) {
-            // int start = queue.poll();
+            // int start = queue.poll() || queue.remove() || queue.removeLast();
             int start = queue.remove(); // start of the current word
             // if not visited
             if (visited[start] == 0) {
@@ -93,7 +93,10 @@ public class WordBreak {
     public static void main(String[] args) {
         String s = "nota";
         String[] wordDict = {"a", "no", "not", "to", "fala", "eat", "alligator", "yahoo"};
-
         System.out.println(wordBreak(s, wordDict));
+
+        String animals = "catsandog";
+        String[] wordDictAnimals = {"cats", "dog", "sand", "and", "cat"};
+        System.out.println(wordBreak(animals, wordDictAnimals));
     }
 }

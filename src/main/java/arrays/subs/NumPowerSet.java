@@ -48,15 +48,12 @@ public class NumPowerSet {
         return sets;
     }
 
-    private static void backtrack(List<List<Integer>> powerSet, List<Integer> subSet, int[] nums, int start) {
-        powerSet.add(subSet);
-        System.out.println(powerSet);
+    private static void backtrack(List<List<Integer>> result, List<Integer> subsets, int[] nums, int start) {
+        result.add(new ArrayList<>(subsets));
         for (int i = start; i < nums.length; i++) {
-            subSet.add(nums[i]);
-            // reduce the problem space for the node currently branched
-            backtrack(powerSet, subSet, nums, i + 1);
-            // once the candidates as deduced to be not suitable for obtaining solution, backtrack/remove it
-            subSet.remove(subSet.size() - 1);
+            subsets.add(nums[i]);
+            backtrack(result, subsets, nums, i + 1);
+            subsets.remove(subsets.size() - 1);
         }
     }
 
@@ -68,9 +65,8 @@ public class NumPowerSet {
     }
 
     public static void main(String[] args) {
-        int[] a = {12, 92, 36, 45, 89, 24, 63, 57};
-        //System.out.println(subsets(a));
-
-        System.out.println(printSubsetsUsingBitManipulation(a));
+        // int[] a = {12, 92, 36, 45, 89, 24, 63, 57};
+        int[] a = {1, 2, 3};
+        System.out.println(subsets(a));
     }
 }

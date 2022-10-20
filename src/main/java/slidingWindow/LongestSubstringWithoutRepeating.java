@@ -1,7 +1,8 @@
-package arrays.subs;
+package slidingWindow;
 
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Map;
 import java.util.Queue;
 
 /**
@@ -25,13 +26,18 @@ import java.util.Queue;
  * Output: 3
  * Explanation: The answer is "wke", with the length of 3.
  * Note that the answer must be a substring, "pwke" is a subsequence and not a substring.
+ *
+ * ~!@#HARD:REVISE
  */
 public class LongestSubstringWithoutRepeating {
 
+    /** Sliding Window Problem */
     public static int lengthOfLongestUniqueSubstring(String s) {
-        if (s.length() == 0) return 0;
-        HashMap<Character, Integer> map = new HashMap<>();
-        int max = 0;
+        if (s == null || s.length() == 0) {
+            return 0;
+        }
+        Map<Character, Integer> map = new HashMap<>();
+        int longestUniqueSubstringLength = 0;
         for (int i = 0, j = 0; i < s.length(); i++) {
             char currChar = s.charAt(i);
             if (map.containsKey(currChar)) {
@@ -40,10 +46,10 @@ public class LongestSubstringWithoutRepeating {
                 j = Math.max(j, map.get(currChar) + 1);
             }
             map.put(currChar, i);
-            // deduce the window size
-            max = Math.max(max, i - j + 1);
+            // deduce the window size which is the length of max substring
+            longestUniqueSubstringLength = Math.max(longestUniqueSubstringLength, i - j + 1);
         }
-        return max;
+        return longestUniqueSubstringLength;
     }
 
     public int lengthOfLongestSubstringUsingArray(String s) {

@@ -1,6 +1,7 @@
 package arrays;
 
 import java.util.Arrays;
+import java.util.TreeSet;
 
 /**
  * Next Smaller Element
@@ -55,10 +56,26 @@ public class NextSmallerElement {
         System.out.println(Arrays.toString(nse));
     }
 
+    private static int[] nseUsingSelfBalancingTree(int[] arr) {
+        int[] ans = new int[arr.length];
+        TreeSet<Integer> selfBalancingTree = new TreeSet<>();
+        for (int i : arr) {
+            selfBalancingTree.add(i);
+        }
+
+        for (int i = 0; i < arr.length; i++) {
+            Integer smaller = selfBalancingTree.lower(arr[i]);
+            ans[i] = smaller == null ? -1 : smaller;
+        }
+        return ans;
+    }
+
     public static void main(String[] args) {
         int[] arr = {4, 8, 5, 2, 25};
         int[] arr1 = {13, 7, 6, 12};
         nextSmallerElement(arr);
+        System.out.println(Arrays.toString(nseUsingSelfBalancingTree(arr)));
+
         nextSmallerElement(arr1);
     }
 }

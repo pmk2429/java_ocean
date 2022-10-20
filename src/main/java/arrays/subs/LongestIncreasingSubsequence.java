@@ -25,73 +25,81 @@ import java.util.List;
  * Input : arr[] = {50, 3, 10, 7, 40, 80}
  * Output : Length of LIS = 4
  * The longest increasing subsequence is {3, 7, 40, 80}
+ * <p>
+ * ~!@#HARD:REVISE
  */
 public class LongestIncreasingSubsequence {
 
-  private static List<Integer> getLIS(int[] nums) {
-    if (nums == null || nums.length == 0) {
-      return null;
-    }
-
-    ArrayList<Integer> list = new ArrayList<>();
-
-    for (int num : nums) {
-      if (list.size() == 0 || num > list.get(list.size() - 1)) {
-        list.add(num);
-      } else {
-        int i = 0;
-        int j = list.size() - 1;
-
-        while (i < j) {
-          int mid = (i + j) / 2;
-          if (list.get(mid) < num) {
-            i = mid + 1;
-          } else {
-            j = mid;
-          }
+    private static List<Integer> getLIS(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return null;
         }
-        list.set(j, num);
-      }
-    }
 
-    return list;
-  }
+        ArrayList<Integer> list = new ArrayList<>();
 
-  private static int lis(int[] arr, int n) {
-    int[] lis = new int[n];
-    int i, j, max = 0;
+        for (int num : nums) {
+            int size = list.size();
+            // if the current element is greater than the last inserted element in the list, add it to the list
+            if (size == 0 || num > list.get(size - 1)) {
+                list.add(num);
+            }
+            else {
+                int start = 0;
+                int end = size - 1;
 
-    /* Initialize LIS values for all indexes */
-    for (i = 0; i < n; i++) {
-      lis[i] = 1;
-    }
-
-    /* Compute optimized LIS values in bottom up manner */
-    for (i = 1; i < n; i++) {
-      for (j = 0; j < i; j++) {
-        if (arr[i] > arr[j] && lis[i] < lis[j] + 1) {
-          lis[i] = lis[j] + 1;
+                while (start < end) {
+                    int mid = (start + end) / 2;
+                    // binary search
+                    if (num > list.get(mid)) {
+                        start = mid + 1;
+                    }
+                    else {
+                        end = mid;
+                    }
+                }
+                // list.add(end, num); -- adds element at specified position
+                list.set(end, num); // -- replaces element at a specified position
+            }
         }
-      }
+
+        return list;
     }
 
-    /* Pick maximum of all LIS values */
-    for (i = 0; i < n; i++) {
-      if (max < lis[i]) {
-        max = lis[i];
-      }
+    private static int lis(int[] arr, int n) {
+        int[] lis = new int[n];
+        int i, j, max = 0;
+
+        /* Initialize LIS values for all indexes */
+        for (i = 0; i < n; i++) {
+            lis[i] = 1;
+        }
+
+        /* Compute optimized LIS values in bottom up manner */
+        for (i = 1; i < n; i++) {
+            for (j = 0; j < i; j++) {
+                if (arr[i] > arr[j] && lis[i] < lis[j] + 1) {
+                    lis[i] = lis[j] + 1;
+                }
+            }
+        }
+
+        /* Pick maximum of all LIS values */
+        for (i = 0; i < n; i++) {
+            if (max < lis[i]) {
+                max = lis[i];
+            }
+        }
+
+        return max;
     }
 
-    return max;
-  }
-
-  // driver program to test above functions
-  public static void main(String[] args) {
-    int[] arr = {10, 22, 9, 33, 21, 50, 41, 60};
-    int n = arr.length;
-    System.out.println("Length of lis is " + lis(arr, n) + "\n");
+    // driver program to test above functions
+    public static void main(String[] args) {
+        int[] arr = {10, 22, 9, 33, 21, 50, 41, 60};
+        int n = arr.length;
+        System.out.println("Length of lis is " + lis(arr, n) + "\n");
 
 
-    System.out.println(getLIS(arr));
-  }
+        System.out.println(getLIS(arr));
+    }
 }

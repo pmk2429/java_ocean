@@ -4,12 +4,12 @@ import java.util.*;
 
 public class MonkeyStockDataEntry {
 
-    private ArrayList<Integer> arr; // A resizable array
+    private final ArrayList<Integer> arr; // A resizable array
     private int max = Integer.MIN_VALUE;
-    private int min = Integer.MAX_VALUE;
+    private final int min = Integer.MAX_VALUE;
 
     // A hash where keys are array elements and values are indexes in arr[]
-    private HashMap<Integer, Integer> hash;
+    private final HashMap<Integer, Integer> hash;
 
     // Constructor (creates arr[] and hash)
     public MonkeyStockDataEntry() {
@@ -49,12 +49,12 @@ public class MonkeyStockDataEntry {
 
         // Swap element with last element so that remove from
         // arr[] can be done in O(1) time
-        int size = arr.size();
-        Integer last = arr.get(size - 1);
-        Collections.swap(arr, index, size - 1);
+        int lastIndex = arr.size() - 1;
+        Integer last = arr.get(lastIndex);
+        Collections.swap(arr, index, lastIndex);
 
         // Remove last element (This is O(1))
-        arr.remove(size - 1);
+        arr.remove(lastIndex);
 
         // Update hash table for new index of last element
         hash.put(last, index);

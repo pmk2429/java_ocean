@@ -8,8 +8,6 @@ public class ReverseString {
      * reverse the entire string character by character. For eg: inputString: my
      * name is pavitra kansara arasnak artivap si eman ym.
      *
-     * @param inputString
-     * @return
      */
     private static String reverseWholeString(String inputString) {
         StringBuilder reversed = new StringBuilder();
@@ -28,9 +26,6 @@ public class ReverseString {
      * <p>
      * So this method will call the reverseString method for each word in the
      * String.
-     *
-     * @param inputString
-     * @return
      */
     private static String reverseWordsInString(String inputString) {
         String[] words = inputString.split(" ");

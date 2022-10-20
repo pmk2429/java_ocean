@@ -61,10 +61,10 @@ public class MedianTwoSortedArrays {
         int size = union.length;
         int mid = (size - 1) / 2;
         double median;
-        if (size % 2 == 0) {
+        if (size % 2 == 0) { // even
             median = (double) (union[mid] + union[mid + 1]) / 2;
         }
-        else {
+        else { // odd
             median = union[mid];
         }
 
