@@ -44,6 +44,7 @@ public class MRUApps {
         int switchToApp = apps[switchToIndex];
 
         while (x > 0) {
+            // logic to move each element to the right of the array
             apps[x] = apps[--x];
         }
 

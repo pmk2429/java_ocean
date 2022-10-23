@@ -9,7 +9,7 @@ import java.util.Map;
  * ~!@#HARD:REVISE
  */
 public class LRUCacheHashMap {
-    private class Node {
+    private static class Node {
         int key;
         int value;
         Node prev, next;
@@ -30,8 +30,8 @@ public class LRUCacheHashMap {
     private int count;
 
     public LRUCacheHashMap(int capacity) {
-        this.CAPACITY = capacity;
-        this.count = 0;
+        CAPACITY = capacity;
+        count = 0;
         map = new HashMap<>();
         head = new Node();
         tail = new Node();

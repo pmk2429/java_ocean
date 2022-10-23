@@ -45,8 +45,7 @@ public class FindUniqueChars {
         StringBuilder sbr = new StringBuilder();
         char[] allChars = new char[256];
         for (int i = 0; i < str.length(); i++) {
-            int charPos = str.charAt(i);
-            allChars[charPos]++;
+            allChars[str.charAt(i)]++;
         }
 
         for (int i = 0; i < allChars.length; i++) {
@@ -65,23 +64,21 @@ public class FindUniqueChars {
         int[] count = new int[MAX_CHAR];
         int[] index = new int[MAX_CHAR];
 
-        for (int i = 0; i < MAX_CHAR; i++) {
-            count[i] = 0;
-            index[i] = n;
-        }
+        Arrays.fill(count, 0);
+        Arrays.fill(index, n);
 
         for (int i = 0; i < n; i++) {
-            char charPos = str.charAt(i);
-            count[charPos]++;
+            char currChar = str.charAt(i);
+            count[currChar]++;
 
-            // if the character is not yer traversed, set the count of char to 1
-            if (count[charPos] == 1 && str.charAt(i) != ' ') {
-                index[charPos] = i; // index of character in the given string
+            // if the character is not yet traversed, set the count of char to 1
+            if (count[currChar] == 1 && !Character.isWhitespace(currChar)) {
+                index[currChar] = i; // index of character in the given string
             }
 
             // If character repeats, then remove it from index[]
-            if (count[charPos] == 2) {
-                index[charPos] = n;
+            if (count[currChar] == 2) {
+                index[currChar] = n;
             }
         }
 
@@ -97,9 +94,8 @@ public class FindUniqueChars {
     }
 
     public static void main(String[] args) {
-        String str = "Geeks for Geeks";
-        //System.out.println(distinctChars(str.toLowerCase()));
-        //System.out.println(distinctCharsConstantSpace(str.toLowerCase()));
+        String str = "Geeks for abc Geeks bcd";
+        System.out.println(distinctCharsO1Space(str.toLowerCase()));
         System.out.println(distinctCharsSingleLoop(str.toLowerCase()));
     }
 }

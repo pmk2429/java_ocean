@@ -29,9 +29,9 @@ package arrays;
 public class ClimbingStairs {
     public static int climbStairs(int n) {
         // base cases
-        if (n <= 0) return 0;
-        if (n == 1) return 1;
-        if (n == 2) return 2;
+        if (n > 0 && n <= 3) {
+            return n;
+        }
 
         // in Fib seq starting numbers are 0, 1, 1 --> so 1(two step before), 1 (one step before)
         // for our case it's 1, 2 --> 1(two step before), 2 (one step before)

@@ -1,9 +1,7 @@
 package hard;
 
-import java.util.ArrayDeque;
-import java.util.Deque;
-import java.util.HashMap;
-import java.util.Map;
+import java.time.Instant;
+import java.util.*;
 
 class StockData {
 
@@ -13,8 +11,10 @@ class StockData {
 
     protected StockData() {
         stockPrices = new ArrayDeque<>();
-        min = new Stock(11222, Integer.MAX_VALUE);
-        max = new Stock(33333, Integer.MIN_VALUE);
+        Instant instant = Instant.now();
+        long timeStampMillis = instant.toEpochMilli();
+        min = new Stock(timeStampMillis, Integer.MAX_VALUE);
+        max = new Stock(timeStampMillis, Integer.MIN_VALUE);
     }
 
     public void push(Stock stock) {

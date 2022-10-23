@@ -29,42 +29,34 @@ import java.util.Map;
  */
 public class UncommonWords {
 
-  private static String[] uncommonWords(String a, String b) {
-    String[] aWords = a.split(" ");
-    String[] bWords = b.split(" ");
-    ArrayList<String> uncommonWords = new ArrayList<>();
-    HashMap<String, Integer> wordsMap = new HashMap<>();
-    for (int i = 0; i < aWords.length; i++) {
-      if (wordsMap.containsKey(aWords[i])) {
-        wordsMap.put(aWords[i], wordsMap.get(aWords[i]) + 1);
-      } else {
-        wordsMap.put(aWords[i], 1);
-      }
+    private static String[] uncommonWords(String a, String b) {
+        String[] aWords = a.split(" ");
+        String[] bWords = b.split(" ");
+        ArrayList<String> uncommonWords = new ArrayList<>();
+        HashMap<String, Integer> wordsMap = new HashMap<>();
+        for (String aWord : aWords) {
+            wordsMap.put(aWord, wordsMap.getOrDefault(aWord, 0) + 1);
+        }
+
+        for (String bWord : bWords) {
+            wordsMap.put(bWord, wordsMap.getOrDefault(bWord, 0) + 1);
+        }
+
+        for (Map.Entry<String, Integer> entryMap : wordsMap.entrySet()) {
+            if (entryMap.getValue() == 1) {
+                uncommonWords.add(entryMap.getKey());
+            }
+        }
+
+        String[] stockArr = new String[uncommonWords.size()];
+        stockArr = uncommonWords.toArray(stockArr);
+        return stockArr;
     }
 
-    for (int i = 0; i < bWords.length; i++) {
-      if (wordsMap.containsKey(bWords[i])) {
-        wordsMap.put(bWords[i], wordsMap.get(bWords[i]) + 1);
-      } else {
-        wordsMap.put(bWords[i], 1);
-      }
+    public static void main(String[] args) {
+        String a = "apple apple";
+        String b = "banana";
+
+        System.out.println(Arrays.toString(uncommonWords(a, b)));
     }
-
-    for (Map.Entry<String, Integer> entryMap : wordsMap.entrySet()) {
-      if (entryMap.getValue() == 1) {
-        uncommonWords.add(entryMap.getKey());
-      }
-    }
-
-    String[] stockArr = new String[uncommonWords.size()];
-    stockArr = uncommonWords.toArray(stockArr);
-    return stockArr;
-  }
-
-  public static void main(String[] args) {
-    String a = "apple apple";
-    String b = "banana";
-
-    System.out.println(Arrays.toString(uncommonWords(a, b)));
-  }
 }

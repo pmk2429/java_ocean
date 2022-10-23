@@ -20,6 +20,8 @@ import java.util.Arrays;
  * <p>
  * Input: arr[] = {3, 2, 5, 7, 1}
  * Output: -1 3 2 2 2
+ * <p>
+ * ~!@#HARD:REVISE
  */
 public class ReplaceWithSmallestOnLeft {
 

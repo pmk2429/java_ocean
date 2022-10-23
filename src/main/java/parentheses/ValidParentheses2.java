@@ -1,4 +1,4 @@
-package strings;
+package parentheses;
 
 /**
  * Given a string containing only three types of characters: '(', ')' and '*', write a function to check whether this
@@ -22,7 +22,7 @@ package strings;
  * Note:
  * The string size will be in the range [1, 100].
  */
-public class ValidParenthesis {
+public class ValidParentheses2 {
 
     private static boolean isValid(String paren) {
         if (paren == null) {

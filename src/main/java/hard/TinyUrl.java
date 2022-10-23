@@ -53,6 +53,7 @@ public class TinyUrl {
 
     // Encodes a URL to a shortened URL.
     public String encode(String longUrl) {
+        // caching - first hit
         if (revIndex.containsKey(longUrl)) {
             return BASE_HOST + revIndex.get(longUrl);
         }

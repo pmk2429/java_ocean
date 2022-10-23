@@ -4,6 +4,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.PriorityQueue;
 
+/**
+ * Building PriorityQueue Comparator is the main logic in solving this problem.
+ */
 public class FrequencySort {
 
     private static String frequencySort(String s) {

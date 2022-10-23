@@ -20,6 +20,7 @@ package hard;
  * Note:
  * <p>
  * Your algorithm should run in O(length) time and uses constant extra space.
+ * This relates to {@link numbers.SmallestPositiveMissingNumber}
  */
 public class FirstMissingPositive {
 
@@ -46,7 +47,7 @@ public class FirstMissingPositive {
                 return i + 1;
             }
         }
-        return possibleMaxNum + 1;
+        return possibleMaxNum + 1; // n is the last index which stores n+1 value
     }
 
     public static void main(String[] args) {

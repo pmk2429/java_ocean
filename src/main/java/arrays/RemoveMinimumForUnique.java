@@ -11,7 +11,7 @@ import java.util.HashMap;
  * Examples:
  * ---------
  * Input :
- * A[] = { 1, 2, 3, 4}
+ * A[] = { 1, 2, 3, 4 }
  * B[] = { 2, 3, 4, 5, 8 }
  * Output :
  * 3

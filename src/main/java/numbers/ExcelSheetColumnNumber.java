@@ -50,7 +50,7 @@ public class ExcelSheetColumnNumber {
     }
 
     public static void main(String[] args) {
-        String colName = "PMK";
+        String colName = "AB";
         System.out.println(getColNumber(colName));
     }
 }

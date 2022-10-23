@@ -1,7 +1,7 @@
 package numbers;
 
-import java.util.Arrays;
 import java.util.PriorityQueue;
+import java.util.Queue;
 import java.util.Random;
 
 public class FindKthLargest {
@@ -73,7 +73,7 @@ public class FindKthLargest {
 
     // Uses PriorityQueue
     private static int kthLargestUsingHeap(int[] nums, int k) {
-        PriorityQueue<Integer> q = new PriorityQueue<>(k);
+        Queue<Integer> q = new PriorityQueue<>(k);
         for (int i : nums) {
             q.offer(i);
             if (q.size() > k) {
@@ -82,12 +82,6 @@ public class FindKthLargest {
         }
 
         return q.peek();
-    }
-
-    // Use sorting
-    public int findKthLargestBySorting(int[] nums, int k) {
-        Arrays.sort(nums);
-        return nums[nums.length - k];
     }
 
     public static void main(String[] args) {
@@ -109,6 +103,5 @@ public class FindKthLargest {
         System.out.println("\n\n");
         int[] a = {5, 4, 1, 8, 5, 7, 9};
         System.out.println("# " + kthLargestUsingHeap(a, 3));
-
     }
 }

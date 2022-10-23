@@ -11,8 +11,9 @@ public class ThreeSum {
         int[] threeSum = new int[3];
         boolean found = false;
         Set<Integer> set = new HashSet<>();
+        int lastIndex = length - 1;
 
-        for (int i = 0; i < length - 2; i++) {
+        for (int i = 0; i < lastIndex; i++) {
             threeSum[0] = arr[i];
             int complement = target - arr[i];
             for (int j = i + 1; j < length; j++) {

@@ -1,5 +1,6 @@
 package strings;
 
+import java.util.Arrays;
 import java.util.Hashtable;
 
 /**
@@ -69,7 +70,7 @@ public class FirstUniqueCharacter {
         return '\0';
     }
 
-    public static int firstUniqueCharOptimized(String s) {
+    private static int firstUniqueCharOptimizedIndex(String s) {
         int[] charCount = new int[26];
         char[] chars = s.toCharArray();
         for (char c : chars) {
@@ -83,12 +84,29 @@ public class FirstUniqueCharacter {
         return -1;
     }
 
+    private static int firstUniqueAllCharsASCIIIndex(String str) {
+        int[] charFreq = new int[256];
+        char[] chars = str.toCharArray();
+        for (char c : chars) {
+            charFreq[c]++;
+        }
+        for (int i = 0; i < str.length(); i++) {
+            if (charFreq[chars[i]] == 1) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
     public static void main(String[] args) {
         String s1 = "leetcode";
-        System.out.println(firstUniqueCharOptimized(s1));
+        System.out.println(firstUniqueCharOptimizedIndex(s1));
         String s2 = "loveleetcode";
-        System.out.println(firstUniqueCharOptimized(s2));
+        System.out.println(firstUniqueCharOptimizedIndex(s2));
         String s3 = "aabb";
-        System.out.println(firstUniqueCharOptimized(s3));
+        System.out.println(firstUniqueCharOptimizedIndex(s3));
+
+        String asciiAll = "paviputra19!@#$%^ABCDPMK";
+        System.out.println(firstUniqueAllCharsASCIIIndex(asciiAll));
     }
 }

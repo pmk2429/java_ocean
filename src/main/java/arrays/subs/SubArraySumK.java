@@ -15,7 +15,7 @@ import java.util.HashMap;
  */
 public class SubArraySumK {
 
-    private static int subarraySum(int[] nums, int target) {
+    private static int subArraySum(int[] nums, int target) {
         int count = 0, sum = 0;
         HashMap<Integer, Integer> map = new HashMap<>();
         map.put(0, 1);
@@ -33,6 +33,6 @@ public class SubArraySumK {
     public static void main(String[] args) {
         int[] nums = {1, 1, 1};
         int k = 2;
-        System.out.println(subarraySum(nums, k));
+        System.out.println(subArraySum(nums, k));
     }
 }

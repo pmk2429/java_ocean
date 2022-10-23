@@ -1,4 +1,4 @@
-package strings;
+package parentheses;
 
 /**
  * Given a string S of '(' and ')' parentheses, we add the minimum number of parentheses ( '(' or ')',
@@ -28,24 +28,24 @@ package strings;
  * Input: "()))(("
  * Output: 4
  */
-public class ValidBracesString {
+public class ValidParentheses {
 
-  private static int minAddToMakeValid(String S) {
-    int ans = 0, bal = 0;
-    for (int i = 0; i < S.length(); ++i) {
-      bal += S.charAt(i) == '(' ? 1 : -1;
-      // It is guaranteed bal >= -1
-      if (bal == -1) {
-        ans++;
-        bal++;
-      }
+    private static int minAddToMakeValid(String S) {
+        int ans = 0, bal = 0;
+        for (int i = 0; i < S.length(); ++i) {
+            bal += S.charAt(i) == '(' ? 1 : -1;
+            // It is guaranteed bal >= -1
+            if (bal == -1) {
+                ans++;
+                bal++;
+            }
+        }
+
+        return ans + bal;
     }
 
-    return ans + bal;
-  }
-
-  public static void main(String[] args) {
-    String str = "()))((";
-    System.out.println(minAddToMakeValid(str));
-  }
+    public static void main(String[] args) {
+        String str = "()))((";
+        System.out.println(minAddToMakeValid(str));
+    }
 }
