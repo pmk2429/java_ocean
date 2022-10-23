@@ -37,16 +37,17 @@ public class SmallestPositiveMissingNumber {
         for (int i = 0; i < n; i++) {
             // if value is negative or greater than array size, then it cannot
             // be marked in array. So move to next element.
-            int val = arr[i];
-            if (val <= 0 || val > n) {
+            int index = arr[i];
+            if (index <= 0 || index > n) {
                 continue;
             }
             // traverse the array until we reach at an element which is already marked or which could not be marked.
-            while (arr[val - 1] != val) {
-                int nextVal = arr[val - 1];
-                arr[val - 1] = val;
-                val = nextVal;
-                if (val <= 0 || val > n) {
+            while (arr[index - 1] != index) {
+                // inplace sorting using index based technique that can be done in O(n) time
+                int temp = arr[index - 1];
+                arr[index - 1] = index;
+                index = temp;
+                if (index <= 0 || index > n) {
                     break;
                 }
             }

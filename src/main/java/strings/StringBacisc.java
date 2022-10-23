@@ -17,12 +17,14 @@ public class StringBacisc {
 
         if (A.length() == 1) {
             A = A.substring(0, 1).toUpperCase();
-        } else if (A.length() > 1) {
+        }
+        else if (A.length() > 1) {
             A = A.substring(0, 1).toUpperCase() + A.substring(1, A.length());
         }
         if (B.length() == 1) {
             B = B.substring(0, 1).toUpperCase();
-        } else if (B.length() > 1) {
+        }
+        else if (B.length() > 1) {
             B = B.substring(0, 1).toUpperCase() + B.substring(1, B.length());
         }
         System.out.println(A + " " + B);

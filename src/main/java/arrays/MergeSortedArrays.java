@@ -35,49 +35,43 @@ import java.util.PriorityQueue;
  */
 public class MergeSortedArrays {
 
-  private static int[] mergeUsingMinHeap(int[] a, int[] b) {
-    PriorityQueue<Integer> heap = new PriorityQueue<>();
+    private static int[] mergeUsingMinHeap(int[] a, int[] b) {
+        PriorityQueue<Integer> heap = new PriorityQueue<>();
 
-    for (int ele : a) {
-      heap.offer(ele);
+        for (int ele : a) {
+            heap.offer(ele);
+        }
+
+        for (int ele : b) {
+            heap.offer(ele);
+        }
+
+        return heap.stream().mapToInt(i -> i).toArray();
     }
 
-    for (int ele : b) {
-      heap.offer(ele);
+    private static void mergeO1Space(int[] a, int[] b) {
+        int m = a.length;
+        int n = b.length;
+        for (int i = n - 1; i >= 0; i--) {
+            int j;
+            int lastA = a[m - 1];
+            for (j = m - 2; j >= 0 && a[j] > b[i]; j--) {
+                a[j + 1] = a[j];
+            }
+
+            if (j != m - 2 || lastA > b[i]) {
+                a[j + 1] = b[i];
+                b[i] = lastA;
+            }
+        }
+
+        System.out.println(Arrays.toString(a));
+        System.out.println(Arrays.toString(b));
     }
 
-    return heap.stream().mapToInt(i -> i).toArray();
-  }
-
-  private static void mergeO1Space(int[] a, int[] b) {
-    int m = a.length;
-    int n = b.length;
-    // Iterate through all elements of b[] starting from the last element
-    for (int i = n - 1; i >= 0; i--) {
-      /* Find the smallest element greater than b[i]. Move all
-      elements one position ahead till the smallest greater
-      element is not found */
-      int j;
-      int lastA = a[m - 1];
-      // loop from second last element of A and compare each element with B
-      for (j = m - 2; j >= 0 && a[j] > b[i]; j--) {
-        a[j + 1] = a[j];
-      }
-
-      // If there was a greater element
-      if (j != m - 2 || lastA > b[i]) {
-        a[j + 1] = b[i];
-        b[i] = lastA;
-      }
+    public static void main(String[] args) {
+        int[] arr1 = new int[]{1, 5, 9, 10, 15, 20};
+        int[] arr2 = new int[]{2, 3, 8, 13};
+        mergeO1Space(arr1, arr2);
     }
-
-    System.out.println(Arrays.toString(a));
-    System.out.println(Arrays.toString(b));
-  }
-
-  public static void main(String[] args) {
-    int[] arr1 = new int[]{1, 5, 9, 10, 15, 20};
-    int[] arr2 = new int[]{2, 3, 8, 13};
-    mergeO1Space(arr1, arr2);
-  }
 }

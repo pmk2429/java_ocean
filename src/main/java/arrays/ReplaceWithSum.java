@@ -25,7 +25,7 @@ import java.util.Arrays;
  */
 public class ReplaceWithSum {
 
-    private static void replaceWithSum(int[] arr) {
+    private static void replaceWithSumExceptSelf(int[] arr) {
         int[] sumArr = new int[arr.length];
         int sum = Arrays.stream(arr).sum();
 
@@ -37,6 +37,6 @@ public class ReplaceWithSum {
 
     public static void main(String[] args) {
         int[] arr = new int[]{6, 8, 32, 12, 14, 10, 25};
-        replaceWithSum(arr);
+        replaceWithSumExceptSelf(arr);
     }
 }

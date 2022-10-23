@@ -1,7 +1,5 @@
 package arrays.subs;
 
-import java.util.List;
-
 /**
  * Given a set of candidate numbers (candidates) (without duplicates) and a target number (target), find all
  * unique combinations in candidates where the candidate numbers sums to target.
@@ -31,21 +29,6 @@ import java.util.List;
  */
 public class SubsetsOfGivenLength {
 
-    private static List<List<Integer>> combinationSum(int[] candidates, int target) {
-        // 1. break down the problems into possible abstractions
-        // 2. extend the algo to entire problem space
-        // 3. handle edge cases
-        // 4. test solution
-        // 5. optimize
-
-        return null;
-    }
-
-    /* arr[]  ---> Input Array
-      data[] ---> Temporary array to store current combination
-      start & end ---> Staring and Ending indexes in arr[]
-      index  ---> Current index in data[]
-      r ---> Size of a combination to be printed */
     private static void combinationUtil(int[] arr, int n, int r, int index, int[] data, int i) {
         // Current combination is ready to be printed, print it
         if (index == r) {

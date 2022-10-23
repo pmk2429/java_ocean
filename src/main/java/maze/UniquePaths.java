@@ -8,6 +8,10 @@ class UniquePaths {
         return x >= 0 && y >= 0 && x < N && y < N;
     }
 
+    private static boolean isSafe(int[][] maze, boolean[][] visited, int x, int y) {
+        return maze[x][y] == 1 && !visited[x][y];
+    }
+
     private static int countPaths(int[][] maze, int x, int y, boolean[][] visited, int count) {
         // if destination (bottom-rightmost cell) is found, increment the path count
         if (x == N - 1 && y == N - 1) {
@@ -22,22 +26,22 @@ class UniquePaths {
         if (isValidCell(x, y) && maze[x][y] == 1) {
 
             // go down (x, y) --> (x + 1, y)
-            if (x + 1 < N && !visited[x + 1][y]) {
+            if (isValidCell(x + 1, y) && !visited[x + 1][y]) {
                 count = countPaths(maze, x + 1, y, visited, count);
             }
 
             // go up (x, y) --> (x - 1, y)
-            if (x - 1 >= 0 && !visited[x - 1][y]) {
+            if (isValidCell(x - 1, y) && !visited[x - 1][y]) {
                 count = countPaths(maze, x - 1, y, visited, count);
             }
 
             // go right (x, y) --> (x, y + 1)
-            if (y + 1 < N && !visited[x][y + 1]) {
+            if (isValidCell(x, y + 1) && !visited[x][y + 1]) {
                 count = countPaths(maze, x, y + 1, visited, count);
             }
 
             // go left (x, y) --> (x, y - 1)
-            if (y - 1 >= 0 && !visited[x][y - 1]) {
+            if (isValidCell(x, y - 1) && !visited[x][y - 1]) {
                 count = countPaths(maze, x, y - 1, visited, count);
             }
         }

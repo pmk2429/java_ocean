@@ -43,17 +43,21 @@ import java.util.Arrays;
  * babgbag
  * ^^^
  * <p>
- * This problem is simiar to {@link strings.FrequencyOfSubstring}
- *
+ * This problem is similar to {@link strings.FrequencyOfSubstring}
+ * <p>
  * ~!@#HARD:REVISE
  */
 public class Subsequences {
     private static int numDistinct(String str, String sub) {
-        if (str == null || sub == null || sub.length() > str.length())
+        if (str == null || sub == null || sub.length() > str.length()) {
             return 0;
+        }
+
         int strLength = str.length(), subLength = sub.length();
         int[] counts = new int[strLength + 1];
+
         Arrays.fill(counts, 1);
+
         // starting with 1
         for (int i = 1; i <= subLength; i++) {
             int pre = 0;

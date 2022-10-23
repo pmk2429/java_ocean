@@ -7,12 +7,12 @@ public class ShortestPath {
 
     // Check if it is possible to go to (x, y) from current position. The
     // function returns false if the cell has value 0 or already visited
-    private static boolean isSafe(int[][] maze, boolean[][] visited, int x, int y) {
+    private static boolean isValid(int[][] maze, boolean[][] visited, int x, int y) {
         return (maze[x][y] != 0 && !visited[x][y]);
     }
 
     // if not a valid position, return false
-    private static boolean isValid(int x, int y) {
+    private static boolean isNavigable(int x, int y) {
         return (x >= 0 && y >= 0 && x < M && y < N);
     }
 
@@ -32,22 +32,22 @@ public class ShortestPath {
         visited[i][j] = true;
 
         // go to bottom cell
-        if (isValid(i + 1, j) && isSafe(mat, visited, i + 1, j)) {
+        if (isNavigable(i + 1, j) && isValid(mat, visited, i + 1, j)) {
             minimumDistance = findShortestPath(mat, visited, i + 1, j, x, y, minimumDistance, dist + 1);
         }
 
         // go to top cell
-        if (isValid(i - 1, j) && isSafe(mat, visited, i - 1, j)) {
+        if (isNavigable(i - 1, j) && isValid(mat, visited, i - 1, j)) {
             minimumDistance = findShortestPath(mat, visited, i - 1, j, x, y, minimumDistance, dist + 1);
         }
 
         // go to right cell
-        if (isValid(i, j + 1) && isSafe(mat, visited, i, j + 1)) {
+        if (isNavigable(i, j + 1) && isValid(mat, visited, i, j + 1)) {
             minimumDistance = findShortestPath(mat, visited, i, j + 1, x, y, minimumDistance, dist + 1);
         }
 
         // go to left cell
-        if (isValid(i, j - 1) && isSafe(mat, visited, i, j - 1)) {
+        if (isNavigable(i, j - 1) && isValid(mat, visited, i, j - 1)) {
             minimumDistance = findShortestPath(mat, visited, i, j - 1, x, y, minimumDistance, dist + 1);
         }
 

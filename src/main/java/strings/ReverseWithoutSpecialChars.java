@@ -53,11 +53,8 @@ public class ReverseWithoutSpecialChars {
                     res[i] = str.charAt(j);
                     res[j] = temp;
                     i++;
-                    j--;
                 }
-                else {
-                    j--;
-                }
+                j--;
             }
             else {
                 res[i] = str.charAt(i);

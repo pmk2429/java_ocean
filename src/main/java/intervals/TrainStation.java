@@ -47,14 +47,12 @@ public class TrainStation {
         while (i < arrival.length) {
             // if a train is scheduled to arrive next
             if (arrival[i] < departure[j]) {
-                // increase the count of trains and update minimum
-                // platforms if required
-                platforms = Integer.max(platforms, ++count);
-
+                // increase the count of trains and update minimum platforms if required
+                count++;
+                platforms = Math.max(platforms, count);
                 // move the pointer to the next arrival
                 i++;
             }
-
             // if the train is scheduled to depart next i.e.
             // `departure[j] < arrival[i]`, decrease trains' count
             // and move pointer `j` to the next departure.

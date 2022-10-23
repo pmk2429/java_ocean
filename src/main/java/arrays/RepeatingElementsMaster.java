@@ -38,16 +38,10 @@ public class RepeatingElementsMaster {
 
     // works when max(arr) is > size(arr) and Auxiliary space is not O(1)
     private static void findNonRepeatingElement(int[] arr) {
-        int count = 1;
         Map<Integer, Integer> map = new HashMap<>();
 
-        for (int i = 0; i < arr.length; i++) {
-            if (map.containsKey(arr[i])) {
-                map.put(arr[i], count + 1);
-            }
-            else {
-                map.put(arr[i], count);
-            }
+        for (int j : arr) {
+            map.put(j, map.getOrDefault(j, 0) + 1);
         }
         if (map.containsValue(1)) {
             for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
@@ -96,7 +90,7 @@ public class RepeatingElementsMaster {
         // we have to sort the array in order to find the max element
         Arrays.sort(arr);
         System.out.println(Arrays.toString(arr));
-        int i = 0, j = 1;
+        int i = 0, j = i + 1;
         while (i < arr.length) {
             if (j != arr.length) {
                 if (arr[i] == arr[j]) {
@@ -120,10 +114,10 @@ public class RepeatingElementsMaster {
         int[] arr3 = {4, 2, 4, 5, 2, 3, 1, 27, 29, 27};
         findRepeatingMaxElementSameSpace(arr3);
 
-//    int[] bx = {1, 2, 3, 4, 5, 6, 6, 7};
-//    int index = findRepeating(bx, 0, bx.length - 1);
-//    if (index != -1) {
-//      System.out.println(bx[index]);
-//    }
+        //    int[] bx = {1, 2, 3, 4, 5, 6, 6, 7};
+        //    int index = findRepeating(bx, 0, bx.length - 1);
+        //    if (index != -1) {
+        //      System.out.println(bx[index]);
+        //    }
     }
 }

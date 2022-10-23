@@ -21,7 +21,7 @@ public class RemoveChars {
             charCount[mask.charAt(i)]++;
         }
 
-        while (index != firstArr.length) {
+        while (index < firstArr.length) {
             char temp = firstArr[index];
             if (charCount[temp] == 0) { // element is not present in mask
                 firstArr[resIndex] = firstArr[index];

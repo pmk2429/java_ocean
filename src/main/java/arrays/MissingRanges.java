@@ -16,11 +16,13 @@ public class MissingRanges {
 
     private static List<String> findMissingRanges(int[] vals) {
         List<String> ranges = new ArrayList<>();
+        int length = vals.length;
+        int lastIndex = length - 1;
         int start = vals[0];
-        int end = vals[vals.length - 1];
+        int end = vals[lastIndex];
         int prev = start - 1;
-        for (int i = 0; i <= vals.length; i++) {
-            int curr = (i == vals.length) ? end + 1 : vals[i];
+        for (int i = 0; i <= length; i++) {
+            int curr = (i == length) ? end + 1 : vals[i];
             if (curr - prev >= 2) {
                 ranges.add(getRange(prev + 1, curr - 1));
             }

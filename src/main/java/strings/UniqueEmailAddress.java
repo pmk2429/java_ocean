@@ -32,42 +32,40 @@ import java.util.Set;
  */
 public class UniqueEmailAddress {
 
-  private static int uniqueEmailAddresses(String[] emails) {
-    // rationale - to avoid adding duplicated
-    Set<String> uniqueEmails = new HashSet<>();
+    private static int uniqueEmailAddresses(String[] emails) {
+        // rationale - to avoid adding duplicated
+        Set<String> uniqueEmails = new HashSet<>();
 
-    String ignore = "+";
-    String period = ".";
+        String ignore = "+";
+        String period = ".";
 
-    for (int i = 0; i < emails.length; i++) {
-      StringBuilder sb = new StringBuilder();
+        for (String s : emails) {
+            StringBuilder sb = new StringBuilder();
 
-      String email = emails[i];
+            // split the email in to local name and domain name using @ symbol
+            String[] metadata = s.split("@");
+            String localName = metadata[0];
+            String domainName = metadata[1];
 
-      // split the email in to local name and domain name using @ symbol
-      String[] metadata = email.split("@");
-      String localName = metadata[0];
-      String domainName = metadata[1];
+            // check if localName contains period or ignore char
+            if (localName.contains(period)) {
+                localName = localName.replace(".", "");
+            }
 
-      // check if localName contains period or ignore char
-      if (localName.contains(period)) {
-        localName = localName.replace(".", "");
-      }
+            if (localName.contains(ignore)) {
+                int index = localName.indexOf(ignore);
+                localName = localName.substring(0, index);
+            }
 
-      if (localName.contains(ignore)) {
-        int index = localName.indexOf(ignore);
-        localName = localName.substring(0, index);
-      }
+            sb.append(localName).append("@").append(domainName);
+            uniqueEmails.add(sb.toString());
+        }
 
-      sb.append(localName).append("@").append(domainName);
-      uniqueEmails.add(sb.toString());
+        return uniqueEmails.size();
     }
 
-    return uniqueEmails.size();
-  }
-
-  public static void main(String[] args) {
-    String[] emails = {"test.email+alex@leetcode.com", "test.e.mail+bob.cathy@leetcode.com", "testemail+david@lee.tcode.com"};
-    System.out.println(uniqueEmailAddresses(emails));
-  }
+    public static void main(String[] args) {
+        String[] emails = {"test.email+alex@leetcode.com", "test.e.mail+bob.cathy@leetcode.com", "testemail+david@lee.tcode.com"};
+        System.out.println(uniqueEmailAddresses(emails));
+    }
 }

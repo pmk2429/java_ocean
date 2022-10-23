@@ -24,9 +24,10 @@ public class MaximumProfit {
         int maxProfit = -1;
         int transactionFee = 2;
         int[] transactionDays = new int[2];
-        for (int i = 0; i < transactions.length; i++) {
+        int length = transactions.length;
+        for (int i = 0; i < length; i++) {
             int j = i + 1;
-            while (j < transactions.length) {
+            while (j < length) {
                 currProfit = transactions[j] - transactions[i] - transactionFee;
                 if (currProfit > maxProfit) {
                     maxProfit = currProfit;

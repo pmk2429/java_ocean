@@ -28,14 +28,14 @@ public class PlusOne {
         int carry = 0;
         // start with the reverse loop
         for (int i = (length - 1); i >= 0; i--) {
-            int lastSum = arr[i] + 1;
-            if (lastSum > 9) {
-                int lastDigit = lastSum % 10;
+            int sum = arr[i] + 1;
+            if (sum > 9) {
+                int lastDigit = sum % 10;
                 arr[i] = lastDigit;
                 carry = 1;
             }
             else {
-                arr[i] = lastSum;
+                arr[i] = sum;
                 carry = 0;
                 break;
             }

@@ -24,7 +24,7 @@ public class LRUCache {
     }
 
     /* Refers key x with in the LRU cache */
-    private void refer(int x) {
+    private void offer(int x) {
         if (!set.contains(x)) {
             if (dq.size() == CAPACITY) {
                 int last = dq.removeLast();
@@ -49,12 +49,12 @@ public class LRUCache {
 
     public static void main(String[] args) {
         LRUCache ca = new LRUCache(4);
-        ca.refer(1);
-        ca.refer(2);
-        ca.refer(3);
-        ca.refer(1);
-        ca.refer(4);
-        ca.refer(5);
+        ca.offer(1);
+        ca.offer(2);
+        ca.offer(3);
+        ca.offer(1);
+        ca.offer(4);
+        ca.offer(5);
         ca.display();
     }
 }

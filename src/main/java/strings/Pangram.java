@@ -1,5 +1,8 @@
 package strings;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * WAP to find Given a string check if it is Pangram or not.
  * A pangram is a sentence containing every letter in the English Alphabet.
@@ -10,6 +13,8 @@ package strings;
  * <p>
  */
 public class Pangram {
+
+    private static final int MAX_CHARS = 26;
 
     private static boolean checkPangram(String str) {
         // Create a hash table to mark the characters present in the string
@@ -47,21 +52,45 @@ public class Pangram {
     }
 
     private static boolean isPangram(String str) {
-        char[] alphabets = new char[256];
-        // build the list of char arrays
+        boolean[] mark = new boolean[MAX_CHARS];
         for (int i = 0; i < str.length(); i++) {
-            char c = str.charAt(i);
-            int ascii = (int) c;
-            alphabets[ascii]++;
-        }
-
-        boolean charsAvailable = true;
-        for (int i = 65; i < 91; i++) {
-            if (alphabets[i] == 0 || alphabets[i + 32] == 0) {
-                charsAvailable = false;
+            char currChar = str.charAt(i);
+            if ('A' <= currChar && currChar <= 'Z') {
+                mark[currChar - 'A'] = true;
+            }
+            else if ('a' <= currChar && currChar <= 'z') {
+                mark[currChar - 'a'] = true;
             }
         }
-        return charsAvailable;
+
+        for (int i = 0; i < MAX_CHARS; i++) {
+            if (!mark[i]) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    private static List<Character> missingChars(String str, int strLength) {
+        boolean[] mark = new boolean[MAX_CHARS];
+        List<Character> charsList = new ArrayList<>();
+
+        for (int i = 0; i < strLength; i++) {
+            char currChar = str.charAt(i);
+            if ('A' <= currChar && currChar <= 'Z') {
+                mark[currChar - 'A'] = true;
+            }
+            else if ('a' <= currChar && currChar <= 'z') {
+                mark[currChar - 'a'] = true;
+            }
+        }
+        for (int i = 0; i < MAX_CHARS; i++) {
+            if (!mark[i]) {
+                charsList.add((char) (i + 'a'));
+            }
+        }
+        return charsList;
     }
 
     public static void main(String[] args) {
