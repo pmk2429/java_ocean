@@ -70,9 +70,9 @@ public class CutOffTrees {
         Queue<int[]> queue = new LinkedList<>();
         queue.add(new int[]{sr, sc, 0});
 
-        boolean[][] seen = new boolean[R][C];
+        boolean[][] visited = new boolean[R][C];
 
-        seen[sr][sc] = true;
+        visited[sr][sc] = true;
 
         while (!queue.isEmpty()) {
             int[] cur = queue.poll();
@@ -82,8 +82,8 @@ public class CutOffTrees {
             for (int di = 0; di < 4; ++di) {
                 int r = cur[0] + sr;
                 int c = cur[1] + sc;
-                if (0 <= r && r < R && 0 <= c && c < C && !seen[r][c] && forest.get(r).get(c) > 0) {
-                    seen[r][c] = true;
+                if (0 <= r && r < R && 0 <= c && c < C && !visited[r][c] && forest.get(r).get(c) > 0) {
+                    visited[r][c] = true;
                     queue.add(new int[]{r, c, cur[2] + 1});
                 }
             }

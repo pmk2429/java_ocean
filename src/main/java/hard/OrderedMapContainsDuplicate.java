@@ -28,7 +28,7 @@ public class OrderedMapContainsDuplicate {
 
     /**
      * This problem requires to maintain a window of size k of the previous values that can be queried for value ranges.
-     * The best data structure to do that is Binary Search Tree because it self balances the height of the tree.
+     * The best data structure to do that is Binary Search Tree because it self-balances the height of the tree.
      * As a result maintaining the tree of size k will result in time complexity O(N lg K).
      * In order to check if there exists any value of range abs(nums[i] - nums[j]) to simple queries can be executed
      * both of time complexity O(lg K)

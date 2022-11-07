@@ -22,7 +22,7 @@ import java.util.Arrays;
 public class InsertIntervals {
 
     private static int[][] insert(int[][] intervals, int[] newInterval) {
-        int M = intervals.length;
+        int M = intervals.length; // total rows
 
         // Time : O(n) Space : O(n)
         if (newInterval == null) return intervals;
@@ -44,8 +44,8 @@ public class InsertIntervals {
 
         // replace the new intervals with the minimum value
         while (i < M && intervals[i][0] <= end) {
-            newInterval[0] = Math.min(newInterval[0], intervals[i][0]);
-            newInterval[1] = Math.max(newInterval[1], intervals[i][1]);
+            newInterval[0] = Math.min(newInterval[0], intervals[i][0]); // start
+            newInterval[1] = Math.max(newInterval[1], intervals[i][1]); // end
             i++;
         }
 

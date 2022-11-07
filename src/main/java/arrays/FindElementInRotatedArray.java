@@ -47,15 +47,15 @@ public class FindElementInRotatedArray {
      */
     private static int binarySearchIndex(int left, int right) {
         while (left <= right) {
-            int pivot = (left + right) / 2;
-            if (nums[pivot] == target) {
-                return pivot;
+            int mid = (left + right) / 2;
+            if (nums[mid] == target) {
+                return mid;
             }
-            else if (target < nums[pivot]) {
-                right = pivot - 1;
+            else if (target < nums[mid]) {
+                right = mid - 1;
             }
             else {
-                left = pivot + 1;
+                left = mid + 1;
             }
         }
         return -1;

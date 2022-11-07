@@ -1,7 +1,9 @@
 package numbers;
 
+import slidingWindow.SlidingWindowMaximum;
+
 /**
- * Same as {@link arrays.SlidingWindowMaximum}
+ * Same as {@link SlidingWindowMaximum}
  */
 public class SlidingWindowKSum {
 

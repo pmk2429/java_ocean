@@ -49,29 +49,29 @@ public class MergeSortedArrays {
         return heap.stream().mapToInt(i -> i).toArray();
     }
 
-    private static void mergeO1Space(int[] a, int[] b) {
-        int m = a.length;
-        int n = b.length;
-        for (int i = n - 1; i >= 0; i--) {
-            int j;
-            int lastA = a[m - 1];
-            for (j = m - 2; j >= 0 && a[j] > b[i]; j--) {
-                a[j + 1] = a[j];
-            }
+    private static void merge(int[] arr1, int m, int[] arr2, int n) {
+        int p1 = m - 1;
+        int p2 = n - 1;
 
-            if (j != m - 2 || lastA > b[i]) {
-                a[j + 1] = b[i];
-                b[i] = lastA;
+        for (int p = m + n - 1; p >= 0; p--) {
+            if (p2 < 0) {
+                break;
+            }
+            if (p1 >= 0 && arr1[p1] > arr2[p2]) {
+                arr1[p] = arr1[p1--];
+            }
+            else {
+                arr1[p] = arr2[p2--];
             }
         }
 
-        System.out.println(Arrays.toString(a));
-        System.out.println(Arrays.toString(b));
+        System.out.println(Arrays.toString(arr1));
+        System.out.println(Arrays.toString(arr2));
     }
 
     public static void main(String[] args) {
         int[] arr1 = new int[]{1, 5, 9, 10, 15, 20};
         int[] arr2 = new int[]{2, 3, 8, 13};
-        mergeO1Space(arr1, arr2);
+        merge(arr1, arr1.length, arr2, arr2.length);
     }
 }

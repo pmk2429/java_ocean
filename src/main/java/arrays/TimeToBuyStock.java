@@ -19,5 +19,25 @@ package arrays;
  * Explanation: In this case, no transaction is done, i.e. max profit = 0.
  */
 public class TimeToBuyStock {
+    private static int maxProfit(int[] prices) {
+        int leastProfitSoFar = Integer.MAX_VALUE;
+        int maxProfit = 0;
+        int currProfit = 0;
 
+        for (int price : prices) {
+            if (price < leastProfitSoFar) {
+                leastProfitSoFar = price;
+            }
+            currProfit = price - leastProfitSoFar;
+            if (currProfit > maxProfit) {
+                maxProfit = currProfit;
+            }
+        }
+        return maxProfit;
+    }
+
+    public static void main(String[] args) {
+        int[] prices = {7, 1, 5, 3, 6, 4};
+        System.out.println(maxProfit(prices));
+    }
 }
