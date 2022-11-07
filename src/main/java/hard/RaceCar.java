@@ -1,5 +1,10 @@
 package hard;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 /**
  * Your car starts at position 0 and speed +1 on an infinite number line.  (Your car can go into negative positions.)
  * <p>
@@ -39,23 +44,34 @@ package hard;
  */
 public class RaceCar {
 
-    private int racecar(int target) {
+    private static final List<Integer[]> queue = new ArrayList<>();
+    private static final Set<Integer[]> visited = new HashSet<>();
+    private static int moves;
 
-        int position = 0;
-        int speed = 1;
+    private static int raceCar(int target) {
+        queue.add(new Integer[]{0, 0, 1}); // #moves, position, speed
 
-        // 1. Design algo for smallest solvable unit of problem
+        while (queue.size() > 0) {
+            moves = queue.get(0)[0];
+            int position = queue.get(0)[1];
+            int speed = queue.get(0)[2];
+            queue.remove(0);
 
-
-        // 2. Extend the algo to entire problem set
-
-        // 3. Mind your edge cases
-
-        // 4. Test
-
-        // 5. Optimize
-
-        return -1;
+            if (position == target) {
+                return moves;
+            }
+            else if (visited.contains(new Integer[]{position, speed})) {
+                continue;
+            }
+            else {
+                visited.add(new Integer[]{position, speed});
+                queue.add(new Integer[]{moves + 1, position + speed, speed * 2});
+                if ((position + speed > target && speed > 0) || (position + speed < target && speed < 0)) {
+                    queue.add(new Integer[]{moves + 1, position, speed > 0 ? -1 : 1});
+                }
+            }
+        }
+        return moves;
     }
 
     public static void main(String[] args) {

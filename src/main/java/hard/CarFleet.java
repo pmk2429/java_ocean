@@ -47,7 +47,7 @@ public class CarFleet {
         for (int i = 0; i < N; i++) {
             cars[i] = new Car(position[i], (double) (target - position[i]) / speed[i]);
         }
-        Arrays.sort(cars, Comparator.comparingInt(a -> a.position));
+        Arrays.sort(cars, Comparator.comparingInt(a -> a .position));
 
         int ans = 0, t = N;
         while (--t > 0) {

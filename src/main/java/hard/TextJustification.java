@@ -17,7 +17,7 @@ import java.util.List;
  * Note:
  * <p>
  * A word is defined as a character sequence consisting of non-space characters only.
- * Each word'addStr length is guaranteed to be greater than 0 and not exceed maxWidth.
+ * Each word length is guaranteed to be greater than 0 and not exceed maxWidth.
  * The input array words contains at least one word.
  * <p>
  * Example 1:
@@ -62,14 +62,17 @@ import java.util.List;
  * "everything  else  we",
  * "do                  "
  * ]
- *
+ * <p>
  * ~!@#HARD:REVISE
  */
 public class TextJustification {
 
+    private static final String WHITE_SPACE = " ";
+    private static final String EMPTY_SPACE = "";
+
     private static String getSpaceStr(int count) {
         StringBuilder sb = new StringBuilder();
-        while (count-- > 0) sb.append(" ");
+        while (count-- > 0) sb.append(WHITE_SPACE);
         return sb.toString();
     }
 
@@ -82,36 +85,38 @@ public class TextJustification {
             return null;
         }
 
+        int length = words.length;
         List<String> res = new ArrayList<>();
 
         int start = 0; // inclusive
 
-        while (start < words.length) {
+        while (start < length) {
             int currWordLength = words[start].length();
             int end = start + 1; // exclusive
-            while (end < words.length) {
+            while (end < length) {
+                // our end pointer will help us determine how many words we can fit in the current line
                 int nextWordLength = words[end].length();
                 if (currWordLength + 1 + nextWordLength > maxWidth) break;
                 currWordLength += 1 + nextWordLength;
                 end++;
             }
 
-            // build the line
+            // build the line using end pointer as total words we can fit
             StringBuilder sb = new StringBuilder(words[start++]);
-            if (end == words.length) { // left justify with single " "
+            if (end == length) { // left justify with single " "
                 while (start < end) {
-                    sb.append(" ").append(words[start++]);
+                    sb.append(WHITE_SPACE).append(words[start++]);
                 }
             }
             else {
-                // spread out evenly
+                // spread out evenly when current `end` word is not till the length of array and so needs to add spacing
                 int wordCount = end > start ? end - start : 1;
                 int extra = (maxWidth - currWordLength) % wordCount;
                 String evenly = getSpaceStr((maxWidth - currWordLength) / wordCount);
                 while (start < end) {
                     sb.append(" ")
                         .append(evenly)
-                        .append(extra-- > 0 ? " " : "")
+                        .append(extra-- > 0 ? WHITE_SPACE : EMPTY_SPACE)
                         .append(words[start++]);
                 }
             }
@@ -120,7 +125,7 @@ public class TextJustification {
 
             // add extra padding
             while (lineLen++ < maxWidth) {
-                sb.append(" ");
+                sb.append(WHITE_SPACE);
             }
 
             res.add(sb.toString());

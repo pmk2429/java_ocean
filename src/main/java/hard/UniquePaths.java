@@ -30,21 +30,24 @@ public class UniquePaths {
 
     private static int uniquePaths(int m, int n) {
         int[][] memo = new int[m][n];
+
         // 1 path to any grid on first row
         Arrays.fill(memo[0], 1);
 
         for (int i = 0; i < memo.length; i++) {
-            memo[i][0] = 1; // 1 path to any grid on first column
+            // 1 path to any grid on first column
+            memo[i][0] = 1;
         }
 
-        for (int row = 1; row < memo.length; row++) {
-            for (int col = 1; col < memo[0].length; col++) {
+        for (int i = 1; i < m; i++) {
+            for (int j = 1; j < n; j++) {
                 // number of paths to grid(row, col) is the sum of number of paths to grid to the left
                 // and number of paths to grid above
-                memo[row][col] = memo[row][col - 1] + memo[row - 1][col];
+                memo[i][j] = memo[i - 1][j] + memo[i][j - 1];
             }
         }
-        return memo[m - 1][n - 1];//number of paths to finish point
+
+        return memo[m - 1][n - 1]; //number of paths to finish point
     }
 
     public static void main(String[] args) {

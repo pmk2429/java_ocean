@@ -56,7 +56,7 @@ public class WordBreak {
                     if (end == length) {
                         break;
                     }
-                    queue.add(end);
+                    queue.add(end);  // queue.offer() || queue.addLast()
                 }
                 // mark visited
                 visited[start] = 1;
@@ -90,6 +90,26 @@ public class WordBreak {
         return false;
     }
 
+    private static boolean wordBreakHelper(String str, Set<String> wordDictionary) {
+        int length = str.length();
+        if (length == 0) {
+            return false;
+        }
+
+        for (int i = 0; i < length; i++) {
+            String currSubStr = str.substring(0, i); // 0 -> i
+            String nextSubStr = str.substring(i); // i -> length
+            if (wordDictionary.contains(currSubStr) && wordBreakHelper(nextSubStr, wordDictionary)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private static boolean findWordInDictionary(String str, Set<String> wordDictionary) {
+        return wordBreakHelper(str, wordDictionary);
+    }
+
     public static void main(String[] args) {
         String s = "nota";
         String[] wordDict = {"a", "no", "not", "to", "fala", "eat", "alligator", "yahoo"};
@@ -98,5 +118,10 @@ public class WordBreak {
         String animals = "catsandog";
         String[] wordDictAnimals = {"cats", "dog", "sand", "and", "cat"};
         System.out.println(wordBreak(animals, wordDictAnimals));
+
+        String animals2 = "catsandog";
+        String[] demo = {"cats", "dog", "sand", "and", "cat"};
+        Set<String> wordDictionary = new HashSet<>(Arrays.asList(demo));
+        System.out.println(findWordInDictionary(animals2, wordDictionary));
     }
 }

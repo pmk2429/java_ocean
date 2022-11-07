@@ -35,7 +35,7 @@ public class LongestIncreasingSubsequence {
             return null;
         }
 
-        ArrayList<Integer> list = new ArrayList<>();
+        List<Integer> list = new ArrayList<>();
 
         for (int num : nums) {
             int size = list.size();
@@ -47,9 +47,9 @@ public class LongestIncreasingSubsequence {
                 int start = 0;
                 int end = size - 1;
 
+                // binary search
                 while (start < end) {
                     int mid = (start + end) / 2;
-                    // binary search
                     if (num > list.get(mid)) {
                         start = mid + 1;
                     }

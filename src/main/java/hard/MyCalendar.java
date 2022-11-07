@@ -42,24 +42,24 @@ import java.util.TreeMap;
  */
 public class MyCalendar {
 
-    private final Map<Integer, Integer> delta;
+    private final Map<Integer, Integer> scheduler;
 
     public MyCalendar() {
-        delta = new TreeMap<>();
+        scheduler = new TreeMap<>();
     }
 
     public boolean book(int start, int end) {
-        delta.put(start, delta.getOrDefault(start, 0) + 1);
-        delta.put(end, delta.getOrDefault(end, 0) - 1);
+        scheduler.put(start, scheduler.getOrDefault(start, 0) + 1);
+        scheduler.put(end, scheduler.getOrDefault(end, 0) - 1);
 
         int active = 0;
-        for (int d : delta.values()) {
+        for (int d : scheduler.values()) {
             active += d;
-            if (active >= 3) {
-                delta.put(start, delta.get(start) - 1);
-                delta.put(end, delta.get(end) + 1);
-                if (delta.get(start) == 0) {
-                    delta.remove(start);
+            if (active >= 3) { // triple booked
+                scheduler.put(start, scheduler.get(start) - 1);
+                scheduler.put(end, scheduler.get(end) + 1);
+                if (scheduler.get(start) == 0) {
+                    scheduler.remove(start);
                 }
                 return false;
             }

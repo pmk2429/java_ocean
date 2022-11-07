@@ -44,6 +44,16 @@ import java.util.Arrays;
  */
 public class NumberOfLines {
 
+    private static int[] numberOfLinesOptimized(int[] widths, String S) {
+        int res = 1, cur = 0;
+        for (char c : S.toCharArray()) {
+            int width = widths[c - 'a'];
+            res = cur + width > 100 ? res + 1 : res;
+            cur = cur + width > 100 ? width : cur + width;
+        }
+        return new int[]{res, cur};
+    }
+
     private static int[] numberOfLines(int[] widths, String str) {
         int[] output = new int[2];
         int charFrequencySum = 0;
@@ -58,9 +68,7 @@ public class NumberOfLines {
             curCharWidth = curCharWidth * widths[index];
             if (charFrequencySum + curCharWidth > lineLimit) {
                 totalLines++;
-                // this indicates # of chars on the new line
-                output[1] = curCharWidth;
-                charFrequencySum = 0;
+                charFrequencySum = widths[index];
             }
             else {
                 // iterator to find the total number of chars yet
@@ -68,6 +76,7 @@ public class NumberOfLines {
             }
         }
         output[0] = totalLines;
+        output[1] = charFrequencySum;
 
         return output;
     }

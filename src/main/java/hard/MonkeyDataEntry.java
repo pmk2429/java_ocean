@@ -72,7 +72,8 @@ public class MonkeyDataEntry {
             }
         }
         else {
-            System.out.println("Invalid TICKER. Cannot add to system");
+            throw new IllegalStateException("Invalid TICKER. Cannot add to system");
+            //System.out.println("Invalid TICKER. Cannot add to system");
         }
     }
 
