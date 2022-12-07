@@ -71,13 +71,13 @@ public class FirstUniqueCharacter {
     }
 
     private static int firstUniqueCharOptimizedIndex(String s) {
-        int[] charCount = new int[26];
+        int[] charFreq = new int[26];
         char[] chars = s.toCharArray();
         for (char c : chars) {
-            charCount[c - 'a']++;
+            charFreq[c - 'a']++;
         }
         for (int i = 0; i < chars.length; i++) {
-            if (charCount[chars[i] - 'a'] == 1) {
+            if (charFreq[chars[i] - 'a'] == 1) {
                 return i;
             }
         }

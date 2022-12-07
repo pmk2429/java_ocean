@@ -76,40 +76,27 @@ public class TopKFrequentWords {
         return firstKWords;
     }
 
-    private static List<String> topKFrequent(String[] words, int k) {
-        Map<String, Integer> count = new HashMap<>();
-        for (String word : words) {
-            count.put(word, count.getOrDefault(word, 0) + 1);
-        }
-        List<String> candidates = new ArrayList<>(count.keySet());
-        Collections.sort(candidates,
-            (w1, w2) -> count.get(w1).equals(count.get(w2))
-                ? w1.compareTo(w2)
-                : count.get(w2) - count.get(w1));
-
-        return candidates.subList(0, k);
-    }
-
     private static List<String> topKFrequentWordsUsingHeap(String[] words, int k) {
         Map<String, Integer> count = new HashMap<>();
+        List<String> result = new LinkedList<>();
 
         for (String word : words) {
             count.put(word, count.getOrDefault(word, 0) + 1);
         }
 
-        // either  by natural ordering or the ones whose count is highest
-        PriorityQueue<String> heap = new PriorityQueue<>((w1, w2) -> count.get(w1).equals(count.get(w2))
+        Queue<String> pq = new PriorityQueue<>((w1, w2) -> count.get(w1).equals(count.get(w2))
             ? w1.compareTo(w2)
             : count.get(w2) - count.get(w1));
 
         for (String word : count.keySet()) {
-            heap.offer(word);
-            if (heap.size() > k) {
-                heap.poll();
-            }
+            pq.offer(word);
         }
 
-        return new ArrayList<>(heap);
+        for (int i = 0; i < k; i++) {
+            result.add(pq.poll());
+        }
+
+        return result;
     }
 
     public static void main(String[] args) {

@@ -56,7 +56,7 @@ public class NextSmallerElement {
         System.out.println(Arrays.toString(nse));
     }
 
-    private static int[] nseUsingSelfBalancingTree(int[] arr) {
+    private static int[] closestSmallerElementUsingSelfBalancingTree(int[] arr) {
         int[] ans = new int[arr.length];
         TreeSet<Integer> selfBalancingTree = new TreeSet<>();
         for (int i : arr) {
@@ -74,7 +74,7 @@ public class NextSmallerElement {
         int[] arr = {4, 8, 5, 2, 25};
         int[] arr1 = {13, 7, 6, 12};
         nextSmallerElement(arr);
-        System.out.println(Arrays.toString(nseUsingSelfBalancingTree(arr)));
+        System.out.println(Arrays.toString(closestSmallerElementUsingSelfBalancingTree(arr)));
 
         nextSmallerElement(arr1);
     }

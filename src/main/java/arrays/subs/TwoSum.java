@@ -62,6 +62,9 @@ public class TwoSum {
         int[] a = {5, 8, 2, 11, 7, 6, 15};
         int target = 9;
         System.out.println(Arrays.toString(twoSum(a, target)));
-        System.out.println(Arrays.toString(twoSumBinarySearch(a, target)));
+
+        int[] sum0 = { 3, 4, -7, 3, 1, 3, 1, -4, -2, -2 };
+        int target0 = 0;
+        System.out.println(Arrays.toString(twoSum(sum0, target0)));
     }
 }

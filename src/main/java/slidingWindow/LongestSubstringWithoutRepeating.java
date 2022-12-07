@@ -36,6 +36,7 @@ public class LongestSubstringWithoutRepeating {
         if (s == null || s.length() == 0) {
             return 0;
         }
+        // map to store the character and its latest index encountered
         Map<Character, Integer> map = new HashMap<>();
         int longestUniqueSubstringLength = 0;
         for (int i = 0, j = 0; i < s.length(); i++) {

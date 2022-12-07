@@ -34,6 +34,7 @@ public class ShortestDistanceToChar {
         int position = -length;
         for (int i = 0; i < length; i++) {
             if (S.charAt(i) == C) {
+                // position keeps track of last known encountered position of `e`
                 position = i;
             }
             ans[i] = i - position; // difference between `current index` and the index of `C`
@@ -42,6 +43,7 @@ public class ShortestDistanceToChar {
         // 2nd pass from the end
         for (int i = length - 1; i >= 0; i--) {
             if (S.charAt(i) == C) {
+                // position keeps track of last known encountered position of `e`
                 position = i;
             }
             ans[i] = Math.min(ans[i], position - i);

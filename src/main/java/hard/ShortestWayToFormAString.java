@@ -34,7 +34,6 @@ package hard;
  */
 public class ShortestWayToFormAString {
 
-
     private static int shortestWay(String source, String target) {
         int[] chars = new int[26];
 
@@ -47,18 +46,16 @@ public class ShortestWayToFormAString {
         int i = 0, j = 0;
         int count = 1;
         while (j < targetLength) {
+            char iChar = source.charAt(i);
             char jChar = target.charAt(j);
-            if (source.charAt(i) == jChar) {
-                i++;
+            if (iChar == jChar) {
                 j++;
             }
-            else {
-                i++;
-                if (chars[jChar - 'a'] == 0) {
-                    return -1;
-                }
+            else if (chars[jChar - 'a'] == 0) {
+                return -1;
             }
-            //new sequence. start sccaning source again
+            i++;
+            // new sequence. start scanning source again
             if (j != targetLength && i == source.length()) {
                 i = 0;
                 count++;

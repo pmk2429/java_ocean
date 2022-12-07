@@ -14,16 +14,16 @@ public class RemoveChars {
 
     private static String removeChars(String first, String mask) {
         char[] firstArr = first.toCharArray();
-        int[] charCount = new int[256];
+        int[] charFreq = new int[256];
         int index = 0, resIndex = 0;
 
         for (int i = 0; i < mask.length(); i++) {
-            charCount[mask.charAt(i)]++;
+            charFreq[mask.charAt(i)]++;
         }
 
         while (index < firstArr.length) {
             char temp = firstArr[index];
-            if (charCount[temp] == 0) { // element is not present in mask
+            if (charFreq[temp] == 0) { // element is not present in mask
                 firstArr[resIndex] = firstArr[index];
                 resIndex++;
             }
