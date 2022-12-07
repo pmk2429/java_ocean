@@ -32,7 +32,7 @@ import java.util.Arrays;
  * Bags 0, 1, and 2 have full capacity.
  * There are 3 bags at full capacity, so we return 3.
  * It can be shown that it is not possible to have more than 3 bags at full capacity.
- * Note that we did not use all of the additional rocks.
+ * Note that we did not use all the additional rocks.
  * <p>
  * Constraints:
  * ----------

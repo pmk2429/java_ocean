@@ -12,16 +12,18 @@ public class FirstKOccurringWords {
 
         Queue<String> wordsPriorityQueue = new PriorityQueue<>((w1, w2) -> wordMap.get(w1).equals(wordMap.get(w2))
             ? w1.compareTo(w2)
-            : wordMap.get(w1) - wordMap.get(w2));
+            : wordMap.get(w2) - wordMap.get(w1));
 
         for (String word : wordMap.keySet()) {
             wordsPriorityQueue.offer(word);
-            if (wordsPriorityQueue.size() > k) {
-                wordsPriorityQueue.poll();
-            }
         }
 
-        return new ArrayList<>(wordsPriorityQueue);
+        List<String> kOccurringWords = new ArrayList<>();
+        for (int i = 0; i < k; i++) {
+            kOccurringWords.add(wordsPriorityQueue.poll());
+        }
+
+        return kOccurringWords;
     }
 
     public static void main(String[] args) {

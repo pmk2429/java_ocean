@@ -53,7 +53,6 @@ public class PositionOfLargeGroups {
                 }
             }
             i = j;
-            j = 0;
         }
         return groups;
     }

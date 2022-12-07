@@ -39,8 +39,59 @@ public class MoveZero {
         nums[j] = temp;
     }
 
+    public static int[] moveZeroesToLeft(int[] arr) {
+        int i = arr.length - 1;
+        int j = arr.length - 1;
+
+        while (i >= 0) {
+            if (arr[i] != 0) {
+                arr[j] = arr[i];
+                j--;
+            }
+            i--;
+        }
+
+        while (j >= 0) {
+            arr[j] = 0;
+            j--;
+        }
+
+        return arr;
+    }
+
+    /*
+     * Given an integer array, move all elements containing '0' to the right while maintaining the order of
+     * other elements in the array.
+     * */
+    public static int[] moveZeroesToRight(int[] arr) {
+        int i = 0;
+        int j = 0;
+
+        while (i < arr.length) {
+            if (arr[i] != 0) {
+                arr[j] = arr[i];
+                j++;
+            }
+            i++;
+        }
+
+        while (j < arr.length) {
+            arr[j] = 0;
+            j++;
+        }
+        return arr;
+    }
+
+    private static void printArrays(int[] original, int[] updated) {
+        System.out.println(Arrays.toString(original) + " ---> " + Arrays.toString(updated));
+    }
+
     public static void main(String[] args) {
-        int[] arr = new int[]{1, 0, 3, 2, 0, 12};
-        System.out.println(Arrays.toString(moveZeroesWithoutSort(arr)));
+        int[] arr = new int[]{1, 0, 3, 4, 7, 0, 6, 2, 0, 9, 0, 0, 12};
+        printArrays(arr, moveZeroesWithoutSort(arr));
+        int[] arr1 = new int[]{1, 0, 3, 4, 7, 0, 6, 2, 0, 9, 0, 0, 12};
+        printArrays(arr1, moveZeroesToLeft(arr1));
+        int[] arr2 = new int[]{1, 0, 3, 4, 7, 0, 6, 2, 0, 9, 0, 0, 12};
+        printArrays(arr2, moveZeroesToRight(arr2));
     }
 }

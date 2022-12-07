@@ -32,12 +32,12 @@ import java.util.Set;
  */
 public class UniqueEmailAddress {
 
+    private static final String IGNORE = "+";
+    private static final String PERIOD = ".";
+
     private static int uniqueEmailAddresses(String[] emails) {
         // rationale - to avoid adding duplicated
         Set<String> uniqueEmails = new HashSet<>();
-
-        String ignore = "+";
-        String period = ".";
 
         for (String s : emails) {
             StringBuilder sb = new StringBuilder();
@@ -48,12 +48,12 @@ public class UniqueEmailAddress {
             String domainName = metadata[1];
 
             // check if localName contains period or ignore char
-            if (localName.contains(period)) {
-                localName = localName.replace(".", "");
+            if (localName.contains(PERIOD)) {
+                localName = localName.replace(PERIOD, "");
             }
 
-            if (localName.contains(ignore)) {
-                int index = localName.indexOf(ignore);
+            if (localName.contains(IGNORE)) {
+                int index = localName.indexOf(IGNORE);
                 localName = localName.substring(0, index);
             }
 

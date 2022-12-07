@@ -39,7 +39,7 @@ public class CarFleet {
     private static int carFleet(int target, int[] position, int[] speed) {
         int N = position.length; // total number of cars
 
-        if (N <= 0) {
+        if (N == 0) {
             return -1;
         }
 

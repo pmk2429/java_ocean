@@ -1,7 +1,10 @@
 package hard;
 
 import java.time.Instant;
-import java.util.*;
+import java.util.ArrayDeque;
+import java.util.Deque;
+import java.util.HashMap;
+import java.util.Map;
 
 class StockData {
 
@@ -50,7 +53,6 @@ class Stock {
 }
 
 public class MonkeyDataEntry {
-
     private final Map<String, StockData> tickerMap;
 
     private MonkeyDataEntry() {

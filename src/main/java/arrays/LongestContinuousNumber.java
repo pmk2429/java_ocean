@@ -14,9 +14,9 @@ public class LongestContinuousNumber {
             if (array[i] == array[i + 1]) {
                 count++;
             }
-            if (array[i] != array[i + 1]) {
+            else {
                 countList.add(count);
-                count = 0;
+                count = 1;
             }
         }
         return Collections.max(countList);

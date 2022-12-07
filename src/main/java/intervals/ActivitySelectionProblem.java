@@ -19,7 +19,7 @@ public class ActivitySelectionProblem {
 
     public static List<Pair> selectActivity(List<Pair> activities) {
         // `k` keeps track of the index of the last selected activity
-        int k = 0;
+        int lastSelectedActivity = 0;
 
         // set to store the selected activities index
         Set<Integer> result = new HashSet<>();
@@ -36,9 +36,9 @@ public class ActivitySelectionProblem {
             // if the start time of the i'th activity is greater or equal
             // to the finish time of the last selected activity, it
             // can be included in the activities list
-            if (activities.get(i).getStart() >= activities.get(k).getFinish()) {
+            if (activities.get(i).getStart() >= activities.get(lastSelectedActivity).getFinish()) {
                 result.add(i);
-                k = i;
+                lastSelectedActivity = i;
             }
         }
 
@@ -56,25 +56,3 @@ public class ActivitySelectionProblem {
     }
 }
 
-class Pair {
-    private final int start;
-    private final int finish;
-
-    public Pair(int start, int finish) {
-        this.start = start;
-        this.finish = finish;
-    }
-
-    public int getFinish() {
-        return finish;
-    }
-
-    public int getStart() {
-        return start;
-    }
-
-    @Override
-    public String toString() {
-        return "(" + getStart() + ", " + getFinish() + ")";
-    }
-}

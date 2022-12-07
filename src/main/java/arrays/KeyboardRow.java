@@ -1,6 +1,7 @@
 package arrays;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 /**
  * Given a List of words, return the words that can be typed using letters of alphabet on only one row's of
@@ -52,7 +53,7 @@ public class KeyboardRow {
                 words[i] = null;
             }
         }
-        return words;
+        return Arrays.stream(words).filter(Objects::nonNull).toArray(String[]::new);
     }
 
     public static void main(String[] args) {

@@ -35,7 +35,7 @@ public class TrainStation {
         Arrays.sort(departure);
 
         // maintains the count of trains
-        int count = 0;
+        int trainCount = 0;
 
         // stores minimum platforms needed
         int platforms = 0;
@@ -44,12 +44,12 @@ public class TrainStation {
         int i = 0, j = 0;
 
         // run till all trains have arrived
-        while (i < arrival.length) {
+        while (i < arrival.length && j < departure.length) {
             // if a train is scheduled to arrive next
             if (arrival[i] < departure[j]) {
                 // increase the count of trains and update minimum platforms if required
-                count++;
-                platforms = Math.max(platforms, count);
+                trainCount++;
+                platforms = Math.max(platforms, trainCount);
                 // move the pointer to the next arrival
                 i++;
             }
@@ -60,7 +60,7 @@ public class TrainStation {
             // If two trains are arriving and departing simultaneously,
             // i.e., `arrival[i] == departure[j]`, depart the train first
             else {
-                count--;
+                trainCount--;
                 j++;
             }
         }
