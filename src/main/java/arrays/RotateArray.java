@@ -18,65 +18,65 @@ import java.util.Arrays;
  */
 public class RotateArray {
 
-  private static void rightRotate(int[] arr, int distance) {
+    private static void rightRotate(int[] arr, int distance) {
 
-  }
-
-  private static void leftRotate(int[] arr, int distance) {
-
-  }
-
-  private static void reverse(int[] arr, int left, int right) {
-    if (arr == null || arr.length <= 0) {
-      return;
     }
 
-    while (left < right) {
-      int temp = arr[left];
-      arr[left] = arr[right];
-      arr[right] = temp;
-      left++;
-      right--;
-    }
-  }
+    private static void leftRotate(int[] arr, int distance) {
 
-  private static int[] rotate(int[] arr, int degree) {
-    if (arr == null || arr.length <= 0 || degree <= 0) {
-      throw new IllegalArgumentException("Array Invalid");
     }
 
-    if (degree > arr.length) {
-      degree = degree % arr.length;
+    private static void reverse(int[] arr, int left, int right) {
+        if (arr == null || arr.length <= 0) {
+            return;
+        }
+
+        while (left < right) {
+            int temp = arr[left];
+            arr[left] = arr[right];
+            arr[right] = temp;
+            left++;
+            right--;
+        }
     }
 
-    int partition = arr.length - degree - 1;
+    private static int[] rotate(int[] arr, int degree) {
+        if (arr == null || arr.length <= 0 || degree <= 0) {
+            throw new IllegalArgumentException("Array Invalid");
+        }
 
-    reverse(arr, 0, partition - 1);
-    reverse(arr, partition, arr.length - 1);
-    reverse(arr, 0, arr.length - 1);
+        if (degree > arr.length) {
+            degree = degree % arr.length;
+        }
 
-    return arr;
-  }
+        int partition = arr.length - degree - 1;
 
-  private static void rotateArray(int[] arr, int distance) {
-    // distance iteration
-    for (int i = 0; i < distance; i++) {
-      // arr iteration
-      int temp = arr[0];
-      int length = arr.length;
-      for (int d = 0; d < length - 1; d++) {
-        arr[d] = arr[d + 1];
-      }
-      arr[length - 1] = temp;
+        reverse(arr, 0, partition - 1);
+        reverse(arr, partition, arr.length - 1);
+        reverse(arr, 0, arr.length - 1);
+
+        return arr;
     }
 
-    System.out.println(Arrays.toString(arr));
-  }
+    private static void rotateArray(int[] arr, int distance) {
+        // distance iteration
+        for (int i = 0; i < distance; i++) {
+            // arr iteration
+            int temp = arr[0];
+            int length = arr.length;
+            for (int d = 0; d < length - 1; d++) {
+                arr[d] = arr[d + 1];
+            }
+            arr[length - 1] = temp;
+        }
 
-  public static void main(String[] args) {
-    int[] arr = new int[]{1, 2, 3, 4, 5};
-    rotateArray(arr, 2);
-    int[] arr1 = new int[]{1, 2, 3, 4, 5};
-    System.out.println(Arrays.toString(rotate(arr1, 2)));
-  }
+        System.out.println(Arrays.toString(arr));
+    }
+
+    public static void main(String[] args) {
+        int[] arr = new int[]{1, 2, 3, 4, 5};
+        rotateArray(arr, 2);
+        int[] arr1 = new int[]{1, 2, 3, 4, 5};
+        System.out.println(Arrays.toString(rotate(arr1, 2)));
+    }
 }

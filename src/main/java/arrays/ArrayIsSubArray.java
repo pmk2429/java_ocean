@@ -10,6 +10,7 @@ import java.util.Arrays;
  * <p>
  * Input : A[] = {1, 2, 3, 4, 5}, B[] = {2, 5, 6}
  * Output : No
+ * ~!@#HARD:REVISE
  */
 public class ArrayIsSubArray {
 
@@ -26,6 +27,7 @@ public class ArrayIsSubArray {
                 // if entire B is traversed, return true
                 if (j == n) {
                     isSubArray = true;
+                    break;
                 }
             }
             else {
@@ -50,8 +52,8 @@ public class ArrayIsSubArray {
     }
 
     public static void main(String[] args) {
-        int main[] = {2, 3, 0, 5, 1, 1, 2};
-        int sub[] = {1, 2};
+        int[] main = {2, 3, 0, 5, 1, 1, 2};
+        int[] sub = {1, 2};
 
         System.out.println(isSubArray(main, sub));
     }

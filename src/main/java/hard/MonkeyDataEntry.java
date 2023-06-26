@@ -105,7 +105,7 @@ public class MonkeyDataEntry {
         Stock uberMin = dataEntry.getStockMinData("UBER");
         Stock uberMax = dataEntry.getStockMaxData("UBER");
 
-        System.out.println(uberMax.price);
-        System.out.println(uberMin.price);
+        System.out.println("Min - " + uberMin.price);
+        System.out.println("Max - " + uberMax.price);
     }
 }

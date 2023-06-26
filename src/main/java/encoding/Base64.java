@@ -10,10 +10,10 @@ public class Base64 {
         if (input.length() % 4 != 0) {
             throw new IllegalArgumentException("Invalid base64 input");
         }
-        byte decoded[] = new byte[((input.length() * 3) / 4) - (input.indexOf('=') > 0 ? (input.length() - input.indexOf('=')) : 0)];
+        byte[] decoded = new byte[((input.length() * 3) / 4) - (input.indexOf('=') > 0 ? (input.length() - input.indexOf('=')) : 0)];
         char[] inChars = input.toCharArray();
         int j = 0;
-        int b[] = new int[4];
+        int[] b = new int[4];
         for (int i = 0; i < inChars.length; i += 4) {
             // This could be made faster (but more complicated) by precomputing these index locations
             b[0] = codes.indexOf(inChars[i]);
@@ -48,11 +48,13 @@ public class Base64 {
                     out.append(codes.charAt(b));
                     b = in[i + 2] & 0x3F;
                     out.append(codes.charAt(b));
-                } else {
+                }
+                else {
                     out.append(codes.charAt(b));
                     out.append('=');
                 }
-            } else {
+            }
+            else {
                 out.append(codes.charAt(b));
                 out.append("==");
             }

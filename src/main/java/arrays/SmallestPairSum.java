@@ -2,7 +2,7 @@ package arrays;
 
 /**
  * Smallest Pair Sum in an array
- * Given an array of distinct integers arr[], the task is to find a pair which has the minimum sum and print the sum.
+ * Given an array of distinct integers' arr[], the task is to find a pair which has the minimum sum and print the sum.
  * <p>
  * Example 1:
  * ----------

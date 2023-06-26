@@ -20,13 +20,13 @@ class Pair {
     @Override
     public String toString() {
         int start = getStart();
-        int end = getFinish();
+        int finish = getFinish();
         if (start <= 0) {
-            return "( <= " + end + ")";
+            return "( <= " + finish + ")";
         }
-        if (end <= 0) {
+        if (finish <= 0) {
             return "(" + start + " >= )";
         }
-        return "(" + start + ", " + end + ")";
+        return "(" + start + ", " + finish + ")";
     }
 }

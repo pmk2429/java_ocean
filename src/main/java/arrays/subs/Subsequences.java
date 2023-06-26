@@ -75,6 +75,7 @@ public class Subsequences {
             }
             counts[0] = 0;
         }
+        // return the last char from counts - Prefix Sum
         return counts[strLength];
     }
 

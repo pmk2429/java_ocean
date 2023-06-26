@@ -8,7 +8,7 @@ class UniquePaths {
         return x >= 0 && y >= 0 && x < N && y < N;
     }
 
-    private static boolean isSafe(int[][] maze, boolean[][] visited, int x, int y) {
+    private static boolean isNavigable(int[][] maze, boolean[][] visited, int x, int y) {
         return maze[x][y] == 1 && !visited[x][y];
     }
 

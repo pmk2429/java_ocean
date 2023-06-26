@@ -16,12 +16,12 @@ public class RemoveDuplicatesO1Space {
 
     private static String removeDuplicatesAllChars(String str) {
         StringBuilder newStr = new StringBuilder();
-        int[] alphabets = new int[256];
+        int[] charFreq = new int[256];
         for (int i = 0; i < str.length(); i++) {
             int charPos = str.charAt(i);
-            if (alphabets[charPos] == 0) {
+            if (charFreq[charPos] == 0) {
+                charFreq[charPos]++;
                 newStr.append(str.charAt(i));
-                alphabets[charPos]++;
             }
         }
         return newStr.toString();

@@ -21,6 +21,7 @@ import java.util.Arrays;
  * Input: arr[] = {3, 2, 5, 7, 1}
  * Output: -1 3 2 2 2
  * <p>
+ * Similar problem to find NSE : {@link NextSmallerElement}
  * ~!@#HARD:REVISE
  */
 public class ReplaceWithSmallestOnLeft {

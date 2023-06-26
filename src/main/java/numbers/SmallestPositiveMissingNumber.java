@@ -31,14 +31,15 @@ public class SmallestPositiveMissingNumber {
      * <p>
      * Input: {1, 1, 0, -1, -2}
      * Output: 2
+     * This problem is similar to {@link hard.FirstMissingPositive}
      */
     private static int findSmallestPositiveMissingNumberUnsortedArray(int[] arr) {
-        int n = arr.length;
-        for (int i = 0; i < n; i++) {
+        int possibleMaxNum = arr.length;
+        for (int i = 0; i < possibleMaxNum; i++) {
             // if value is negative or greater than array size, then it cannot
             // be marked in array. So move to next element.
             int index = arr[i];
-            if (index <= 0 || index > n) {
+            if (index <= 0 || index > possibleMaxNum) {
                 continue;
             }
             // traverse the array until we reach at an element which is already marked or which could not be marked.
@@ -47,26 +48,27 @@ public class SmallestPositiveMissingNumber {
                 int temp = arr[index - 1];
                 arr[index - 1] = index;
                 index = temp;
-                if (index <= 0 || index > n) {
+                if (index <= 0 || index > possibleMaxNum) {
                     break;
                 }
             }
         }
 
         // find first array index which is not marked which is also the smallest positive missing number.
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < possibleMaxNum; i++) {
             if (arr[i] != i + 1) {
                 return i + 1;
             }
         }
 
         // if all indices are marked, then smallest missing positive number is array_size + 1.
-        return n + 1;
+        return possibleMaxNum + 1;
     }
 
-    /* Utility function that puts all non-positive
-         (0 and negative) numbers on left side of
-         arr[] and return count of such numbers */
+    /**
+     * Utility function that puts all non-positive(0 and negative) numbers on left side of
+     * arr[] and return count of such numbers
+     */
     static int segregate(int[] arr, int size) {
         int i = 0, j = 0;
         for (i = 0; i < size; i++) {

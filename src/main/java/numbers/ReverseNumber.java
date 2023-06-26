@@ -40,7 +40,6 @@ public class ReverseNumber {
 
     public static void main(String[] args) {
         int reversedNumber = reverse(-321);
-        System.out.println(Integer.MAX_VALUE);
         System.out.println("\nReverse of entered number is: " + reversedNumber);
     }
 }

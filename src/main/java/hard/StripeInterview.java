@@ -1,4 +1,4 @@
-package interviews;
+package hard;
 
 import java.util.Objects;
 

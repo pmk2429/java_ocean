@@ -72,7 +72,6 @@ public class TrainStation {
         double[] arrival = {2.00, 2.10, 3.00, 3.20, 3.50, 5.00};
         double[] departure = {2.30, 3.40, 3.20, 4.30, 4.00, 5.20};
 
-        System.out.print("The minimum platforms needed is "
-            + findMinPlatforms(arrival, departure));
+        System.out.print("Minimum platforms required - " + findMinPlatforms(arrival, departure));
     }
 }

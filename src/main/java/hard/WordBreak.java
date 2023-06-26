@@ -44,7 +44,7 @@ public class WordBreak {
 
         while (!queue.isEmpty()) {
             // int start = queue.poll() || queue.remove() || queue.removeFirst();
-            int start = queue.remove(); // start of the current word
+            int start = queue.poll(); // start of the current word
             // if not visited
             if (visited[start] == 0) {
                 for (int end = start + 1; end <= length; end++) {

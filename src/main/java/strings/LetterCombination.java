@@ -18,7 +18,7 @@ import java.util.*;
  */
 public class LetterCombination {
 
-    private final static Map<String, String> phone = new HashMap<String, String>() {{
+    private final static Map<String, String> phone = new HashMap<>() {{
         put("2", "abc");
         put("3", "def");
         put("4", "ghi");

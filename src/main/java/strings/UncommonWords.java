@@ -1,9 +1,7 @@
 package strings;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * We are given two sentences A and B. (A sentence is a string of space separated words.
@@ -32,7 +30,7 @@ public class UncommonWords {
     private static String[] uncommonWords(String a, String b) {
         String[] aWords = a.split(" ");
         String[] bWords = b.split(" ");
-        ArrayList<String> uncommonWords = new ArrayList<>();
+        List<String> uncommonWords = new ArrayList<>();
         HashMap<String, Integer> wordsMap = new HashMap<>();
         for (String aWord : aWords) {
             wordsMap.put(aWord, wordsMap.getOrDefault(aWord, 0) + 1);
