@@ -3,18 +3,10 @@ package strings;
 import java.util.Arrays;
 
 public class ReplaceWhiteSpace {
-    public static void main(String[] args) {
-        String str = "my name is pavitra kansara";
-
-        ReplaceWhiteSpace replaceObj = new ReplaceWhiteSpace();
+    private static String replaceWithWhiteSpace(String str) {
         char[] strArr = str.toCharArray();
         int length = str.length();
-        String replacedString = replaceObj.replaceWithWhiteSpace(strArr, length);
-        System.out.println(replacedString);
-    }
-
-    public String replaceWithWhiteSpace(char[] strArr, int length) {
-        int spaceCount = 0, i;
+        int i, spaceCount = 0;
         for (i = 0; i < length; i++) {
             if (strArr[i] == ' ') {
                 spaceCount++;
@@ -34,9 +26,14 @@ public class ReplaceWhiteSpace {
             }
             else {
                 strArr[newLength - 1] = strArr[i];
-                newLength = newLength - 1;
+                newLength--;
             }
         }
         return String.copyValueOf(strArr);
+    }
+
+    public static void main(String[] args) {
+        String str = "my name is pavitra kansara";
+        System.out.println(replaceWithWhiteSpace(str));
     }
 }

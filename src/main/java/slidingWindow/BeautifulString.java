@@ -52,6 +52,7 @@ public class BeautifulString {
                 lo = hi - 1;
             }
             seen.add(currChar);
+            // seen.size() will always be max set to 5 since HashSet doesn't allow duplicates
             if (seen.size() == vowels.length()) {
                 longest = Math.max(longest, hi - lo);
             }

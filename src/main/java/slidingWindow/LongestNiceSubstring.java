@@ -42,11 +42,11 @@ public class LongestNiceSubstring {
             return "";
         }
         char[] arr = s.toCharArray();
-        Set<Character> set = new HashSet<>();
-        for (char c : arr) set.add(c);
+        Set<Character> seen = new HashSet<>();
+        for (char c : arr) seen.add(c);
         for (int i = 0; i < arr.length; i++) {
             char currChar = arr[i];
-            if (set.contains(Character.toUpperCase(currChar)) && set.contains(Character.toLowerCase(currChar))) continue;
+            if (seen.contains(Character.toUpperCase(currChar)) && seen.contains(Character.toLowerCase(currChar))) continue;
             // divide and conquer
             String sub1 = longestNiceSubstring(s.substring(0, i)); // left - first sub problem
             String sub2 = longestNiceSubstring(s.substring(i + 1)); // second - right sub problem

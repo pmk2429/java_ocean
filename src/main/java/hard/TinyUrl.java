@@ -35,13 +35,14 @@ import java.util.Map;
  * ==========
  * 1 <= url.length <= 104
  * url is guranteed to be a valid URL.
- *
- *  ~!@#HARD:REVISE
+ * <p>
+ * ~!@#HARD:REVISE
  */
 public class TinyUrl {
 
     private final static String BASE_HOST = "http://tinyurl.com/";
     private final static int URL_SHORTENER_LENGTH = 6;
+    private static final String CHAR_SET = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789~@#^*";
 
     private final Map<String, String> index = new HashMap<>();
     private final Map<String, String> revIndex = new HashMap<>();
@@ -57,14 +58,12 @@ public class TinyUrl {
         if (revIndex.containsKey(longUrl)) {
             return BASE_HOST + revIndex.get(longUrl);
         }
-
-        String charSet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789~@#^*";
         String key;
         do {
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < URL_SHORTENER_LENGTH; i++) {
-                int r = (int) (Math.random() * charSet.length());
-                sb.append(charSet.charAt(r));
+                int r = (int) (Math.random() * CHAR_SET.length());
+                sb.append(CHAR_SET.charAt(r));
             }
             key = sb.toString();
         } while (index.containsKey(key));

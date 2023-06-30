@@ -26,11 +26,11 @@ public class RemoveAdjacentDuplicates {
 
     private static String removeDuplicates(String S) {
         Stack<Character> stack = new Stack<>();
-        for (char s : S.toCharArray()) {
-            if (!stack.isEmpty() && stack.peek() == s)
+        for (char c : S.toCharArray()) {
+            if (!stack.isEmpty() && stack.peek() == c)
                 stack.pop();
             else
-                stack.push(s);
+                stack.push(c);
         }
         StringBuilder sb = new StringBuilder();
         for (char s : stack) sb.append(s);

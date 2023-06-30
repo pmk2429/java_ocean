@@ -15,22 +15,21 @@ public class RemoveChars {
     private static String removeChars(String first, String mask) {
         char[] firstArr = first.toCharArray();
         int[] charFreq = new int[256];
-        int index = 0, resIndex = 0;
+        int i = 0, resIndex = 0;
 
-        for (int i = 0; i < mask.length(); i++) {
-            charFreq[mask.charAt(i)]++;
+        for (int j = 0; j < mask.length(); j++) {
+            charFreq[mask.charAt(j)]++;
         }
 
-        while (index < firstArr.length) {
-            char temp = firstArr[index];
+        while (i < firstArr.length) {
+            char temp = firstArr[i];
             if (charFreq[temp] == 0) { // element is not present in mask
-                firstArr[resIndex] = firstArr[index];
+                firstArr[resIndex] = firstArr[i];
                 resIndex++;
             }
-            index++;
+            i++;
         }
-        first = new String(firstArr);
-        return first.substring(0, resIndex);
+        return new String(firstArr).substring(0, resIndex);
     }
 
     public static void main(String[] args) {

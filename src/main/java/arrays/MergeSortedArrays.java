@@ -32,6 +32,7 @@ import java.util.PriorityQueue;
  * <p>
  * 2) Merge two sorted arrays in O(nLogn) time
  * - Use Min heap (PriorityQueue)
+ * Same as {@link  Union}
  */
 public class MergeSortedArrays {
 
@@ -49,24 +50,13 @@ public class MergeSortedArrays {
         return heap.stream().mapToInt(i -> i).toArray();
     }
 
-    private static void merge(int[] arr1, int m, int[] arr2, int n) {
-        int p1 = m - 1;
-        int p2 = n - 1;
-
-        for (int p = m + n - 1; p >= 0; p--) {
-            if (p2 < 0) {
-                break;
-            }
-            if (p1 >= 0 && arr1[p1] > arr2[p2]) {
-                arr1[p] = arr1[p1--];
-            }
-            else {
-                arr1[p] = arr2[p2--];
-            }
-        }
-
-        System.out.println(Arrays.toString(arr1));
-        System.out.println(Arrays.toString(arr2));
+    private static void merge(int[] nums1, int m, int[] nums2, int n) {
+        int i = m - 1;
+        int j = n - 1;
+        int k = m + n - 1;
+        while (j >= 0)
+            if (i >= 0 && nums1[i] > nums2[j]) nums1[k--] = nums1[i--];
+            else nums1[k--] = nums2[j--];
     }
 
     public static void main(String[] args) {

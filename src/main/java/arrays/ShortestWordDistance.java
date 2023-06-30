@@ -18,7 +18,7 @@ package arrays;
 public class ShortestWordDistance {
 
     private static int shortestDistance(String[] words, String word1, String word2) {
-        // 1. Break down problem into shortest possible abstraction
+        // 1. Break down problem into the shortest possible abstraction
         // 2. Solve that unit piece using algorithm
         // 3. Extend algorithm to entire problem space
         // 4. Mind edges

@@ -13,6 +13,7 @@ import java.util.Stack;
  * <p>
  * Note: The length of temperatures will be in the range [1, 30000]. Each temperature will be an integer
  * in the range [30, 100].
+ * ~!@#HARD:REVISE
  */
 public class DailyTemperatures {
     private static int[] dailyTemperatures(int[] T) {

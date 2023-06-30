@@ -1,6 +1,7 @@
 package strings;
 
 import java.util.HashMap;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -31,6 +32,8 @@ import java.util.regex.Pattern;
  * Notes:
  * ------
  * You may assume pattern contains only lowercase letters, and str contains lowercase letters separated by a single space.
+ * <p>
+ * ~!@#HARD:REVISE
  */
 public class WordPattern {
     private static boolean wordPattern(String pattern, String str) {
@@ -41,6 +44,7 @@ public class WordPattern {
         }
 
         String[] words = str.split(" ");
+
         if (words.length != patternLength) {
             return false;
         }
@@ -49,17 +53,16 @@ public class WordPattern {
             return true;
         }
 
-        HashMap<Character, String> hm = new HashMap<>();
+        Map<Character, String> map = new HashMap<>();
 
         for (int i = 0; i < patternLength; i++) {
             char a = pattern.charAt(i);
             String b = words[i];
 
-            if (hm.containsKey(a) && !hm.get(a).equals(b) || !hm.containsKey(a) && hm.containsValue(b))
+            if (map.containsKey(a) && !map.get(a).equals(b) || !map.containsKey(a) && map.containsValue(b))
                 return false;
             else
-                hm.put(a, b);
-
+                map.put(a, b);
         }
 
         return true;

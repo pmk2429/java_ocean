@@ -1,5 +1,6 @@
 package strings;
 
+import java.util.Objects;
 import java.util.Stack;
 
 /**
@@ -47,31 +48,34 @@ import java.util.Stack;
  */
 public class BaseballGame {
 
-  private static int calPoints(String[] ops) {
-    Stack<Integer> stack = new Stack<>();
+    private static int calPoints(String[] ops) {
+        Stack<Integer> stack = new Stack<>();
 
-    for (String op : ops) {
-      if (op.equals("+")) {
-        int top = stack.pop();
-        int newTop = top + stack.peek();
-        stack.push(top);
-        stack.push(newTop);
-      } else if (op.equals("C")) {
-        stack.pop();
-      } else if (op.equals("D")) {
-        stack.push(2 * stack.peek());
-      } else {
-        stack.push(Integer.valueOf(op));
-      }
+        for (String op : ops) {
+            switch (op) {
+                case "+":
+                    int top = stack.pop();
+                    int newTop = top + stack.peek();
+                    stack.push(top);
+                    stack.push(newTop);
+                    break;
+                case "C":
+                    stack.pop();
+                    break;
+                case "D":
+                    stack.push(2 * stack.peek());
+                    break;
+                default:
+                    stack.push(Integer.valueOf(op));
+                    break;
+            }
+        }
+
+        return stack.stream().mapToInt(Integer::intValue).sum();
     }
 
-    int ans = 0;
-    for (int score : stack) ans += score;
-    return ans;
-  }
-
-  public static void main(String[] args) {
-    String[] input = {"5", "-2", "4", "C", "D", "9", "+", "+"};
-    System.out.println(calPoints(input));
-  }
+    public static void main(String[] args) {
+        String[] input = {"5", "-2", "4", "C", "D", "9", "+", "+"};
+        System.out.println(calPoints(input));
+    }
 }

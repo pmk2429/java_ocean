@@ -25,35 +25,36 @@ package pattern;
  */
 public class FindPatternSequence {
 
-  private static int findTotalSequence(String str) {
-    int totalSequence = 0;
-    boolean startSequence = false;
+    private static int findTotalSequence(String str) {
+        int totalSequence = 0;
+        boolean startSequence = false;
 
-    int i = 0;
-    while (i < str.length()) {
-      char curChar = str.charAt(i);
-      if (curChar == '1' || curChar == '0') {
-        if (!startSequence && curChar == '1') { // we found first '1'
-          startSequence = true;
-        } else if (startSequence && curChar == '1') { // this means we hit the ending '1'
-          if (str.charAt(i - 1) == '0') {
-            totalSequence++;
-          }
+        int i = 0;
+        while (i < str.length()) {
+            char curChar = str.charAt(i);
+            if (curChar == '1' || curChar == '0') {
+                if (!startSequence && curChar == '1') { // we found first '1'
+                    startSequence = true;
+                }
+                else if (startSequence && curChar == '1') { // this means we hit the ending '1'
+                    if (str.charAt(i - 1) == '0') {
+                        totalSequence++;
+                    }
+                }
+            }
+            else {
+                if (startSequence) {
+                    startSequence = false;
+                }
+            }
+            i++;
         }
-        i++;
-      } else {
-        if (startSequence) {
-          startSequence = false;
-        }
-        i++;
-      }
+
+        return totalSequence;
     }
 
-    return totalSequence;
-  }
-
-  public static void main(String[] args) {
-    String str = "1001001ab101";
-    System.out.println(findTotalSequence(str));
-  }
+    public static void main(String[] args) {
+        String str = "1001001ab101";
+        System.out.println(findTotalSequence(str));
+    }
 }

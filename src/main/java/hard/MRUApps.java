@@ -23,7 +23,8 @@ import java.util.Arrays;
  * <p>
  * Input: arr[] = {5, 7, 2, 3, 4, 1, 6}, K = 10
  * Output: 3 5 7 2 4 1 6
- *
+ * Related to {@link arrays.RotateArray}
+ * <p>
  * ~!@#HARD:REVISE
  */
 public class MRUApps {

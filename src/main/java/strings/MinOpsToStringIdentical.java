@@ -11,16 +11,16 @@ public class MinOpsToStringIdentical {
         }
 
         int i, j, res = 0;
-        int[] count = new int[256];
+        int[] charFreq = new int[256];
 
         // subtract count for every character in B
         for (i = 0; i < A.length(); i++) {
-            count[A.charAt(i)]++;
-            count[B.charAt(i)]--;
+            charFreq[A.charAt(i)]++;
+            charFreq[B.charAt(i)]--;
         }
 
         // Check if all counts become 0
-        boolean allZeroes = IntStream.of(count).allMatch(x -> x == 0);
+        boolean allZeroes = IntStream.of(charFreq).allMatch(x -> x == 0);
         if (!allZeroes) {
             return -1;
         }

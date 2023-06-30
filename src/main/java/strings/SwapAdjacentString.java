@@ -29,9 +29,10 @@ import java.util.Map;
 public class SwapAdjacentString {
 
     private static boolean canTransform(String start, String end) {
-        Map<String, String> moves = new HashMap<>();
-        moves.put("XL", "LX");
-        moves.put("RX", "XR");
+        Map<String, String> moves = new HashMap<>() {{
+            put("XL", "LX");
+            put("RX", "XR");
+        }};
 
         boolean transform = true;
         // 3) edge/corner cases

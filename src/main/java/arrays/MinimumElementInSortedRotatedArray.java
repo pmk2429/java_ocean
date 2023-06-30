@@ -15,19 +15,19 @@ package arrays;
  */
 public class MinimumElementInSortedRotatedArray {
 
-  // Works only for sorted arrays?
-  private static int findMinimumElement(int[] arr) {
-    int minimum = Integer.MAX_VALUE;
-    for (int i = 0; i < arr.length; i++) {
-      if (arr[i] < minimum) {
-        minimum = arr[i];
-      }
+    // Works only for sorted arrays
+    private static int findMinimumElement(int[] arr) {
+        int minimum = Integer.MAX_VALUE;
+        for (int j : arr) {
+            if (j < minimum) {
+                minimum = j;
+            }
+        }
+        return minimum;
     }
-    return minimum;
-  }
 
-  public static void main(String[] args) {
-    int arr[] = {5, 6, 1, 2, 3, 4};
-    System.out.println(findMinimumElement(arr));
-  }
+    public static void main(String[] args) {
+        int arr[] = {5, 6, 1, 2, 3, 4};
+        System.out.println(findMinimumElement(arr));
+    }
 }

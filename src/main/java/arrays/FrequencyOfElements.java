@@ -13,7 +13,7 @@ public class FrequencyOfElements {
     The idea is to traverse the given array, use elements as index and store their counts at the index.
     For example, when we see element 7, we go to index 6 and store the count.
     There are few problems to handle, one is the counts can get mixed with the elements,
-    this is handled by storing the counts as negative. Other problem is loosing the element which is replaced by count,
+    this is handled by storing the counts as negative. Other problem is losing the element which is replaced by count,
     this is handled by first storing the element to be replaced at current index.
      */
     private static void frequency(int[] arr) {
@@ -57,7 +57,7 @@ public class FrequencyOfElements {
     }
 
     public static void main(String[] args) {
-        int[] arr = {4, 3, 3, 2, 4, 5, 2};
+        int[] arr = {4, 3, 3, 2, 4, 5, 3};
         frequency(arr);
     }
 }
