@@ -19,8 +19,8 @@ public class MyStringUtils {
     }
 
     public static int indexOfNonWhitespace(byte[] value) {
-        int length = value.length;
         int left = 0;
+        int length = value.length;
         while (left < length) {
             char ch = getChar(value, left);
             if (ch != ' ' && ch != '\t' && !Character.isWhitespace(ch)) {

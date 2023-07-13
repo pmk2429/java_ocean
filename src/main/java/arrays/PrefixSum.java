@@ -1,5 +1,7 @@
 package arrays;
 
+import java.util.Arrays;
+
 /**
  * Given an array arr[] of size n, its prefix sum array is another array prefixSum[] of same size such that
  * the value of prefixSum[i] is arr[0] + arr[1] + arr[2] … arr[i].
@@ -20,7 +22,6 @@ public class PrefixSum {
     // Fills prefix sum array
     private static void fillPrefixSum(int[] arr, int[] prefixSum) {
         prefixSum[0] = arr[0];
-
         for (int i = 1; i < arr.length; ++i) {
             prefixSum[i] = prefixSum[i - 1] + arr[i];
         }
@@ -32,9 +33,6 @@ public class PrefixSum {
 
         fillPrefixSum(arr, prefixSum);
 
-        for (int j : prefixSum) {
-            System.out.print(j + " ");
-        }
-        System.out.println();
+        Arrays.stream(prefixSum).forEach(System.out::println);
     }
 }

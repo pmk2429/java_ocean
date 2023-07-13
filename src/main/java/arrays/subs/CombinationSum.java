@@ -1,8 +1,6 @@
 package arrays.subs;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 /**
  * ~!@#HARD:REVISE
@@ -30,7 +28,12 @@ public class CombinationSum {
         return res;
     }
 
-    private static void backtrackUsingDFS(int[] candidates, int target, List<Integer> combination, List<List<Integer>> res, int start, int k) {
+    private static void backtrackUsingDFS(int[] candidates,
+                                          int target,
+                                          List<Integer> combination,
+                                          Set<List<Integer>> res,
+                                          int start,
+                                          int k) {
         // base case to add the solution set to result
         if (target == 0 && combination.size() == k) {
             res.add(new ArrayList<>(combination));
@@ -47,8 +50,8 @@ public class CombinationSum {
         }
     }
 
-    private static List<List<Integer>> combinationSum(int[] candidates, int target, int k) {
-        List<List<Integer>> res = new ArrayList<>();
+    private static Set<List<Integer>> combinationSum(int[] candidates, int target, int k) {
+        Set<List<Integer>> res = new HashSet<>();
         if (candidates == null || candidates.length == 0 || target <= 0) {
             return res;
         }
@@ -59,10 +62,10 @@ public class CombinationSum {
 
     public static void main(String[] args) {
         int[] candidates = {4, 5, 10, 7, 3, 4, 7, 4, 1, 8};
-        int target = 20;
+        int target = 17;
         int k = 3;
 
-        List<List<Integer>> res = combinationSum(candidates, target, k);
+        Set<List<Integer>> res = combinationSum(candidates, target, k);
         for (List<Integer> list : res) {
             System.out.println(list);
         }

@@ -1,37 +1,29 @@
 package strings;
 
-/**
- * Created by Pavitra on 4/23/2016.
- */
 public class MergeStrings {
 
-    private static String interleave(String str1, String str2) {
-        int length1 = str1.length();
-        int length2 = str2.length();
+    private static String interleave(String word1, String word2) {
+        int m = word1.length();
+        int n = word2.length();
+        int i = 0, j = 0;
 
-        // take the smaller String
-        int smallStringLength = Math.min(length1, length2);
-        int biggerStringLength = Math.max(length1, length2);
-        int remainingString = biggerStringLength - smallStringLength;
+        StringBuilder result = new StringBuilder();
 
-        StringBuilder sb = new StringBuilder();
-
-        for (int i = 0; i < smallStringLength; i++) {
-            sb.append(str1.charAt(i));
-            sb.append(str2.charAt(i));
+        while (i < m || j < n) {
+            if (i < m) {
+                result.append(word1.charAt(i++));
+            }
+            if (j < n) {
+                result.append(word2.charAt(j++));
+            }
         }
 
-        String biggerString = str1.compareTo(str2) < 0 ? str1 : str2;
-        int startIndex = biggerString.length() - remainingString;
-
-        // append the remaining pieces in the String
-        for (int i = startIndex; i < biggerString.length(); i++) {
-            sb.append(biggerString.charAt(i));
-        }
-        return sb.toString();
+        return result.toString();
     }
 
     public static void main(String[] args) {
         System.out.println(interleave("4567", "d"));
+        System.out.println(interleave("abc", "xyz"));
+        System.out.println(interleave("ab", "pqrs"));
     }
 }

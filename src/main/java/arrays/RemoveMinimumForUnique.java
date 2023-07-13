@@ -1,6 +1,7 @@
 package arrays;
 
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Remove minimum number of elements such that no common element exist in both array
@@ -32,18 +33,16 @@ import java.util.HashMap;
  */
 public class RemoveMinimumForUnique {
 
-    private static int minRemove(int[] a, int[] b, int n, int m) {
-        HashMap<Integer, Integer> countA = new HashMap<>();
-        HashMap<Integer, Integer> countB = new HashMap<>();
+    private static int minRemove(int[] a, int[] b, int m, int n) {
+        Map<Integer, Integer> countA = new HashMap<>();
+        Map<Integer, Integer> countB = new HashMap<>();
 
-        for (int i = 0; i < n; i++) {
-            int temp = a[i];
-            countA.put(temp, countA.getOrDefault(temp, 0) + 1);
+        for (int val : a) {
+            countA.put(val, countA.getOrDefault(val, 0) + 1);
         }
 
-        for (int i = 0; i < m; i++) {
-            int temp = b[i];
-            countB.put(temp, countB.getOrDefault(temp, 0) + 1);
+        for (int val : b) {
+            countB.put(val, countB.getOrDefault(val, 0) + 1);
         }
 
         int res = 0;

@@ -17,24 +17,24 @@ package strings;
  */
 public class NewCharacterSet {
 
-  private static final String CHAR_SET = "qwertyuiopasdfghjklzxcvbnm";
-  private static String HASHED_STRING = "";
+    private static final String CHAR_SET = "qwertyuiopasdfghjklzxcvbnm";
+    private static String HASHED_STRING = "";
 
-  private static void hash(String charSet) {
+    private static void hash(String charSet) {
 
-  }
-
-  private static String convertString(String str) {
-    StringBuilder output = new StringBuilder();
-    for (int i = 0; i < str.length(); i++) {
-      int nC = str.charAt(i) - (char) 'a';
-      output.append(nC);
     }
-    return output.toString();
-  }
 
-  public static void main(String[] args) {
-    String input = "a";
-    System.out.println(convertString(input));
-  }
+    private static String convertString(String str) {
+        StringBuilder output = new StringBuilder();
+        for (int i = 0; i < str.length(); i++) {
+            int nC = str.charAt(i) - (char) 'a';
+            output.append(nC);
+        }
+        return output.toString();
+    }
+
+    public static void main(String[] args) {
+        String input = "a";
+        System.out.println(convertString(input));
+    }
 }

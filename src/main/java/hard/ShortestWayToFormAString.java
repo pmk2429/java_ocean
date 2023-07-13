@@ -42,6 +42,7 @@ public class ShortestWayToFormAString {
         }
 
         int targetLength = target.length();
+        int sourceLength = source.length();
 
         int i = 0, j = 0;
         int count = 1;
@@ -52,11 +53,12 @@ public class ShortestWayToFormAString {
                 j++;
             }
             else if (chars[jChar - 'a'] == 0) {
+                // if none of the chars that are present in `source` are in `target`, return -1
                 return -1;
             }
             i++;
-            // new sequence. start scanning source again
-            if (j != targetLength && i == source.length()) {
+            // if target end is not reached but source end is reached, start scanning `source` again.
+            if (j != targetLength && i == sourceLength) {
                 i = 0;
                 count++;
             }

@@ -25,6 +25,7 @@ import java.util.Arrays;
  * The train departed at 4.30 from platform 1
  * The train arrived at 5.00 on platform 1
  * The train departed at 5.20 from platform 1
+ * ~!@#HARD:REVISE
  */
 public class TrainStation {
     public static int findMinPlatforms(double[] arrival, double[] departure) {

@@ -32,12 +32,12 @@ public class ReplaceWithSmallestOnLeft {
         int minEle = arr[0];
         arr[0] = -1;
 
-        for (int i = 1; i < arr.length; ++i) {
+        for (int i = 1; i < arr.length; i++) {
             if (minEle < arr[i]) {
                 arr[i] = minEle;
             }
             else {
-                // replace `minEle` with new smallest element and swap arr[i] with prev `minEle`
+                // We need to replace `arr[i]` with the existing `minEle` and then update `minEle` with curr `arr[i]`
                 int temp = arr[i];
                 arr[i] = minEle;
                 minEle = temp;

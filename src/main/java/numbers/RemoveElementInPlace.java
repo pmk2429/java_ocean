@@ -1,7 +1,5 @@
 package numbers;
 
-import slidingWindow.FrequencyOfMostFrequentElement;
-
 /**
  * Given an integer array nums and an integer val, remove all occurrences of val in nums in-place.
  * The order of the elements may be changed. Then return the number of elements in nums which are not equal to val.
@@ -48,18 +46,19 @@ import slidingWindow.FrequencyOfMostFrequentElement;
  * 0 <= nums.length <= 100
  * 0 <= nums[i] <= 50
  * 0 <= val <= 100
+ * Similar to {@link RemoveDuplicatesSortedArray}.
  */
 public class RemoveElementInPlace {
 
-    public static int removeElement(int[] nums, int val) {
-        int index = 0;
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] != val) {
-                nums[index] = nums[i];
-                index++;
+    public static int removeElement(int[] arr, int val) {
+        int i = 0; // i will point to the new range of `arr[]` with `val` removed.
+        for (int j = 0; j < arr.length; j++) {
+            if (arr[j] != val) {
+                arr[i] = arr[j];
+                i++;
             }
         }
-        return index;
+        return i;
     }
 
     public static void main(String[] args) {

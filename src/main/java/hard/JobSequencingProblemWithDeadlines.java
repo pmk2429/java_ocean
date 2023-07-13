@@ -54,9 +54,10 @@ public class JobSequencingProblemWithDeadlines {
         // consider each job in decreasing order of their profits
         for (Job job : jobs) {
             // search for the next free slot and map the task to that slot
-            for (int j = job.deadline - 1; j >= 0; j--) {
-                if (j < T && slot[j] == -1) {
-                    slot[j] = job.taskId;
+            for (int i = job.deadline - 1; i >= 0; i--) {
+                // if time is less than the Max deadline and slot is not yet filled:
+                if (i < T && slot[i] == -1) {
+                    slot[i] = job.taskId;
                     profit += job.profit;
                     break;
                 }

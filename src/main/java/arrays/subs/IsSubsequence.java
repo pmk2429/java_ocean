@@ -8,15 +8,15 @@ public class IsSubsequence {
         while (i < M && j < N) {
             // move both pointers or just the right pointer
             if (s.charAt(i) == t.charAt(j)) {
-                i++;
+                j++;
             }
-            j++;
+            i++;
         }
-        return i == M;
+        return j == N;
     }
 
     public static void main(String[] args) {
-        String s = "abc", t = "ahbgdc";
+        String s = "ahbgdc", t = "abc";
         System.out.println(isSubsequence(s, t));
     }
 }

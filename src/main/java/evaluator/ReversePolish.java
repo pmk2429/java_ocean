@@ -10,44 +10,43 @@ import java.util.Stack;
  * given array. When it is a number, push it to the stack. When it is an
  * operator, pop two numbers from the stack, do the calculation, and push back
  * the result.
- * 
  */
 
 public class ReversePolish {
-	public static void main(String[] args) {
-		String[] tokens = { "2", "1", "+", "3", "*", "3", "/", "5", "+" };
-		System.out.println(evalRPN(tokens));
-	}
+    private static int evalRPN(String[] tokens) {
+        int returnValue;
+        String operators = "+-*/";
+        Stack<String> stack = new Stack<>();
 
-	private static int evalRPN(String[] tokens) {
-		int returnValue = 0;
+        for (String token : tokens) {
+            if (!operators.contains(token)) {
+                stack.push(token);
+            }
+            else {
+                int a = Integer.parseInt(stack.pop());
+                int b = Integer.parseInt(stack.pop());
+                switch (token) {
+                    case "+":
+                        stack.push(String.valueOf(a + b));
+                        break;
+                    case "-":
+                        stack.push(String.valueOf(b - a));
+                        break;
+                    case "*":
+                        stack.push(String.valueOf(a * b));
+                        break;
+                    case "/":
+                        stack.push(String.valueOf(b / a));
+                        break;
+                }
+            }
+        }
+        returnValue = Integer.parseInt(stack.pop());
+        return returnValue;
+    }
 
-		String operators = "+-*/";
-		Stack<String> stack = new Stack<String>();
-
-		for (String t : tokens) {
-			if (!operators.contains(t)) {
-				stack.push(t);
-			} else {
-				int a = Integer.valueOf(stack.pop());
-				int b = Integer.valueOf(stack.pop());
-				switch (t) {
-				case "+":
-					stack.push(String.valueOf(a + b));
-					break;
-				case "-":
-					stack.push(String.valueOf(b - a));
-					break;
-				case "*":
-					stack.push(String.valueOf(a * b));
-					break;
-				case "/":
-					stack.push(String.valueOf(b / a));
-					break;
-				}
-			}
-		}
-		returnValue = Integer.valueOf(stack.pop());
-		return returnValue;
-	}
+    public static void main(String[] args) {
+        String[] tokens = {"2", "1", "+", "3", "*", "3", "/", "5", "+"};
+        System.out.println(evalRPN(tokens));
+    }
 }

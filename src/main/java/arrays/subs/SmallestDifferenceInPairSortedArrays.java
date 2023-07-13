@@ -21,43 +21,44 @@ import java.util.Arrays;
  */
 public class SmallestDifferenceInPairSortedArrays {
 
-  private static int findSmallestDifference(int[] A, int[] B, int m, int n) {
-    Arrays.sort(A);
-    Arrays.sort(B);
+    private static int findSmallestDifference(int[] A, int[] B, int m, int n) {
+        Arrays.sort(A);
+        Arrays.sort(B);
 
-    int a = 0, b = 0;
+        int a = 0, b = 0;
 
-    // Initialize result as max value
-    int minDiff = Integer.MAX_VALUE;
+        // Initialize result as max value
+        int minDiff = Integer.MAX_VALUE;
 
-    // Scan Both Arrays upto sizeof of the Arrays
-    while (a < m && b < n) {
-      // store the min difference and keep updating on each iteration
+        // Scan Both Arrays upto sizeof of the Arrays
+        while (a < m && b < n) {
+            // store the min difference and keep updating on each iteration
 
-      if ((Math.abs(A[a]) - Math.abs(B[b])) < minDiff) {
-        minDiff = (Math.abs(A[a]) - Math.abs(B[b]));
-      }
+            if ((Math.abs(A[a]) - Math.abs(B[b])) < minDiff) {
+                minDiff = (Math.abs(A[a]) - Math.abs(B[b]));
+            }
 
-      // Move Smaller Value from 2 Arrays
-      if (A[a] < B[b]) {
-        a++;
-      } else {
-        b++;
-      }
+            // Move Smaller Value from 2 Arrays
+            if (A[a] < B[b]) {
+                a++;
+            }
+            else {
+                b++;
+            }
+        }
+
+        // return final sma result
+        return minDiff;
     }
 
-    // return final sma result
-    return minDiff;
-  }
+    public static void main(String[] args) {
+        int[] A = {1, 2, 11, 5};
+        int[] B = {4, 12, 19, 23, 127, 235};
 
-  public static void main(String[] args) {
-    int[] A = {1, 2, 11, 5};
-    int[] B = {4, 12, 19, 23, 127, 235};
+        int m = A.length;
+        int n = B.length;
 
-    int m = A.length;
-    int n = B.length;
+        System.out.println(findSmallestDifference(A, B, m, n));
 
-    System.out.println(findSmallestDifference(A, B, m, n));
-
-  }
+    }
 }

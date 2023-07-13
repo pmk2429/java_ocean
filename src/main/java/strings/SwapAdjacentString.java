@@ -35,8 +35,9 @@ public class SwapAdjacentString {
         }};
 
         boolean transform = true;
-        // 3) edge/corner cases
-        String validChars = "^[L|X|R]*$";
+
+        String validChars = "^[LXR]*$";
+
         if (!start.matches(validChars) || !end.matches(validChars)) {
             return false;
         }
@@ -49,7 +50,6 @@ public class SwapAdjacentString {
             return false;
         }
 
-        // 1) algorithm for smallest unit of solvable problem
         int i = 0;
         while (i < start.length()) {
             int j = i + 1;
@@ -69,11 +69,6 @@ public class SwapAdjacentString {
             }
             i = i + 2;
         }
-
-        // 2) expand to algo to include entire problem
-
-        // 4) optimization
-        // not required
 
         return transform;
     }

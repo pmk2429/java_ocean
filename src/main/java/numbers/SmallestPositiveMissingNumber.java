@@ -69,12 +69,11 @@ public class SmallestPositiveMissingNumber {
      * Utility function that puts all non-positive(0 and negative) numbers on left side of
      * arr[] and return count of such numbers
      */
-    static int segregate(int[] arr, int size) {
-        int i = 0, j = 0;
+    private static int segregate(int[] arr, int size) {
+        int i, j = 0;
         for (i = 0; i < size; i++) {
             if (arr[i] <= 0) {
-                int temp;
-                temp = arr[i];
+                int temp = arr[i];
                 arr[i] = arr[j];
                 arr[j] = temp;
                 // increment count of non-positive integers
