@@ -1,13 +1,10 @@
 package arrays;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
+import java.util.*;
 
 public class Union {
     private static int[] findUnion(int[] arr1, int[] arr2) {
-        HashSet<Integer> union = new HashSet<>();
+        Set<Integer> union = new HashSet<>();
         for (int i : arr1) {
             union.add(i);
         }

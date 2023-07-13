@@ -56,7 +56,7 @@ public class AndroidVersions {
         ApkVersion apkVersion2 = new ApkVersion("B", 0, 16);
         ApkVersion apkVersion3 = new ApkVersion("C", 7, 10);
 
-        List<ApkVersion> versions = new ArrayList<ApkVersion>() {{
+        List<ApkVersion> versions = new ArrayList<>() {{
             add(apkVersion1);
             add(apkVersion2);
             add(apkVersion3);

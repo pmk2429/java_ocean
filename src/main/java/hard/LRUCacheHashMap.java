@@ -10,6 +10,9 @@ import java.util.Map;
  */
 public class LRUCacheHashMap {
     private static class Node {
+        /**
+         * Here key seems redundant but it'll be used in removal and updating the value..
+         */
         int key;
         int value;
         Node prev, next;
@@ -44,6 +47,7 @@ public class LRUCacheHashMap {
         if (null == n) {
             return -1;
         }
+        // when we get the Node, we update - remove and then add it back
         update(n);
         return n.value;
     }
@@ -69,11 +73,17 @@ public class LRUCacheHashMap {
         }
     }
 
+    /**
+     * Remove the node and re-insert it back next to head.
+     */
     private void update(Node node) {
         remove(node);
         add(node);
     }
 
+    /**
+     * Insert the node between `head` and `head.next`
+     */
     private void add(Node node) {
         Node after = head.next;
         head.next = node;

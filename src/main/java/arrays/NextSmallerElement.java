@@ -27,6 +27,7 @@ import java.util.TreeSet;
  * 7       -->    6
  * 6       -->   -1
  * 12      -->   -1
+ * Also check {@link ClosestGreaterElement} and {@link hard.OrderedMapContainsDuplicate}.
  */
 public class NextSmallerElement {
 

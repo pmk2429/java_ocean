@@ -25,11 +25,11 @@ public class MonkeyStockDataEntry {
         }
 
         // Else put element at the end of arr[]
-        int s = arr.size();
+        int lastIndex = arr.size();
         arr.add(x);
 
-        // And put in hash also
-        hash.put(x, s);
+        // And put in hash with itx index
+        hash.put(x, lastIndex);
 
         if (x > max) {
             max = x;

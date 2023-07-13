@@ -114,7 +114,7 @@ public class TextJustification {
                 int extra = (maxWidth - currWordLength) % wordCount;
                 String evenly = getSpaceStr((maxWidth - currWordLength) / wordCount);
                 while (start < end) {
-                    sb.append(" ")
+                    sb.append(WHITE_SPACE)
                         .append(evenly)
                         .append(extra-- > 0 ? WHITE_SPACE : EMPTY_SPACE)
                         .append(words[start++]);

@@ -1,5 +1,8 @@
 package numbers;
 
+/**
+ * ~!@#HARD:REVISE
+ */
 public class RemoveDuplicatesSortedArray {
     private static int removeDuplicatesO1(int[] arr) {
         int i = 0;
@@ -9,6 +12,7 @@ public class RemoveDuplicatesSortedArray {
                 arr[i] = arr[j];
             }
         }
+        //Arrays.copyOfRange(arr, j, i);
         return i + 1;
     }
 

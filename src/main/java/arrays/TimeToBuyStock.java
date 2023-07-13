@@ -17,18 +17,22 @@ package arrays;
  * Input: [7,6,4,3,1]
  * Output: 0
  * Explanation: In this case, no transaction is done, i.e. max profit = 0.
+ * This problem is same as Subset with the biggest difference.
+ * <p>
+ * Similar to {@link DailyTemperatures}.
+ * ~!@#HARD:REVISE
  */
 public class TimeToBuyStock {
     private static int maxProfit(int[] prices) {
-        int leastProfitSoFar = Integer.MAX_VALUE;
+        int leastPriceSoFar = Integer.MAX_VALUE;
         int maxProfit = 0;
         int currProfit = 0;
 
         for (int price : prices) {
-            if (price < leastProfitSoFar) {
-                leastProfitSoFar = price;
+            if (price < leastPriceSoFar) {
+                leastPriceSoFar = price;
             }
-            currProfit = price - leastProfitSoFar;
+            currProfit = price - leastPriceSoFar;
             if (currProfit > maxProfit) {
                 maxProfit = currProfit;
             }

@@ -2,6 +2,7 @@ package arrays;
 
 import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.Stack;
 
 /**
@@ -46,7 +47,7 @@ public class KeysAndRooms {
     public boolean canVisitAllRooms(List<List<Integer>> rooms) {
         Stack<Integer> stack = new Stack<>();
         stack.add(0);
-        HashSet<Integer> visited = new HashSet<>();
+        Set<Integer> visited = new HashSet<>();
         visited.add(0);
         while (!stack.isEmpty()) {
             int temp = stack.pop();

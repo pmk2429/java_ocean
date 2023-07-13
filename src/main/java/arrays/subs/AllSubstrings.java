@@ -1,31 +1,27 @@
 package arrays.subs;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Created by Pavitra on 11/12/2015.
  */
 public class AllSubstrings {
 
-    private static String longestUniqueSubstring() {
-        String str = "pavitra";
-        String maxUniqueSubstring = "";
-        int subLength = Integer.MIN_VALUE;
-
-        char[] charFreq = new char[256];
-
-        for (int i = 0; i < str.length(); i++) {
-            for (int j = i; j < str.length() - i; j++) {
-                if (charFreq[i] == 0) {
-                    charFreq[i]++;
-                    String sub = str.substring(i, i + j);
-                    if (sub.length() > subLength) {
-                        subLength = sub.length();
-                        maxUniqueSubstring = sub;
-                    }
-                }
+    private static String longestUniqueSubstring(String str) {
+        Map<Character, Integer> visited = new HashMap<>();
+        String longestUniqueSubstring = "";
+        for (int i = 0, j = 0; j < str.length(); j++) {
+            char currChar = str.charAt(j);
+            if (visited.containsKey(currChar)) {
+                i = Math.max(i, visited.get(currChar) + 1);
             }
+            if (longestUniqueSubstring.length() < j - i + 1) {
+                longestUniqueSubstring = str.substring(i, j + 1);
+            }
+            visited.put(currChar, j);
         }
-
-        return maxUniqueSubstring;
+        return longestUniqueSubstring;
     }
 
     private static void allUniqueSubstrings() {
@@ -54,11 +50,26 @@ public class AllSubstrings {
         }
     }
 
+    private static int longestContinuousSubstring(String s) {
+        int j = 0, res = 1;
+        for (int i = 1; i < s.length(); i++) {
+            if (s.charAt(i) != s.charAt(j) + i - j) {
+                j = i;
+            }
+            res = Math.max(res, i - j + 1);
+        }
+        return res;
+    }
+
     public static void main(String[] args) {
         allSubstrings();
         System.out.println("--------------");
         allUniqueSubstrings();
         System.out.println("--------------");
-        System.out.println(longestUniqueSubstring());
+        System.out.println(longestUniqueSubstring("pavitra"));
+        String lca = "abacaba";
+        System.out.println(longestContinuousSubstring(lca));
+        String lca2 = "abcdef";
+        System.out.println(longestContinuousSubstring(lca2));
     }
 }

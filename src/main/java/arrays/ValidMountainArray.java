@@ -33,6 +33,7 @@ public class ValidMountainArray {
 
     private static boolean validMountainArray(int[] A) {
         int N = A.length;
+        int lastIndex = N - 1;
         if (N <= 2 || N > 1000) {
             return false;
         }
@@ -40,22 +41,22 @@ public class ValidMountainArray {
         int i = 0;
 
         // climb up
-        while (i + 1 < N && A[i] < A[i + 1]) {
+        while (i < lastIndex && A[i] < A[i + 1]) {
             i++;
         }
 
         // climb down
-        while (i + 1 < N && A[i] > A[i + 1]) {
+        while (i < lastIndex && A[i] > A[i + 1]) {
             i++;
         }
 
-        return i == N - 1;
+        return i == lastIndex;
     }
 
     public static void main(String[] args) {
         int[] arr = {0, 2, 4, 6, 5, 3, 2, 1};
         int[] arr1 = {0, 3, 2, 6, 5, 3, 2, 1};
         int[] arr2 = {0, 2, 4, 5, 1, 7, 6, 3};
-        System.out.println(validMountainArray(arr1));
+        System.out.println(validMountainArray(arr));
     }
 }

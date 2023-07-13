@@ -16,7 +16,11 @@ package strings;
  */
 public class ReverseWithoutSpecialChars {
 
-    private static String reverseWithoutSpecialChars(String str) {
+    /**
+     * Algo to swap values of letters ONLY while traversing the array from start and back simultaneously.
+     * Same as {@link #reverseOnlyChars(String)}
+     */
+    private static String reverseStringWithoutSpecialChars(String str) {
         char[] rev = new char[str.length()];
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < str.length(); i++) {
@@ -41,7 +45,8 @@ public class ReverseWithoutSpecialChars {
         return String.valueOf(rev);
     }
 
-    /* Algo to swap values of letters while traversing the array from start and back simultaneously.
+    /**
+     * Algo to swap values of letters ONLY while traversing the array from start and back simultaneously.
      */
     private static String reverseOnlyChars(String str) {
         char[] res = str.toCharArray();
@@ -66,8 +71,8 @@ public class ReverseWithoutSpecialChars {
 
     public static void main(String[] args) {
         String str = "a,b$c";
-        System.out.println(reverseWithoutSpecialChars(str));
+        System.out.println(str + " -> " + reverseStringWithoutSpecialChars(str));
         String str2 = "az%b#c*d"; // dc%b#z*a
-        System.out.println(reverseOnlyChars(str2));
+        System.out.println(str2 + " -> " + reverseOnlyChars(str2));
     }
 }

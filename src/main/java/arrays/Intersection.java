@@ -30,12 +30,12 @@ public class Intersection {
             return null;
         }
         int i = 0, j = 0;
-        int n = a.length;
-        int m = b.length;
+        int m = a.length;
+        int n = b.length;
 
         ArrayList<Integer> intersection = new ArrayList<>();
 
-        while (i < n && j < m) {
+        while (i < m && j < n) {
             if (a[i] < b[j]) {
                 i++;
             }

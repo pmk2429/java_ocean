@@ -25,7 +25,7 @@ package hard;
 public class FirstMissingPositive {
 
     private static int smallestMissingPositive(int[] nums) {
-        if (null == nums || nums.length == 0) {
+        if (nums == null || nums.length == 0) {
             return 1;
         }
 

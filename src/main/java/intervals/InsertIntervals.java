@@ -35,6 +35,7 @@ public class InsertIntervals {
         int start = newInterval[0];
         int end = newInterval[1];
 
+        // loop through `intervals` and compare `end` of each `intervals` with the `start` of `newInterval`
         while (i < M && intervals[i][1] < start) {
             ans[idx][0] = intervals[i][0];
             ans[idx][1] = intervals[i][1];
@@ -53,6 +54,7 @@ public class InsertIntervals {
         ans[idx][1] = newInterval[1];
         idx++;
 
+        // assign the remaining of `intervals` to the newly created `ans` interval
         while (i < M) {
             ans[idx][0] = intervals[i][0];
             ans[idx][1] = intervals[i][1];
@@ -60,7 +62,7 @@ public class InsertIntervals {
             i++;
         }
 
-        // create a 2D array that doesn't contain extra spaces
+        // create a 2D array that doesn't contain extra spaces -- trim extra spaces
         int[][] res = new int[idx][2];
         for (int j = 0; j < idx; j++) {
             res[j][0] = ans[j][0];

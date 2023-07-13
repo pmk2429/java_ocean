@@ -1,5 +1,7 @@
 package arrays;
 
+import java.util.LinkedList;
+
 /**
  * Write a class RecentCounter to count recent requests.
  * It has only one method: ping(int t), where t represents some time in milliseconds.
@@ -24,17 +26,34 @@ package arrays;
  */
 class RecentCounter {
 
-    public RecentCounter() {
+    private final LinkedList<Integer> slidingWindow;
 
+    public RecentCounter() {
+        slidingWindow = new LinkedList<>();
     }
 
     public int ping(int t) {
-        return 0;
+        // step 1). append the current call
+        slidingWindow.addLast(t);
+
+        // step 2). invalidate the outdated pings
+        while (slidingWindow.getFirst() < t - 3000) {
+            slidingWindow.removeFirst();
+        }
+
+        return slidingWindow.size();
     }
 
     public static void main(String[] args) {
         RecentCounter obj = new RecentCounter();
         int param1 = obj.ping(1);
+        System.out.println(param1);
+        int param2 = obj.ping(100);
+        System.out.println(param2);
+        int param3 = obj.ping(3001);
+        System.out.println(param3);
+        int param4 = obj.ping(3002);
+        System.out.println(param4);
     }
 }
 

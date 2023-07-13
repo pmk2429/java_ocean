@@ -20,6 +20,8 @@ package arrays;
  * Note:
  * cost will have a length in the range [2, 1000].
  * Every cost[i] will be an integer in the range [0, 999].
+ * <p>
+ * Similar to {@link HouseRobber} where alternate sum needs to be deduced.
  */
 public class MinCostClimbingStairs {
 

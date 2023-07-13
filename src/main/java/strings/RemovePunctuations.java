@@ -17,13 +17,12 @@ package strings;
  */
 public class RemovePunctuations {
 
-  private static String removePunctuations(String str) {
-    String str1 = str.replaceAll("\\p{Punct}", "");
-    return str1;
-  }
+    private static String removePunctuations(String str) {
+        return str != null && str.trim().length() > 0 ? str.replaceAll("\\p{Punct}", "") : null;
+    }
 
-  public static void main(String[] args) {
-    String str = "%welcome' to @mukrash#";
-    System.out.println(removePunctuations(str));
-  }
+    public static void main(String[] args) {
+        String str = "%welcome' to @mukrash#";
+        System.out.println(removePunctuations(str));
+    }
 }

@@ -4,16 +4,6 @@ package strings;
  * Created by Pavitra on 4/23/2016.
  */
 public class NeedleInHaystack {
-    private static int needleInHaystack(String haystack, String needle) {
-        if (haystack.contains(needle)) {
-            System.out.println("yes");
-            return haystack.indexOf(needle);
-        }
-        else {
-            return -1;
-        }
-    }
-
     private static int strStr(String haystack, String needle) {
         if (needle == null || needle.length() == 0) {
             return 0;

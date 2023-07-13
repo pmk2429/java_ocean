@@ -1,5 +1,6 @@
 package arrays;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -10,36 +11,38 @@ import java.util.Map;
  * <p>
  * Input: {4, 2, -3, 1, 6}
  * Output: true
- * There is a subarray with zero sum from index 1 to 3.
+ * There is a sub-array with zero-sum from index 1 to 3.
  * <p>
  * Input: {4, 2, 0, 1, 6}
  * Output: true
- * There is a subarray with zero sum from index 2 to 2.
+ * There is a sub-array with zero-sum from index 2 to 2.
  * <p>
  * Input: {-3, 2, 3, 1, 6}
  * Output: false
- * There is no subarray with zero sum.
+ * There is no sub-array with zero-sum.
+ * <p>
+ * ~!@#HARD:REVISE
  */
 public class SubArrayWithZeroSum {
 
-    /*
-    We can also use hashing. The idea is to iterate through the array and for every element arr[i],
-    calculate sum of elements form 0 to i (this can simply be done as sum += arr[i]).
-    If the current sum has been seen before, then there is a zero sum array.
-    Hashing is used to store the sum values, so that we can quickly store sum and find out whether the
-    current sum is seen before or not.
-
-    Example :
-    arr[] = {1, 4, -2, -2, 5, -4, 3}
-
-    If we consider all prefix sums, we can notice that there is a subarray with 0 sum when :
-    1) Either a prefix sum repeats or
-    2) Or prefix sum becomes 0.
-
-    Prefix sums for above array are:
-    1, 5, 3, 1, 6, 2, 5
-
-    Since prefix sum 1 repeats, we have a subarray with 0 sum.
+    /**
+     * We can also use hashing. The idea is to iterate through the array and for every element arr[i],
+     * calculate sum of elements form 0 to i (this can simply be done as sum += arr[i]).
+     * If the current sum has been seen before, then there is a zero-sum array.
+     * Hashing is used to store the sum values, so that we can quickly store sum and find out whether the
+     * current sum is seen before or not.
+     * <p>
+     * Example :
+     * arr[] = {1, 4, -2, -2, 5, -4, 3}
+     * <p>
+     * If we consider all prefix sums, we can notice that there is a sub-array with 0 sum when :
+     * 1) Either a prefix sum repeats or
+     * 2) Or prefix sum becomes 0.
+     * <p>
+     * Prefix sums for above array are:
+     * 1, 5, 3, 1, 6, 2, 5
+     * <p>
+     * Since prefix sum 1 repeats, we have a sub-array with 0 sum.
      */
     private static boolean subArrayExists(int[] arr) {
         Map<Integer, Integer> prevSum = new HashMap<>();
@@ -63,7 +66,8 @@ public class SubArrayWithZeroSum {
 
     public static void main(String[] args) {
         int[] arr = {-3, 2, 3, 1, 6};
+        System.out.println("Subarray with 0 sum exists : " + Arrays.toString(arr) + " - " + subArrayExists(arr));
         int[] arr1 = {1, 4, -2, -2, 5, -4, 3};
-        System.out.println("Subarray with 0 sum exists - " + subArrayExists(arr1));
+        System.out.println("Subarray with 0 sum exists : " + Arrays.toString(arr1) + " - " + subArrayExists(arr1));
     }
 }
