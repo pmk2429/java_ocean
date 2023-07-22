@@ -6,24 +6,33 @@ package strings;
 public class ReverseVowels {
 
     private static String reverseVowels(String str) {
-        char[] letters = str.toCharArray();
-        String vowels = "aeiou";
-        int i = 0;
-        int j = str.length() - 1;
-        while (i <= j) {
-            if (vowels.indexOf(Character.toLowerCase(str.charAt(i))) != -1) {
-                char temp = str.charAt(i);
-                letters[i] = letters[j];
-                letters[j] = temp;
-                i++;
-                j--;
+        char[] word = str.toCharArray();
+        int start = 0;
+        int end = str.length() - 1;
+        String vowels = "aeiouAEIOU";
+
+        while (start < end) {
+            // Move start pointer until it points to a vowel
+            while (start < end && vowels.indexOf(word[start]) == -1) {
+                start++;
             }
-            else {
-                letters[i] = str.charAt(i);
-                i++;
+
+            // Move end pointer until it points to a vowel
+            while (start < end && vowels.indexOf(word[end]) == -1) {
+                end--;
             }
+
+            // Swap the vowels
+            char temp = word[start];
+            word[start] = word[end];
+            word[end] = temp;
+
+            // Move the pointers towards each other
+            start++;
+            end--;
         }
-        return String.valueOf(letters);
+
+        return new String(word);
     }
 
     public static void main(String[] args) {

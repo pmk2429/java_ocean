@@ -31,7 +31,7 @@ public class MonotonicArray {
 
     private static boolean increasing(int[] arr) {
         for (int i = 0; i < arr.length - 1; ++i)
-            if (arr[i] >= arr[i + 1]) {
+            if (arr[i] > arr[i + 1]) {
                 return false;
             }
         return true;
@@ -39,7 +39,7 @@ public class MonotonicArray {
 
     private static boolean decreasing(int[] arr) {
         for (int i = 0; i < arr.length - 1; ++i)
-            if (arr[i] <= arr[i + 1]) {
+            if (arr[i] < arr[i + 1]) {
                 return false;
             }
         return true;
@@ -50,7 +50,7 @@ public class MonotonicArray {
     }
 
     public static void main(String[] args) {
-        int[] a = {1, 2, 5, 4};
+        int[] a = {1, 2, 2, 3};
         System.out.println(isMonotonic(a));
     }
 }

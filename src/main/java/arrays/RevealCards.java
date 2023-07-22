@@ -53,7 +53,7 @@ public class RevealCards {
             int topCard = index.pollFirst();
             ans[topCard] = card;
             if (!index.isEmpty())
-                index.add(topCard);
+                index.addLast(topCard);
         }
 
         return ans;

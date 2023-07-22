@@ -1,4 +1,4 @@
-package generics.boundedgenerics;
+package generics;
 
 public class Animal extends LivingBeing {
 	@Override

@@ -43,7 +43,7 @@ public class FindUniqueChars {
     // Does not maintain the order of characters
     private static String distinctCharsO1Space(String str) {
         StringBuilder sbr = new StringBuilder();
-        char[] charFreq = new char[256];
+        int[] charFreq = new int[256];
         for (int i = 0; i < str.length(); i++) {
             charFreq[str.charAt(i)]++;
         }

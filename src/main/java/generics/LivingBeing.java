@@ -1,4 +1,4 @@
-package generics.boundedgenerics;
+package generics;
 
 public class LivingBeing {
     public String getName() {

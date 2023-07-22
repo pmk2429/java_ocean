@@ -36,7 +36,7 @@ import java.util.Set;
  * ==========
  * 1 <= word.length <= 5 * 105
  * word consists of characters 'a', 'e', 'i', 'o', and 'u'.
- *
+ * <p>
  * ~!@#HARD:REVISE
  */
 public class BeautifulString {

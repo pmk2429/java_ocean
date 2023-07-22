@@ -57,7 +57,7 @@ public class RotateArray {
         return arr;
     }
 
-    private static void rotateArray(int[] arr, int distance) {
+    private static void rotateArrayLeft(int[] arr, int distance) {
         // distance iteration
         for (int i = 0; i < distance; i++) {
             // arr iteration
@@ -69,13 +69,29 @@ public class RotateArray {
             arr[length - 1] = temp;
         }
 
-        System.out.println(Arrays.toString(arr));
+        System.out.println("Rotate Right: " + Arrays.toString(arr));
+    }
+
+    private static void rotateArrayRight(int[] arr, int distance) {
+        // distance iteration
+        for (int i = 0; i < distance; i++) {
+            // arr iteration
+            int length = arr.length;
+            int temp = arr[length - 1];
+            for (int d = length - 1; d >= 1; d--) {
+                arr[d] = arr[d - 1];
+            }
+            arr[0] = temp;
+        }
+
+        System.out.println("Rotate Left: " + Arrays.toString(arr));
     }
 
     public static void main(String[] args) {
-        int[] arr = new int[]{1, 2, 3, 4, 5};
-        rotateArray(arr, 2);
         int[] arr1 = new int[]{1, 2, 3, 4, 5};
-        System.out.println(Arrays.toString(rotate(arr1, 2)));
+        System.out.println("Original Array : " + Arrays.toString(arr1));
+        rotateArrayLeft(arr1, 2);
+        int[] arr2 = new int[]{1, 2, 3, 4, 5};
+        rotateArrayRight(arr2, 2);
     }
 }

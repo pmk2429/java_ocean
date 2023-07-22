@@ -33,6 +33,8 @@ import java.util.Arrays;
  * ==========
  * 2 <= nums.length <= 105
  * -105 <= nums[i] <= 105
+ * <p>
+ * Similar to {@link PivotIndex}
  */
 public class WaysToSplitArray {
 

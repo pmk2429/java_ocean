@@ -20,13 +20,13 @@ public class SmallestPairSum {
     // find smallest and nextSmallest, return their sum
     private static int findSmallestPair(int[] arr) {
         int smallestPairSum = -1;
+
         if (arr == null || arr.length == 0) {
             return smallestPairSum;
         }
 
         if (arr.length == 1) {
-            smallestPairSum = arr[0];
-            return smallestPairSum;
+            return arr[0];
         }
 
         if (arr.length == 2) {

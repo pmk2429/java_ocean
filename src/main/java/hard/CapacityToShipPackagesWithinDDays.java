@@ -46,6 +46,8 @@ import java.util.Arrays;
  * ------------
  * 1 <= days <= weights.length <= 5 * 104
  * 1 <= weights[i] <= 500
+ * <p>
+ * Similar to {@link MinimumTimeToCompleteTrips}
  */
 public class CapacityToShipPackagesWithinDDays {
 

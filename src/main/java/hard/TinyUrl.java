@@ -41,9 +41,8 @@ import java.util.Map;
 public class TinyUrl {
 
     private final static String BASE_HOST = "http://tinyurl.com/";
-    private final static int URL_SHORTENER_LENGTH = 6;
     private static final String CHAR_SET = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789~@#^*";
-
+    private final static int URL_SHORTENER_LENGTH = 6;
     private final Map<String, String> index = new HashMap<>();
     private final Map<String, String> revIndex = new HashMap<>();
 
@@ -81,5 +80,6 @@ public class TinyUrl {
         String decode = tinyUrl.decode(encoded);
         System.out.println("Decoded back - " + decode);
     }
+
 }
 

@@ -33,8 +33,8 @@ public class ClimbingStairs {
             return n;
         }
 
-        // in Fib seq starting numbers are 0, 1, 1 --> so 1(two step before), 1 (one step before)
-        // for our case it's 1, 2 --> 1(two step before), 2 (one step before)
+        // in Fib seq starting numbers are 0, 1, 1 --> so 0 (two step before), 1 (one step before)
+        // for our case it's 1, 2 --> 1 (two step before), 2 (one step before)
         int oneStepBefore = 2; // n1
         int twoStepsBefore = 1; // n2
         int allWays = 0;

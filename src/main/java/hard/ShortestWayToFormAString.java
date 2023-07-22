@@ -41,8 +41,8 @@ public class ShortestWayToFormAString {
             chars[c - 'a']++;
         }
 
-        int targetLength = target.length();
         int sourceLength = source.length();
+        int targetLength = target.length();
 
         int i = 0, j = 0;
         int count = 1;
@@ -58,9 +58,9 @@ public class ShortestWayToFormAString {
             }
             i++;
             // if target end is not reached but source end is reached, start scanning `source` again.
-            if (j != targetLength && i == sourceLength) {
-                i = 0;
+            if (i == sourceLength && j != targetLength) {
                 count++;
+                i = 0;
             }
         }
         return count;

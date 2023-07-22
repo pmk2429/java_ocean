@@ -3,7 +3,7 @@ package arrays.subs;
 import java.util.Arrays;
 
 /**
- * Smallest Difference pair of values between two unsorted Arrays
+ * Smallest Difference a pair of values between two unsorted Arrays
  * Given two arrays of integers, compute the pair of values (one value in each array) with the smallest (non-negative)
  * difference. Return the difference.
  * <p>
@@ -25,29 +25,26 @@ public class SmallestDifferenceInPairSortedArrays {
         Arrays.sort(A);
         Arrays.sort(B);
 
-        int a = 0, b = 0;
+        int i = 0, j = 0;
 
-        // Initialize result as max value
         int minDiff = Integer.MAX_VALUE;
 
-        // Scan Both Arrays upto sizeof of the Arrays
-        while (a < m && b < n) {
+        while (i < m && j < n) {
             // store the min difference and keep updating on each iteration
-
-            if ((Math.abs(A[a]) - Math.abs(B[b])) < minDiff) {
-                minDiff = (Math.abs(A[a]) - Math.abs(B[b]));
+            int currDiff = Math.abs(A[i]) - Math.abs(B[j]);
+            if (currDiff < minDiff) {
+                minDiff = currDiff;
             }
 
             // Move Smaller Value from 2 Arrays
-            if (A[a] < B[b]) {
-                a++;
+            if (A[i] < B[j]) {
+                i++;
             }
             else {
-                b++;
+                j++;
             }
         }
 
-        // return final sma result
         return minDiff;
     }
 
@@ -59,6 +56,5 @@ public class SmallestDifferenceInPairSortedArrays {
         int n = B.length;
 
         System.out.println(findSmallestDifference(A, B, m, n));
-
     }
 }

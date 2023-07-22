@@ -35,6 +35,8 @@ import java.util.Arrays;
  * ----------
  * 1 <= time.length <= 105
  * 1 <= time[i], totalTrips <= 107
+ * <p>
+ * Similar to {@link CapacityToShipPackagesWithinDDays}
  */
 public class MinimumTimeToCompleteTrips {
 
@@ -42,9 +44,9 @@ public class MinimumTimeToCompleteTrips {
      * For givenTime T, first bus takes givenTime/T to complete a trip.
      * So for givenTime = 3, and for total times = 3,
      * Trips by Bus 1 = 3 / 1 = 3
-     * Trips by Bus 2 = 2 / 1 = 2
+     * Trips by Bus 2 = 3 / 2 = 1
      * Trips by Bus 3 = 3 / 3 = 1
-     * Sum of all trips for givenTime = 3 : 3 + 2 + 1 = 6
+     * Sum of all trips for givenTime = 3 : 3 + 1 + 1 = 5
      */
     private static boolean timeEnough(int[] time, long givenTime, int totalTrips) {
         long actualTrips = 0;
@@ -59,8 +61,9 @@ public class MinimumTimeToCompleteTrips {
     private static long minimumTime(int[] time, int totalTrips) {
         // Initialize the left and right boundaries.
         int maxTime = Arrays.stream(time).max().getAsInt();
+        int minTime = Arrays.stream(time).min().getAsInt();
         long left = 1;
-        long right = (long) maxTime * totalTrips;
+        long right = (long) minTime * totalTrips;
 
         // Binary search to find the minimum time to finish the task.
         while (left < right) {
