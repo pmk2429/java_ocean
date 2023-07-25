@@ -3,6 +3,8 @@ package arrays;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * WAP to find intersecting elements from two arrays and return a new array.
@@ -10,10 +12,7 @@ import java.util.HashSet;
 public class Intersection {
 
     private static int[] findIntersection(int[] arr1, int[] arr2) {
-        HashSet<Integer> set1 = new HashSet<>();
-        for (int i : arr1) {
-            set1.add(i);
-        }
+        Set<Integer> set1 = Arrays.stream(arr1).boxed().collect(Collectors.toSet());
 
         HashSet<Integer> set2 = new HashSet<>();
         for (int i : arr2) {

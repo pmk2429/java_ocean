@@ -31,11 +31,6 @@ public class MinChangesFor1ToN {
 
         int length = arr.length;
 
-        //Arrays.sort(arr);
-
-        //int min = arr[0];
-        //int max = arr[length - 1];
-
         int min = Arrays.stream(arr).min().getAsInt();
         int max = Arrays.stream(arr).max().getAsInt();
 

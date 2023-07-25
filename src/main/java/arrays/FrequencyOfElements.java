@@ -51,9 +51,9 @@ public class FrequencyOfElements {
                 i++;
             }
         }
-        System.out.println("Below are counts of all elements");
+        System.out.println("Frequency of all elements in this array");
         for (int j = 0; j < length; j++)
-            System.out.println(j + 1 + "->" + Math.abs(arr[j]));
+            System.out.println(j + 1 + " -> " + Math.abs(arr[j]));
     }
 
     public static void main(String[] args) {

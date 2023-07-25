@@ -24,13 +24,13 @@ import java.util.Set;
  * Output: -1
  */
 public class KthMissingElementInUnsortedArray {
-    private static int findKthMissing(int[] arr, int n, int k) {
+    private static int findKthMissing(int[] arr, int k) {
         Set<Integer> missing = new HashSet<>();
         int count = 0;
 
         // Insert all the elements in a set
-        for (int i = 0; i < n; i++) {
-            missing.add(arr[i]);
+        for (int val : arr) {
+            missing.add(val);
         }
 
         // Find the maximum and minimum element
@@ -59,6 +59,6 @@ public class KthMissingElementInUnsortedArray {
         int n = arr.length;
         int k = 5;
 
-        System.out.println(findKthMissing(arr, n, k));
+        System.out.println(findKthMissing(arr, k));
     }
 }

@@ -1,6 +1,7 @@
 package arrays;
 
-import java.util.LinkedList;
+import java.util.ArrayDeque;
+import java.util.Deque;
 
 /**
  * Write a class RecentCounter to count recent requests.
@@ -26,17 +27,19 @@ import java.util.LinkedList;
  */
 class RecentCounter {
 
-    private final LinkedList<Integer> slidingWindow;
+    private final Deque<Integer> slidingWindow;
 
     public RecentCounter() {
-        slidingWindow = new LinkedList<>();
+        slidingWindow = new ArrayDeque<>();
+        // can also use LinkedList
+        // slidingWindow = new LinkedList<>();
     }
 
     public int ping(int t) {
         // step 1). append the current call
         slidingWindow.addLast(t);
 
-        // step 2). invalidate the outdated pings
+        // step 2). invalidate the outdated pings -- keep sliding the window
         while (slidingWindow.getFirst() < t - 3000) {
             slidingWindow.removeFirst();
         }

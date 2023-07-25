@@ -41,26 +41,30 @@ import java.util.Map;
  * 1 <= words.length <= 1000
  * 1 <= words[i].length <= 16
  * words[i] only consists of lowercase English letters.
- *
+ * <p>
  * ~!@#HARD:REVISE
  */
 public class WordChain {
 
-    private static int longestStrChain(String[] words) {
+    private static int longestWordChain(String[] words) {
         if (words == null || words.length == 0) return 0;
         int res = 0;
         Arrays.sort(words, Comparator.comparingInt(String::length)); // Sort the words based on their lengths
         Map<String, Integer> map = new HashMap<>(); // Stores each word and length of its max chain.
 
-        for (String w : words) { // From the shortest word to the longest word
-            map.put(w, 1); // Each word is atleast 1 chain long
-            for (int i = 0; i < w.length(); i++) { // Form next word removing 1 char each time for each w
-                StringBuilder sb = new StringBuilder(w);
+        for (String word : words) {
+            // Each word is at least 1 chain long
+            map.put(word, 1);
+            for (int i = 0; i < word.length(); i++) {
+                // Form next word removing 1 char each time for each w
+                StringBuilder sb = new StringBuilder(word);
                 String next = sb.deleteCharAt(i).toString();
-                if (map.containsKey(next) && map.get(next) + 1 > map.get(w))
-                    map.put(w, map.get(next) + 1); //If the new chain is longer, update the map
+                if (map.containsKey(next) && map.get(next) + 1 > map.get(word)) {
+                    // If the new chain is longer, update the map
+                    map.put(word, map.get(next) + 1);
+                }
             }
-            res = Math.max(res, map.get(w)); //Store max length of all chains
+            res = Math.max(res, map.get(word)); // Store max length of all chains
         }
         return res;
     }
@@ -68,7 +72,7 @@ public class WordChain {
     public static void main(String[] args) {
         String[] words1 = {"a", "b", "ba", "bca", "bda", "bdca"};
         String[] words2 = {"xbc", "pcxbcf", "xb", "cxbc", "pcxbc"};
-        System.out.println(longestStrChain(words1));
-        System.out.println(longestStrChain(words2));
+        System.out.println(longestWordChain(words1));
+        System.out.println(longestWordChain(words2));
     }
 }

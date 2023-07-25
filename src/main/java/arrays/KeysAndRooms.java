@@ -50,8 +50,8 @@ public class KeysAndRooms {
         Set<Integer> visited = new HashSet<>();
         visited.add(0);
         while (!stack.isEmpty()) {
-            int temp = stack.pop();
-            for (int room : rooms.get(temp)) {
+            int key = stack.pop();
+            for (int room : rooms.get(key)) {
                 if (!visited.contains(room)) {
                     stack.add(room);
                     visited.add(room);

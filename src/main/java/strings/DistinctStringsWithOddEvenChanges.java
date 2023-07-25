@@ -21,6 +21,8 @@ import java.util.Set;
  * <p>
  * Input  : arr[] = {"abc", "cba"}
  * Output : 1
+ * <p>
+ * ~!@#HARD:REVISE
  */
 public class DistinctStringsWithOddEvenChanges {
 
@@ -77,9 +79,11 @@ public class DistinctStringsWithOddEvenChanges {
     }
 
     public static void main(String[] args) {
+        String[] arr = {"abc", "cba"};
+        int n = arr.length;
+        System.out.println(countDistinct(arr, n));
         String[] input = {"abcd", "acbd", "adcb", "cdba", "bcda", "badc"};
-        int n = input.length;
-
+        n = input.length;
         System.out.println(countDistinct(input, n));
     }
 }

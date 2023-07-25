@@ -11,8 +11,14 @@ import java.util.List;
  * Q: What if the given array is empty?
  * A: Then you should return [“0->99”] as those ranges are missing.
  * Q: What if the given array contains all elements from the ranges? A: Return an empty list, which means no range is missing.
+ * <p>
+ * Similar to {@link intervals.AndroidVersions}
  */
 public class MissingRanges {
+
+    private static String getRange(int from, int to) {
+        return (from == to) ? String.valueOf(from) : from + "->" + to;
+    }
 
     private static List<String> findMissingRanges(int[] vals) {
         List<String> ranges = new ArrayList<>();
@@ -21,6 +27,7 @@ public class MissingRanges {
         int start = vals[0];
         int end = vals[lastIndex];
         int prev = start - 1;
+
         for (int i = 0; i <= length; i++) {
             int curr = (i == length) ? end + 1 : vals[i];
             if (curr - prev >= 2) {
@@ -29,10 +36,6 @@ public class MissingRanges {
             prev = curr;
         }
         return ranges;
-    }
-
-    private static String getRange(int from, int to) {
-        return (from == to) ? String.valueOf(from) : from + "->" + to;
     }
 
     public static void main(String[] args) {

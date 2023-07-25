@@ -33,7 +33,10 @@ public class CanJump {
             return true;
         }
         for (int i = 0; i < nums.length; i++) {
-            currMaximum = Math.max(currMaximum, nums[i] + i);
+            // given the curr position, let's say i, you can jump from this `i` position
+            // to the value of `i` which is nums[i].
+            int maxJumpFromCurrIndex = nums[i] + i;
+            currMaximum = Math.max(currMaximum, maxJumpFromCurrIndex);
             if (checker == i) {
                 checker = currMaximum;
             }

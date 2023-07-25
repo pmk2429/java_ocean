@@ -46,7 +46,7 @@ import java.util.stream.Stream;
  * 1 <= recipes[i].length, ingredients[i][j].length, supplies[k].length <= 10
  * recipes[i], ingredients[i][j], and supplies[k] consist only of lowercase English letters.
  * All the values of recipes and supplies combined are unique.
- * Each ingredients[i] does not contain any duplicate values.
+ * Each ingredient[i] does not contain any duplicate values.
  */
 public class RecipesFromSupplies {
     private static List<String> findAllRecipes(String[] recipes, List<List<String>> ingredients, String[] supplies) {
@@ -87,12 +87,29 @@ public class RecipesFromSupplies {
         return ans;
     }
 
-    public static void main(String[] args) {
+    private static List<String> getAllRecipes1() {
         String[] recipes = {"bread", "sandwich"};
         String[] supplies = {"yeast", "flour", "meat"};
-        List<List<String>> ingredients = new ArrayList<>();
-        ingredients.add(new ArrayList<>(Arrays.asList("yeast", "flour")));
-        ingredients.add(new ArrayList<>(Arrays.asList("bread", "meat")));
-        System.out.println(findAllRecipes(recipes, ingredients, supplies));
+        List<List<String>> ingredients = new ArrayList<>() {{
+            add(Arrays.asList("yeast", "flour"));
+            add(Arrays.asList("bread", "meat"));
+        }};
+        return findAllRecipes(recipes, ingredients, supplies);
+    }
+
+    private static List<String> getAllRecipes2() {
+        String[] recipes = {"bread", "sandwich", "burger"};
+        String[] supplies = {"yeast", "flour", "meat"};
+        List<List<String>> ingredients = new ArrayList<>() {{
+            add(Arrays.asList("yeast", "flour"));
+            add(Arrays.asList("bread", "meat"));
+            add(Arrays.asList("sandwich", "meat", "bread"));
+        }};
+        return findAllRecipes(recipes, ingredients, supplies);
+    }
+
+    public static void main(String[] args) {
+        System.out.println(getAllRecipes1());
+        System.out.println(getAllRecipes2());
     }
 }

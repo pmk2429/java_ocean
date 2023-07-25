@@ -49,6 +49,7 @@ class MathOperationParenthesis {
 
                 // }
                 operationStack.push(operation);
+                startIndex = i;
             }
             else if (curr == ')') {
                 String opToPerform = operationStack.pop();
@@ -66,6 +67,7 @@ class MathOperationParenthesis {
                 System.out.println(Arrays.toString(inputParams));
                 paramStack.push(Integer.parseInt(inputParams[0].trim()));
                 paramStack.push(Integer.parseInt(inputParams[1].trim()));
+                i = parenIndex - 1;
             }
         }
 
@@ -88,6 +90,7 @@ class MathOperationParenthesis {
     public static void main(String[] args) {
         // System.out.println("$UBER Interview");
         String input = "add(3, 5)";
+        System.out.println(calculateOperation(input));
         System.out.println(calculateNestedOperation(input));
     }
 }

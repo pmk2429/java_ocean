@@ -57,6 +57,9 @@ public class NextSmallerElement {
         System.out.println(Arrays.toString(nse));
     }
 
+    /**
+     * Similar to {@link ClosestGreaterElement}
+     */
     private static int[] closestSmallerElementUsingSelfBalancingTree(int[] arr) {
         int[] ans = new int[arr.length];
         TreeSet<Integer> selfBalancingTree = new TreeSet<>();
@@ -73,10 +76,9 @@ public class NextSmallerElement {
 
     public static void main(String[] args) {
         int[] arr = {4, 8, 5, 2, 25};
-        int[] arr1 = {13, 7, 6, 12};
         nextSmallerElement(arr);
         System.out.println(Arrays.toString(closestSmallerElementUsingSelfBalancingTree(arr)));
-
+        int[] arr1 = {13, 7, 6, 12};
         nextSmallerElement(arr1);
     }
 }

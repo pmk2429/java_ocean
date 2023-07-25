@@ -31,7 +31,6 @@ public class TwoSum {
         }
         return twoSum;
     }
-
     private static int binarySearch(int[] A, int key, int start) {
         int L = start, R = A.length - 1;
         while (L < R) {
@@ -63,7 +62,7 @@ public class TwoSum {
         int target = 9;
         System.out.println(Arrays.toString(twoSum(a, target)));
 
-        int[] sum0 = { 3, 4, -7, 3, 1, 3, 1, -4, -2, -2 };
+        int[] sum0 = {3, 4, -7, 3, 1, 3, 1, -4, -2, -2};
         int target0 = 0;
         System.out.println(Arrays.toString(twoSum(sum0, target0)));
     }

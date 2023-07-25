@@ -22,14 +22,14 @@ package strings;
 public class FindExtraChar {
 
     private static char findExtraCharByLooping(String strA, String strB) {
-        char[] allChars = new char[256];
+        int[] charFreq = new int[256];
         for (int i = 0; i < strA.length(); i++) {
-            allChars[strA.charAt(i)]++;
+            charFreq[strA.charAt(i)]++;
         }
 
         for (int i = 0; i < strB.length(); i++) {
             int bAscii = strB.charAt(i);
-            if (allChars[bAscii] == 0) {
+            if (charFreq[bAscii] == 0) {
                 return strB.charAt(i);
             }
         }

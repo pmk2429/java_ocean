@@ -65,7 +65,7 @@ public class BaseballGame {
                     stack.push(2 * stack.peek());
                     break;
                 default:
-                    stack.push(Integer.valueOf(op));
+                    stack.push(Integer.parseInt(op));
                     break;
             }
         }
