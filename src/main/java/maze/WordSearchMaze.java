@@ -41,7 +41,7 @@ public class WordSearchMaze {
         char temp = board[i][j];
 
         // mark as visited
-        board[i][j] = ' ';
+        board[i][j] = '\0';
 
         boolean found = dfs(board, i + 1, j, word, index + 1) ||
             dfs(board, i - 1, j, word, index + 1) ||

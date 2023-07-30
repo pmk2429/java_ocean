@@ -100,9 +100,7 @@ public class PathExists {
 
         visited[i][j] = 0;
 
-        boolean pathExists = isTop || isDown || isLeft || isRight;
-
-        return pathExists;
+        return isTop || isDown || isLeft || isRight;
     }
 
     // recursive solution for going in only one direction until bounds is reached or 1.

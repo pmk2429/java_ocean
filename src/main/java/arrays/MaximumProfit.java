@@ -41,17 +41,18 @@ public class MaximumProfit {
     }
 
     private static int maxProfitOnePass(int[] prices) {
-        int minprice = Integer.MAX_VALUE;
-        int maxprofit = 0;
+        int minPrice = Integer.MAX_VALUE;
+        int maxProfit = 0;
         for (int price : prices) {
-            if (price < minprice) {
-                minprice = price;
+            if (price < minPrice) {
+                minPrice = price;
             }
-            else if (price - minprice > maxprofit) {
-                maxprofit = price - minprice;
+            int currProfit = price - minPrice;
+            if (currProfit > maxProfit) {
+                maxProfit = currProfit;
             }
         }
-        return maxprofit;
+        return maxProfit;
     }
 
     public static void main(String[] args) {

@@ -52,7 +52,9 @@ package hard;
  * 1 <= w.length <= 104
  * 1 <= w[i] <= 105
  * pickIndex will be called at most 104 times.
- *
+ * <p>
+ * Similar to {@link CapacityToShipPackagesWithinDDays} and {@link MinimumTimeToCompleteTrips}.
+ * <p>
  * ~!@#HARD:REVISE
  */
 public class RandomPickWithWeight {
@@ -99,9 +101,9 @@ public class RandomPickWithWeight {
         int prefixSum = 0;
         for (int i = 0; i < w.length; ++i) {
             prefixSum += w[i];
-            this.prefixSums[i] = prefixSum;
+            prefixSums[i] = prefixSum;
         }
-        this.totalSum = prefixSum;
+        totalSum = prefixSum;
     }
 
     public int pickIndex() {

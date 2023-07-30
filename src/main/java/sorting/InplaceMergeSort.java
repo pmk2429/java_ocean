@@ -1,4 +1,6 @@
-package arrays;
+package sorting;
+
+import java.util.Arrays;
 
 /**
  * Approach:
@@ -44,13 +46,9 @@ public class InplaceMergeSort {
         }
     }
 
-    /* l is for left index and r is right index of the
-       sub-array of arr to be sorted */
-    static void mergeSort(int[] arr, int l, int r) {
+    private static void mergeSort(int[] arr, int l, int r) {
         if (l < r) {
-
-            // Same as (l + r) / 2, but avoids overflow
-            // for large l and r
+            // Same as (l + r) / 2, but avoids overflow for large l and r
             int m = l + (r - l) / 2;
 
             // Sort first and second halves
@@ -61,22 +59,19 @@ public class InplaceMergeSort {
         }
     }
 
-    static void printArray(int A[], int size) {
-        int i;
-        for (i = 0; i < size; i++)
-            System.out.print(A[i] + " ");
-        System.out.println();
+    private static void printArray(int[] A) {
+        Arrays.stream(A).mapToObj(result -> result + " ").forEach(System.out::print);
     }
 
     public static void main(String[] args) {
         int[] arr = {12, 11, 13, 5, 6, 7};
         int arr_size = arr.length;
         mergeSort(arr, 0, arr_size - 1);
-        printArray(arr, arr_size);
+        printArray(arr);
 
         int[] arr2 = {2, 0, 2, 1, 1, 0};
         int arr2_size = arr2.length;
         mergeSort(arr2, 0, arr2_size - 1);
-        printArray(arr2, arr2_size);
+        printArray(arr2);
     }
 }
