@@ -29,47 +29,70 @@ import java.util.*;
  * randomSet.getRandom();
  */
 public class RandomizedSet {
-
-    private final Set<Integer> randomSet;
-    private final List<Integer> randomList;
-    private final Random random;
+    private final Map<Integer, Integer> map;
+    private final List<Integer> list;
+    private final Random rand;
 
     /**
      * Initialize your data structure here.
      */
     public RandomizedSet() {
-        randomSet = new HashSet<>();
-        randomList = new ArrayList<>();
-        random = new Random();
+        map = new HashMap<>();
+        list = new ArrayList<>();
+        rand = new Random();
     }
 
     /**
      * Inserts a value to the set. Returns true if the set did not already contain the specified element.
      */
     public boolean insert(int val) {
-        if (randomSet.contains(val)) {
+        if (map.containsKey(val)) {
             return false;
         }
-        randomList.add(val);
-        return randomSet.add(val);
+
+        int newIndex = list.size();
+        map.put(val, newIndex);
+        list.add(newIndex, val);
+
+        return true;
     }
 
     /**
      * Removes a value from the set. Returns true if the set contained the specified element.
      */
     public boolean remove(int val) {
-        if (!randomSet.contains(val)) {
+        if (!map.containsKey(val)) {
             return false;
         }
-        randomList.remove(val);
-        return randomSet.remove(val);
+
+        // move the last element to the place idx of the element to delete
+        int lastIndex = list.size() - 1;
+        int lastElement = list.get(lastIndex);
+        int index = map.get(val);
+        list.set(index, lastElement);
+        map.put(lastElement, index);
+        // delete the last element
+        list.remove(lastIndex);
+        map.remove(val);
+
+        return true;
     }
 
     /**
      * Get a random element from the set.
      */
     public int getRandom() {
-        int n = random.nextInt(randomList.size());
-        return randomList.get(n);
+        return list.get(rand.nextInt(list.size()));
+    }
+
+    public static void main(String[] args) {
+        RandomizedSet randomSet = new RandomizedSet();
+        randomSet.insert(1);
+        randomSet.remove(2);
+        randomSet.insert(2);
+        randomSet.getRandom();
+        randomSet.remove(1);
+        randomSet.insert(2);
+        randomSet.getRandom();
     }
 }

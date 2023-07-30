@@ -42,6 +42,8 @@ import java.util.Map;
  * 1 <= words[i].length <= 16
  * words[i] only consists of lowercase English letters.
  * <p>
+ * Similar to {@link strings.RansomNote}
+ * <p>
  * ~!@#HARD:REVISE
  */
 public class WordChain {
@@ -71,8 +73,11 @@ public class WordChain {
 
     public static void main(String[] args) {
         String[] words1 = {"a", "b", "ba", "bca", "bda", "bdca"};
-        String[] words2 = {"xbc", "pcxbcf", "xb", "cxbc", "pcxbc"};
         System.out.println(longestWordChain(words1));
+        String[] words2 = {"xbc", "pcxbcf", "xb", "cxbc", "pcxbc"};
         System.out.println(longestWordChain(words2));
+        String[] ransomMagazine = {"a", "b"};
+        System.out.println(longestWordChain(ransomMagazine));
+
     }
 }

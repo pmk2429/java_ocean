@@ -63,7 +63,7 @@ public class BackspaceCompare {
             else {
                 // curr char is '#' and so subString/decrease length of the current String
                 if (sSb.length() > 0) {
-                    sSb.setLength(sSb.length() - 1);
+                    sSb.deleteCharAt(sSb.length() - 1);
                 }
             }
         }
@@ -75,7 +75,7 @@ public class BackspaceCompare {
             }
             else {
                 if (tSb.length() > 0) {
-                    tSb.setLength(tSb.length() - 1);
+                    tSb.deleteCharAt(tSb.length() - 1);
                 }
             }
         }

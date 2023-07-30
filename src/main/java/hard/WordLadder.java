@@ -14,8 +14,9 @@ import java.util.*;
  * --------
  * FOOL to SAGE
  * FOOL -> POOL -> POLL -> POLE -> PALE -> SALE -> SAGE (length = 7)
- *
- *  ~!@#HARD:REVISE
+ * <p>
+ * ~!@#HARD:REVISE
+ * ~!MyFav
  */
 public class WordLadder {
 
@@ -47,7 +48,7 @@ public class WordLadder {
      * Determines the length of the shortest word ladder that connects the two based off Dictionary
      */
     private static List<String> wordLadder(String start, String target, Set<String> wordDict) {
-        Deque<WordObj> wordQueue = new LinkedList<>();
+        Deque<WordObj> wordQueue = new ArrayDeque<>();
         WordObj word = new WordObj(start, Collections.singletonList(start)); // start with first word
         wordQueue.add(word);
 

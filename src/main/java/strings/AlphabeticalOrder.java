@@ -4,8 +4,8 @@ public class AlphabeticalOrder {
     private static boolean isAlphabeticalOrder(String s) {
         int n = s.length();
 
-        for (int i = 1; i < n; i++) {
-            if (s.charAt(i - 1) > s.charAt(i)) {
+        for (int i = 0; i < n - 1; i++) {
+            if (s.charAt(i) > s.charAt(i + 1)) {
                 return false;
             }
         }

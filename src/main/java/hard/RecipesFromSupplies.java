@@ -52,7 +52,7 @@ public class RecipesFromSupplies {
     private static List<String> findAllRecipes(String[] recipes, List<List<String>> ingredients, String[] supplies) {
         List<String> ans = new ArrayList<>();
         // Put all supplies into HashSet.
-        Set<String> available = Stream.of(supplies).collect(Collectors.toCollection(HashSet::new));
+        Set<String> available = Arrays.stream(supplies).collect(Collectors.toSet());
         Map<String, Set<String>> ingredientToRecipes = new HashMap<>();
 
         Map<String, Integer> inDegree = new HashMap<>();

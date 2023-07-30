@@ -56,6 +56,21 @@ public class FindUniqueChars {
         return sbr.toString();
     }
 
+    private static String distinctCharsO1SpaceMain(String str) {
+        StringBuilder sbr = new StringBuilder();
+        int[] charFreq = new int[256];
+        for (char c : str.toCharArray()) {
+            charFreq[c]++;
+        }
+
+        for (int i = 0; i < str.length(); i++) {
+            if (charFreq[str.charAt(i)] == 1) {
+                sbr.append(str.charAt(i));
+            }
+        }
+        return sbr.toString();
+    }
+
     // Maintains index of chars in the string as is and traverse the String only once
     private static String distinctCharsSingleLoop(String str) {
         StringBuilder sbr = new StringBuilder();
@@ -96,6 +111,6 @@ public class FindUniqueChars {
     public static void main(String[] args) {
         String str = "Geeks for abc Geeks bcd";
         System.out.println(distinctCharsO1Space(str.toLowerCase()));
-        System.out.println(distinctCharsSingleLoop(str.toLowerCase()));
+        System.out.println(distinctCharsO1SpaceMain(str.toLowerCase()));
     }
 }

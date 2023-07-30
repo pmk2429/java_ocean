@@ -2,8 +2,6 @@ package numbers;
 
 import java.util.Arrays;
 
-import static java.lang.Math.min;
-
 /**
  * Created by Pavitra on 4/22/2016.
  * <p>
@@ -18,21 +16,6 @@ public class MaxSubArray {
             ans = Math.max(ans, sum);
         }
         return ans;
-    }
-
-    private static int maxSubArraySum(int s, int[] nums) {
-        int n = nums.length;
-        int ans = Integer.MAX_VALUE;
-        int left = 0;
-        int sum = 0;
-        for (int i = 0; i < n; i++) {
-            sum += nums[i];
-            while (sum >= s) {
-                ans = min(ans, i + 1 - left);
-                sum -= nums[left++];
-            }
-        }
-        return (ans != Integer.MAX_VALUE) ? ans : 0;
     }
 
     public static int[] subArraySum(int[] A) {
@@ -67,8 +50,21 @@ public class MaxSubArray {
         return result;
     }
 
+    private static int maxSubArraySum(int[] nums) {
+        int maxSubArr = Integer.MIN_VALUE;
+        for (int i = 0; i < nums.length; i++) {
+            int currSubArr = 0;
+            for (int j = i; j < nums.length; j++) {
+                currSubArr += nums[j];
+                maxSubArr = Math.max(maxSubArr, currSubArr);
+            }
+        }
+        return maxSubArr;
+    }
+
     public static void main(String[] args) {
-        int[] max = subArraySum(new int[]{-1, 2, -1, -12, 35, 31, 26});
-        System.out.println(Arrays.toString(max));
+        // The subarray [4,-1,2,1] has the largest sum 6.
+        int maxSubArray = maxSubArraySum(new int[]{-2, 1, -3, 4, -1, 2, 1, -5, 4});
+        System.out.println(maxSubArray);
     }
 }

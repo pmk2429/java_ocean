@@ -3,13 +3,12 @@ package maze;
 class UniquePaths {
     private static final int N = 4;
 
-    // Check if cell (x, y) is valid or not
-    private static boolean isValidCell(int x, int y) {
-        return x >= 0 && y >= 0 && x < N && y < N;
+    private static boolean isValid(int[][] maze, boolean[][] visited, int x, int y) {
+        return maze[x][y] == 1 && !visited[x][y];
     }
 
-    private static boolean isNavigable(int[][] maze, boolean[][] visited, int x, int y) {
-        return maze[x][y] == 1 && !visited[x][y];
+    private static boolean isNavigable(int x, int y) {
+        return x >= 0 && y >= 0 && x < N && y < N;
     }
 
     private static int countPaths(int[][] maze, int x, int y, boolean[][] visited, int count) {
@@ -23,25 +22,25 @@ class UniquePaths {
         visited[x][y] = true;
 
         // if current cell is a valid and open cell
-        if (isValidCell(x, y) && maze[x][y] == 1) {
+        if (isNavigable(x, y) && maze[x][y] == 1) {
 
             // go down (x, y) --> (x + 1, y)
-            if (isValidCell(x + 1, y) && !visited[x + 1][y]) {
+            if (isNavigable(x + 1, y) && !visited[x + 1][y]) {
                 count = countPaths(maze, x + 1, y, visited, count);
             }
 
             // go up (x, y) --> (x - 1, y)
-            if (isValidCell(x - 1, y) && !visited[x - 1][y]) {
+            if (isNavigable(x - 1, y) && !visited[x - 1][y]) {
                 count = countPaths(maze, x - 1, y, visited, count);
             }
 
             // go right (x, y) --> (x, y + 1)
-            if (isValidCell(x, y + 1) && !visited[x][y + 1]) {
+            if (isNavigable(x, y + 1) && !visited[x][y + 1]) {
                 count = countPaths(maze, x, y + 1, visited, count);
             }
 
             // go left (x, y) --> (x, y - 1)
-            if (isValidCell(x, y - 1) && !visited[x][y - 1]) {
+            if (isNavigable(x, y - 1) && !visited[x][y - 1]) {
                 count = countPaths(maze, x, y - 1, visited, count);
             }
         }

@@ -31,6 +31,7 @@ import java.util.stream.Collectors;
  * Output: false
  * <p>
  * ~!@#HARD:REVISE
+ * ~!MyFav
  */
 public class WordBreak {
 

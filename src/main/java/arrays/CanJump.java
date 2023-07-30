@@ -50,10 +50,30 @@ public class CanJump {
         return true;
     }
 
+    private static int totalJump(int[] nums) {
+        int n = nums.length;
+        int answer = 0;
+        int checker = 0, currMaximum = 0;
+
+        for (int i = 0; i < n - 1; i++) {
+            int maxJumpFromCurrIndex = nums[i] + i;
+            currMaximum = Math.max(currMaximum, maxJumpFromCurrIndex);
+
+            if (checker == i) {
+                answer++;
+                checker = currMaximum;
+            }
+        }
+
+        return answer;
+    }
+
     public static void main(String[] args) {
         int[] nums = {2, 3, 1, 1, 4};
         System.out.println("2, 3, 1, 1, 4 -> " + canJump(nums));
+        System.out.println("2, 3, 1, 1, 4 -> " + totalJump(nums));
         int[] nums2 = {3, 2, 1, 0, 4};
         System.out.println("3, 2, 1, 0, 4 -> " + canJump(nums2));
+        System.out.println("3, 2, 1, 0, 4 -> " + totalJump(nums2));
     }
 }
