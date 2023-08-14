@@ -53,6 +53,33 @@ public class AllSubstrings {
         String longestSubstring = "";
 
         for (int i = 0; i < str.length(); i++) {
+            Set<Character> charSet = new HashSet<>();
+            StringBuilder currSub = new StringBuilder();
+
+            for (int j = i; j < str.length(); j++) {
+                char currChar = str.charAt(j);
+                if (!charSet.contains(currChar)) {
+                    charSet.add(currChar);
+                    currSub.append(currChar);
+                }
+                else {
+                    break;
+                }
+            }
+
+            if (currSub.length() > maxLen) {
+                maxLen = currSub.length();
+                longestSubstring = currSub.toString();
+            }
+        }
+        return longestSubstring;
+    }
+
+    private static String longestUniqueSubstringUsingString(String str) {
+        int maxLen = 0;
+        String longestSubstring = "";
+
+        for (int i = 0; i < str.length(); i++) {
             String currSub = "";
             for (int j = i; j < str.length(); j++) {
                 char currChar = str.charAt(j);

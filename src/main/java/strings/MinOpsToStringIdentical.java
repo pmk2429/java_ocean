@@ -2,11 +2,17 @@ package strings;
 
 import java.util.stream.IntStream;
 
+/**
+ * Similar to {@link Anagrams}.
+ */
 public class MinOpsToStringIdentical {
     private static int minOps(String A, String B) {
 
+        int aLength = A.length();
+        int bLength = B.length();
+
         // This parts checks whether conversion is possible or not
-        if (A.length() != B.length()) {
+        if (aLength != bLength) {
             return -1;
         }
 
@@ -14,7 +20,7 @@ public class MinOpsToStringIdentical {
         int[] charFreq = new int[256];
 
         // subtract count for every character in B
-        for (i = 0; i < A.length(); i++) {
+        for (i = 0; i < aLength; i++) {
             charFreq[A.charAt(i)]++;
             charFreq[B.charAt(i)]--;
         }
@@ -25,8 +31,8 @@ public class MinOpsToStringIdentical {
             return -1;
         }
 
-        i = A.length() - 1;
-        j = B.length() - 1;
+        i = aLength - 1;
+        j = bLength - 1;
 
         while (i >= 0) {
             // If there is a mismatch, then keep incrementing result 'res'

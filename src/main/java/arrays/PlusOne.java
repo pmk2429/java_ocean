@@ -45,7 +45,7 @@ public class PlusOne {
         if (carry != 0) {
             int[] retArr = new int[length + 1];
             retArr[0] = carry;
-            System.arraycopy(arr, 0, retArr, 1, arr.length);
+            System.arraycopy(arr, 0, retArr, 1, length);
             return retArr;
         }
         return arr;

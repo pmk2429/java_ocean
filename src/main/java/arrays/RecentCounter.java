@@ -37,7 +37,7 @@ class RecentCounter {
 
     public int ping(int t) {
         // step 1). append the current call
-        slidingWindow.addLast(t);
+        slidingWindow.offer(t);
 
         // step 2). invalidate the outdated pings -- keep sliding the window
         while (slidingWindow.getFirst() < t - 3000) {

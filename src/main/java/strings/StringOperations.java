@@ -3,7 +3,7 @@ package strings;
 public class StringOperations {
     public static void main(String[] args) {
         System.out.println("Output for replaceAllChar(): "
-            + repalceAllChar("pavitra mukund kansara", "a", "*"));
+            + replaceAllChar("pavitra mukund kansara", "a", "*"));
         System.out.println("Output for deleteAllNonDigit(): "
             + deleteAllNonDigit("#21sadfs23$&%^(!9@!"));
         System.out.println("Output for replaceCharAt(): "
@@ -39,7 +39,7 @@ public class StringOperations {
         return s.replaceAll("\\D", "");
     }
 
-    public static String repalceAllChar(String s, String f, String r) {
+    public static String replaceAllChar(String s, String f, String r) {
         return s.replace(f, r);
     }
 }

@@ -37,11 +37,12 @@ public class PositionOfLargeGroups {
         int startPos = 0;
         int endPos = 0;
         int i = 0, j;
-        while (i < str.length()) {
+        int length = str.length();
+        while (i < length) {
             List<Integer> position = new ArrayList<>();
             startPos = i;
             j = i + 1;
-            if (j < str.length()) {
+            if (j < length) {
                 while (str.charAt(i) == str.charAt(j)) {
                     endPos = j;
                     j++;

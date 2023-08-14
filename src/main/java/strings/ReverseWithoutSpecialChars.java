@@ -57,14 +57,13 @@ public class ReverseWithoutSpecialChars {
                     char temp = str.charAt(i);
                     res[i] = str.charAt(j);
                     res[j] = temp;
-                    i++;
+                    j--;
                 }
-                j--;
             }
             else {
                 res[i] = str.charAt(i);
-                i++;
             }
+            i++;
         }
         return String.valueOf(res);
     }

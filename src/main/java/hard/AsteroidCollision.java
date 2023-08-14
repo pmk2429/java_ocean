@@ -112,8 +112,9 @@ public class AsteroidCollision {
     }
 
     public static void main(String[] args) {
-        int[] arr = {10, 2, -5};
         int[] arr1 = {-8, 8};
         System.out.println(Arrays.toString(asteroidCollision(arr1)));
+        int[] arr = {-2, -1, 1, 2};
+        System.out.println(Arrays.toString(asteroidCollision(arr)));
     }
 }

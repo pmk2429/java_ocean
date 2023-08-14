@@ -1,5 +1,7 @@
 package hard;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 /**
  * Suppose we have a class:
  * <p>
@@ -35,30 +37,39 @@ package hard;
  */
 public class PrintInOrder {
 
-    volatile int i = 0;
+    private AtomicInteger firstJobDone = new AtomicInteger(0);
+    private AtomicInteger secondJobDone = new AtomicInteger(0);
 
     public PrintInOrder() {
-
     }
 
     public void first(Runnable printFirst) throws InterruptedException {
-        // printFirst.run() outputs "first". Do not change or remove this line.
+        // printFirst.run() outputs "first".
         printFirst.run();
-        i = 1;
-
+        // mark the first job as done, by increasing its count.
+        firstJobDone.incrementAndGet();
     }
 
     public void second(Runnable printSecond) throws InterruptedException {
-        while (i != 1) ;
-        // printSecond.run() outputs "second". Do not change or remove this line.
+        while (firstJobDone.get() != 1) {
+            // waiting for the first job to be done.
+        }
+        // printSecond.run() outputs "second".
         printSecond.run();
-        i = 2;
+        // mark the second as done, by increasing its count.
+        secondJobDone.incrementAndGet();
     }
 
     public void third(Runnable printThird) throws InterruptedException {
-        while (i != 2) ;
-        // printThird.run() outputs "third". Do not change or remove this line.
+        while (secondJobDone.get() != 1) {
+            // waiting for the second job to be done.
+        }
+        // printThird.run() outputs "third".
         printThird.run();
-        i = 3;
+    }
+
+    public static void main(String[] args) {
+        PrintInOrder foo = new PrintInOrder();
+
     }
 }

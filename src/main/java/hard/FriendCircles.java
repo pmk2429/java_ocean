@@ -36,21 +36,27 @@ package hard;
  * If M[i][j] = 1, then M[j][i] = 1.
  */
 public class FriendCircles {
-    public void dfs(int[][] M, int[] visited, int i) {
-        for (int j = 0; j < M.length; j++) {
-            if (M[i][j] == 1 && visited[j] == 0) {
+
+    private static int M;
+    private static int N;
+
+    public void dfs(int[][] maze, int[] visited, int i) {
+        for (int j = 0; j < M; j++) {
+            if (maze[i][j] == 1 && visited[j] == 0) {
                 visited[j] = 1;
-                dfs(M, visited, j);
+                dfs(maze, visited, j);
             }
         }
     }
 
-    public int findCircleNum(int[][] M) {
-        int[] visited = new int[M.length];
+    public int findCircleNum(int[][] maze) {
+        M = maze.length;
+        N = maze[0].length;
+        int[] visited = new int[M];
         int count = 0;
-        for (int i = 0; i < M.length; i++) {
+        for (int i = 0; i < M; i++) {
             if (visited[i] == 0) {
-                dfs(M, visited, i);
+                dfs(maze, visited, i);
                 count++;
             }
         }

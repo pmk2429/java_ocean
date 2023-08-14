@@ -69,6 +69,7 @@ public class RandomizedSet {
         int lastIndex = list.size() - 1;
         int lastElement = list.get(lastIndex);
         int index = map.get(val);
+        // Collections.swap(list, index, lastIndex);
         list.set(index, lastElement);
         map.put(lastElement, index);
         // delete the last element

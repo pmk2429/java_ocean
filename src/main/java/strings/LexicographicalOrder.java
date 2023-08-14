@@ -17,21 +17,21 @@ package strings;
  */
 public class LexicographicalOrder {
 
+    private static final int MAX_CHAR = 26;
+
     private static String newString(String originalLabel, int charLimit) {
         int n = originalLabel.length();
         // Stores the frequency of characters
-        int[] charCount = new int[26];
+        int[] charCount = new int[MAX_CHAR];
 
-        for (int i = 0; i < n; i++) {
-            charCount[originalLabel.charAt(i) - 'a']++;
+        for (char c : originalLabel.toCharArray()) {
+            charCount[c - 'a']++;
         }
 
-        // Stores the resultant string
         StringBuilder newString = new StringBuilder(n);
 
-        for (int i = 25; i >= 0; i--) {
+        for (int i = MAX_CHAR - 1; i >= 0; i--) {
             int count = 0;
-            // Append larger character
             while (charCount[i] > 0) {
                 newString.append((char) (i + 'a'));
                 // Decrease count in charset
@@ -60,7 +60,6 @@ public class LexicographicalOrder {
 
     // Function to return nearest lower character
     private static Character nextAvailableChar(int[] charset, int start) {
-        // Traverse charset from start-1
         for (int i = start - 1; i >= 0; i--) {
             if (charset[i] > 0) {
                 charset[i]--;

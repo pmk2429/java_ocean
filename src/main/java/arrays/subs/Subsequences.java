@@ -58,10 +58,8 @@ public class Subsequences {
 
         Arrays.fill(counts, 1);
 
-        // starting with 1
         for (int i = 1; i <= subLength; i++) {
             int pre = 0;
-            // starting with 1
             for (int j = 1; j <= strLength; j++) {
                 int preSub = counts[j];
                 // compare one character to the left

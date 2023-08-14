@@ -39,7 +39,7 @@ public class OrderedMapContainsDuplicate {
         }
 
         TreeSet<Integer> selfBalancingTree = new TreeSet<>();
-        for (int i = 0; i < nums.length; ++i) {
+        for (int i = 0; i < nums.length; i++) {
             // Find the successor of current element
             Integer ceiling = selfBalancingTree.ceiling(nums[i]);
             if (ceiling != null && ceiling <= nums[i] + t) {

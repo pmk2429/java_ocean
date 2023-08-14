@@ -61,6 +61,7 @@ public class TrainStation {
             // If two trains are arriving and departing simultaneously,
             // i.e., `arrival[i] == departure[j]`, depart the train first
             else {
+                // train departed -- hence -- platform freed up
                 trainCount--;
                 j++;
             }

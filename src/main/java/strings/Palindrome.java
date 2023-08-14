@@ -22,18 +22,34 @@ public class Palindrome {
         return res;
     }
 
-    public static boolean isPalidrome(String inputString) {
+    private static boolean isPalindrome(String s) {
+        for (int i = 0, j = s.length() - 1; i < j; i++, j--) {
+            while (i < j && !Character.isLetterOrDigit(s.charAt(i))) {
+                i++;
+            }
+            while (i < j && !Character.isLetterOrDigit(s.charAt(j))) {
+                j--;
+            }
+
+            if (Character.toLowerCase(s.charAt(i)) != Character.toLowerCase(s.charAt(j))) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public static boolean isPalindromeNormal(String inputString) {
         boolean isPalindrome = false;
         int length = inputString.length();
-        int i, begin, end, middle;
+        int start = 0;
+        int end = length - 1;
+        int middle = (start + end) / 2;
+        int i;
 
-        begin = 0;
-        end = length - 1;
-        middle = (begin + end) / 2;
-
-        for (i = begin; i <= middle; i++) {
-            if (inputString.charAt(begin) == inputString.charAt(end)) {
-                begin++;
+        for (i = start; i <= middle; i++) {
+            if (inputString.charAt(start) == inputString.charAt(end)) {
+                start++;
                 end--;
             }
             else {
@@ -51,21 +67,16 @@ public class Palindrome {
     }
 
     public static void main(String[] args) {
-        String original, reverse = "";
+        String original;
         Scanner in = new Scanner(System.in);
 
         System.out.println("Enter a string to check if it is a palindrome:");
         System.out.print("> ");
         original = in.nextLine();
 
-        int length = original.length();
-
-        for (int i = length - 1; i >= 0; i--) {
-            reverse = reverse + original.charAt(i);
-        }
 
         System.out.println();
-        if (original.equals(reverse)) {
+        if (isPalindrome(original)) {
             System.out.println("YES, Entered string is a palindrome.");
         }
         else {

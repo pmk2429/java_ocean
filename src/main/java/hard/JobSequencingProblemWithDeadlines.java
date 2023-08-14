@@ -40,12 +40,12 @@ public class JobSequencingProblemWithDeadlines {
         }
     }
 
-    private static void scheduleJobs(List<Job> jobs, int T) {
+    private static void scheduleJobs(List<Job> jobs, int deadline) {
         // stores the maximum profit that can be earned by scheduling jobs
         int profit = 0;
 
         // array to store used and unused slots info
-        int[] slot = new int[T];
+        int[] slot = new int[deadline];
         Arrays.fill(slot, -1);
 
         // arrange the jobs in decreasing order of their profits
@@ -56,7 +56,7 @@ public class JobSequencingProblemWithDeadlines {
             // search for the next free slot and map the task to that slot
             for (int i = job.deadline - 1; i >= 0; i--) {
                 // if time is less than the Max deadline and slot is not yet filled:
-                if (i < T && slot[i] == -1) {
+                if (i < deadline && slot[i] == -1) {
                     slot[i] = job.taskId;
                     profit += job.profit;
                     break;
@@ -86,9 +86,9 @@ public class JobSequencingProblemWithDeadlines {
         );
 
         // stores the maximum deadline that can be associated with a job
-        final int T = 15;
+        final int deadline = 15;
 
         // schedule jobs and calculate the maximum profit
-        scheduleJobs(jobs, T);
+        scheduleJobs(jobs, deadline);
     }
 }

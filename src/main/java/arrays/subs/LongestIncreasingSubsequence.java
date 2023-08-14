@@ -26,6 +26,8 @@ import java.util.List;
  * Output : Length of LIS = 4
  * The longest increasing subsequence is {3, 7, 40, 80}
  * <p>
+ * This should be thought in tandem with {@link hard.LongestConsecutiveSequence}.
+ * <p>
  * ~!@#HARD:REVISE
  */
 public class LongestIncreasingSubsequence {
@@ -95,11 +97,9 @@ public class LongestIncreasingSubsequence {
 
     // driver program to test above functions
     public static void main(String[] args) {
-        int[] arr = {10, 22, 9, 33, 21, 50, 41, 60};
+        int[] arr = {50, 3, 10, 7, 40, 80};
         int n = arr.length;
         System.out.println("Length of lis is " + lis(arr, n) + "\n");
-
-
         System.out.println(getLIS(arr));
     }
 }

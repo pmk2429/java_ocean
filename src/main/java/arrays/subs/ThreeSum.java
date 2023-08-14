@@ -8,10 +8,10 @@ public class ThreeSum {
 
     private static int[] threeSum(int[] arr, int target) {
         int length = arr.length;
+        int lastIndex = length - 1;
         int[] threeSum = new int[3];
         boolean found = false;
         Set<Integer> set = new HashSet<>();
-        int lastIndex = length - 1;
 
         for (int i = 0; i < lastIndex; i++) {
             threeSum[0] = arr[i];

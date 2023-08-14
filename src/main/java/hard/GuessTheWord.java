@@ -54,6 +54,17 @@ import java.util.Random;
  */
 public class GuessTheWord {
 
+    private static int getMatches(String word1, String word2) {
+        int matches = 0;
+        for (int i = 0; i < word1.length(); i++) {
+            if (word1.charAt(i) == word2.charAt(i)) {
+                matches++;
+            }
+        }
+
+        return matches;
+    }
+
     private static void findSecretWord(String[] words, Master master) {
         Random random = new Random();
         for (int i = 0, matches = 0; i < 10 && matches != 6; i++) {
@@ -69,19 +80,10 @@ public class GuessTheWord {
         }
     }
 
-    private static int getMatches(String word1, String word2) {
-        int matches = 0;
-        for (int i = 0; i < word1.length(); i++) {
-            if (word1.charAt(i) == word2.charAt(i)) {
-                matches++;
-            }
-        }
-
-        return matches;
-    }
-
     public static void main(String[] args) {
-
+        String secret = "acckzz";
+        String[] words = {"acckzz", "ccbazz", "eiowzz", "abcczz"};
+        int allowedGuesses = 10;
     }
 }
 

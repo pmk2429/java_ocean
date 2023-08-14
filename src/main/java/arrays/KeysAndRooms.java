@@ -1,9 +1,6 @@
 package arrays;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-import java.util.Stack;
+import java.util.*;
 
 /**
  * There are N rooms, and you start in room 0.
@@ -44,7 +41,7 @@ import java.util.Stack;
 public class KeysAndRooms {
 
     // DFS - Graph
-    public boolean canVisitAllRooms(List<List<Integer>> rooms) {
+    private static boolean canVisitAllRooms(List<List<Integer>> rooms) {
         Stack<Integer> stack = new Stack<>();
         stack.add(0);
         Set<Integer> visited = new HashSet<>();
@@ -62,5 +59,15 @@ public class KeysAndRooms {
             }
         }
         return rooms.size() == visited.size();
+    }
+
+    public static void main(String[] args) {
+        List<List<Integer>> roomsAndKeys = new ArrayList<>() {{
+            add(List.of(1));
+            add(List.of(2));
+            add(List.of(3));
+            add(List.of());
+        }};
+        System.out.println(canVisitAllRooms(roomsAndKeys));
     }
 }

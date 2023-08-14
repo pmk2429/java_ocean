@@ -9,11 +9,8 @@ public class RemoveCharFromString {
      * Array to check whether the specified char is in the Character Array or
      * not. If match is found then the char is replaced with a null and a count
      * is incremented to make sure how many characters were replaced(removed).
-     * Otherwise the message is printed that the specified character was not
+     * Otherwise, the message is printed that the specified character was not
      * found in the String.
-     *
-     * @param original
-     * @param character
      */
     private static char[] removeAllOccurencesOfCharFromString(String original, char character) {
         int count = 0;
@@ -37,27 +34,13 @@ public class RemoveCharFromString {
     private static String removeChar(String original, char character) {
         StringBuilder sb = new StringBuilder();
         char[] sArr = original.toCharArray();
-        for (int i = 0; i < sArr.length; i++) {
-            if (character != sArr[i]) {
-                sb.append(sArr[i]);
+        for (char c : sArr) {
+            if (character != c) {
+                sb.append(c);
             }
         }
 
         return sb.toString();
-    }
-
-    /**
-     * Removes a specific char from String from specific position based on the occurrence index provided.
-     *
-     * @param original
-     * @param character
-     * @return
-     */
-    private static char[] removeSpecificOccurenceOfCharFromString(String original, char character, int occurrenceIndex) {
-        int count = 0;
-        char[] stringArray = original.toCharArray();
-
-        return stringArray;
     }
 
     public static void main(String[] args) {

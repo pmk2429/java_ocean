@@ -47,14 +47,18 @@ public class BeautifulString {
         Set<Character> seen = new HashSet<>();
         for (int lo = -1, hi = 0; hi < word.length(); hi++) {
             char currChar = word.charAt(hi);
-            if (hi > 0 && word.charAt(hi - 1) > currChar) {
-                seen = new HashSet<>(); // reset HashSet since the new char is smaller alphabetically than previous
-                lo = hi - 1;
-            }
-            seen.add(currChar);
-            // seen.size() will always be max set to 5 since HashSet doesn't allow duplicates
-            if (seen.size() == vowels.length()) {
-                longest = Math.max(longest, hi - lo);
+            if (vowels.indexOf(currChar) != -1) {
+                if (hi > 0 && word.charAt(hi - 1) > currChar) {
+                    seen = new HashSet<>(); // reset HashSet since the new char is smaller alphabetically than previous
+                    lo = hi - 1;
+                }
+                seen.add(currChar);
+                // seen.size() will always be max set to 5 since HashSet doesn't allow duplicates
+                if (seen.size() == vowels.length()) {
+                    longest = Math.max(longest, hi - lo);
+                }
+            } else {
+                longest = -1;
             }
         }
         return longest;

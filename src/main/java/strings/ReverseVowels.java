@@ -7,29 +7,29 @@ public class ReverseVowels {
 
     private static String reverseVowels(String str) {
         char[] word = str.toCharArray();
-        int start = 0;
-        int end = str.length() - 1;
+        int i = 0;
+        int j = str.length() - 1;
         String vowels = "aeiouAEIOU";
 
-        while (start < end) {
+        while (i < j) {
             // Move start pointer until it points to a vowel
-            while (start < end && vowels.indexOf(word[start]) == -1) {
-                start++;
+            while (i < j && vowels.indexOf(word[i]) == -1) {
+                i++;
             }
 
             // Move end pointer until it points to a vowel
-            while (start < end && vowels.indexOf(word[end]) == -1) {
-                end--;
+            while (i < j && vowels.indexOf(word[j]) == -1) {
+                j--;
             }
 
             // Swap the vowels
-            char temp = word[start];
-            word[start] = word[end];
-            word[end] = temp;
+            char temp = word[i];
+            word[i] = word[j];
+            word[j] = temp;
 
             // Move the pointers towards each other
-            start++;
-            end--;
+            i++;
+            j--;
         }
 
         return new String(word);

@@ -17,12 +17,11 @@ import java.util.Arrays;
  * transactionFee = 1
  * Output: 5 1
  */
-public class MaximumProfit {
+public class BestTimeToBuyAndSellStock1 {
 
-    private static int[] maxProfit(int[] transactions) {
+    private static int[] maxProfitTransactionDays(int[] transactions, int transactionFee) {
         int currProfit;
         int maxProfit = -1;
-        int transactionFee = 2;
         int[] transactionDays = new int[2];
         int length = transactions.length;
         for (int i = 0; i < length; i++) {
@@ -31,8 +30,8 @@ public class MaximumProfit {
                 currProfit = transactions[j] - transactions[i] - transactionFee;
                 if (currProfit > maxProfit) {
                     maxProfit = currProfit;
-                    transactionDays[0] = transactions[i];
-                    transactionDays[1] = transactions[j];
+                    transactionDays[0] = transactions[j];
+                    transactionDays[1] = transactions[i];
                 }
                 j++;
             }
@@ -56,8 +55,10 @@ public class MaximumProfit {
     }
 
     public static void main(String[] args) {
-        int[] arr = {6, 1, 7, 2, 8, 4};
-        System.out.println(Arrays.toString(maxProfit(arr)));
+        int[] arr = {7, 1, 5, 3, 6, 4};
+        System.out.println(Arrays.toString(maxProfitTransactionDays(arr, 1)));
+        int[] arr1 = {6, 1, 7, 2, 8, 4};
+        System.out.println(Arrays.toString(maxProfitTransactionDays(arr1, 2)));
         System.out.println(maxProfitOnePass(arr));
     }
 }

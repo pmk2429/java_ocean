@@ -1,7 +1,7 @@
-package matrix;
+package maze;
 
 import java.util.ArrayDeque;
-import java.util.Queue;
+import java.util.Deque;
 
 /**
  * Given a binary matrix where 0 represents water and 1 represents land, and connected ones form an island, count
@@ -20,22 +20,26 @@ public class CountNumberOfIslands {
     // from the current position. The function returns false if (x, y)
     // is not valid matrix coordinates or (x, y) represents water or
     // position (x, y) is already processed
-    public static boolean isSafe(int[][] mat, int x, int y, boolean[][] processed) {
+    public static boolean isSafe(int[][] maze, int x, int y, boolean[][] visited) {
         return (x >= 0 && x < M) &&
             (y >= 0 && y < N) &&
-            mat[x][y] == 1 &&
-            !processed[x][y];
+            maze[x][y] == 1 &&
+            !visited[x][y];
     }
 
-    public static void BFS(int[][] mat, boolean[][] processed, int i, int j) {
-        Queue<Pair> q = new ArrayDeque<>();
+    private static boolean isValid(int[][] mat, int x, int y, boolean[][] visited) {
+        return mat[x][y] == 1 && !visited[x][y];
+    }
+
+    public static void BFS(int[][] maze, boolean[][] visited, int i, int j) {
+        Deque<Pair> q = new ArrayDeque<>();
         q.add(new Pair(i, j));
-        processed[i][j] = true;
+        visited[i][j] = true;
 
         while (!q.isEmpty()) {
-            int x = q.peek().x;
-            int y = q.peek().y;
-            q.poll();
+            Pair curr = q.poll();
+            int x = curr.x;
+            int y = curr.y;
 
             // check for all eight possible movements from the current cell
             // and enqueue each valid movement
@@ -43,8 +47,8 @@ public class CountNumberOfIslands {
                 int rowMovement = x + row[k];
                 int colMovement = y + col[k];
                 // skip if the location is invalid, or already processed, or has water
-                if (isSafe(mat, rowMovement, colMovement, processed)) {
-                    processed[rowMovement][colMovement] = true;
+                if (isSafe(maze, rowMovement, colMovement, visited)) {
+                    visited[rowMovement][colMovement] = true;
                     Pair pair = new Pair(rowMovement, colMovement);
                     q.add(pair);
                 }
@@ -52,22 +56,22 @@ public class CountNumberOfIslands {
         }
     }
 
-    public static int countIslands(int[][] mat) {
-        if (mat == null || mat.length == 0) {
+    public static int countIslands(int[][] maze) {
+        if (maze == null || maze.length == 0) {
             return 0;
         }
 
-        int M = mat.length;
-        int N = mat[0].length;
+        int M = maze.length;
+        int N = maze[0].length;
 
         // stores if a cell is processed or not
-        boolean[][] processed = new boolean[M][N];
+        boolean[][] visited = new boolean[M][N];
 
         int island = 0;
         for (int i = 0; i < M; i++) {
             for (int j = 0; j < N; j++) {
-                if (mat[i][j] == 1 && !processed[i][j]) {
-                    BFS(mat, processed, i, j);
+                if (isValid(maze, i, j, visited)) {
+                    BFS(maze, visited, i, j);
                     island++;
                 }
             }
@@ -91,7 +95,7 @@ public class CountNumberOfIslands {
                 {1, 1, 1, 1, 0, 0, 0, 1, 1, 1}
             };
 
-        System.out.print("The total number of islands is " + countIslands(mat));
+        System.out.print("Total islands: " + countIslands(mat));
     }
 }
 

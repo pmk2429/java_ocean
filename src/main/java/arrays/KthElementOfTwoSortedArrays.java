@@ -40,23 +40,23 @@ public class KthElementOfTwoSortedArrays {
      * - Loop from reverse to find the kth element
      */
     private static int kthElement(int[] a, int[] b, int k) {
-        PriorityQueue<Integer> sortedElements = new PriorityQueue<>();
+        PriorityQueue<Integer> queue = new PriorityQueue<>();
 
-        for (int elem : a) {
-            sortedElements.offer(elem);
+        for (int i : a) {
+            queue.offer(i);
         }
 
-        for (int elem : b) {
-            sortedElements.offer(elem);
+        for (int i : b) {
+            queue.offer(i);
         }
 
-        for (int i = 0; i < sortedElements.size(); i++) {
-            if (sortedElements.size() > k) {
-                sortedElements.poll();
+        for (int i = 0; i < queue.size(); i++) {
+            if (queue.size() > k) {
+                queue.poll();
             }
         }
 
-        return sortedElements.peek();
+        return queue.peek();
     }
 
     public static void main(String[] args) {

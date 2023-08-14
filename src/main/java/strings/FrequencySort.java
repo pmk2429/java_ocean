@@ -30,7 +30,7 @@ public class FrequencySort {
         while (!pq.isEmpty()) {
             char val = pq.poll();
             int freq = map.get(val);
-            for (int i = 0; i < freq; i++) {
+            while (freq-- > 0) {
                 // creates a string with increasing order of Frequency else
                 sb.append(val);
             }

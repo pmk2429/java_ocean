@@ -9,7 +9,7 @@ import java.util.Map;
  * Given the starting string start and the ending string end, return True if and only if there exists a sequence of
  * moves to transform one string to the other.
  * <p>
- * Example:
+ * Example:s
  * --------
  * Input: start = "RX XL RX R XL", end = "XR LX XR R LX"
  * Output: True

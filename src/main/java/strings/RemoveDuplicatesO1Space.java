@@ -27,19 +27,6 @@ public class RemoveDuplicatesO1Space {
         return newStr.toString();
     }
 
-    private static String removeDuplicates(String originalString) {
-        StringBuilder newStr = new StringBuilder();
-        int[] alphabets = new int[26];
-        for (int i = 0; i < originalString.length(); i++) {
-            int alphabetPos = originalString.charAt(i) - 97;
-            if (alphabets[alphabetPos] == 0) {
-                newStr.append(originalString.charAt(i));
-                alphabets[alphabetPos]++;
-            }
-        }
-        return newStr.toString();
-    }
-
     public String removeDuplicatesON(String S) {
         StringBuilder sb = new StringBuilder();
         int sbLength = 0;

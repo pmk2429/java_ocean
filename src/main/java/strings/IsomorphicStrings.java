@@ -60,6 +60,9 @@ public class IsomorphicStrings {
         return true;
     }
 
+    /**
+     * This method uses hashing and builds a hash of string based on the character and it's corresponding index.
+     */
     private static String transformString(String s) {
         Map<Character, Integer> indexMap = new HashMap<>();
         StringBuilder sb = new StringBuilder();

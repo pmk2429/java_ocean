@@ -50,58 +50,9 @@ public class PathExists {
         {0, 1, 0, 0, 0},
         {1, 1, 0, 1, 1},
         {0, 1, 1, 1, 1},
-        {0, 0, 0, 0, 1}};
+        {0, 0, 0, 0, 1}
+    };
 
-
-    private static boolean isValid(int[][] maze, Point curr, int[][] visited) {
-        return maze[curr.row][curr.column] != 0 && visited[curr.row][curr.column] == 0;
-    }
-
-    private static boolean isNavigable(Point cell) {
-        return cell.row >= 0 && cell.row < M && cell.column >= 0 && cell.column < N;
-    }
-
-    private static boolean hasPath(int[][] maze, Point start, Point end, int[][] visited) {
-        // Your solution goes here
-        // base case
-        if (start.equals(end)) {
-            return true;
-        }
-
-        // edge case : start should always start from 1
-
-        int i = start.row;
-        int j = start.column;
-
-        // mark the start as visited for loop
-        visited[i][j] = 1;
-
-        Point top = new Point(i - 1, j);
-        Point down = new Point(i + 1, j);
-        Point left = new Point(i, j - 1);
-        Point right = new Point(i, j + 1);
-
-        boolean isTop = false, isDown = false, isLeft = false, isRight = false;
-        if (isNavigable(top) && isValid(maze, top, visited)) {
-            isTop = hasPath(maze, top, end, visited);
-        }
-
-        if (isNavigable(down) && isValid(maze, down, visited)) {
-            isDown = hasPath(maze, down, end, visited);
-        }
-
-        if (isNavigable(left) && isValid(maze, left, visited)) {
-            isLeft = hasPath(maze, left, end, visited);
-        }
-
-        if (isNavigable(right) && isValid(maze, right, visited)) {
-            isRight = hasPath(maze, right, end, visited);
-        }
-
-        visited[i][j] = 0;
-
-        return isTop || isDown || isLeft || isRight;
-    }
 
     // recursive solution for going in only one direction until bounds is reached or 1.
     private static int[][] dir = new int[][]{{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
@@ -133,14 +84,61 @@ public class PathExists {
         return result;
     }
 
+    private static boolean isValid(int[][] maze, Point cell, boolean[][] visited) {
+        return maze[cell.row][cell.column] != 0 && !visited[cell.row][cell.column];
+    }
+
+    private static boolean isNavigable(Point cell) {
+        return cell.row >= 0 && cell.row < M && cell.column >= 0 && cell.column < N;
+    }
+
+    private static boolean hasPath(int[][] maze, Point start, Point end, boolean[][] visited) {
+        // Your solution goes here
+        // base case
+        if (start.equals(end)) {
+            return true;
+        }
+
+        // edge case : start should always start from 1
+
+        int i = start.row;
+        int j = start.column;
+
+        // mark the start as visited for loop
+        visited[i][j] = true;
+
+        Point top = new Point(i - 1, j);
+        Point down = new Point(i + 1, j);
+        Point left = new Point(i, j - 1);
+        Point right = new Point(i, j + 1);
+
+        boolean isTop = false, isDown = false, isLeft = false, isRight = false;
+        if (isNavigable(top) && isValid(maze, top, visited)) {
+            isTop = hasPath(maze, top, end, visited);
+        }
+
+        if (isNavigable(down) && isValid(maze, down, visited)) {
+            isDown = hasPath(maze, down, end, visited);
+        }
+
+        if (isNavigable(left) && isValid(maze, left, visited)) {
+            isLeft = hasPath(maze, left, end, visited);
+        }
+
+        if (isNavigable(right) && isValid(maze, right, visited)) {
+            isRight = hasPath(maze, right, end, visited);
+        }
+
+        visited[i][j] = false;
+
+        return isTop || isDown || isLeft || isRight;
+    }
+
     private static boolean hasPath(int[][] maze, Point start, Point end) {
-        int rowLength = maze.length; // row
-        int colLength = maze[0].length; // column
+        M = maze.length; // row
+        N = maze[0].length; // column
 
-        M = rowLength;
-        N = colLength;
-
-        int[][] visited = new int[M][N]; // visited will mirror maze in dimensions
+        boolean[][] visited = new boolean[M][N];
 
         return hasPath(maze, start, end, visited);
     }
