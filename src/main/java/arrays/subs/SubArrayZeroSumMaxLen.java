@@ -1,12 +1,13 @@
 package arrays.subs;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class SubArrayZeroSumMaxLen {
-    // Returns length of the maximum length subarray with 0 sum
+    // Returns length of the maximum length sub-array with 0 sum
     private static int maxLen(int[] arr) {
         // Creates an empty HashMap
-        HashMap<Integer, Integer> sumMap = new HashMap<>();
+        Map<Integer, Integer> sumMap = new HashMap<>();
 
         int sum = 0; // Initialize sum of elements
         int maxLen = 0; // Initialize result
@@ -41,8 +42,8 @@ public class SubArrayZeroSumMaxLen {
     }
 
     // Drive method
-    public static void main(String arg[]) {
-        int arr[] = {15, -2, 2, -8, 1, 7, 10, 23};
+    public static void main(String[] arg) {
+        int[] arr = {15, -2, 2, -8, 1, 7, 10, 23};
         System.out.println("Length of the longest 0 sum subarray is " + maxLen(arr));
     }
 }

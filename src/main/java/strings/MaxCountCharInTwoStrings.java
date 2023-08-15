@@ -56,15 +56,14 @@ public class MaxCountCharInTwoStrings {
         }
 
         // we can get away with second loop by removing the same process and negating the count
-    /*
-    for (int i = 0; i < s2.length(); i++) {
-      if (maxChar1 == s2.charAt(i)) {
-        maxInFirst--;
-
-        // ultimately return true if maxInFirst is 0;
-      }
-    }
-     */
+        /*
+            for (int i = 0; i < s2.length(); i++) {
+                if (maxChar1 == s2.charAt(i)) {
+                maxInFirst--;
+                // ultimately return true if maxInFirst is 0;
+                }
+            }
+        */
 
         return (maxInFirst == maxInSecond) && (maxCharS1 == maxCharS2);
     }

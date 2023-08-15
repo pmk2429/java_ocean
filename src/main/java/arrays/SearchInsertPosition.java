@@ -31,7 +31,10 @@ public class SearchInsertPosition {
 
         while (L <= R) {
             int M = (L + R) / 2;
-            if (target < nums[M]) {
+            if (target == nums[M]) {
+                return M;
+            }
+            else if (target < nums[M]) {
                 R = M - 1;
             }
             else {
@@ -43,7 +46,7 @@ public class SearchInsertPosition {
 
     public static void main(String[] args) {
         int[] nums = {1, 3, 5, 6};
-        int target = 7;
+        int target = 5;
         System.out.println(searchInsert(nums, target));
         int[] nums1 = {1, 3, 5, 6};
         int target1 = 4;

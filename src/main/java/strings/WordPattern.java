@@ -2,8 +2,6 @@ package strings;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * Given a pattern and a string str, find if str follows the same pattern.
@@ -37,19 +35,20 @@ import java.util.regex.Pattern;
  */
 public class WordPattern {
     private static boolean wordPattern(String pattern, String str) {
+        if (pattern == null || pattern.length() == 0 || str == null) {
+            return false;
+        }
+
+        String[] words = str.trim().split("\\s+");
+
+        int wordsLength = words.length;
         int patternLength = pattern.length();
 
-        if (patternLength == 0 || str == null) {
+        if (wordsLength != patternLength) {
             return false;
         }
 
-        String[] words = str.split(" ");
-
-        if (words.length != patternLength) {
-            return false;
-        }
-
-        if (words.length == 1 && !words[0].equals(pattern)) {
+        if (wordsLength == 1 && !words[0].equals(pattern)) {
             return true;
         }
 

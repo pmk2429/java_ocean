@@ -19,14 +19,16 @@ import java.util.stream.Collectors;
  */
 public class ActivitySelectionProblem {
 
+    private static final Comparator<Pair> pairComparator = Comparator.comparingInt(Pair::getFinish);
+
     public static List<Pair> selectActivity(List<Pair> activities) {
-        // `k` keeps track of the index of the last selected activity
+        // keeps track of the index of the last selected activity
         int lastSelectedActivity = 0;
 
         // set to store the selected activities index
         Set<Integer> result = new HashSet<>();
 
-        activities.sort(Comparator.comparingInt(Pair::getFinish));
+        activities.sort(pairComparator);
 
         // select 0 as the first activity
         if (activities.size() > 0) {

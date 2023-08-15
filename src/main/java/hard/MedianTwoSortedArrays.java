@@ -26,11 +26,11 @@ public class MedianTwoSortedArrays {
             return -1;
         }
 
-        int[] union = new int[a.length + b.length];
 
         int m = a.length;
         int n = b.length;
         int i = 0, j = 0, k = 0;
+        int[] union = new int[m + n];
 
         while (i < m && j < n) {
             if (a[i] < b[j]) {

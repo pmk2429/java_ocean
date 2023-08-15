@@ -31,6 +31,7 @@ public class TwoSum {
         }
         return twoSum;
     }
+
     private static int binarySearch(int[] A, int key, int start) {
         int L = start, R = A.length - 1;
         while (L < R) {

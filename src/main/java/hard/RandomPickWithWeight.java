@@ -99,7 +99,7 @@ public class RandomPickWithWeight {
         prefixSums = new int[w.length];
 
         int prefixSum = 0;
-        for (int i = 0; i < w.length; ++i) {
+        for (int i = 0; i < w.length; i++) {
             prefixSum += w[i];
             prefixSums[i] = prefixSum;
         }
@@ -110,22 +110,23 @@ public class RandomPickWithWeight {
         double target = totalSum * Math.random();
 
         // run a binary search to find the target zone
-        int low = 0, high = prefixSums.length;
-        while (low < high) {
+        int left = 0;
+        int right = prefixSums.length;
+        while (left < right) {
             // better to avoid the overflow
-            int mid = low + (high - low) / 2;
-            if (target > prefixSums[mid]) {
-                low = mid + 1;
+            int mid = left + (right - left) / 2;
+            if (target < prefixSums[mid]) {
+                right = mid;
             }
             else {
-                high = mid;
+                left = mid + 1;
             }
         }
-        return low;
+        return left;
     }
 
     public static void main(String[] args) {
-        int[] weights = {1, 2, 3, 4, 3};
+        int[] weights = {1, 3};
         RandomPickWithWeight randomPickWithWeight = new RandomPickWithWeight(weights);
         int weightedIndex = randomPickWithWeight.pickIndex();
         System.out.println(weightedIndex);

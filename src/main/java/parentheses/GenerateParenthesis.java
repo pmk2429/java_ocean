@@ -22,17 +22,17 @@ import java.util.List;
  */
 public class GenerateParenthesis {
 
-    private static void backtrack(List<String> list, String str, int open, int close, int max) {
+    private static void backtrack(List<String> result, String str, int open, int close, int max) {
         // base case -- add to list only when the String size is 2x the input number
         if (str.length() == max * 2) {
-            list.add(str);
+            result.add(str);
             return;
         }
 
         if (open < max)
-            backtrack(list, str + "(", open + 1, close, max);
+            backtrack(result, str + "(", open + 1, close, max);
         if (close < open)
-            backtrack(list, str + ")", open, close + 1, max);
+            backtrack(result, str + ")", open, close + 1, max);
     }
 
     // backtracking problem

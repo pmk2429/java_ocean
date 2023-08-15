@@ -22,7 +22,7 @@ public class ShortestPath {
     // 'min_dist' stores length of longest path from source to destination
     // found so far and 'dist' maintains length of path from source cell to
     // the current cell (i, j)
-    private static int findShortestPath(int[][] mat, boolean[][] visited, int i, int j, int x, int y, int minimumDistance, int dist) {
+    private static int findShortestPath(int[][] maze, boolean[][] visited, int i, int j, int x, int y, int minimumDistance, int dist) {
         // if destination is found, update min_dist
         if (i == x && j == y) {
             return Math.min(dist, minimumDistance);
@@ -32,23 +32,23 @@ public class ShortestPath {
         visited[i][j] = true;
 
         // go to bottom cell
-        if (isNavigable(i + 1, j) && isValid(mat, visited, i + 1, j)) {
-            minimumDistance = findShortestPath(mat, visited, i + 1, j, x, y, minimumDistance, dist + 1);
+        if (isNavigable(i + 1, j) && isValid(maze, visited, i + 1, j)) {
+            minimumDistance = findShortestPath(maze, visited, i + 1, j, x, y, minimumDistance, dist + 1);
         }
 
         // go to top cell
-        if (isNavigable(i - 1, j) && isValid(mat, visited, i - 1, j)) {
-            minimumDistance = findShortestPath(mat, visited, i - 1, j, x, y, minimumDistance, dist + 1);
+        if (isNavigable(i - 1, j) && isValid(maze, visited, i - 1, j)) {
+            minimumDistance = findShortestPath(maze, visited, i - 1, j, x, y, minimumDistance, dist + 1);
         }
 
         // go to right cell
-        if (isNavigable(i, j + 1) && isValid(mat, visited, i, j + 1)) {
-            minimumDistance = findShortestPath(mat, visited, i, j + 1, x, y, minimumDistance, dist + 1);
+        if (isNavigable(i, j + 1) && isValid(maze, visited, i, j + 1)) {
+            minimumDistance = findShortestPath(maze, visited, i, j + 1, x, y, minimumDistance, dist + 1);
         }
 
         // go to left cell
-        if (isNavigable(i, j - 1) && isValid(mat, visited, i, j - 1)) {
-            minimumDistance = findShortestPath(mat, visited, i, j - 1, x, y, minimumDistance, dist + 1);
+        if (isNavigable(i, j - 1) && isValid(maze, visited, i, j - 1)) {
+            minimumDistance = findShortestPath(maze, visited, i, j - 1, x, y, minimumDistance, dist + 1);
         }
 
         // Backtrack - Reset and remove (i, j) from visited matrix
@@ -77,7 +77,7 @@ public class ShortestPath {
         int minDistance = findShortestPath(mat, visited, 0, 0, 7, 5, Integer.MAX_VALUE, 0);
 
         if (minDistance != Integer.MAX_VALUE) {
-            System.out.println("The shortest path from source to destination has length " + minDistance);
+            System.out.println("The shortest path from source to destination has length: " + minDistance);
         }
         else {
             System.out.println("Destination can't be reached from source");

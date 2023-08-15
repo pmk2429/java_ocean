@@ -5,8 +5,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Find if there is a subarray with 0 sum
- * Given an array of positive and negative numbers, find if there is a subarray (of size at-least one) with 0 sum.
+ * Find if there is a continuous sub-array with 0 sum.
+ * Given an array of positive and negative numbers, find if there is a sub-array (of size at-least one) with 0 sum.
  * Examples :
  * <p>
  * Input: {4, 2, -3, 1, 6}

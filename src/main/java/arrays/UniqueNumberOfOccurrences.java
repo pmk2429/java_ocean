@@ -6,7 +6,8 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * Given an array of integers arr, return true if the number of occurrences of each value in the array is unique or false otherwise.
+ * Given an array of integers arr, return true if the number of occurrences of each value in the array is unique
+ * or false otherwise.
  * <p>
  * Example 1:
  * ----------
@@ -33,17 +34,16 @@ public class UniqueNumberOfOccurrences {
 
     private static boolean uniqueOccurrences(int[] arr) {
         // Store the frequency of elements in the unordered map.
-        Map<Integer, Integer> freq = new HashMap<>();
+        Map<Integer, Integer> freqMap = new HashMap<>();
         for (int num : arr) {
-            freq.put(num, freq.getOrDefault(num, 0) + 1);
+            freqMap.put(num, freqMap.getOrDefault(num, 0) + 1);
         }
 
         // Store the frequency count of elements in the unordered set.
-        Set<Integer> freqSet = new HashSet<>(freq.values());
+        Set<Integer> freqSet = new HashSet<>(freqMap.values());
 
-        // If the set size is equal to the map size,
-        // It implies frequency counts are unique.
-        return freq.size() == freqSet.size();
+        // If the set size is equal to the map size, it implies frequency counts are unique.
+        return freqMap.size() == freqSet.size();
     }
 
     public static void main(String[] args) {

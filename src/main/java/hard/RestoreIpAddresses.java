@@ -14,7 +14,7 @@ import java.util.List;
  * Input: "25525511135"
  * Output: ["255.255.11.135", "255.255.111.35"]
  * <p>
- * ~!@#HARD:REVISEti
+ * ~!@#HARD:REVISE
  *
  */
 public class RestoreIpAddresses {
@@ -67,7 +67,7 @@ public class RestoreIpAddresses {
                     updateOutput(currPos);  // add the solution to output
                 }
                 else {
-                    dfs(currPos, dots - 1); // continue to place dots
+                    dfs(currPos, dots - 1); // we already consumed one dot. Continue to place dots
                 }
                 segments.removeLast();  // remove the last placed dot
             }

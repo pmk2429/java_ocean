@@ -6,19 +6,14 @@ public class ReplaceWhiteSpace {
     private static String replaceWithWhiteSpace(String str) {
         char[] strArr = str.toCharArray();
         int length = str.length();
-        int i, spaceCount = 0;
-        for (i = 0; i < length; i++) {
-            if (strArr[i] == ' ') {
-                spaceCount++;
-            }
-        }
+        int spaceCount = (int) str.chars().filter(ch -> ch == ' ').count();
         // count newLength of the array.
         int newLength = length + spaceCount * 2;
         // increase the length of the array
         strArr = Arrays.copyOf(strArr, newLength);
         // now loop through array
-        for (i = length - 1; i >= 0; i--) {
-            if (strArr[i] == ' ') {
+        for (int i = length - 1; i >= 0; i--) {
+            if (Character.isWhitespace(strArr[i])) {
                 strArr[newLength - 1] = '0';
                 strArr[newLength - 2] = '2';
                 strArr[newLength - 3] = '%';

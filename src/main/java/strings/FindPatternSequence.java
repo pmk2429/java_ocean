@@ -1,4 +1,4 @@
-package pattern;
+package strings;
 
 /**
  * Count of occurrences of a “1(0+)1” pattern in a string
@@ -25,6 +25,12 @@ package pattern;
  */
 public class FindPatternSequence {
 
+    /**
+     * 1. Iterate through index ‘0’ to ‘n-1’.
+     * 2. If we encounter a ‘1’, we iterate till the elements are ‘0’.
+     * 3. After the stream of zeros ends, we check whether we encounter a ‘1’ or not.
+     * 4. Keep on doing this till we reach the end of string.
+     */
     private static int findTotalSequence(String str) {
         int totalSequence = 0;
         boolean startSequence = false;

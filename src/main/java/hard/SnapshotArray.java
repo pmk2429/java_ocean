@@ -33,26 +33,34 @@ import java.util.TreeMap;
  */
 public class SnapshotArray {
 
-    private final TreeMap<Integer, Integer>[] A;
+    private final TreeMap<Integer, Integer>[] arrayMap;
     private int snapId = 0;
 
     public SnapshotArray(int length) {
-        A = new TreeMap[length];
+        arrayMap = new TreeMap[length];
         for (int i = 0; i < length; i++) {
-            A[i] = new TreeMap<>();
-            A[i].put(0, 0);
+            arrayMap[i] = new TreeMap<>();
+            arrayMap[i].put(0, 0);
         }
     }
 
     public void set(int index, int val) {
-        A[index].put(snapId, val);
+        arrayMap[index].put(snapId, val);
     }
 
     public int snap() {
         return snapId++;
     }
 
-    public int get(int index, int snap_id) {
-        return A[index].floorEntry(snap_id).getValue();
+    public int get(int index, int snapId) {
+        return arrayMap[index].floorEntry(snapId).getValue();
+    }
+
+    public static void main(String[] args) {
+        SnapshotArray snapshotArr = new SnapshotArray(3);
+        snapshotArr.set(0, 5);
+        snapshotArr.snap();
+        snapshotArr.set(0, 6);
+        snapshotArr.get(0, 0);
     }
 }

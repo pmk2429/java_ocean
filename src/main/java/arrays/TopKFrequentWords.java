@@ -106,5 +106,9 @@ public class TopKFrequentWords {
         String[] str2 = {"the", "day", "is", "sunny", "the", "the", "the", "sunny", "is", "is"};
         int k2 = 4;
         System.out.println(topKFrequentWordsUsingHeap(str2, k2));
+
+        String[] lexicographical = {"blueberry", "apricot", "banana", "apple", "pineapple", "pear", "pizza"};
+        int k3 = 7;
+        System.out.println(topKFrequentWordsUsingHeap(lexicographical, k3));
     }
 }

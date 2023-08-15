@@ -37,15 +37,15 @@ public class FindExtraChar {
     }
 
     private static char findExtraCharByComparison(String strA, String strB) {
-        char notPresent = '#';
+        char extraChar = '\0';
         for (int i = 0; i < strB.length(); i++) {
             char curBChar = strB.charAt(i);
             if (strA.indexOf(curBChar) < 0) {
-                notPresent = curBChar;
+                extraChar = curBChar;
                 break;
             }
         }
-        return notPresent;
+        return extraChar;
     }
 
     public static void main(String[] args) {

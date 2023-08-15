@@ -17,14 +17,6 @@ import java.util.Arrays;
  */
 public class RotateArray {
 
-    private static void rightRotate(int[] arr, int distance) {
-
-    }
-
-    private static void leftRotate(int[] arr, int distance) {
-
-    }
-
     private static void reverse(int[] arr, int left, int right) {
         if (arr == null || arr.length <= 0) {
             return;
@@ -61,15 +53,15 @@ public class RotateArray {
         // distance iteration
         for (int i = 0; i < distance; i++) {
             // arr iteration
-            int temp = arr[0];
             int length = arr.length;
+            int temp = arr[0];
             for (int d = 0; d < length - 1; d++) {
                 arr[d] = arr[d + 1];
             }
             arr[length - 1] = temp;
         }
 
-        System.out.println("Rotate Right: " + Arrays.toString(arr));
+        System.out.println("Rotate Left: " + Arrays.toString(arr));
     }
 
     private static void rotateArrayRight(int[] arr, int distance) {
@@ -84,7 +76,7 @@ public class RotateArray {
             arr[0] = temp;
         }
 
-        System.out.println("Rotate Left: " + Arrays.toString(arr));
+        System.out.println("Rotate Right: " + Arrays.toString(arr));
     }
 
     public static void main(String[] args) {

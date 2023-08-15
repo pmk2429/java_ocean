@@ -1,7 +1,6 @@
 package strings;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 /**
  * We are given two sentences A and B. (A sentence is a string of space separated words.
@@ -30,8 +29,8 @@ public class UncommonWords {
     private static String[] uncommonWords(String a, String b) {
         String[] aWords = a.split(" ");
         String[] bWords = b.split(" ");
-        List<String> uncommonWords = new ArrayList<>();
-        HashMap<String, Integer> wordsMap = new HashMap<>();
+        Set<String> uncommonWords = new HashSet<>();
+        Map<String, Integer> wordsMap = new HashMap<>();
         for (String aWord : aWords) {
             wordsMap.put(aWord, wordsMap.getOrDefault(aWord, 0) + 1);
         }
@@ -46,9 +45,14 @@ public class UncommonWords {
             }
         }
 
-        String[] stockArr = new String[uncommonWords.size()];
-        stockArr = uncommonWords.toArray(stockArr);
-        return stockArr;
+        /*
+        Set<String> uncommonWords = wordsMap.entrySet().stream()
+            .filter(entryMap -> entryMap.getValue() == 1)
+            .map(Map.Entry::getKey)
+            .collect(Collectors.toSet());
+         */
+
+        return uncommonWords.toArray(new String[0]);
     }
 
     public static void main(String[] args) {

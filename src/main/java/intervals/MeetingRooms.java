@@ -2,6 +2,7 @@ package intervals;
 
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.List;
 import java.util.PriorityQueue;
 
 /**
@@ -32,7 +33,7 @@ import java.util.PriorityQueue;
  */
 public class MeetingRooms {
 
-    public int minMeetingRooms(Interval[] intervals) {
+    private static int minMeetingRooms(Interval[] intervals) {
 
         // Check for the base case. If there are no intervals, return 0
         if (intervals.length == 0) {
@@ -51,7 +52,8 @@ public class MeetingRooms {
         // Iterate over remaining intervals
         for (int i = 1; i < intervals.length; i++) {
             // If the room due to free up the earliest is free, assign that room to this meeting
-            if (intervals[i].start >= scheduler.peek()) {
+            if (!scheduler.isEmpty() && intervals[i].start >= scheduler.peek()) {
+                // new meeting starts after the current meeting and so interview room freed up
                 scheduler.poll();
             }
 
@@ -65,7 +67,12 @@ public class MeetingRooms {
     }
 
     public static void main(String[] args) {
-
+        List<Interval> intervals = Arrays.asList(
+            new Interval(0, 30),
+            new Interval(5, 10),
+            new Interval(15, 20)
+        );
+        System.out.println(minMeetingRooms(intervals.toArray(new Interval[0])));
     }
 }
 

@@ -4,27 +4,13 @@ import java.util.Scanner;
 import java.util.Stack;
 
 public class BinaryConversion {
-    public static void main(String[] args) {
-        BinaryConversion dtb = new BinaryConversion();
-
-        System.out.println("Enter Decimal number: ");
-        System.out.print("> ");
-        Scanner input = new Scanner(System.in);
-        int decimalNumber = input.nextInt();
-        input.close();
-
-        Stack<Integer> binaryData = dtb.convertToBinary(decimalNumber);
-        dtb.printBinary(binaryData);
-    }
-
     /**
      * convertToBinary(int) method receives integer as an input parameter and
      * converts the number to its equivalent binary representation.
      */
     public Stack<Integer> convertToBinary(int decimalNumber) {
-        int remainder;
         Stack<Integer> binaryData = new Stack<>();
-
+        int remainder;
         do {
             remainder = decimalNumber % 2;
             decimalNumber = decimalNumber / 2;
@@ -58,5 +44,18 @@ public class BinaryConversion {
             int data = binaryInfo.pop();
             System.out.print(data);
         }
+    }
+
+    public static void main(String[] args) {
+        BinaryConversion dtb = new BinaryConversion();
+
+        System.out.println("Enter Decimal number: ");
+        System.out.print("> ");
+        Scanner input = new Scanner(System.in);
+        int decimalNumber = input.nextInt();
+        input.close();
+
+        Stack<Integer> binaryData = dtb.convertToBinary(decimalNumber);
+        dtb.printBinary(binaryData);
     }
 }

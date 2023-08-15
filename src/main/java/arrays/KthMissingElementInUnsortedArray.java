@@ -1,8 +1,8 @@
 package arrays;
 
 import java.util.Arrays;
-import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * Given an unsorted sequence a[], the task is to find the K-th missing contiguous element in the increasing sequence
@@ -25,13 +25,8 @@ import java.util.Set;
  */
 public class KthMissingElementInUnsortedArray {
     private static int findKthMissing(int[] arr, int k) {
-        Set<Integer> missing = new HashSet<>();
+        Set<Integer> missing = Arrays.stream(arr).boxed().collect(Collectors.toSet());
         int count = 0;
-
-        // Insert all the elements in a set
-        for (int val : arr) {
-            missing.add(val);
-        }
 
         // Find the maximum and minimum element
         int min = Arrays.stream(arr).min().getAsInt();
@@ -56,7 +51,6 @@ public class KthMissingElementInUnsortedArray {
 
     public static void main(String[] args) {
         int[] arr = {2, 10, 9, 4};
-        int n = arr.length;
         int k = 5;
 
         System.out.println(findKthMissing(arr, k));

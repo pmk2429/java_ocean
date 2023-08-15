@@ -88,7 +88,7 @@ public class Pangram {
     }
 
     public static void main(String[] args) {
-        String str = "The quick brown fox jump over the lazy dog";
+        String str = "The quick brown fox jumps over the lazy dog";
         System.out.println(isPangram(str));
     }
 }

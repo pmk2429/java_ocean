@@ -16,7 +16,7 @@ public class FrequencyOfElements {
     this is handled by storing the counts as negative. Other problem is losing the element which is replaced by count,
     this is handled by first storing the element to be replaced at current index.
      */
-    private static void frequency(int[] arr) {
+    private static void inplaceFrequency(int[] arr) {
         int length = arr.length;
         int i = 0;
 
@@ -58,6 +58,6 @@ public class FrequencyOfElements {
 
     public static void main(String[] args) {
         int[] arr = {4, 3, 3, 2, 4, 5, 3};
-        frequency(arr);
+        inplaceFrequency(arr);
     }
 }

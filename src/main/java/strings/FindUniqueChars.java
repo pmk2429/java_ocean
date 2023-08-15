@@ -44,8 +44,8 @@ public class FindUniqueChars {
     private static String distinctCharsO1Space(String str) {
         StringBuilder sbr = new StringBuilder();
         int[] charFreq = new int[256];
-        for (int i = 0; i < str.length(); i++) {
-            charFreq[str.charAt(i)]++;
+        for (char c : str.toCharArray()) {
+            charFreq[c]++;
         }
 
         for (int i = 0; i < charFreq.length; i++) {

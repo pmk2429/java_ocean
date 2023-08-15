@@ -37,12 +37,12 @@ public class RemoveMinimumForUnique {
         Map<Integer, Integer> countA = new HashMap<>();
         Map<Integer, Integer> countB = new HashMap<>();
 
-        for (int val : a) {
-            countA.put(val, countA.getOrDefault(val, 0) + 1);
+        for (int num : a) {
+            countA.put(num, countA.getOrDefault(num, 0) + 1);
         }
 
-        for (int val : b) {
-            countB.put(val, countB.getOrDefault(val, 0) + 1);
+        for (int num : b) {
+            countB.put(num, countB.getOrDefault(num, 0) + 1);
         }
 
         int res = 0;

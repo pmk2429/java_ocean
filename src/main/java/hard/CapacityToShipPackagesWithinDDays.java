@@ -66,6 +66,10 @@ public class CapacityToShipPackagesWithinDDays {
         return daysNeeded <= days;
     }
 
+    /**
+     * Based on the intuition, it's obvious that the load capacity would be somewhere in the range of
+     * MAX_WEIGHT <= TOTAL_WEIGHT so using the binary search problem, we can set our bounds accordingly.
+     */
     private static int shipWithinDays(int[] weights, int days) {
         int maxLoad, l = Arrays.stream(weights).max().getAsInt();
         int totalLoad, r = Arrays.stream(weights).sum();

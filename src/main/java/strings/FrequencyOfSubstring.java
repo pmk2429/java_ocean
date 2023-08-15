@@ -8,13 +8,13 @@ import java.util.regex.Pattern;
  */
 public class FrequencyOfSubstring {
 
-    public static boolean isEmpty(String s) {
+    public static boolean isNullOrEmpty(String s) {
         return s == null || s.length() == 0;
     }
 
     /* Counts how many times the substring appears in the larger string. */
     public static int countMatches(String text, String sub) {
-        if (isEmpty(text) || isEmpty(sub)) {
+        if (isNullOrEmpty(text) || isNullOrEmpty(sub)) {
             return 0;
         }
 

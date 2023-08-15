@@ -5,7 +5,7 @@ import java.util.Objects;
 /**
  * For the purposes of this interview, imagine that we own a store. This
  * store doesn't always have customers shopping: there might be some long
- * stretches of time where no customers enter the store. We've asked our
+ * stretches of time when no customers enter the store. We've asked our
  * employees to write simple notes to keep track of when customers are
  * shopping and when they aren't by simply writing a single letter every
  * hour: 'Y' if there were customers during that hour, 'N' if the store

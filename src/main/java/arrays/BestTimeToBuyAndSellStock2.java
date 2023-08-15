@@ -22,17 +22,17 @@ package arrays;
  * Similar to {@link DailyTemperatures}.
  * ~!@#HARD:REVISE
  */
-public class TimeToBuyStock {
+public class BestTimeToBuyAndSellStock2 {
     private static int maxProfit(int[] prices) {
-        int leastPriceSoFar = Integer.MAX_VALUE;
+        int minPrice = Integer.MAX_VALUE;
         int maxProfit = 0;
         int currProfit = 0;
 
         for (int price : prices) {
-            if (price < leastPriceSoFar) {
-                leastPriceSoFar = price;
+            if (price < minPrice) {
+                minPrice = price;
             }
-            currProfit = price - leastPriceSoFar;
+            currProfit = price - minPrice;
             if (currProfit > maxProfit) {
                 maxProfit = currProfit;
             }

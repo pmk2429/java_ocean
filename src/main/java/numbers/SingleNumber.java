@@ -39,8 +39,18 @@ public class SingleNumber {
         return multipleNum;
     }
 
+    private static int singleNumber2(int[] nums) {
+        int a = 0;
+        for (int i : nums) {
+            a ^= i;
+        }
+        return a;
+    }
+
     public static void main(String[] args) {
-        int[] nums = {1, 2, 3, 4, 3, 5, 6};
+        int[] nums = {1, 2, 6, 5, 4, 2, 7, 8};
         System.out.println(singleNumberOn(nums));
+        int[] nums2 = {4, 1, 2, 1, 2};
+        System.out.println(singleNumber2(nums2));
     }
 }

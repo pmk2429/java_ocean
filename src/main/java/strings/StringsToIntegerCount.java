@@ -1,29 +1,24 @@
 package strings;
 
 import java.util.LinkedHashMap;
+import java.util.Map;
 
 /**
  * String text = "1,2,3,4,1,2,3,4,1,2,3,4,1,2";
  */
 public class StringsToIntegerCount {
 
-    public static void main(String[] args) {
-        String text = "1,2,3,4,1,2,3,4,1,2,3,4,1,2";
-        LinkedHashMap<Integer, Integer> freqMap = getFrequency(text);
-        printNumberFrequency(freqMap);
-    }
-
-    private static LinkedHashMap<Integer, Integer> getFrequency(String str) {
+    private static Map<Integer, Integer> getFrequency(String str) {
         if (str == null) return null;
         // split the String into numbers using ',' delimiter
-        String[] numString = str.split(",");
+        String[] numString = str.trim().split(",");
 
         // LinkedHashMap to maintain the insertion order of elements (as requirement given in question)
-        LinkedHashMap<Integer, Integer> numFreq = new LinkedHashMap<>();
+        Map<Integer, Integer> numFreq = new LinkedHashMap<>();
 
         // loop through the numString array which is a String array and then parse it one by one
         for (String s : numString) {
-            Integer currNum = Integer.valueOf(s);
+            Integer currNum = Integer.parseInt(s);
             // if the num is already in the Map, increment the count, else add it to Map
             numFreq.put(currNum, numFreq.getOrDefault(currNum, 0) + 1);
         }
@@ -31,8 +26,13 @@ public class StringsToIntegerCount {
         return numFreq;
     }
 
-    // PrintMap function using Java8
-    private static void printNumberFrequency(LinkedHashMap<Integer, Integer> numFreqMap) {
+    private static void printNumberFrequency(Map<Integer, Integer> numFreqMap) {
         numFreqMap.forEach((key, value) -> System.out.println(key + " is present " + value + " times"));
+    }
+
+    public static void main(String[] args) {
+        String text = "1,2,3,4,1,2,3,4,1,2,3,4,1,2";
+        Map<Integer, Integer> freqMap = getFrequency(text);
+        printNumberFrequency(freqMap);
     }
 }

@@ -49,7 +49,9 @@ import java.util.Map;
 public class WordChain {
 
     private static int longestWordChain(String[] words) {
-        if (words == null || words.length == 0) return 0;
+        if (words == null || words.length == 0) {
+            return 0;
+        }
         int res = 0;
         Arrays.sort(words, Comparator.comparingInt(String::length)); // Sort the words based on their lengths
         Map<String, Integer> map = new HashMap<>(); // Stores each word and length of its max chain.
@@ -78,6 +80,5 @@ public class WordChain {
         System.out.println(longestWordChain(words2));
         String[] ransomMagazine = {"a", "b"};
         System.out.println(longestWordChain(ransomMagazine));
-
     }
 }

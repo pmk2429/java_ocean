@@ -3,7 +3,7 @@ package arrays.subs;
 import java.util.Arrays;
 
 /**
- * Length of the longest alternating sub array
+ * Length of the continuous longest alternating sub array.
  * Given an array of N including positive and negative numbers only. The task is to find the length of the
  * longest alternating (means negative-positive-negative or positive-negative-positive) sub array present in the array.
  * <p>
@@ -19,6 +19,7 @@ import java.util.Arrays;
 public class AlternatingSubArray {
     public static int longestAlternating(int[] arr, int n) {
         int[] count = new int[n];
+        // update the last index to 1
         count[n - 1] = 1;
         for (int i = n - 2; i >= 0; i--) {
             if (arr[i] * arr[i + 1] < 0) {
@@ -31,7 +32,6 @@ public class AlternatingSubArray {
         return Arrays.stream(count).max().getAsInt();
     }
 
-    // driver program
     public static void main(String[] args) {
         int[] a = {-5, -1, -1, 2, -2, -3};
         System.out.println(longestAlternating(a, a.length));

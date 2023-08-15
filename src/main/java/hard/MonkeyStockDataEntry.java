@@ -1,12 +1,15 @@
 package hard;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Random;
 
 public class MonkeyStockDataEntry {
 
-    private final ArrayList<Integer> arr; // A resizable array
+    private final ArrayList<Integer> arr;
     private int max = Integer.MIN_VALUE;
-    private final int min = Integer.MAX_VALUE;
+    private int min = Integer.MAX_VALUE;
 
     // A hash where keys are array elements and values are indexes in arr[]
     private final HashMap<Integer, Integer> hash;
@@ -24,15 +27,15 @@ public class MonkeyStockDataEntry {
             return;
         }
 
-        // Else put element at the end of arr[]
         int lastIndex = arr.size();
         arr.add(x);
-
-        // And put in hash with itx index
         hash.put(x, lastIndex);
 
         if (x > max) {
             max = x;
+        }
+        if (x < min) {
+            min = x;
         }
     }
 
@@ -62,11 +65,8 @@ public class MonkeyStockDataEntry {
 
     // Returns a random element from MonkeyStockDataEntry
     int getRandom() {
-        // Find a random index from 0 to size - 1
         Random rand = new Random();  // Choose a different seed
         int index = rand.nextInt(arr.size());
-
-        // Return element at randomly picked index
         return arr.get(index);
     }
 

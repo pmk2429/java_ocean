@@ -34,7 +34,7 @@ package hard;
  */
 public class ShortestWayToFormAString {
 
-    private static int shortestWay(String source, String target) {
+    private static int minSubsequencesRequired(String source, String target) {
         int[] chars = new int[26];
 
         for (char c : source.toCharArray()) {
@@ -68,8 +68,8 @@ public class ShortestWayToFormAString {
 
     public static void main(String[] args) {
         String source = "abc", target = "abcbc";
-        System.out.println(shortestWay(source, target));
+        System.out.println(minSubsequencesRequired(source, target));
         String source1 = "xyz", target1 = "xzyxz";
-        System.out.println(shortestWay(source1, target1));
+        System.out.println(minSubsequencesRequired(source1, target1));
     }
 }

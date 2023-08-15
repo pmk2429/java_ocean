@@ -22,12 +22,14 @@ import java.util.Set;
  */
 public class LongestCommonSubstring {
     private static Set<String> longestCommonSubstrings(String s, String t) {
-        int[][] table = new int[s.length()][t.length()];
+        int sLength = s.length();
+        int tLength = t.length();
+        int[][] table = new int[sLength][tLength];
         int longest = 0;
         Set<String> result = new HashSet<>();
 
-        for (int i = 0; i < s.length(); i++) {
-            for (int j = 0; j < t.length(); j++) {
+        for (int i = 0; i < sLength; i++) {
+            for (int j = 0; j < tLength; j++) {
                 if (s.charAt(i) != t.charAt(j)) {
                     continue;
                 }

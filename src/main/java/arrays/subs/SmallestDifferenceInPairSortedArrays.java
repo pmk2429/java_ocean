@@ -31,7 +31,7 @@ public class SmallestDifferenceInPairSortedArrays {
 
         while (i < m && j < n) {
             // store the min difference and keep updating on each iteration
-            int currDiff = Math.abs(A[i]) - Math.abs(B[j]);
+            int currDiff = Math.abs(A[i] - B[j]);
             if (currDiff < minDiff) {
                 minDiff = currDiff;
             }

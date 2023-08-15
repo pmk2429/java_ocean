@@ -77,14 +77,18 @@ public class StockPriceFluctuation {
         maxHeap.add(new int[]{price, timestamp});
     }
 
+    /**
+     * Return latest price of the stock.
+     */
     public int current() {
-        // Return latest price of the stock.
         return timestampPriceMap.get(latestTime);
     }
 
+    /**
+     * Pop pairs from heap with the price doesn't match with hashmap.
+     */
     public int maximum() {
         int[] top = maxHeap.peek();
-        // Pop pairs from heap with the price doesn't match with hashmap.
         while (timestampPriceMap.get(top[1]) != top[0]) {
             maxHeap.poll();
             top = maxHeap.peek();
@@ -95,12 +99,15 @@ public class StockPriceFluctuation {
 
     public int minimum() {
         int[] top = minHeap.peek();
-        // Pop pairs from heap with the price doesn't match with hashmap.
         while (timestampPriceMap.get(top[1]) != top[0]) {
             minHeap.poll();
             top = minHeap.peek();
         }
 
         return top[0];
+    }
+
+    public static void main(String[] args) {
+        StockPriceFluctuation stockPrice = new StockPriceFluctuation();
     }
 }
