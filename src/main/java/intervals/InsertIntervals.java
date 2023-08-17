@@ -16,7 +16,7 @@ import java.util.Arrays;
  * Input: intervals = [[1,2],[3,5],[6,7],[8,10],[12,16]], newInterval = [4,8]
  * Output: [[1,2],[3,10],[12,16]]
  * Explanation: Because the new interval [4,8] overlaps with [3,5],[6,7],[8,10].
- *
+ * <p>
  * ~!@#HARD:REVISE
  */
 public class InsertIntervals {
@@ -27,6 +27,7 @@ public class InsertIntervals {
         // Time : O(n) Space : O(n)
         if (newInterval == null) return intervals;
 
+        // intuition to add newInterval considering there's no overlapping interval
         int[][] ans = new int[M + 1][2];
 
         int i = 0;
@@ -36,7 +37,7 @@ public class InsertIntervals {
         int end = newInterval[1];
 
         // loop through `intervals` and compare `end` of each `intervals` with the `start` of `newInterval`
-        while (i < M && intervals[i][1] < start) {
+        while (i < M && start > intervals[i][1]) {
             ans[idx][0] = intervals[i][0];
             ans[idx][1] = intervals[i][1];
             idx++;
@@ -50,6 +51,7 @@ public class InsertIntervals {
             i++;
         }
 
+        // assign the updated newInterval start and end to ans
         ans[idx][0] = newInterval[0];
         ans[idx][1] = newInterval[1];
         idx++;

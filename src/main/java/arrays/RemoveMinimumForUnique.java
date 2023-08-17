@@ -33,7 +33,7 @@ import java.util.Map;
  */
 public class RemoveMinimumForUnique {
 
-    private static int minRemove(int[] a, int[] b, int m, int n) {
+    private static int minRemove(int[] a, int[] b) {
         Map<Integer, Integer> countA = new HashMap<>();
         Map<Integer, Integer> countB = new HashMap<>();
 
@@ -58,9 +58,6 @@ public class RemoveMinimumForUnique {
     public static void main(String[] args) {
         int[] a = {1, 2, 3, 4};
         int[] b = {2, 3, 4, 5, 8, 4, 8, 7, 9, 3, 4};
-        int n = a.length;
-        int m = b.length;
-
-        System.out.println(minRemove(a, b, n, m));
+        System.out.println(minRemove(a, b));
     }
 }

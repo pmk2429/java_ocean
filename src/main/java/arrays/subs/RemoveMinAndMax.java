@@ -38,7 +38,9 @@ public class RemoveMinAndMax {
         int min = Integer.MAX_VALUE;
         int max = Integer.MIN_VALUE;
 
-        for (int i = 0; i < nums.length; i++) {
+        int n = nums.length;
+
+        for (int i = 0; i < n; i++) {
             if (nums[i] < min) {
                 min = nums[i];
                 minIdx = i;
@@ -50,13 +52,11 @@ public class RemoveMinAndMax {
             }
         }
 
-
-        int n = nums.length;
-
         int firstDiff = Math.max(maxIdx, minIdx) + 1;
         int lastDiff = n - Math.min(maxIdx, minIdx);
         int midDiff = n - Math.max(maxIdx, minIdx) + Math.min(maxIdx, minIdx) + 1;
 
+        // return lowest of 3
         return Math.min(Math.min(firstDiff, lastDiff), midDiff);
     }
 

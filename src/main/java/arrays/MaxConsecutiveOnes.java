@@ -29,23 +29,44 @@ package arrays;
  */
 public class MaxConsecutiveOnes {
 
-    private static int maxConsecutiveOnes(int[] nums, int k) {
-        int left = 0, right;
-        for (right = 0; right < nums.length; right++) {
-            // If we included a zero in the window we reduce the value of k.
-            // Since k is the maximum zeros allowed in a window.
-            if (nums[right] == 0) {
-                k--;
+    private static int maxConsecutiveOnes(int[] nums) {
+        int count = 0;
+        int maxCount = Integer.MIN_VALUE;
+
+        for (int num : nums) {
+            if (num == 1) {
+                count++;
             }
-            // A negative k denotes we have consumed all allowed flips and window has
-            // more than allowed zeros, thus increment left pointer by 1 to keep the window size same.
-            if (k < 0) {
-                // If the left element to be thrown out is zero we increase k.
-                k += 1 - nums[left];
-                left++;
+            else {
+                maxCount = Math.max(maxCount, count);
+                count = 0;
             }
         }
-        return right - left;
+
+        return Math.max(maxCount, count);
+    }
+
+    /**
+     * Sliding window problem
+     * ======================
+     * If we included a zero in the window we reduce the value of k.
+     * Since k is the maximum zeros allowed in a window.
+     * A negative k denotes we have consumed all allowed flips and window has
+     * more than allowed zeros, thus increment left pointer by 1 to keep the window size same.
+     * If the left element to be thrown out is zero we increase k.
+     */
+    private static int maxConsecutiveOnes(int[] nums, int k) {
+        int i = 0, j;
+        for (j = 0; j < nums.length; j++) {
+            if (nums[j] == 0) {
+                k--;
+            }
+            if (k < 0) {
+                k += 1 - nums[i];
+                i++;
+            }
+        }
+        return j - i;
     }
 
     public static void main(String[] args) {

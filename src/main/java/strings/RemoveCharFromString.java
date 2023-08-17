@@ -33,8 +33,7 @@ public class RemoveCharFromString {
 
     private static String removeChar(String original, char character) {
         StringBuilder sb = new StringBuilder();
-        char[] sArr = original.toCharArray();
-        for (char c : sArr) {
+        for (char c : original.toCharArray()) {
             if (character != c) {
                 sb.append(c);
             }

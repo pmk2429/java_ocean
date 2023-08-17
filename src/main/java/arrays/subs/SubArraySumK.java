@@ -1,6 +1,7 @@
 package arrays.subs;
 
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Given an array of integers and an integer k, you need to find the total number of continuous subarrays whose sum equals to k.
@@ -17,7 +18,7 @@ public class SubArraySumK {
 
     private static int subArraySum(int[] nums, int target) {
         int count = 0, sum = 0;
-        HashMap<Integer, Integer> map = new HashMap<>();
+        Map<Integer, Integer> map = new HashMap<>();
         map.put(0, 1);
         for (int num : nums) {
             sum += num;

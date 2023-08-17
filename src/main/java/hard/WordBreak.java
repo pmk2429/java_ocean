@@ -63,7 +63,7 @@ public class WordBreak {
         queue.add(0);
 
         while (!queue.isEmpty()) {
-            int start = queue.remove();
+            int start = queue.poll();
             // if not visited
             if (visited[start] == 0) {
                 for (int end = start + 1; end <= length; end++) {
@@ -88,7 +88,7 @@ public class WordBreak {
         Deque<Integer> queue = new ArrayDeque<>();
         List<String> res = new ArrayList<>();
 
-        queue.add(0);
+        queue.offer(0); // queue.add() || queue.addLast()
 
         while (!queue.isEmpty()) {
             // int start = queue.poll() || queue.remove() || queue.removeFirst();
@@ -104,7 +104,7 @@ public class WordBreak {
                     if (end == length) {
                         break;
                     }
-                    queue.add(end);  // queue.offer() || queue.addLast()
+                    queue.offer(end); // queue.add() || queue.addLast()
                 }
                 // mark visited
                 visited[start] = 1;

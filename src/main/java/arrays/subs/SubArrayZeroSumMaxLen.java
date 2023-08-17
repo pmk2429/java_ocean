@@ -41,7 +41,6 @@ public class SubArrayZeroSumMaxLen {
         return maxLen;
     }
 
-    // Drive method
     public static void main(String[] arg) {
         int[] arr = {15, -2, 2, -8, 1, 7, 10, 23};
         System.out.println("Length of the longest 0 sum subarray is " + maxLen(arr));
