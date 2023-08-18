@@ -41,7 +41,7 @@ public class FindMinRotatedSortedArray {
         System.out.println(Arrays.toString(nums) + " rotateIndex -> " + rotateIndex);
         int minElem = nums[rotateIndex];
         System.out.println(Arrays.toString(nums) + " min element -> " + minElem);
-        int maxElem = nums[rotateIndex  - 1];
+        int maxElem = nums[rotateIndex - 1];
         System.out.println(Arrays.toString(nums) + " max element -> " + maxElem);
     }
 }

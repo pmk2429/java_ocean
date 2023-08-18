@@ -1,4 +1,4 @@
-package hard;
+package intervals;
 
 import java.util.Arrays;
 
@@ -60,8 +60,11 @@ public class MinArrowsBurstBalloons {
             return 1;
         });
 
+        // OR
+        // Arrays.sort(points, Comparator.comparingInt(a -> a[1]));
+
         int arrows = 1;
-        int xStart, xEnd, firstEnd = points[0][1];
+        int xStart, xEnd, firstEnd = points[0][1]; // firstEnd points to `end` of first sorted point
         for (int[] point : points) {
             xStart = point[0];
             xEnd = point[1];
@@ -83,5 +86,9 @@ public class MinArrowsBurstBalloons {
             {7, 12}
         };
         System.out.println(findMinArrowShots(points));
+        int[][] balloons = {
+            {1, 2}, {2, 3}, {3, 4}, {4, 5}
+        };
+        System.out.println(findMinArrowShots(balloons));
     }
 }

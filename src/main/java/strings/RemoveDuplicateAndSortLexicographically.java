@@ -25,6 +25,9 @@ import java.util.*;
  */
 public class RemoveDuplicateAndSortLexicographically {
 
+    /**
+     * For String `cbacdcbc` this method will return `abcd`
+     */
     private static String removeDuplicatesPQ(String s) {
         Map<Character, Integer> charMap = new HashMap<>();
         for (char c : s.toCharArray()) {
@@ -45,6 +48,9 @@ public class RemoveDuplicateAndSortLexicographically {
         return sb.toString();
     }
 
+    /**
+     * For string `cbacdcbc` this method will return `acdb`
+     */
     private static String removeDuplicateLetters(String s) {
         Stack<Character> stack = new Stack<>();
 

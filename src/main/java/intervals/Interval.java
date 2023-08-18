@@ -9,4 +9,14 @@ public class Interval {
         this.start = start;
         this.end = end;
     }
+
+    public String toString() {
+        if (start <= 0) {
+            return "( <= " + end + ")";
+        }
+        if (end <= 0) {
+            return "(" + start + " >= )";
+        }
+        return "(" + start + ", " + end + ")";
+    }
 }

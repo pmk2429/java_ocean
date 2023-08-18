@@ -19,9 +19,9 @@ import java.util.stream.Collectors;
  */
 public class ActivitySelectionProblem {
 
-    private static final Comparator<Pair> pairComparator = Comparator.comparingInt(Pair::getFinish);
+    private static final Comparator<Interval> pairComparator = Comparator.comparingInt(i -> i.end);
 
-    public static List<Pair> selectActivity(List<Pair> activities) {
+    public static List<Interval> selectNonOverlappingIntervals(List<Interval> activities) {
         // keeps track of the index of the last selected activity
         int lastSelectedActivity = 0;
 
@@ -40,7 +40,7 @@ public class ActivitySelectionProblem {
             // if the start time of the i'th activity is greater or equal
             // to the finish time of the last selected activity, it
             // can be included in the activities list
-            if (activities.get(i).getStart() >= activities.get(lastSelectedActivity).getFinish()) {
+            if (activities.get(i).start >= activities.get(lastSelectedActivity).end) {
                 result.add(i);
                 lastSelectedActivity = i;
             }
@@ -51,21 +51,21 @@ public class ActivitySelectionProblem {
     }
 
     public static void main(String[] args) {
-        List<Pair> activities = Arrays.asList(
-            new Pair(1, 4),
-            new Pair(3, 5),
-            new Pair(0, 6),
-            new Pair(5, 7),
-            new Pair(3, 8),
-            new Pair(5, 9),
-            new Pair(6, 10),
-            new Pair(8, 11),
-            new Pair(8, 12),
-            new Pair(2, 13),
-            new Pair(12, 14)
+        List<Interval> activities = Arrays.asList(
+            new Interval(1, 4),
+            new Interval(3, 5),
+            new Interval(0, 6),
+            new Interval(5, 7),
+            new Interval(3, 8),
+            new Interval(5, 9),
+            new Interval(6, 10),
+            new Interval(8, 11),
+            new Interval(8, 12),
+            new Interval(2, 13),
+            new Interval(12, 14)
         );
 
-        List<Pair> result = selectActivity(activities);
+        List<Interval> result = selectNonOverlappingIntervals(activities);
         System.out.println(result);
     }
 }

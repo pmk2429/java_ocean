@@ -11,7 +11,7 @@ import java.util.Map;
 public class LRUCacheHashMap {
     private static class Node {
         /**
-         * Here key seems redundant but it'll be used in removal and updating the value..
+         * Here key seems redundant, but it'll be used in removal and updating the value.
          */
         int key;
         int value;

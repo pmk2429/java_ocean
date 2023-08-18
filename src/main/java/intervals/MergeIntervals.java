@@ -12,7 +12,7 @@ public class MergeIntervals {
      */
     private static final Comparator<Interval> intervalComparator = Comparator.comparingInt(i -> i.start);
 
-    public List<Interval> merge(List<Interval> intervals) {
+    private static List<Interval> merge(List<Interval> intervals) {
         intervals.sort(intervalComparator);
         Deque<Interval> merged = new ArrayDeque<>();
         for (Interval interval : intervals) {
@@ -27,5 +27,14 @@ public class MergeIntervals {
         }
 
         return new ArrayList<>(merged);
+    }
+
+    public static void main(String[] args) {
+        List<Interval> intervals = new ArrayList<>() {{
+            add(new Interval(1, 5));
+            add(new Interval(6, 8));
+            add(new Interval(3, 9));
+        }};
+        System.out.println(merge(intervals));
     }
 }

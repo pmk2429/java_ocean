@@ -39,8 +39,8 @@ public class SnapshotArray {
     public SnapshotArray(int length) {
         arrayMap = new TreeMap[length];
         for (int i = 0; i < length; i++) {
-            arrayMap[i] = new TreeMap<>();
-            arrayMap[i].put(0, 0);
+            arrayMap[i] = new TreeMap<>(); // init the TreeMap
+            arrayMap[i].put(0, 0); // init the 2D array in TreeMap
         }
     }
 

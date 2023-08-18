@@ -47,4 +47,13 @@ public class BattleShipsInBoard {
 
         return count;
     }
+
+    public static void main(String[] args) {
+        char[][] battleShips = {
+            {'X', '.', '.', 'X'},
+            {'.', '.', '.', 'X'},
+            {'.', '.', '.', 'X'}
+        };
+        System.out.println(countBattleships(battleShips));
+    }
 }

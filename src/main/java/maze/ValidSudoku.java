@@ -71,12 +71,14 @@ public class ValidSudoku {
                 if (rows[i][pos] == 1) {
                     return false;
                 }
+                // mark the row as visited
                 rows[i][pos] = 1;
 
                 // Check the column
                 if (cols[j][pos] == 1) {
                     return false;
                 }
+                // mark the column as visited
                 cols[j][pos] = 1;
 
                 // Check the box
