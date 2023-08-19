@@ -1,4 +1,4 @@
-package hard;
+package maze;
 
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -52,8 +52,8 @@ public class ShortestPathToGetKeys {
             }
         }
 
-        Node start = new Node(si, sj, 0);
-        Queue<Node> q = new LinkedList<>();
+        NodeInfo start = new NodeInfo(si, sj, 0);
+        Queue<NodeInfo> q = new LinkedList<>();
         q.offer(start);
         Set<String> visited = new HashSet<>();
 
@@ -64,7 +64,7 @@ public class ShortestPathToGetKeys {
         while (!q.isEmpty()) {
             int size = q.size();
             for (int i = 0; i < size; i++) {
-                Node cur = q.poll();
+                NodeInfo cur = q.poll();
                 if (cur.key == (1 << k) - 1) {
                     return level;
                 }
@@ -87,7 +87,7 @@ public class ShortestPathToGetKeys {
                     }
 
                     if (visited.add(x + " " + y + " " + key)) {
-                        q.offer(new Node(x, y, key));
+                        q.offer(new NodeInfo(x, y, key));
                     }
                 }
             }
@@ -113,10 +113,10 @@ public class ShortestPathToGetKeys {
     }
 }
 
-class Node {
+class NodeInfo {
     int i, j, key;
 
-    public Node(int i, int j, int key) {
+    public NodeInfo(int i, int j, int key) {
         this.i = i;
         this.j = j;
         this.key = key;

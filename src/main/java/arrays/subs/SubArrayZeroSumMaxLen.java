@@ -6,39 +6,38 @@ import java.util.Map;
 public class SubArrayZeroSumMaxLen {
     // Returns length of the maximum length sub-array with 0 sum
     private static int maxLen(int[] arr) {
-        // Creates an empty HashMap
-        Map<Integer, Integer> sumMap = new HashMap<>();
+        Map<Integer, Integer> map = new HashMap<>();
 
-        int sum = 0; // Initialize sum of elements
-        int maxLen = 0; // Initialize result
+        int sum = 0;
+        int maxLength = 0;
 
         // Traverse through the given array
         for (int i = 0; i < arr.length; i++) {
             // Add current element to sum
             sum += arr[i];
 
-            if (arr[i] == 0 && maxLen == 0) {
-                maxLen = 1;
+            if (arr[i] == 0 && maxLength == 0) {
+                maxLength = 1;
             }
 
+            // increment the count of maxLength
             if (sum == 0) {
-                maxLen = i + 1;
+                maxLength = i + 1;
             }
 
             // Look this sum in hash table
-            Integer iPrev = sumMap.get(sum);
+            Integer prev = map.get(sum);
 
             // If this sum is seen before, then update maxLen
-            // if required
-            if (iPrev != null) {
-                maxLen = Math.max(maxLen, i - iPrev);
+            if (prev != null) {
+                maxLength = Math.max(maxLength, i - prev);
             }
             else { // Else put this sum in hash table
-                sumMap.put(sum, i);
+                map.put(sum, i);
             }
         }
 
-        return maxLen;
+        return maxLength;
     }
 
     public static void main(String[] arg) {
