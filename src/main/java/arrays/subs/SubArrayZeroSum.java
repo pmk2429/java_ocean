@@ -1,4 +1,4 @@
-package arrays;
+package arrays.subs;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -23,7 +23,7 @@ import java.util.Map;
  * <p>
  * ~!@#HARD:REVISE
  */
-public class SubArrayWithZeroSum {
+public class SubArrayZeroSum {
 
     /**
      * We can also use hashing. The idea is to iterate through the array and for every element arr[i],

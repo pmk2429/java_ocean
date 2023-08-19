@@ -1,4 +1,4 @@
-package hard;
+package graph.problems;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -51,16 +51,15 @@ public class RecipesFromSupplies {
     private static List<String> findAllRecipes(String[] recipes, List<List<String>> ingredients, String[] supplies) {
         List<String> ans = new ArrayList<>();
         // Put all supplies into HashSet.
-        Set<String> available = Arrays.stream(supplies).collect(Collectors.toSet());
+        Set<String> availableSuuplies = Arrays.stream(supplies).collect(Collectors.toSet());
         Map<String, Set<String>> ingredientToRecipes = new HashMap<>();
-
-        Map<String, Integer> inDegree = new HashMap<>();
+        Map<String, Integer> inDegree = new HashMap<>(); // graph
 
         for (int i = 0; i < recipes.length; ++i) {
             int nonAvailable = 0;
-            for (String ing : ingredients.get(i)) {
-                if (!available.contains(ing)) {
-                    ingredientToRecipes.computeIfAbsent(ing, s -> new HashSet<>()).add(recipes[i]);
+            for (String ingredient : ingredients.get(i)) {
+                if (!availableSuuplies.contains(ingredient)) {
+                    ingredientToRecipes.computeIfAbsent(ingredient, s -> new HashSet<>()).add(recipes[i]);
                     ++nonAvailable;
                 }
             }
@@ -71,7 +70,6 @@ public class RecipesFromSupplies {
                 inDegree.put(recipes[i], nonAvailable);
             }
         }
-
         // Toplogical Sort
         for (int i = 0; i < ans.size(); ++i) {
             String recipe = ans.get(i);
@@ -87,7 +85,7 @@ public class RecipesFromSupplies {
     }
 
     private static List<String> getAllRecipes1() {
-        String[] recipes = {"bread", "sandwich"};
+        String[] recipes = {"bread", "sandwich", "falafel", "pizza"};
         String[] supplies = {"yeast", "flour", "meat"};
         List<List<String>> ingredients = new ArrayList<>() {{
             add(Arrays.asList("yeast", "flour"));
