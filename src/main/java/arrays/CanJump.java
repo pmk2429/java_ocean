@@ -29,10 +29,12 @@ public class CanJump {
     private static boolean canJump(int[] nums) {
         int currMaximum = 0;
         int checker = 0;
-        if (nums.length == 1) {
+        int length = nums.length;
+
+        if (length == 1) {
             return true;
         }
-        for (int i = 0; i < nums.length; i++) {
+        for (int i = 0; i < length; i++) {
             // given the curr position, let's say i, you can jump from this `i` position
             // to the value of `i` which is nums[i].
             int maxJumpFromCurrIndex = nums[i] + i;
@@ -40,7 +42,7 @@ public class CanJump {
             if (checker == i) {
                 checker = currMaximum;
             }
-            if (currMaximum >= nums.length - 1) {
+            if (currMaximum >= length - 1) {
                 return true;
             }
             if (nums[checker] == 0 && i == checker) {
@@ -52,7 +54,7 @@ public class CanJump {
 
     private static int totalJump(int[] nums) {
         int n = nums.length;
-        int answer = 0;
+        int totalJump = 0;
         int checker = 0, currMaximum = 0;
 
         for (int i = 0; i < n - 1; i++) {
@@ -60,12 +62,12 @@ public class CanJump {
             currMaximum = Math.max(currMaximum, maxJumpFromCurrIndex);
 
             if (checker == i) {
-                answer++;
+                totalJump++;
                 checker = currMaximum;
             }
         }
 
-        return answer;
+        return totalJump;
     }
 
     public static void main(String[] args) {

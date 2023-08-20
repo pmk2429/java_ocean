@@ -108,7 +108,10 @@ public class WordDictionary {
         dictionary.addWord("Mamu");
         dictionary.addWord("KP");
         dictionary.addWord("Tysu");
+        dictionary.addWord("Mukund");
+        dictionary.addWord("Mina");
+        dictionary.addWord("Narendra");
 
-        System.out.println(dictionary.contains("KP"));
+        System.out.println(dictionary.contains("mumma"));
     }
 }

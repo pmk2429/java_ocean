@@ -11,25 +11,27 @@ public class NodeExists {
      * 7 = "111", starting from index 1, we go from root = 1, going right --> 3, going right --> 7.
      * Similar to {@link BinaryTreeIndexExists}.
      */
-    public boolean nodeExists(Node root, int index) {
-        if (index <= 0) {
+    public boolean nodeExists(TreeNode root, int index) {
+        if (root == null || index <= 0) {
             return false;
         }
 
-        char[] binary = Integer.toBinaryString(index).toCharArray();
+        String binaryIndex = Integer.toBinaryString(index + 1);
 
-        for (int i = 1; i < binary.length; i++) {
-            if (root == null) {
-                return false;
-            }
-            if (binary[i] == '0') {
-                root = root.left;
+        TreeNode curr = root;
+        for (int i = 1; i < binaryIndex.length(); i++) {
+            if (binaryIndex.charAt(i) == '0') {
+                curr = curr.left;
             }
             else {
-                root = root.right;
+                curr = curr.right;
+            }
+
+            if (curr == null) {
+                return false;
             }
         }
-        return root != null;
+        return true;
     }
 
     private static boolean ifNodeExists(TreeNode root, int key) {

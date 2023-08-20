@@ -18,7 +18,7 @@ public class RootToLeafPaths {
         }
 
         // if we are here root has at least 1 child node
-        sb.append("->");
+        sb.append(" -> ");
         String answer = sb.toString();
 
         pathBuilder(root.left, sb, result);
@@ -36,7 +36,7 @@ public class RootToLeafPaths {
     }
 
     public static void main(String[] args) {
-        TreeNode root = TreeNode.createBT();
+        TreeNode root = TreeNode.createUnusualTree();
         System.out.println(binaryTreePaths(root));
     }
 }
