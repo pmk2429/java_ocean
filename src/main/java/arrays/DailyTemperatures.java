@@ -1,5 +1,7 @@
 package arrays;
 
+import market.StockSpanner;
+
 import java.util.Arrays;
 import java.util.Stack;
 
@@ -13,7 +15,7 @@ import java.util.Stack;
  * <p>
  * Note: The length of temperatures will be in the range [1, 30000]. Each temperature will be an integer
  * in the range [30, 100].
- * Similar to {@link hard.StockSpanner}.
+ * Similar to {@link StockSpanner}.
  * ~!@#HARD:REVISE
  */
 public class DailyTemperatures {
