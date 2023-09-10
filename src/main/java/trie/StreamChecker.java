@@ -52,7 +52,7 @@ import java.util.Map;
 public class StreamChecker {
 
     class TrieNode {
-        Map<Character, TrieNode> children = new HashMap();
+        Map<Character, TrieNode> children = new HashMap<>();
         boolean word = false;
     }
 

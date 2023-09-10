@@ -36,7 +36,7 @@ public class FindNextNodeAtSameLevel {
                 // if the desired node is found, return its next right node
                 if (curr == node) {
                     // if the next right node doesn't exist, return null
-                    if (size == 0) {
+                    if (queue.isEmpty() || size == 0) {
                         return null;
                     }
                     return queue.peek();

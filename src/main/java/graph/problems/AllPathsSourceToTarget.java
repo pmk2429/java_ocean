@@ -37,7 +37,7 @@ public class AllPathsSourceToTarget {
     private List<List<Integer>> results;
 
     protected void backtrack(int currNode, Deque<Integer> path) {
-        if (currNode == this.target) {
+        if (currNode == target) {
             // Note: one should make a deep copy of the path
             results.add(new ArrayList<>(path));
             return;
@@ -45,7 +45,7 @@ public class AllPathsSourceToTarget {
         // explore the neighbor nodes one after another.
         for (int nextNode : graph[currNode]) {
             // mark the choice, before backtracking.
-            path.addLast(nextNode);
+            path.offer(nextNode);
             backtrack(nextNode, path);
             // remove the previous choice, to try the next choice
             path.removeLast();
@@ -58,7 +58,7 @@ public class AllPathsSourceToTarget {
         results = new ArrayList<>();
         // adopt the LinkedList for fast access to the tail element.
         Deque<Integer> path = new ArrayDeque<>();
-        path.addLast(0);
+        path.offer(0);
         // kick of the backtracking, starting from the source (node 0)
         backtrack(0, path);
         return results;
