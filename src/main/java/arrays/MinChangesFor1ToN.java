@@ -29,25 +29,25 @@ public class MinChangesFor1ToN {
             return -1;
         }
 
-        int length = arr.length;
+        int n = arr.length;
 
         int min = Arrays.stream(arr).min().getAsInt();
         int max = Arrays.stream(arr).max().getAsInt();
 
         // this indicates that 1 to N are present
-        if (max - min + 1 == length) {
+        if (max - min + 1 == n) {
             return 0;
         }
 
         int count = 0;
         int i = 0;
 
-        while (i < length) {
+        while (i < n) {
             int j = i + 1;
-            if (j < length) {
+            if (j < n) {
                 if (arr[j] - arr[i] > 1) {
                     count++;
-                    length--;
+                    n--;
                 }
             }
             i++;

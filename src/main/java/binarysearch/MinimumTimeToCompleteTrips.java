@@ -1,4 +1,6 @@
-package hard;
+package binarysearch;
+
+import binarysearch.CapacityToShipPackagesWithinDDays;
 
 import java.util.Arrays;
 

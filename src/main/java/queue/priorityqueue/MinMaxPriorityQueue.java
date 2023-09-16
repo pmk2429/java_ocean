@@ -16,7 +16,7 @@ public class MinMaxPriorityQueue {
         while (!dq.isEmpty() && dq.getLast() > data) {
             dq.removeLast();
         }
-        dq.addLast(data);
+        dq.add(data);
         q.add(data);
     }
 

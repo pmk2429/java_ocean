@@ -1,5 +1,8 @@
 package hard;
 
+import binarysearch.CapacityToShipPackagesWithinDDays;
+import binarysearch.MinimumTimeToCompleteTrips;
+
 /**
  * You are given a 0-indexed array of positive integers w where w[i] describes the weight of the ith index.
  * You need to implement the function pickIndex(), which randomly picks an index in the range [0, w.length - 1]
