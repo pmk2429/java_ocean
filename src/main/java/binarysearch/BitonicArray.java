@@ -1,4 +1,4 @@
-package arrays;
+package binarysearch;
 
 /**
  * Find an element in Bitonic array

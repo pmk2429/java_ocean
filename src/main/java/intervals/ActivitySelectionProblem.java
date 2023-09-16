@@ -16,10 +16,11 @@ import java.util.stream.Collectors;
  * (1, 4), (3, 5), (0, 6), (5, 7), (3, 8), (5, 9), (6, 10), (8, 11), (8, 12), (2, 13), (12, 14)
  * Output:
  * (1, 4), (5, 7), (8, 11), (12, 14)
+ * Similar to {@link EraseOverlappingIntervals} except here, we're supposed to return Intervals list.
  */
 public class ActivitySelectionProblem {
 
-    private static final Comparator<Interval> pairComparator = Comparator.comparingInt(i -> i.end);
+    private static final Comparator<Interval> intervalComparator = Comparator.comparingInt(i -> i.end);
 
     public static List<Interval> selectNonOverlappingIntervals(List<Interval> activities) {
         // keeps track of the index of the last selected activity
@@ -28,7 +29,7 @@ public class ActivitySelectionProblem {
         // set to store the selected activities index
         Set<Integer> result = new HashSet<>();
 
-        activities.sort(pairComparator);
+        activities.sort(intervalComparator);
 
         // select 0 as the first activity
         if (activities.size() > 0) {

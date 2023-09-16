@@ -15,11 +15,11 @@ public class RatMaze {
     that there may be more than one solutions, this
     function prints one of the feasible solutions.*/
 
-    private static boolean isSafe(int i, int j) {
+    private static boolean isNavigable(int i, int j) {
         return i >= 0 && i < M && j >= 0 && j < N;
     }
 
-    private static boolean isNavigable(int[][] maze, int i, int j) {
+    private static boolean isValid(int[][] maze, int i, int j) {
         return maze[i][j] == 1;
     }
 
@@ -30,7 +30,7 @@ public class RatMaze {
             return true;
         }
 
-        if (isSafe(i, j) && isNavigable(maze, i, j)) {
+        if (isNavigable(i, j) && isValid(maze, i, j)) {
             visited[i][j] = 1;
 
             if (solveMazeDFS(maze, i + 1, j, visited)) {

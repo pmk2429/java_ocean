@@ -1,4 +1,4 @@
-package hard;
+package matrix;
 
 import java.util.ArrayDeque;
 import java.util.Deque;

@@ -1,4 +1,4 @@
-package arrays;
+package binarysearch;
 
 public class FindPeakElement {
     private static int peakElement(int[] arr) {

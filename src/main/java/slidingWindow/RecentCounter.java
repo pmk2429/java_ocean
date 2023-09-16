@@ -1,4 +1,4 @@
-package arrays;
+package slidingWindow;
 
 import java.util.ArrayDeque;
 import java.util.Deque;

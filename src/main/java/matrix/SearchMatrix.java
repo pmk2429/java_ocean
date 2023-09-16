@@ -53,10 +53,10 @@ public class SearchMatrix {
         int col = 0;
 
         while (row >= 0 && col < N) {
-            if (matrix[row][col] > target) {
+            if (target < matrix[row][col]) {
                 row--;
             }
-            else if (matrix[row][col] < target) {
+            else if (target > matrix[row][col]) {
                 col++;
             }
             else { // found it
