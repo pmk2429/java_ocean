@@ -22,7 +22,7 @@ package parentheses;
  * Note:
  * The string size will be in the range [1, 100].
  */
-public class ValidParentheses2 {
+public class MatchingValidParentheses {
 
     private static boolean isValid(String paren) {
         if (paren == null) {

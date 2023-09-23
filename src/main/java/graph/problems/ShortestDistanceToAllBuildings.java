@@ -23,21 +23,20 @@ import java.util.Deque;
  */
 public class ShortestDistanceToAllBuildings {
 
-    private static int ROW;
-    private static int COL;
+    private static int M;
+    private static int N;
 
-    private static boolean isValid(int k, int l, int[][] grid, boolean[][] visited) {
-        return k >= 0 && k < ROW && l >= 0 && l < COL && grid[k][l] == 0 && !visited[k][l];
+    private static boolean isValid(int i, int j, int[][] grid, boolean[][] visited) {
+        return i >= 0 && i < M && j >= 0 && j < N && grid[i][j] == 0 && !visited[i][j];
     }
 
     private static void bfs(int[][] grid, int[][] dis, int[][] num, int x, int y) {
-        ROW = grid.length;
-        COL = grid[0].length;
+        M = grid.length;
+        N = grid[0].length;
         int[][] neighbor = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
         Deque<int[]> queue = new ArrayDeque<>();
         queue.offer(new int[]{x, y});
-
-        boolean[][] visited = new boolean[ROW][COL];
+        boolean[][] visited = new boolean[M][N];
         int dist = 0;
         while (!queue.isEmpty()) {
             dist++;
@@ -57,21 +56,20 @@ public class ShortestDistanceToAllBuildings {
                 }
             }
         }
-
     }
 
     private static int shortestDistance(int[][] grid) {
-        if (ROW == 0 || COL == 0) {
+        if (M == 0 || N == 0) {
             return -1;
         }
 
         int buildingNums = 0;
 
-        int[][] dis = new int[ROW][COL]; // distance sum of all building to dis[x][y];
-        int[][] num = new int[ROW][COL]; // how many buildings can reach num[x][y]
+        int[][] dis = new int[M][N]; // distance sum of all building to dis[x][y];
+        int[][] num = new int[M][N]; // how many buildings can reach num[x][y]
 
-        for (int i = 0; i < ROW; i++) {
-            for (int j = 0; j < COL; j++) {
+        for (int i = 0; i < M; i++) {
+            for (int j = 0; j < N; j++) {
                 if (grid[i][j] == 1) {
                     buildingNums++;
                     bfs(grid, dis, num, i, j);
@@ -80,8 +78,8 @@ public class ShortestDistanceToAllBuildings {
         }
 
         int min = Integer.MAX_VALUE;
-        for (int i = 0; i < ROW; i++) {
-            for (int j = 0; j < COL; j++) {
+        for (int i = 0; i < M; i++) {
+            for (int j = 0; j < N; j++) {
                 if (grid[i][j] == 0 && dis[i][j] != 0 && num[i][j] == buildingNums) {
                     min = Math.min(min, dis[i][j]);
                 }

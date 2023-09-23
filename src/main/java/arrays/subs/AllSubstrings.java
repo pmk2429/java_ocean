@@ -51,12 +51,13 @@ public class AllSubstrings {
     private static String longestUniqueSubstring(String str) {
         int maxLen = 0;
         String longestSubstring = "";
+        int length = str.length();
 
-        for (int i = 0; i < str.length(); i++) {
+        for (int i = 0; i < length; i++) {
             Set<Character> charSet = new HashSet<>();
             StringBuilder currSub = new StringBuilder();
 
-            for (int j = i; j < str.length(); j++) {
+            for (int j = i; j < length; j++) {
                 char currChar = str.charAt(j);
                 if (!charSet.contains(currChar)) {
                     charSet.add(currChar);

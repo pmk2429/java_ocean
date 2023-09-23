@@ -1,9 +1,6 @@
 package graph.problems;
 
-import java.util.ArrayDeque;
-import java.util.Deque;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /**
  * There are a total of n courses you have to take, labeled from 0 to n-1.
@@ -90,9 +87,60 @@ public class CourseSchedule {
         return (counter == numCourses);
     }
 
+    public static boolean canFinishUsingList(int numCourses, int[][] prerequisites) {
+        List<List<Integer>> graph = new ArrayList<>(numCourses);
+        int[] inDegree = new int[numCourses];
+        Deque<Integer> queue = new ArrayDeque<>();
+
+        for (int i = 0; i < numCourses; i++) {
+            graph.add(new ArrayList<>());
+        }
+
+        for (int[] prerequisite : prerequisites) {
+            // Get the edge (u, v)
+            int u = prerequisite[1];
+            int v = prerequisite[0];
+
+            inDegree[v]++;
+
+            // Add to the graph.
+            graph.get(u).add(v);
+        }
+
+        // Before we start the process of sorting, find all nodes
+        // that have 0 inDegree and put them in the queue.
+        for (int i = 0; i < inDegree.length; i++) {
+            if (inDegree[i] == 0) {
+                queue.add(i);
+            }
+        }
+
+        // Topological Sort
+        int counter = 0;
+
+        while (!queue.isEmpty()) {
+            // Poll a node with inDegree 0
+            int nodeId = queue.poll();
+
+            // Remove its edges and update the inDegree array.
+            // If one of the children got an inDegree 0, add it to the queue.
+            for (int childId : graph.get(nodeId)) {
+                inDegree[childId]--;
+
+                if (inDegree[childId] == 0) {
+                    queue.add(childId);
+                }
+            }
+            counter++;
+        }
+
+        return (counter == numCourses);
+    }
+
     public static void main(String[] args) {
-        int numOfCourses = 2;
-        int[][] preReqs = {{1, 0}, {0, 1}};
+        int numOfCourses = 3;
+        int[][] preReqs = {{1, 0}, {2, 1}};
         System.out.println(canFinish(numOfCourses, preReqs));
+        System.out.println(canFinishUsingList(numOfCourses, preReqs));
     }
 }

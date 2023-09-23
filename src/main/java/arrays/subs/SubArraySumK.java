@@ -32,8 +32,8 @@ public class SubArraySumK {
     }
 
     public static void main(String[] args) {
-        int[] nums = {1, 1, 1};
-        int k = 2;
+        int[] nums = {23, 2, 4, 6, 7};
+        int k = 6;
         System.out.println(subArraySum(nums, k));
     }
 }

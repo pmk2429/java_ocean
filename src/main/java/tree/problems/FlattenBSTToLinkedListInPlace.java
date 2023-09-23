@@ -39,13 +39,13 @@ public class FlattenBSTToLinkedListInPlace {
             // If the node has a left child
             if (node.left != null) {
                 // Find the rightmost node - successor
-                TreeNode rightRoot = node.left;
-                while (rightRoot.right != null) {
-                    rightRoot = rightRoot.right;
+                TreeNode leftRoot = node.left;
+                while (leftRoot.right != null) {
+                    leftRoot = leftRoot.right;
                 }
 
                 // rewire the connections
-                rightRoot.right = node.right;
+                leftRoot.right = node.right;
                 node.right = node.left;
                 node.left = null;
             }
