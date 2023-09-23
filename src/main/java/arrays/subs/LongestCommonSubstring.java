@@ -14,7 +14,7 @@ import java.util.Set;
  * a (due to eatsleepnightxyz eatsleepabcxyz)
  * t (due to eatsleepnightxyz eatsleepabcxyz)
  * <p>
- * However, the result set should not include e from  eatsleepnightxyz eatsleepabcxyz, because both es are already
+ * However, the result set should not include e from eatsleepnightxyz eatsleepabcxyz, because both es are already
  * contained in the eatsleep mentioned above. Nor should you include ea, eat, ats, etc.,
  * as those are also all covered by eatsleep.
  * <p>

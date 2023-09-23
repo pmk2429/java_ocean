@@ -1,4 +1,4 @@
-package arrays;
+package slidingWindow;
 
 /**
  * Given a binary array nums and an integer k, return the maximum number of consecutive 1's in the array

@@ -8,11 +8,11 @@ public class DeleteMiddleNode {
             return null;
         }
 
-        int size = 0;
+        int size = 1;
         ListNode p1 = head, p2 = head;
 
         // First pass, count the number of nodes in the linked list using 'p1'.
-        while (p1 != null) {
+        while (p1.next != null) {
             size++;
             p1 = p1.next;
         }

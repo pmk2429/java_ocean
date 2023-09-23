@@ -80,10 +80,10 @@ public class RotateArray {
     }
 
     public static void main(String[] args) {
-        int[] arr1 = new int[]{1, 2, 3, 4, 5};
+        int[] arr1 = new int[]{1, 2, 3, 4, 5, 6, 7};
         System.out.println("Original Array : " + Arrays.toString(arr1));
         rotateArrayLeft(arr1, 2);
-        int[] arr2 = new int[]{1, 2, 3, 4, 5};
+        int[] arr2 = new int[]{1, 2, 3, 4, 5, 6, 7};
         rotateArrayRight(arr2, 2);
     }
 }

@@ -28,20 +28,20 @@ package parentheses;
  * Input: "()))(("
  * Output: 4
  */
-public class ValidParentheses {
+public class MinimumAddToMakeValidParentheses {
 
-    private static int minAddToMakeValid(String S) {
-        if (S == null) {
+    private static int minAddToMakeValid(String s) {
+        if (s == null || s.length() == 0) {
             return -1;
         }
 
-        if (S.length() == 1 && (S.charAt(0) == ')' || S.charAt(0) == '(')) {
+        if (s.length() == 1 && (s.charAt(0) == ')' || s.charAt(0) == '(')) {
             return 1;
         }
 
         int ans = 0, bal = 0;
-        for (int i = 0; i < S.length(); i++) {
-            bal += S.charAt(i) == '(' ? 1 : -1;
+        for (char c : s.toCharArray()) {
+            bal += c == '(' ? 1 : -1;
             // It is guaranteed bal >= -1
             if (bal == -1) {
                 ans++;

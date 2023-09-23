@@ -55,6 +55,17 @@ import java.util.List;
  */
 public class CutOffTrees {
 
+    private static int M;
+    private static int N;
+
+    private static boolean isNavigable(int r, int c) {
+        return 0 <= r && r < M && 0 <= c && c < N;
+    }
+
+    private static boolean isValid(List<List<Integer>> forest, boolean[][] visited, int r, int c) {
+        return !visited[r][c] && forest.get(r).get(c) > 0;
+    }
+
     /**
      * We perform a breadth-first-search, processing nodes (grid positions) in a queue. seen keeps track of nodes that
      * have already been added to the queue at some point - those nodes will be already processed or are in the
@@ -65,13 +76,13 @@ public class CutOffTrees {
      * destination 'target' (tr, tc), we'll return the answer.
      */
     public int bfs(List<List<Integer>> forest, int i, int j, int x, int y) {
-        int R = forest.size();
-        int C = forest.get(0).size();
+        M = forest.size();
+        N = forest.get(0).size();
 
         Deque<int[]> queue = new ArrayDeque<>();
         queue.add(new int[]{i, j, 0});
 
-        boolean[][] visited = new boolean[R][C];
+        boolean[][] visited = new boolean[M][N];
 
         visited[i][j] = true;
 
@@ -83,7 +94,7 @@ public class CutOffTrees {
             for (int di = 0; di < 4; ++di) {
                 int r = cur[0] + i;
                 int c = cur[1] + j;
-                if (0 <= r && r < R && 0 <= c && c < C && !visited[r][c] && forest.get(r).get(c) > 0) {
+                if (isNavigable(r, c) && isValid(forest, visited, r, c)) {
                     visited[r][c] = true;
                     queue.add(new int[]{r, c, cur[2] + 1});
                 }

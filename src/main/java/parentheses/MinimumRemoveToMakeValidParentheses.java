@@ -32,18 +32,22 @@ public class MinimumRemoveToMakeValidParentheses {
 
     private static String minRemoveToMakeValid(String s) {
         StringBuilder sb = new StringBuilder(s);
-        Stack<Integer> st = new Stack<>();
+        Stack<Integer> stack = new Stack<>();
         for (int i = 0; i < sb.length(); ++i) {
             if (sb.charAt(i) == '(') {
-                st.add(i);
+                stack.push(i);
             }
-            if (sb.charAt(i) == ')') {
-                if (!st.empty()) st.pop();
-                else sb.setCharAt(i, '*');
+            else if (sb.charAt(i) == ')') {
+                if (!stack.empty()) {
+                    stack.pop();
+                }
+                else {
+                    sb.setCharAt(i, '*');
+                }
             }
         }
-        while (!st.empty()) {
-            sb.setCharAt(st.pop(), '*');
+        while (!stack.empty()) {
+            sb.setCharAt(stack.pop(), '*');
         }
 
         return sb.toString().replaceAll("\\*", "");

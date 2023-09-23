@@ -10,6 +10,7 @@ import java.util.Comparator;
  * Example 1:
  * ----------
  * Input: intervals = [[1,2],[2,3],[3,4],[1,3]]
+ * Input: intervals = [[1,2],[2,3],[1,3],[3,4]]
  * Output: 1
  * Explanation: [1,3] can be removed and the rest of the intervals are non-overlapping.
  * <p>
