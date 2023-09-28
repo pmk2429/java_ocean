@@ -7,7 +7,7 @@ public class TreeNode {
     int data;
     TreeNode left;
     TreeNode right;
-    TreeNode parent;
+    TreeNode next;
     int height;
     int horizontalDistance;
 

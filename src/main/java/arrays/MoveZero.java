@@ -82,16 +82,18 @@ public class MoveZero {
         return arr;
     }
 
-    private static void printArrays(int[] original, int[] updated) {
-        System.out.println(Arrays.toString(original) + " ---> " + Arrays.toString(updated));
-    }
-
     public static void main(String[] args) {
         int[] arr = new int[]{1, 0, 3, 4, 7, 0, 6, 2, 0, 9, 0, 0, 12};
-        printArrays(arr, moveZeroesWithoutSort(arr));
+        System.out.print(Arrays.toString(arr) + " ---> ");
+        System.out.print(Arrays.toString(moveZeroesWithoutSort(arr)));
+        System.out.println();
         int[] arr1 = new int[]{1, 0, 3, 4, 7, 0, 6, 2, 0, 9, 0, 0, 12};
-        printArrays(arr1, moveZeroesToLeft(arr1));
+        System.out.print(Arrays.toString(arr1) + " ---> ");
+        System.out.print(Arrays.toString(moveZeroesToLeft(arr1)));
+        System.out.println();
         int[] arr2 = new int[]{1, 0, 3, 4, 7, 0, 6, 2, 0, 9, 0, 0, 12};
-        printArrays(arr2, moveZeroesToRight(arr2));
+        System.out.print(Arrays.toString(arr2) + " ---> ");
+        System.out.print(Arrays.toString(moveZeroesToRight(arr2)));
+        System.out.println();
     }
 }

@@ -33,11 +33,16 @@ public class ShortestDistanceToAllBuildings {
     private static void bfs(int[][] grid, int[][] dis, int[][] num, int x, int y) {
         M = grid.length;
         N = grid[0].length;
-        int[][] neighbor = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
+
+        int[][] directions = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
+
         Deque<int[]> queue = new ArrayDeque<>();
         queue.offer(new int[]{x, y});
+
         boolean[][] visited = new boolean[M][N];
+
         int dist = 0;
+
         while (!queue.isEmpty()) {
             dist++;
             // all size number of node, their neighbors belongs to next dist which for distance
@@ -45,8 +50,8 @@ public class ShortestDistanceToAllBuildings {
             for (int i = 0; i < size; i++) {
                 int[] top = queue.poll();
                 for (int j = 0; j < 4; j++) {
-                    int k = top[0] + neighbor[j][0];
-                    int l = top[1] + neighbor[j][1];
+                    int k = top[0] + directions[j][0];
+                    int l = top[1] + directions[j][1];
                     if (isValid(k, l, grid, visited)) {
                         visited[k][l] = true;
                         dis[k][l] += dist;

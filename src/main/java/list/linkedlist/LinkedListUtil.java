@@ -27,6 +27,19 @@ public class LinkedListUtil {
         head.next.next = newNode(3);
         head.next.next.next = newNode(4);
         head.next.next.next.next = newNode(5);
+        head.next.next.next.next.next = newNode(6);
+
+        return head;
+    }
+
+    public static ListNode createPalindrome() {
+        ListNode head = newNode(1);
+        head.next = newNode(2);
+        head.next.next = newNode(3);
+        head.next.next.next = newNode(4);
+        head.next.next.next.next = newNode(3);
+        head.next.next.next.next.next = newNode(2);
+        head.next.next.next.next.next.next = newNode(1);
 
         return head;
     }
@@ -95,5 +108,19 @@ public class LinkedListUtil {
             temp = temp.next;
         }
         System.out.print("null\n");
+    }
+
+    public static ListNode reverseList(ListNode head) {
+        ListNode prev = null;
+        ListNode current = head;
+        ListNode next = null;
+        while (current != null) {
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+        head = prev;
+        return head;
     }
 }
