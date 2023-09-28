@@ -43,8 +43,9 @@ import java.util.Stack;
 public class SimplifyPath {
 
     private static String simplifyPath(String path) {
-        if (path == null || path.length() == 0) {
-            return "/";
+        String separator = "/";
+        if (path == null || path.isEmpty()) {
+            return separator;
         }
 
         Stack<String> stack = new Stack<>();
@@ -71,10 +72,10 @@ public class SimplifyPath {
         // Stitch together all the directory names together
         StringBuilder result = new StringBuilder();
         for (String dir : stack) {
-            result.append("/").append(dir);
+            result.append(separator).append(dir);
         }
 
-        return result.length() > 0 ? result.toString() : "/";
+        return result.length() > 0 ? result.toString() : separator;
     }
 
     public static void main(String[] args) {

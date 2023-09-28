@@ -41,17 +41,18 @@ public class NumberOfWeakCharactersInGame {
         int maxDefense = 0;
         for (int i = properties.length - 1; i >= 0; i--) {
             // Compare the current defense with the maximum achieved so far
-            if (properties[i][1] < maxDefense) {
+            int currDefense = properties[i][1];
+            if (currDefense < maxDefense) {
                 weakCharacters++;
             }
-            maxDefense = Math.max(maxDefense, properties[i][1]);
+            maxDefense = Math.max(maxDefense, currDefense);
         }
 
         return weakCharacters;
     }
 
     public static void main(String[] args) {
-        int[][] properties = {{5, 5}, {6, 3}, {3, 6}};
+        int[][] properties = {{1, 5}, {10, 4}, {4, 3}};
         System.out.println(numberOfWeakCharacters(properties));
     }
 }

@@ -47,20 +47,20 @@ public class ZigZagOrderTraversal {
             LinkedList<Integer> currentLevelNodes = new LinkedList<>();
 
             while (size-- > 0) {
-                TreeNode top = q.poll();
+                TreeNode curr = q.poll();
 
-                if (top.left != null) {
-                    q.offer(top.left);
+                if (curr.left != null) {
+                    q.offer(curr.left);
                 }
-                if (top.right != null) {
-                    q.offer(top.right);
+                if (curr.right != null) {
+                    q.offer(curr.right);
                 }
 
                 if (even) {
-                    currentLevelNodes.add(top.data); // adds to the end of the LinkedList : FIFO
+                    currentLevelNodes.addLast(curr.data); // Similar to .add(); adds to the end of the LinkedList : FIFO
                 }
                 else {
-                    currentLevelNodes.addFirst(top.data); // adds to the start of the LinkedList : FILO
+                    currentLevelNodes.addFirst(curr.data); // adds to the start of the LinkedList : FILO
                 }
             }
             list.add(currentLevelNodes);

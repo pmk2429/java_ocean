@@ -50,18 +50,27 @@ public class MergeSortedArrays {
         return heap.stream().mapToInt(i -> i).toArray();
     }
 
-    private static void merge(int[] nums1, int m, int[] nums2, int n) {
+    private static void merge(int[] a, int[] b) {
+        int m = a.length;
+        int n = b.length;
         int i = m - 1;
         int j = n - 1;
         int k = m + n - 1;
-        while (j >= 0)
-            if (i >= 0 && nums1[i] > nums2[j]) nums1[k--] = nums1[i--];
-            else nums1[k--] = nums2[j--];
+        int[] res = new int[m + n];
+        while (j >= 0) {
+            if (i >= 0 && a[i] > b[j]) {
+                res[k--] = a[i--];
+            }
+            else {
+                res[k--] = b[j--];
+            }
+        }
+        System.out.println(Arrays.toString(res));
     }
 
     public static void main(String[] args) {
         int[] arr1 = new int[]{1, 5, 9, 10, 15, 20};
         int[] arr2 = new int[]{2, 3, 8, 13};
-        merge(arr1, arr1.length, arr2, arr2.length);
+        merge(arr1, arr2);
     }
 }

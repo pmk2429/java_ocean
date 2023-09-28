@@ -58,7 +58,7 @@ public class ShortestPath {
     }
 
     public static void main(String[] args) {
-        int[][] mat = {
+        int[][] maze = {
             {1, 1, 1, 1, 1, 0, 0, 1, 1, 1},
             {0, 1, 1, 1, 1, 1, 0, 1, 0, 1},
             {0, 0, 1, 0, 1, 1, 1, 0, 0, 1},
@@ -74,7 +74,7 @@ public class ShortestPath {
         // construct a matrix to keep track of visited cells
         boolean[][] visited = new boolean[M][N];
 
-        int minDistance = findShortestPath(mat, visited, 0, 0, 7, 5, Integer.MAX_VALUE, 0);
+        int minDistance = findShortestPath(maze, visited, 0, 0, 7, 5, Integer.MAX_VALUE, 0);
 
         if (minDistance != Integer.MAX_VALUE) {
             System.out.println("The shortest path from source to destination has length: " + minDistance);

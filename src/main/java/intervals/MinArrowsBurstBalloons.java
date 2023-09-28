@@ -1,6 +1,7 @@
 package intervals;
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 /**
  * There are some spherical balloons taped onto a flat wall that represents the XY-plane.
@@ -51,17 +52,15 @@ public class MinArrowsBurstBalloons {
             return 0;
         }
 
-        // sort by xEnd
-        Arrays.sort(points, (a, b) -> {
-            // We can't simply use the o1[1] - o2[1] trick, as this will cause an
-            // integer overflow for very large or small values.
-            if (a[1] == b[1]) return 0;
-            if (a[1] < b[1]) return -1;
-            return 1;
-        });
-
-        // OR
-        // Arrays.sort(points, Comparator.comparingInt(a -> a[1]));
+        // Using the o1[1] - o2[1] trick for comparison might cause Integer overflow
+        // for very large or small values.
+        //
+        // Arrays.sort(points, (a, b) -> {
+        //      if (a[1] == b[1]) return 0;
+        //      if (a[1] < b[1]) return -1;
+        //      return 1;
+        // });
+        Arrays.sort(points, Comparator.comparingInt(a -> a[1]));
 
         int arrows = 1;
         int xStart, xEnd, firstEnd = points[0][1]; // firstEnd points to `end` of first sorted point

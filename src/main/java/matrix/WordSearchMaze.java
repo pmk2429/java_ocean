@@ -29,7 +29,7 @@ public class WordSearchMaze {
         return i >= 0 && j >= 0 && i < M && j < N && board[i][j] == word.charAt(index);
     }
 
-    private static boolean dfs(char[][] board, int i, int j, String word, int index) {
+    private static boolean wordExistsDFS(char[][] board, int i, int j, String word, int index) {
         if (index == word.length()) {
             return true;
         }
@@ -43,10 +43,10 @@ public class WordSearchMaze {
         // mark as visited
         board[i][j] = '\0';
 
-        boolean found = dfs(board, i + 1, j, word, index + 1) ||
-            dfs(board, i - 1, j, word, index + 1) ||
-            dfs(board, i, j + 1, word, index + 1) ||
-            dfs(board, i, j - 1, word, index + 1);
+        boolean found = wordExistsDFS(board, i + 1, j, word, index + 1) ||
+            wordExistsDFS(board, i - 1, j, word, index + 1) ||
+            wordExistsDFS(board, i, j + 1, word, index + 1) ||
+            wordExistsDFS(board, i, j - 1, word, index + 1);
 
         // mark as unvisited
         board[i][j] = temp;
@@ -57,7 +57,7 @@ public class WordSearchMaze {
     private static boolean exist(char[][] board, String word) {
         for (int i = 0; i < M; i++) {
             for (int j = 0; j < N; j++) {
-                if (dfs(board, i, j, word, 0)) {
+                if (wordExistsDFS(board, i, j, word, 0)) {
                     return true;
                 }
             }
@@ -70,13 +70,14 @@ public class WordSearchMaze {
         char[][] board = {
             {'A', 'B', 'C', 'E'},
             {'S', 'F', 'C', 'S'},
-            {'A', 'D', 'E', 'E'}
+            {'A', 'D', 'P', 'E'},
+            {'A', 'K', 'M', 'E'}
         };
 
         M = board.length;
         N = board[0].length;
 
-        String a = "ABCCED";
+        String a = "PMK";
         System.out.println(exist(board, a));
         String b = "SEE";
         System.out.println(exist(board, b));

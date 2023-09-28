@@ -1,5 +1,7 @@
 package hard;
 
+import iomain.io.In;
+
 import java.util.*;
 import java.util.stream.Collectors;
 

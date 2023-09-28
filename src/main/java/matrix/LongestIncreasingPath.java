@@ -55,7 +55,9 @@ public class LongestIncreasingPath {
     }
 
     private static int longestIncreasingPath(int[][] matrix) {
-        if (matrix.length == 0) return 0;
+        if (matrix.length == 0) {
+            return 0;
+        }
         M = matrix.length;
         N = matrix[0].length;
         int ans = 0;

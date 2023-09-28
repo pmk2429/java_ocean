@@ -34,7 +34,8 @@ public class MinimumRemoveToMakeValidParentheses {
         StringBuilder sb = new StringBuilder(s);
         Stack<Integer> stack = new Stack<>();
         for (int i = 0; i < sb.length(); ++i) {
-            if (sb.charAt(i) == '(') {
+            char c = sb.charAt(i);
+            if (c == '(') {
                 stack.push(i);
             }
             else if (sb.charAt(i) == ')') {
