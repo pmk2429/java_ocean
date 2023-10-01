@@ -50,7 +50,7 @@ public class RangeSumQuery {
      * Time complexity: O(mn) time per query.
      * <p>
      * Assume that mmm and nnn represents the number of rows and columns respectively, each sumRegion
-     * query can go through at most m×nm \times nm×n elements.
+     * query can go through at most m×nm times nm×n elements.
      * <p>
      * Space complexity: O(1)
      * Note that data is a reference to matrix and is not a copy of it.

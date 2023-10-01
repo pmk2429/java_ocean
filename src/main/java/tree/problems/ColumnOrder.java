@@ -10,7 +10,7 @@ public class ColumnOrder {
     // Utility function to store vertical order in map 'm'
     // 'hd' is horizontal distance of current node from root.
     // 'hd' is initially passed as 0
-    private static void buildVerticalOrder(Node root, int horizontalDist, TreeMap<Integer, List<Integer>> columnMap) {
+    private static void buildVerticalOrder(TreeNode root, int horizontalDist, TreeMap<Integer, List<Integer>> columnMap) {
         // Base case
         if (root == null) {
             return;
@@ -34,7 +34,7 @@ public class ColumnOrder {
     }
 
     // The main function to print vertical oder of a binary tree with given root
-    private static void printVerticalOrder(Node root) {
+    private static void printVerticalOrder(TreeNode root) {
         // Create a map and store vertical oder in map using function getVerticalOrder()
         TreeMap<Integer, List<Integer>> m = new TreeMap<>();
         int hd = 0;
@@ -47,15 +47,7 @@ public class ColumnOrder {
     }
 
     public static void main(String[] args) {
-        Node root = new Node(1);
-        root.left = new Node(2);
-        root.right = new Node(3);
-        root.left.left = new Node(4);
-        root.left.right = new Node(5);
-        root.right.left = new Node(6);
-        root.right.right = new Node(7);
-        root.right.left.right = new Node(8);
-        root.right.right.right = new Node(9);
+        TreeNode root = TreeNode.createUnusualTree2();
         System.out.println("Vertical Order traversal is");
         printVerticalOrder(root);
     }

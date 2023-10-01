@@ -44,11 +44,13 @@ public class ArrayStringsAreEqual {
                 return false;
             }
 
+            // reset character pointer and increment the word pointer to point to next pointer in the Array
             if (char1Pointer == word1[word1Pointer].length()) {
                 word1Pointer++;
                 char1Pointer = 0;
             }
 
+            // reset character pointer and increment the word pointer to point to next pointer in the Array
             if (char2Pointer == word2[word2Pointer].length()) {
                 word2Pointer++;
                 char2Pointer = 0;
