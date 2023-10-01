@@ -13,19 +13,18 @@ public class BinaryTreeIndexExists {
             return false;
         }
 
-        // Convert the index to binary representation
         String binaryIndex = Integer.toBinaryString(index + 1);
 
-        TreeNode current = root;
+        TreeNode curr = root;
         for (int i = 1; i < binaryIndex.length(); i++) {
             if (binaryIndex.charAt(i) == '0') {
-                current = current.left;
+                curr = curr.left;
             }
             else {
-                current = current.right;
+                curr = curr.right;
             }
 
-            if (current == null) {
+            if (curr == null) {
                 return false;
             }
         }

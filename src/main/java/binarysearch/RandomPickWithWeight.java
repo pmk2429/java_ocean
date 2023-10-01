@@ -1,7 +1,4 @@
-package hard;
-
-import binarysearch.CapacityToShipPackagesWithinDDays;
-import binarysearch.MinimumTimeToCompleteTrips;
+package binarysearch;
 
 /**
  * You are given a 0-indexed array of positive integers w where w[i] describes the weight of the ith index.

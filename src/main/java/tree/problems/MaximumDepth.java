@@ -15,16 +15,19 @@ public class MaximumDepth {
 
         Deque<TreeNode> queue = new ArrayDeque<>();
         queue.offer(root);
-        TreeNode curr;
-        int depth = 0, size;
+        int depth = 0;
 
         while (!queue.isEmpty()) {
             depth++;
-            size = queue.size();
+            int size = queue.size();
             while (size-- > 0) {
-                curr = queue.poll();
-                if (curr.left != null) queue.offer(curr.left);
-                if (curr.right != null) queue.offer(curr.right);
+                TreeNode curr = queue.poll();
+                if (curr.left != null) {
+                    queue.offer(curr.left);
+                }
+                if (curr.right != null) {
+                    queue.offer(curr.right);
+                }
             }
         }
         return depth;

@@ -43,26 +43,25 @@ public class MinimumNumberOfRefuelingStops {
     private static int minRefuelStops(int target, int tank, int[][] stations) {
         // pq is a maxheap of gas station capacities
         PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder());
-        int ans = 0, prev = 0;
+        int ans = 0, prevGasLocation = 0;
         for (int[] station : stations) {
             int gasLocation = station[0];
             int gasCapacity = station[1];
 
-            tank -= gasLocation - prev;
-            while (!pq.isEmpty() && tank < 0) { // must refuel in past
+            tank -= gasLocation - prevGasLocation;
+            while (!pq.isEmpty() && tank < 0) {
                 tank += pq.poll();
                 ans++;
             }
-
             if (tank < 0) {
                 return -1;
             }
             pq.offer(gasCapacity);
-            prev = gasLocation;
+            prevGasLocation = gasLocation;
         }
 
-        // Repeat body for station = (target, inf)
-        tank -= target - prev;
+        // Repeat body for last station = (target, inf)
+        tank -= target - prevGasLocation;
         while (!pq.isEmpty() && tank < 0) {
             tank += pq.poll();
             ans++;
