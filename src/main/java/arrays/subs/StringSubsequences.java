@@ -31,6 +31,6 @@ public class StringSubsequences {
     }
 
     public static void main(String[] args) {
-        System.out.println(getAllSubsequences("abcde"));
+        System.out.println(getAllSubsequences("pavitra"));
     }
 }

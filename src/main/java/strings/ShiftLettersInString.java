@@ -54,6 +54,11 @@ public class ShiftLettersInString {
     }
 
     public static void main(String[] args) {
-
+        String s = "abc";
+        int[] shifts = {3, 5, 9};
+        System.out.println(shiftingLetters(s, shifts));
+        String s1 = "aaa";
+        int[] shifts1 = {1, 2, 3};
+        System.out.println(shiftingLetters(s1, shifts1));
     }
 }

@@ -81,12 +81,13 @@ public class RemoveStartsFromString {
     private static String removeStars(String s) {
         StringBuilder answer = new StringBuilder();
         for (int i = 0; i < s.length(); i++) {
-            if (i > 0 && s.charAt(i) == '*') {
+            char currChar = s.charAt(i);
+            if (i > 0 && currChar == '*') {
                 // If s[i] == '*', delete the last character from answer.
                 answer.deleteCharAt(answer.length() - 1);
             }
             else { // Otherwise, we have a non-star character, so we append it to answer.
-                answer.append(s.charAt(i));
+                answer.append(currChar);
             }
         }
         return answer.toString();

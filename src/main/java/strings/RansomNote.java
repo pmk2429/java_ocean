@@ -46,19 +46,19 @@ public class RansomNote {
     }
 
     private static boolean canConstruct2(String ransomNote, String magazine) {
-        int[] map = new int[26];
+        int[] charFreq = new int[26];
         for (char c : magazine.toCharArray()) {
-            map[c - 'a']++;
+            charFreq[c - 'a']++;
         }
 
         for (char c : ransomNote.toCharArray()) {
-            int value = map[c - 'a'];
+            int value = charFreq[c - 'a'];
 
             // if the character is not present in magazine, can't construct.
             if (value <= 0) {
                 return false;
             }
-            map[c - 'a']--;
+            charFreq[c - 'a']--;
 
         }
         return true;
