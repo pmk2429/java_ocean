@@ -18,10 +18,10 @@ public class RemoveDuplicatesO1Space {
         StringBuilder newStr = new StringBuilder();
         int[] charFreq = new int[256];
         for (int i = 0; i < str.length(); i++) {
-            int charPos = str.charAt(i);
-            if (charFreq[charPos] == 0) {
-                charFreq[charPos]++;
-                newStr.append(str.charAt(i));
+            char currChar = str.charAt(i);
+            if (charFreq[currChar] == 0) {
+                charFreq[currChar]++;
+                newStr.append(currChar);
             }
         }
         return newStr.toString();

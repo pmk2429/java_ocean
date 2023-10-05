@@ -1,6 +1,6 @@
 package strings;
 
-public class MyStringUtils {
+public class HanaStringUtils {
 
     public static char getChar(byte[] val, int index) {
         return (char) (val[index] & 0xff);
@@ -83,6 +83,10 @@ public class MyStringUtils {
             }
         }
         return new String(buf, 0, count);
+    }
+
+    public static boolean isNullOrEmpty(String str) {
+        return str == null || str.trim().isEmpty();
     }
 
     public static void main(String[] args) {

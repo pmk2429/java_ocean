@@ -4,31 +4,31 @@ import java.util.Arrays;
 
 public class ReplaceWhiteSpace {
     private static String replaceWithWhiteSpace(String str) {
-        char[] strArr = str.toCharArray();
+        char[] res = str.toCharArray();
         int length = str.length();
-        int spaceCount = (int) str.chars().filter(ch -> ch == ' ').count();
+        int spaceCount = (int) str.chars().filter(Character::isWhitespace).count();
         // count newLength of the array.
         int newLength = length + spaceCount * 2;
         // increase the length of the array
-        strArr = Arrays.copyOf(strArr, newLength);
+        res = Arrays.copyOf(res, newLength);
         // now loop through array
         for (int i = length - 1; i >= 0; i--) {
-            if (Character.isWhitespace(strArr[i])) {
-                strArr[newLength - 1] = '0';
-                strArr[newLength - 2] = '2';
-                strArr[newLength - 3] = '%';
+            if (Character.isWhitespace(res[i])) {
+                res[newLength - 1] = '0';
+                res[newLength - 2] = '2';
+                res[newLength - 3] = '%';
                 newLength = newLength - 3;
             }
             else {
-                strArr[newLength - 1] = strArr[i];
+                res[newLength - 1] = res[i];
                 newLength--;
             }
         }
-        return String.copyValueOf(strArr);
+        return String.valueOf(res);
     }
 
     public static void main(String[] args) {
-        String str = "my name is pavitra kansara";
+        String str = "My name is Pavitra M Kansara";
         System.out.println(replaceWithWhiteSpace(str));
     }
 }

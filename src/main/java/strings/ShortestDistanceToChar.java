@@ -23,17 +23,17 @@ import java.util.Arrays;
  * Output: [3,2,1,0]
  */
 public class ShortestDistanceToChar {
-    private static int[] shortestToChar(String S, char C) {
-        if (S == null || S.length() == 0) {
+    private static int[] shortestToChar(String str, char C) {
+        if (HanaStringUtils.isNullOrEmpty(str)) {
             return null;
         }
-        int length = S.length();
+        int length = str.length();
         int[] ans = new int[length];
 
         // 1st pass from the start
         int position = -length;
         for (int i = 0; i < length; i++) {
-            if (S.charAt(i) == C) {
+            if (str.charAt(i) == C) {
                 // position keeps track of last known encountered position of `e`
                 position = i;
             }
@@ -42,7 +42,7 @@ public class ShortestDistanceToChar {
 
         // 2nd pass from the end
         for (int i = length - 1; i >= 0; i--) {
-            if (S.charAt(i) == C) {
+            if (str.charAt(i) == C) {
                 // position keeps track of last known encountered position of `e`
                 position = i;
             }

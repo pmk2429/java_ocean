@@ -13,7 +13,7 @@ package strings;
 public class LengthOfLastWord {
 
     private static int lengthOfLastWord(String str) {
-        if (str == null || str.length() == 0) {
+        if (HanaStringUtils.isNullOrEmpty(str)) {
             return 0;
         }
 

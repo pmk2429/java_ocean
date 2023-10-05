@@ -5,7 +5,7 @@ package strings;
  */
 public class MinimumDistanceBetweenTwoChars {
 
-    private static int minimumDistance(String str, char s1, char s2) {
+    private static int minimumDistance(String str, char c1, char c2) {
         if (str == null || str.length() == 0) {
             return 0;
         }
@@ -15,10 +15,10 @@ public class MinimumDistanceBetweenTwoChars {
 
         for (int i = 0; i < str.length(); i++) {
             char currChar = str.charAt(i);
-            if (currChar == s1) {
+            if (currChar == c1) {
                 i1 = i;
             }
-            else if (currChar == s2) {
+            else if (currChar == c2) {
                 i2 = i;
             }
             if (i1 != -1 && i2 != -1) {

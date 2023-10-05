@@ -1,6 +1,10 @@
 package strings;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * We are given two sentences A and B. (A sentence is a string of space separated words.
@@ -29,7 +33,6 @@ public class UncommonWords {
     private static String[] uncommonWords(String a, String b) {
         String[] aWords = a.split(" ");
         String[] bWords = b.split(" ");
-        Set<String> uncommonWords = new HashSet<>();
         Map<String, Integer> wordsMap = new HashMap<>();
         for (String aWord : aWords) {
             wordsMap.put(aWord, wordsMap.getOrDefault(aWord, 0) + 1);
@@ -39,11 +42,11 @@ public class UncommonWords {
             wordsMap.put(bWord, wordsMap.getOrDefault(bWord, 0) + 1);
         }
 
-        for (Map.Entry<String, Integer> entryMap : wordsMap.entrySet()) {
-            if (entryMap.getValue() == 1) {
-                uncommonWords.add(entryMap.getKey());
-            }
-        }
+        List<String> uncommonWords = wordsMap.entrySet()
+            .stream()
+            .filter(entry -> entry.getValue() == 1)
+            .map(Map.Entry::getKey)
+            .collect(Collectors.toList());
 
         /*
         Set<String> uncommonWords = wordsMap.entrySet().stream()
@@ -52,7 +55,7 @@ public class UncommonWords {
             .collect(Collectors.toSet());
          */
 
-        return uncommonWords.toArray(new String[0]);
+        return uncommonWords.toArray(String[]::new);
     }
 
     public static void main(String[] args) {

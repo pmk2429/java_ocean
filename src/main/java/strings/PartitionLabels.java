@@ -24,18 +24,29 @@ import java.util.List;
  */
 public class PartitionLabels {
 
-    // based on the condition give, first find the first and last occurrence in the String. This will make sure that
-    // the partitions are divided based on the ends and not arbitrarily
-    private static List<Integer> partitionLabels(String S) {
-        List<Integer> partitions = new ArrayList<>();
+    /**
+     * Time Complexity: O(N), where N is the length of S.
+     * Space Complexity: O(1) to keep data structure last of not more
+     * <p>
+     * Based on the condition give, first find the first and last occurrence in the String.
+     * This will make sure that the partitions are divided based on the ends and not arbitrarily.
+     */
+    private static List<Integer> partitionLabels(String str) {
+        int[] last = new int[26];
+        for (int i = 0; i < str.length(); i++) {
+            last[str.charAt(i) - 'a'] = i;
+        }
 
-        int start = 0, end = 0;
-        char firstChar = S.charAt(start);
-
-        // find last index of 'a' in S
-
-
-        return partitions;
+        int j = 0, anchor = 0;
+        List<Integer> ans = new ArrayList<>();
+        for (int i = 0; i < str.length(); i++) {
+            j = Math.max(j, last[str.charAt(i) - 'a']);
+            if (i == j) {
+                ans.add(i - anchor + 1);
+                anchor = i + 1;
+            }
+        }
+        return ans;
     }
 
     public static void main(String[] args) {

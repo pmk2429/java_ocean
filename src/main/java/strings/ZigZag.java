@@ -61,6 +61,10 @@ public class ZigZag {
      * The current direction changes only when we moved up to the topmost row or moved down to the bottommost row.
      */
     private static String zigZag(String s, int numRows) {
+        if (HanaStringUtils.isNullOrEmpty(s)) {
+            return s;
+        }
+
         if (numRows == 1) {
             return s;
         }
@@ -75,17 +79,19 @@ public class ZigZag {
 
         for (char c : s.toCharArray()) {
             rows.get(curRow).append(c);
+            // flip the direction for first or last row and then carry on with logic
             if (curRow == 0 || curRow == numRows - 1) {
                 goingDown = !goingDown;
             }
             curRow += goingDown ? 1 : -1;
         }
 
-        StringBuilder ret = new StringBuilder();
+        StringBuilder res = new StringBuilder();
         for (StringBuilder row : rows) {
-            ret.append(row);
+            res.append(row);
         }
-        return ret.toString();
+
+        return res.toString();
     }
 
     public static void main(String[] args) {

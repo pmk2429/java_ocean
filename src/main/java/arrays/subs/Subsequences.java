@@ -37,11 +37,11 @@ import java.util.Arrays;
  * babgbag
  * ^^    ^
  * babgbag
+ *   ^  ^^
+ * babgbag
  * ^    ^^
  * babgbag
- * ^  ^^
- * babgbag
- * ^^^
+ *     ^^^
  * <p>
  * This problem is similar to {@link strings.FrequencyOfSubstring}
  * <p>
