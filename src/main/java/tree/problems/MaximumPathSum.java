@@ -1,17 +1,15 @@
 package tree.problems;
 
-import javax.swing.tree.TreeCellRenderer;
-
 /**
  * Question:
  * Given a binary tree, find the maximum path sum. The path may start and end at any node in the tree.
  * For example, given the below binary tree,
  * <p>
- * 1
- * /\
- * 2  4
- * /\
- * 2  3
+ *     1
+ *    /\
+ *   2  4
+ *     /\
+ *    2  3
  * The highlighted path(1-4-2-3) yields the maximum sum 10.
  * <p>
  * Example Questions Candidate Might Ask:
@@ -19,7 +17,6 @@ import javax.swing.tree.TreeCellRenderer;
  * A: Assume the tree is non-empty.
  * Q: How about a tree that contains only a single node?
  * A: Then the maximum path sum starts and ends at the same node.
- * Difficulty: Hard, Frequency: Medium
  * Q: What if every node contains negative value?
  * A: Then you should return the single node value that is the least negative.
  * Q: Does the maximum path have to go through the root node?
@@ -28,7 +25,7 @@ import javax.swing.tree.TreeCellRenderer;
  * /\ 23
  * /\ -1 4
  * Hint:
- * Anytime when you found that doing top down approach uses a lot of repeated calculation, bottom up approach usually
+ * Anytime when you found that doing top-down approach uses a lot of repeated calculation, bottom up approach usually
  * is able to be more efficient.
  */
 public class MaximumPathSum {
@@ -41,21 +38,21 @@ public class MaximumPathSum {
      * 3 - Max(left subtree) + Max(Right subtree) + node
      * 4 - Node
      */
-    private static int findMax(TreeNode root) {
+    private static int findMaxPathSum(TreeNode root) {
         if (root == null) {
             return 0;
         }
-        int leftSum = findMax(root.left);
-        int rightSum = findMax(root.right);
+        int leftSum = findMaxPathSum(root.left);
+        int rightSum = findMaxPathSum(root.right);
         int sum = root.data + leftSum + rightSum;
-        maxSum = Math.max(maxSum, sum);
+        maxSum = Math.max(sum, maxSum);
         int res = root.data + Math.max(leftSum, rightSum);
         return Math.max(res, 0);
     }
 
     private static int maxPathSum(TreeNode root) {
         maxSum = Integer.MIN_VALUE;
-        findMax(root);
+        findMaxPathSum(root);
         return maxSum;
     }
 

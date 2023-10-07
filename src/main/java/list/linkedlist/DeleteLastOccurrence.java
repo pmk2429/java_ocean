@@ -38,7 +38,7 @@ public class DeleteLastOccurrence {
     }
 
     public static void main(String[] args) {
-        ListNode head = LinkedListUtil.createWithDuplicates();
+        ListNode head = LinkedListUtil.createWithDuplicatesUnsorted();
         System.out.print("Created Linked list: \n");
         LinkedListUtil.display(head);
         deleteLast(head, 4);

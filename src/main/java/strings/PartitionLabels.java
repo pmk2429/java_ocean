@@ -32,18 +32,20 @@ public class PartitionLabels {
      * This will make sure that the partitions are divided based on the ends and not arbitrarily.
      */
     private static List<Integer> partitionLabels(String str) {
-        int[] last = new int[26];
+        int[] lastIndex = new int[26]; // stores the last index; occurrence of current char
         for (int i = 0; i < str.length(); i++) {
-            last[str.charAt(i) - 'a'] = i;
+            lastIndex[str.charAt(i) - 'a'] = i;
         }
 
-        int j = 0, anchor = 0;
+        int j = 0, partitionIndex = 0;
         List<Integer> ans = new ArrayList<>();
         for (int i = 0; i < str.length(); i++) {
-            j = Math.max(j, last[str.charAt(i) - 'a']);
+            j = Math.max(j, lastIndex[str.charAt(i) - 'a']);
+            // once `j` has reached `i` make the partition
             if (i == j) {
-                ans.add(i - anchor + 1);
-                anchor = i + 1;
+                ans.add(i - partitionIndex + 1);
+                // once partition is done, increment partitionIndex to curr index + 1
+                partitionIndex = i + 1;
             }
         }
         return ans;

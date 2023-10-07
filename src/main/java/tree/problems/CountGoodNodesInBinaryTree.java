@@ -36,6 +36,10 @@ public class CountGoodNodesInBinaryTree {
     private static int numGoodNodes = 0;
 
     private static void dfs(TreeNode node, int maxSoFar) {
+        if (node == null) {
+            return;
+        }
+
         if (node.data >= maxSoFar) {
             numGoodNodes++;
             maxSoFar = node.data;

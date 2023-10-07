@@ -4,7 +4,7 @@ package tree.problems;
  * Given a binary tree where all the right nodes are either leaf nodes with a sibling (a left
  * where the original right nodes turned into left leaf nodes. Return the new root.
  * <p>
- * Top down approach:
+ * Top-down approach:
  * We need to be very careful when reassigning current node’s left and right children.
  * Besides making a copy of the parent node, you would also need to make a copy of the parent’s right child too.
  * The reason is the current node becomes the parent node in the next iteration.
@@ -30,15 +30,25 @@ public class UpsideDown {
      * If we reassign the bottom-level nodes before the upper ones, we won’t have to make copies and worry about
      * overwriting something. We know the new root will be the left-most leaf node, so we begin the reassignment here.
      */
-    public Node upsideBTBottomUp(Node root) {
+    private static TreeNode dfsBottomUp(TreeNode node, TreeNode parent) {
+        if (node == null) {
+            return parent;
+        }
+        TreeNode root = dfsBottomUp(node.left, node);
+        node.left = (parent == null) ? null : parent.right;
+        node.right = parent;
+        return root;
+    }
+
+    private static TreeNode upsideBTBottomUp(TreeNode root) {
         return dfsBottomUp(root, null);
     }
 
-    private Node dfsBottomUp(Node p, Node parent) {
-        if (p == null) return parent;
-        Node root = dfsBottomUp(p.left, p);
-        p.left = (parent == null) ? null : parent.right;
-        p.right = parent;
-        return root;
+    public static void main(String[] args) {
+        TreeNode root = TreeNode.createBT();
+        TreeNode.printTree(root);
+        System.out.println("\n--------------");
+        TreeNode updatedRoot = upsideBTBottomUp(root);
+        TreeNode.printTree(updatedRoot);
     }
 }

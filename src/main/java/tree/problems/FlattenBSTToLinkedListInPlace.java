@@ -38,7 +38,7 @@ public class FlattenBSTToLinkedListInPlace {
         while (node != null) {
             // If the node has a left child
             if (node.left != null) {
-                // Find the rightmost node - successor
+                // Find the rightmost node in left subtree - predecessor
                 TreeNode leftRoot = node.left;
                 while (leftRoot.right != null) {
                     leftRoot = leftRoot.right;

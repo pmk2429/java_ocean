@@ -21,10 +21,12 @@ package tree.problems;
  * problems where inorder tree problems are used especially in order statistics eg-Kth largest element in BST,
  * Kth smallest in BST etc. Hence, this is where Morris traversal would come handy as a more efficient method to do
  * inorder traversal in constant O(1) space without using any stack or recursion.
+ * <p>
+ * Similar to {@link RangeSumBST}, {@link PrintAllNodesBetweenLevels} and {@link KthLargestMorrisTraversal}.
  */
 public class MorrisTraversal {
 
-    private static void rangeTraversal(TreeNode root, int n1, int n2) {
+    private static void rangeTraversal(TreeNode root, int low, int high) {
         if (root == null) {
             return;
         }
@@ -34,7 +36,7 @@ public class MorrisTraversal {
         while (curr != null) {
             if (curr.left == null) {
                 // check if current Node lies between n1 and n2
-                if (curr.data >= n1 && curr.data <= n2) {
+                if (low <= curr.data && curr.data <= high) {
                     System.out.print(curr.data + " ");
                 }
                 curr = curr.right;
@@ -42,16 +44,16 @@ public class MorrisTraversal {
             else {
                 // finding the inorder predecessor is the right most in left subtree or the left
                 // child, i.e. in BST it is the maximum(right most) in left subtree.
-                TreeNode pre = TreeNode.predecessor(curr);
+                TreeNode predecessor = TreeNode.predecessor(curr);
 
-                if (pre.right == null) {
-                    pre.right = curr;
+                if (predecessor.right == null) {
+                    predecessor.right = curr;
                     curr = curr.left;
                 }
                 else {
-                    pre.right = null;
+                    predecessor.right = null;
                     // check if current Node lies between n1 and n2
-                    if (curr.data >= n1 && curr.data <= n2) {
+                    if (low <= curr.data && curr.data <= high) {
                         System.out.print(curr.data + " ");
                     }
                     curr = curr.right;

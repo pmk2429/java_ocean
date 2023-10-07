@@ -3,7 +3,10 @@ package tree.problems;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PathFromRootToNode {
+/**
+ * Similar to {@link RootToLeafPaths} with a variation to build the path only until a specific TreeNode.
+ */
+public class RootToNodePath {
     private static boolean hasPath(TreeNode root, int key, List<Integer> result) {
         if (root == null) {
             return false;

@@ -1,9 +1,7 @@
 package tree.problems;
 
-import javax.swing.tree.TreeCellRenderer;
-
 public class SearchBST {
-    private static TreeNode searchBST(TreeNode root, Integer val) {
+    private static TreeNode searchBST(TreeNode root, int val) {
         while (root != null && root.data != val) {
             root = val < root.data ? root.left : root.right;
         }
@@ -14,5 +12,7 @@ public class SearchBST {
         TreeNode root = TreeNode.createBSTUneven();
         TreeNode searchRoot = searchBST(root, 40);
         System.out.println(searchRoot);
+        TreeNode searchRoot2 = searchBST(root, 24);
+        System.out.println(searchRoot2);
     }
 }
