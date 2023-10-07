@@ -38,15 +38,15 @@ public class EraseOverlappingIntervals {
         // sort intervals based on their end
         Arrays.sort(intervals, Comparator.comparingInt(a -> a[1]));
         int ans = 0;
-        int end = Integer.MIN_VALUE;
+        int prevEnd = Integer.MIN_VALUE;
 
         for (int[] interval : intervals) {
-            int lo = interval[0];
-            int hi = interval[1];
+            int start = interval[0];
+            int end = interval[1];
 
-            if (lo >= end) {
+            if (start >= prevEnd) {
                 // update the end to most recently seen interval
-                end = hi;
+                prevEnd = end;
             }
             else {
                 // Here, the start of the interval is less than the most recent end, so it's an overlap

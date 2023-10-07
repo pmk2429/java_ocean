@@ -3,6 +3,9 @@ package tree.problems;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
+/**
+ * Similar to {@link RangeSumBST}.
+ */
 public class PrintAllNodesBetweenLevels {
 
     private static void printNodes(TreeNode root, int startLevel, int endLevel) {
@@ -22,7 +25,7 @@ public class PrintAllNodesBetweenLevels {
             while (size-- > 0) {
                 curr = queue.poll();
 
-                if (level >= startLevel && level <= endLevel) {
+                if (startLevel <= level && level <= endLevel) {
                     System.out.print(curr.data + " ");
                 }
 
@@ -34,7 +37,7 @@ public class PrintAllNodesBetweenLevels {
                 }
             }
 
-            if (level >= startLevel && level <= endLevel) {
+            if (startLevel <= level && level <= endLevel) {
                 System.out.println();
             }
         }

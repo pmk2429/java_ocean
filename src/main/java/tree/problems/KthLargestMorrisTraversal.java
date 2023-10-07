@@ -1,6 +1,6 @@
 package tree.problems;
 
-public class KthLargestMorrisTraversalO1 {
+public class KthLargestMorrisTraversal {
 
     private static TreeNode kthLargest(TreeNode root, int k) {
         if (root == null) {

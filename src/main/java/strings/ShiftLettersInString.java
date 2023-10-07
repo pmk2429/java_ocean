@@ -37,6 +37,20 @@ public class ShiftLettersInString {
      * This is equivalent to shifting "abc" with shifts=[3+5+9 , 5+9 , 9 ] == [17 , 14 , 9]
      * So the intuition of this solution is to do reverse prefix sum.
      * <a href="https://leetcode.com/problems/shifting-letters/solutions/1451878/c-java-python-easy-solution-well-explained-with-code-for-reference/">...</a>
+     * <p>
+     * this statement is taking a character from the original string, applying a shift to it, and updating
+     * the corresponding character in a StringBuilder with the shifted character
+     * <p>
+     * (shift + shifts[i]) % 26:
+     * This calculates the new shift value for the character.
+     * shift is a running total of shifts calculated for previous characters, and shifts[i] is the
+     * shift specified for the current character at index i.
+     * The modulo operation % 26 ensures that the shift value wraps around within the range of the
+     * English alphabet (26 letters).
+     * <p>
+     * ((s.charAt(i) - 'a' + (shift + shifts[i]) % 26) % 26):
+     * This combines the previous two steps to calculate the new 0-based index of the character within the
+     * English alphabet after applying the shift.
      */
     private static String shiftingLetters(String s, int[] shifts) {
         if (s == null || s.trim().length() == 0) {
@@ -47,7 +61,12 @@ public class ShiftLettersInString {
         int length = s.length();
         long shift = 0;
         for (int i = length - 1; i >= 0; i--) {
-            ans.setCharAt(i, (char) ((s.charAt(i) - 'a' + (shift + shifts[i]) % 26) % 26 + 'a'));
+            int charValue = s.charAt(i) - 'a';
+            int shiftValue = (int) ((shift + shifts[i]) % 26);
+            int shiftedCharValue = (charValue + shiftValue) % 26;
+            char shiftedChar = (char) (shiftedCharValue + 'a');
+            ans.setCharAt(i, shiftedChar);
+            // ans.setCharAt(i, (char) ((s.charAt(i) - 'a' + (shift + shifts[i]) % 26) % 26 + 'a'));
             shift += shifts[i];
         }
         return ans.toString();

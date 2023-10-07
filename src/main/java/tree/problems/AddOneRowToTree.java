@@ -1,7 +1,7 @@
 package tree.problems;
 
 import java.util.ArrayDeque;
-import java.util.Queue;
+import java.util.Deque;
 
 /**
  * Given the root of a binary tree and two integers val and depth, add a row of nodes with value val at the given depth.
@@ -44,28 +44,30 @@ public class AddOneRowToTree {
      * number of nodes at any level in the given tree.
      */
     private static TreeNode addOneRow(TreeNode root, int v, int d) {
+        // to insert at the top of the tree
         if (d == 1) {
             TreeNode n = new TreeNode(v);
             n.left = root;
             return n;
         }
-        Queue<TreeNode> queue = new ArrayDeque<>();
-        queue.add(root);
+        Deque<TreeNode> queue = new ArrayDeque<>();
+        queue.offer(root);
         int depth = 1;
 
         while (depth < d - 1) {
-            Queue<TreeNode> temp = new ArrayDeque<>();
+            Deque<TreeNode> temp = new ArrayDeque<>();
             while (!queue.isEmpty()) {
+                // .remove() similar to .poll() except it throws an Exception if Queue is empty
                 TreeNode node = queue.remove();
-                if (node.left != null) temp.add(node.left);
-                if (node.right != null) temp.add(node.right);
+                if (node.left != null) temp.offer(node.left);
+                if (node.right != null) temp.offer(node.right);
             }
             queue = temp;
             depth++;
         }
 
         while (!queue.isEmpty()) {
-            TreeNode node = queue.remove();
+            TreeNode node = queue.poll();
             TreeNode temp = node.left;
             node.left = new TreeNode(v);
             node.left.left = temp;

@@ -56,7 +56,7 @@ public class LinkedListUtil {
         return head;
     }
 
-    public static ListNode createWithDuplicates() {
+    public static ListNode createWithDuplicatesUnsorted() {
         ListNode head = newNode(1);
         head.next = newNode(2);
         head.next.next = newNode(3);
@@ -67,6 +67,23 @@ public class LinkedListUtil {
         head.next.next.next.next.next.next.next = newNode(7);
         head.next.next.next.next.next.next.next.next = newNode(4);
         head.next.next.next.next.next.next.next.next.next = newNode(8);
+
+        return head;
+    }
+
+    public static ListNode createWithDuplicates() {
+        ListNode head = newNode(1);
+        head.next = newNode(2);
+        head.next.next = newNode(3);
+        head.next.next.next = newNode(3);
+        head.next.next.next.next = newNode(3);
+        head.next.next.next.next.next = newNode(4);
+        head.next.next.next.next.next.next = newNode(5);
+        head.next.next.next.next.next.next.next = newNode(6);
+        head.next.next.next.next.next.next.next.next = newNode(6);
+        head.next.next.next.next.next.next.next.next.next = newNode(6);
+        head.next.next.next.next.next.next.next.next.next.next = newNode(7);
+        head.next.next.next.next.next.next.next.next.next.next.next = newNode(8);
 
         return head;
     }

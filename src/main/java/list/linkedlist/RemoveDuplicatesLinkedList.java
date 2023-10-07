@@ -22,7 +22,7 @@ package list.linkedlist;
  * The list is guaranteed to be sorted in ascending order.
  */
 public class RemoveDuplicatesLinkedList {
-    public ListNode deleteDuplicates(ListNode head) {
+    public static ListNode deleteDuplicates(ListNode head) {
         if (head == null) {
             return null;
         }
@@ -45,5 +45,12 @@ public class RemoveDuplicatesLinkedList {
             curr = curr.next;
         }
         return dummy.next;
+    }
+
+    public static void main(String[] args) {
+        ListNode head = LinkedListUtil.createWithDuplicates();
+        LinkedListUtil.printFancy(head);
+        ListNode updatedHead = deleteDuplicates(head);
+        LinkedListUtil.printFancy(updatedHead);
     }
 }
