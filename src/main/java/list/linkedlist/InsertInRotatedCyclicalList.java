@@ -5,7 +5,7 @@ package list.linkedlist;
  * Since the list is rotates, the first element will be greater than the new val to insert.
  * This problem is same as {@link InsertInSortedLinkedList}.
  */
-public class InsertInCyclicalList {
+public class InsertInRotatedCyclicalList {
 
     private static ListNode insert(ListNode head, int val) {
         if (head == null) {

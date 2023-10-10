@@ -43,15 +43,11 @@ public class CrackingSafe {
     }
 
     private static String crackSafe(int n, int k) {
-        if (n < 0 || n > 4) {
+        if (n < 1 || n > 4) {
             return "0";
         }
 
-        if (k < 0 || k > 10) {
-            return "0";
-        }
-
-        if (n == 1 && k == 1) {
+        if (k < 1 || k > 10) {
             return "0";
         }
 
@@ -59,19 +55,19 @@ public class CrackingSafe {
         ans = new StringBuilder();
 
         StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < n - 1; ++i) {
+        for (int i = 0; i < n - 1; i++) {
             sb.append("0");
         }
         String start = sb.toString();
 
         dfs(start, k);
         ans.append(start);
-        return new String(ans);
+        return ans.toString();
     }
 
     public static void main(String[] args) {
         int n = 2;
-        int k = 5;
+        int k = 2;
         System.out.println(crackSafe(n, k));
     }
 }

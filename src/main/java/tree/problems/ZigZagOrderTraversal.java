@@ -37,23 +37,23 @@ public class ZigZagOrderTraversal {
             return list;
         }
 
-        Deque<TreeNode> q = new ArrayDeque<>();
-        q.offer(root);
+        Deque<TreeNode> queue = new ArrayDeque<>();
+        queue.offer(root);
         boolean even = true;
 
-        while (!q.isEmpty()) {
-            int size = q.size();
+        while (!queue.isEmpty()) {
+            int size = queue.size();
             // use of LinkedList ensures that we can have insertion of elements from both ends
             LinkedList<Integer> currentLevelNodes = new LinkedList<>();
 
             while (size-- > 0) {
-                TreeNode curr = q.poll();
+                TreeNode curr = queue.poll();
 
                 if (curr.left != null) {
-                    q.offer(curr.left);
+                    queue.offer(curr.left);
                 }
                 if (curr.right != null) {
-                    q.offer(curr.right);
+                    queue.offer(curr.right);
                 }
 
                 if (even) {

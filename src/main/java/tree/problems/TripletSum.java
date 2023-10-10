@@ -34,17 +34,16 @@ public class TripletSum {
     private static int[] findTripletSum(int[] nodesArr, int sum) {
         int[] tripletSum = new int[3];
         // Now, check if any triplet with given sum exists in the BST or not
-        int l, r;
+        int l, r = nodesArr.length - 1;
 
         // Now fix the first element one by one and find the other two elements
         for (int i = 0; i < nodesArr.length - 2; i++) {
             // To find the other two elements, start two index
             // variables from two corners of the array and move
             // them toward each other
+
             l = i + 1; // index of the first element in the remaining elements
 
-            // index of the last element
-            r = nodesArr.length - 1;
             tripletSum[0] = nodesArr[i];
             while (l < r) {
                 if (nodesArr[i] + nodesArr[l] + nodesArr[r] == sum) {
@@ -56,7 +55,6 @@ public class TripletSum {
                     l++;
                 }
                 else {
-                    // vec[i] + vec[l] + vec[r] > sum
                     r--;
                 }
             }

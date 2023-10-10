@@ -34,6 +34,15 @@ import java.util.*;
  */
 public class CourseSchedule {
 
+    /**
+     * For graph with nodes [1,0], there are a total of 2 courses to take.
+     * To take course 1 you should have finished course 0. So it is possible.
+     *
+     * This means that there is a path from u -> v such that in order to go to node `v` you must traverse
+     * node `u` and once you traverse `u` then only you can traverse `v`.
+     * So if we have to define a relationship between u and v on a graph then there should be an edge directed
+     * from `u` to `v` and so in such a case, the inDegree (total incoming edge) of `v` is 1.
+     */
     private static boolean canFinish(int numCourses, int[][] prerequisites) {
         List<Integer>[] graph = new LinkedList[numCourses];
         int[] inDegree = new int[numCourses];

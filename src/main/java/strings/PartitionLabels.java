@@ -21,6 +21,8 @@ import java.util.List;
  * -----
  * S will have length in range [1, 500].
  * S will consist of lowercase letters ('a' to 'z') only.
+ * <p>
+ * Similar to {@link PositionOfLargeGroups}.
  */
 public class PartitionLabels {
 

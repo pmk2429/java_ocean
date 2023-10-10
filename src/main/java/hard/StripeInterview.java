@@ -1,6 +1,6 @@
 package hard;
 
-import java.util.Objects;
+import strings.HanaStringUtils;
 
 /**
  * For the purposes of this interview, imagine that we own a store. This
@@ -10,78 +10,78 @@ import java.util.Objects;
  * shopping and when they aren't by simply writing a single letter every
  * hour: 'Y' if there were customers during that hour, 'N' if the store
  * was empty during that hour.
- *
+ * <p>
  * For example, our employee might have written "Y Y N Y", which means
  * the store was open for four hours that day, and it had customers
  * shopping during every hour but its third one.
- *
- *   hour: | 1 | 2 | 3 | 4 |
- *   log:  | Y | Y | N | Y |
- *                   ^
- *                   |
- *             No customers during hour 3
- *
+ * <p>
+ * hour: | 1 | 2 | 3 | 4 |
+ * log:  | Y | Y | N | Y |
+ * ^
+ * |
+ * No customers during hour 3
+ * <p>
  * We suspect that we're keeping the store open too long, so we'd like to
  * understand when we *should have* closed the store. For simplicity's
  * sake, we'll talk about when to close the store by talking about how
  * many hours it was open: if our closing time is `2`, that means the
  * store would have been open for two hours and then closed.
- *
- *   hour:         | 1 | 2 | 3 | 4 |
- *   log:          | Y | Y | N | Y |
- *   closing_time: 0   1   2   3   4
- *                 ^               ^
- *                 |               |
- *          before hour #1    after hour #4
- *
+ * <p>
+ * hour:         | 1 | 2 | 3 | 4 |
+ * log:          | Y | Y | N | Y |
+ * closing_time: 0   1   2   3   4
+ * ^               ^
+ * |               |
+ * before hour #1    after hour #4
+ * <p>
  * (A closing time of 0 means we simply wouldn't have opened the store at
  * all that day.)
- *
+ * <p>
  * First, let's define a "penalty": what we want to know is "how bad
  * would it be if we had closed the store at a given hour?" For a given
  * log and a given closing time, we compute our penalty like this:
- *
- *   +1 penalty for every hour that we're *open* with no customers
- *   +1 penalty for every hour that we're *closed* when customers would have shopped
- *
+ * <p>
+ * +1 penalty for every hour that we're *open* with no customers
+ * +1 penalty for every hour that we're *closed* when customers would have shopped
+ * <p>
  * For example:
- *
- *   hour:    | 1 | 2 | 3 | 4 |   penalty = 3:
- *   log:     | Y | Y | N | Y |     (three hours with customers after closing)
- *   penalty: | * | * |   | * |
- *            ^
- *            |
- *          closing_time = 0
- *
- *   hour:    | 1 | 2 | 3 | 4 |   penalty = 2:
- *   log:     | N | Y | N | Y |      (one hour without customers while open +
- *   penalty: | * |   |   | * |       one hour with customers after closing)
- *                    ^
- *                    |
- *                  closing_time = 2
- *
- *   hour:    | 1 | 2 | 3 | 4 |   penalty = 1
- *   log:     | Y | Y | N | Y |      (one hour without customers while open)
- *   penalty: |   |   | * |   |
- *                            ^
- *                            |
- *                          closing_time = 4
- *
+ * <p>
+ * hour:    | 1 | 2 | 3 | 4 |   penalty = 3:
+ * log:     | Y | Y | N | Y |     (three hours with customers after closing)
+ * penalty: | * | * |   | * |
+ * ^
+ * |
+ * closing_time = 0
+ * <p>
+ * hour:    | 1 | 2 | 3 | 4 |   penalty = 2:
+ * log:     | N | Y | N | Y |      (one hour without customers while open +
+ * penalty: | * |   |   | * |       one hour with customers after closing)
+ * ^
+ * |
+ * closing_time = 2
+ * <p>
+ * hour:    | 1 | 2 | 3 | 4 |   penalty = 1
+ * log:     | Y | Y | N | Y |      (one hour without customers while open)
+ * penalty: |   |   | * |   |
+ * ^
+ * |
+ * closing_time = 4
+ * <p>
  * Note that if we have a log from `n` open hours, the `closing_time`
  * variable can range from 0, meaning "never even opened", to n, meaning
  * "open the entire time".
- *
+ * <p>
  * 1)
  * Write a function `compute_penalty` that computes the total penalty, given
- *   a store log (as a space separated string) AND
- *   a closing time (as an integer)
- *
+ * a store log (as a space separated string) AND
+ * a closing time (as an integer)
+ * <p>
  * In addition to writing this function, you should use tests to
  * demonstrate that it's correct. Do some simple testing, and then quickly
  * describe a few other tests you would write given more time.
- *
+ * <p>
  * ## Examples
- *
+ * <p>
  * compute_penalty("Y Y N Y", 0) should return 3
  * compute_penalty("N Y N Y", 2) should return 2
  * compute_penalty("Y Y N Y", 4) should return 1
@@ -98,7 +98,7 @@ public class StripeInterview {
         final String CUSTOMER_VISIT = "Y";
         final String CUSTOMER_NOT_VISIT = "N";
 
-        if  (log == null || log.trim().length() == 0) {
+        if (HanaStringUtils.isNullOrEmpty(log)) {
             return totalPenalty;
         }
 
@@ -114,11 +114,12 @@ public class StripeInterview {
         for (int i = 0; i < visitorLogLength; i++) {
             // first case
             if (i >= closingTime) {
-                if (Objects.equals(visitorLog[i], CUSTOMER_VISIT)) {
+                if (CUSTOMER_VISIT.equals(visitorLog[i])) {
                     sum++;
                 }
-            } else {
-                if (Objects.equals(visitorLog[i], CUSTOMER_NOT_VISIT)) {
+            }
+            else {
+                if (CUSTOMER_NOT_VISIT.equals(visitorLog[i])) {
                     sum++;
                 }
             }
@@ -142,7 +143,8 @@ public class StripeInterview {
     private static <T> void assertEquals(T expected, T actual) {
         if (expected == null && actual == null || actual != null && actual.equals(expected)) {
             System.out.println("PASSED");
-        } else {
+        }
+        else {
             throw new AssertionError("Expected:\n  " + expected + "\nActual:\n  " + actual + "\n");
         }
     }

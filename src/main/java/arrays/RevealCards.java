@@ -57,12 +57,14 @@ public class RevealCards {
         }
 
         int N = deck.length;
+        int[] ans = new int[N]; // resultant array
+
+        Arrays.sort(deck);
+
         Deque<Integer> queue = new ArrayDeque<>();
         for (int i = 0; i < N; i++) {
             queue.offer(i);
         }
-        int[] ans = new int[N]; // resultant array
-        Arrays.sort(deck);
 
         for (int card : deck) {
             int index = queue.poll();

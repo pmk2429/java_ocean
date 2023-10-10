@@ -35,7 +35,7 @@ public class NumberOfWeakCharactersInGame {
     private static int numberOfWeakCharacters(int[][] properties) {
         // Sort in ascending order of attack,
         // If attack is same sort in descending order of defense
-        Arrays.sort(properties, (a, b) -> (a[0] == b[0]) ? (b[1] - a[1]) : a[0] - b[0]);
+        Arrays.sort(properties, (a, b) -> a[0] == b[0] ? b[1] - a[1] : a[0] - b[0]);
 
         int weakCharacters = 0;
         int maxDefense = 0;
@@ -54,5 +54,7 @@ public class NumberOfWeakCharactersInGame {
     public static void main(String[] args) {
         int[][] properties = {{1, 5}, {10, 4}, {4, 3}};
         System.out.println(numberOfWeakCharacters(properties));
+        int[][] properties2 = {{5, 5}, {6, 3}, {3, 6}};
+        System.out.println(numberOfWeakCharacters(properties2));
     }
 }

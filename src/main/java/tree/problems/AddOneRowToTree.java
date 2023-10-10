@@ -44,6 +44,10 @@ public class AddOneRowToTree {
      * number of nodes at any level in the given tree.
      */
     private static TreeNode addOneRow(TreeNode root, int v, int d) {
+        if (root == null) {
+            return null;
+        }
+
         // to insert at the top of the tree
         if (d == 1) {
             TreeNode n = new TreeNode(v);

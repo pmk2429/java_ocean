@@ -102,7 +102,7 @@ public class SumRootToLeaf {
     }
 
     public static void main(String[] args) {
-        TreeNode root = TreeNode.createUnusualTree();
+        TreeNode root = TreeNode.createBT();
         System.out.println(sumNumbers(root));
     }
 }
