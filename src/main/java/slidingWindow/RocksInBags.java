@@ -50,7 +50,7 @@ public class RocksInBags {
 
         // Sort bags by the remaining capacity.
         int[] remainingCapacity = new int[n];
-        for (int i = 0; i < n; ++i) {
+        for (int i = 0; i < n; i++) {
             remainingCapacity[i] = capacity[i] - rocks[i];
         }
 

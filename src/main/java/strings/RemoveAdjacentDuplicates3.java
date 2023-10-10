@@ -36,6 +36,9 @@ import java.util.Stack;
  */
 public class RemoveAdjacentDuplicates3 {
 
+    /**
+     * Similar to {@link market.StockSpanner} where we maintain the cached results in Stack.
+     */
     private static String removeDuplicates(String s, int k) {
         StringBuilder sb = new StringBuilder(s);
         Stack<Integer> counts = new Stack<>();

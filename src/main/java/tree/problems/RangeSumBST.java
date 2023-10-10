@@ -33,14 +33,14 @@ public class RangeSumBST {
      * Space Complexity: O(N)
      */
     private static int rangeSumBST(TreeNode root, int low, int high) {
-        int ans = 0;
+        int sum = 0;
         Stack<TreeNode> stack = new Stack<>();
         stack.push(root);
         while (!stack.isEmpty()) {
             TreeNode node = stack.pop();
             if (node != null) {
                 if (low <= node.data && node.data <= high) {
-                    ans += node.data;
+                    sum += node.data;
                 }
                 if (low < node.data) {
                     stack.push(node.left);
@@ -50,7 +50,7 @@ public class RangeSumBST {
                 }
             }
         }
-        return ans;
+        return sum;
     }
 
     public static void main(String[] args) {

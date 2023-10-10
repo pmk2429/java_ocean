@@ -33,7 +33,7 @@ public class CourseScheduleFindOrder {
 
     private static int[] findOrder(int numCourses, int[][] prerequisites) {
         Map<Integer, List<Integer>> graph = new HashMap<>();
-        Queue<Integer> q = new ArrayDeque<>();
+        Deque<Integer> queue = new ArrayDeque<>();
         int[] inDegree = new int[numCourses];
         int[] topologicalOrder = new int[numCourses];
 
@@ -41,6 +41,8 @@ public class CourseScheduleFindOrder {
         for (int[] prerequisite : prerequisites) {
             int u = prerequisite[1];
             int v = prerequisite[0];
+
+            // init the Graph
             List<Integer> adjacencyList = graph.getOrDefault(u, new ArrayList<>());
             adjacencyList.add(v);
             graph.put(u, adjacencyList);
@@ -52,13 +54,13 @@ public class CourseScheduleFindOrder {
         // Add all vertices with 0 in-degree to the queue
         for (int i = 0; i < numCourses; i++) {
             if (inDegree[i] == 0) {
-                q.add(i);
+                queue.add(i);
             }
         }
 
         int counter = 0;
-        while (!q.isEmpty()) {
-            int nodeId = q.poll();
+        while (!queue.isEmpty()) {
+            int nodeId = queue.poll();
             topologicalOrder[counter] = nodeId;
 
             // Reduce the in-degree of each neighbor by 1
@@ -68,7 +70,7 @@ public class CourseScheduleFindOrder {
 
                     // If in-degree of a neighbor becomes 0, add it to the Q
                     if (inDegree[neighborId] == 0) {
-                        q.add(neighborId);
+                        queue.add(neighborId);
                     }
                 }
             }

@@ -49,7 +49,8 @@ public class RemoveCancellableNodes {
             temp.next = null;
             if (newHead.next == null) {
                 newHead = temp;
-            } else {
+            }
+            else {
                 newHead.next = temp;
             }
         }
@@ -62,5 +63,11 @@ public class RemoveCancellableNodes {
         LinkedListUtil.printFancy(head);
         ListNode updatedHead = removeCancellableNodes(head);
         LinkedListUtil.display(updatedHead);
+
+        int[] arr2 = {4, 6, -10, 8, 9, 10, -19, 10, -18, 20, 25};
+        ListNode head2 = LinkedListUtil.createFromArray(arr2);
+        LinkedListUtil.printFancy(head2);
+        ListNode updatedHead2 = removeCancellableNodes(head2);
+        LinkedListUtil.display(updatedHead2);
     }
 }

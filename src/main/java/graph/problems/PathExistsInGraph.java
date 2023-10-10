@@ -38,37 +38,47 @@ import java.util.*;
  */
 public class PathExistsInGraph {
 
-    public boolean validPath(int n, int[][] edges, int source, int destination) {
+    private static boolean validPath(int n, int[][] edges, int source, int destination) {
         Map<Integer, List<Integer>> graph = new HashMap<>();
-        for (int[] edge : edges) {
-            int a = edge[0];
-            int b = edge[1];
-            graph.computeIfAbsent(a, val -> new ArrayList<>()).add(b);
-            graph.computeIfAbsent(b, val -> new ArrayList<>()).add(a);
-        }
-
-        // Store all the nodes to be visited in 'queue'.
+        // Store all the nodes to be visited in `queue`.
         boolean[] visited = new boolean[n];
         visited[source] = true;
         Deque<Integer> queue = new ArrayDeque<>();
         queue.offer(source);
 
+        for (int[] edge : edges) {
+            int u = edge[0];
+            int v = edge[1];
+            graph.computeIfAbsent(u, val -> new ArrayList<>()).add(v);
+            graph.computeIfAbsent(v, val -> new ArrayList<>()).add(u);
+        }
+
         while (!queue.isEmpty()) {
             int currNode = queue.poll();
+
             if (currNode == destination) {
                 return true;
             }
 
-            // For all the neighbors of the current node, if we haven't visit it before,
-            // add it to 'queue' and mark it as visited.
-            for (int nextNode : graph.get(currNode)) {
-                if (!visited[nextNode]) {
-                    visited[nextNode] = true;
-                    queue.offer(nextNode);
+            // For all the neighbors of the current node, if we haven't visited it before, add it to `queue` and mark
+            // it as visited.
+            for (int neighborNode : graph.get(currNode)) {
+                if (!visited[neighborNode]) {
+                    visited[neighborNode] = true;
+                    queue.offer(neighborNode);
                 }
             }
         }
-
         return false;
+    }
+
+    public static void main(String[] args) {
+        int n = 3, source = 0, destination = 2;
+        int[][] edges = {{0, 1}, {1, 2}, {2, 0}};
+        System.out.println(validPath(n, edges, source, destination));
+
+        int n2 = 6, source2 = 0, destination2 = 5;
+        int[][] edges2 = {{0, 1}, {0, 2}, {3, 5}, {5, 4}, {4, 3}};
+        System.out.println(validPath(n2, edges2, source2, destination2));
     }
 }

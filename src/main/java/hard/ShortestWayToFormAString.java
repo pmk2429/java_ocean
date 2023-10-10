@@ -44,6 +44,10 @@ public class ShortestWayToFormAString {
         int sourceLength = source.length();
         int targetLength = target.length();
 
+        if (targetLength < sourceLength) {
+            return -1;
+        }
+
         int i = 0, j = 0;
         int count = 1;
         while (j < targetLength) {
@@ -52,7 +56,7 @@ public class ShortestWayToFormAString {
             if (iChar == jChar) {
                 j++;
             }
-            else if (chars[jChar - 'a'] == 0) {
+            else if (chars[jChar - 'a'] <= 0) {
                 // if none of the chars that are present in `source` are in `target`, return -1
                 return -1;
             }
