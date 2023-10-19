@@ -1,7 +1,5 @@
 package stack;
 
-import iomain.io.In;
-
 import java.util.Stack;
 
 public class StackWithMin extends Stack<Integer> {

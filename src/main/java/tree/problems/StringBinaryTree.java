@@ -1,4 +1,4 @@
-package tree.other_impl;
+package tree.problems;
 
 /**
  * Implement these Operations add remove find findMininum findMaximum delete

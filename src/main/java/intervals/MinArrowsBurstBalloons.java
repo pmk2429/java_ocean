@@ -63,14 +63,14 @@ public class MinArrowsBurstBalloons {
         Arrays.sort(intervals, Comparator.comparingInt(a -> a[1]));
 
         int arrows = 1;
-        int xStart, xEnd, firstEnd = intervals[0][1]; // firstEnd points to `end` of first sorted point
+        int xStart, xEnd, prevEnd = intervals[0][1]; // firstEnd points to `end` of first sorted point
         for (int[] interval : intervals) {
             xStart = interval[0];
             xEnd = interval[1];
             // if the current balloon starts after the end of another one needs one more arrow
-            if (xStart > firstEnd) {
+            if (xStart > prevEnd) {
                 arrows++;
-                firstEnd = xEnd;
+                prevEnd = xEnd;
             }
         }
 

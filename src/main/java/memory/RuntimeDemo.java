@@ -1,17 +1,17 @@
 package memory;
 
 public class RuntimeDemo {
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		long startTime = System.currentTimeMillis();
+        long startTime = System.currentTimeMillis();
 
-		long total = 0;
-		for (int i = 0; i < 10000000; i++) {
-			total += i;
-		}
+        long total = 0;
+        for (int i = 0; i < 10000000; i++) {
+            total += i;
+        }
 
-		long stopTime = System.currentTimeMillis();
-		long elapsedTime = stopTime - startTime;
-		System.out.println(elapsedTime + " milliseconds");
-	}
+        long stopTime = System.currentTimeMillis();
+        long elapsedTime = stopTime - startTime;
+        System.out.println(elapsedTime + " milliseconds");
+    }
 }

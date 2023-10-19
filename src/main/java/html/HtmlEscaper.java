@@ -11,8 +11,4 @@ public class HtmlEscaper {
             .collect(Collectors.joining());
     }
 
-
-    public static void main(String[] args) {
-
-    }
 }

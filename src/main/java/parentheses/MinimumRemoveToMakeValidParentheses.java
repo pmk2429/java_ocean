@@ -57,5 +57,7 @@ public class MinimumRemoveToMakeValidParentheses {
     public static void main(String[] args) {
         String s = "lee(t(c)o)de)";
         System.out.println(minRemoveToMakeValid(s));
+        String s2 = "))((";
+        System.out.println(minRemoveToMakeValid(s2));
     }
 }

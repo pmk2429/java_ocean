@@ -35,10 +35,10 @@ package hard;
 public class ShortestWayToFormAString {
 
     private static int minSubsequencesRequired(String source, String target) {
-        int[] chars = new int[26];
+        int[] charFreq = new int[26];
 
         for (char c : source.toCharArray()) {
-            chars[c - 'a']++;
+            charFreq[c - 'a']++;
         }
 
         int sourceLength = source.length();
@@ -56,7 +56,7 @@ public class ShortestWayToFormAString {
             if (iChar == jChar) {
                 j++;
             }
-            else if (chars[jChar - 'a'] <= 0) {
+            else if (charFreq[jChar - 'a'] <= 0) {
                 // if none of the chars that are present in `source` are in `target`, return -1
                 return -1;
             }
