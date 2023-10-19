@@ -7,18 +7,18 @@ package list.linkedlist;
  */
 public class InsertInRotatedCyclicalList {
 
-    private static ListNode insert(ListNode head, int val) {
+    private static ListNode insert(ListNode head, int data) {
         if (head == null) {
             return null;
         }
 
         ListNode curr = head;
         // assuming List is sorted
-        while (curr.data > val) {
+        while (curr.data > data) {
             curr = curr.next;
         }
 
-        ListNode nodeToInsert = new ListNode(val);
+        ListNode nodeToInsert = new ListNode(data);
         nodeToInsert.next = curr.next;
         curr.next = nodeToInsert;
 
