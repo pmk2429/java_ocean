@@ -31,7 +31,7 @@ package parentheses;
 public class MinimumAddToMakeValidParentheses {
 
     private static int minAddToMakeValid(String s) {
-        if (s == null || s.length() == 0) {
+        if (s == null || s.isEmpty()) {
             return -1;
         }
 

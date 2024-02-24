@@ -1,7 +1,5 @@
 package hard;
 
-import iomain.io.In;
-
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -126,5 +124,11 @@ public class WordBreak {
         System.out.print(animals + " -> ");
         System.out.println(wordBreak(animals, wordDictAnimals));
         System.out.println(wordBreak(animals, Arrays.asList(wordDictAnimals)));
+
+        String applePen = "applepenapple";
+        String[] applePenDict = {"apple", "pen"};
+        System.out.print(applePen + " -> ");
+        System.out.println(wordBreak(applePen, applePenDict));
+        System.out.println(wordBreak(applePen, Arrays.asList(applePenDict)));
     }
 }

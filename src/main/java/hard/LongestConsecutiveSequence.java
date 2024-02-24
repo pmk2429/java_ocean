@@ -35,6 +35,7 @@ public class LongestConsecutiveSequence {
         int longestStreak = 0;
 
         for (int num : set) {
+            // logic to find the start point or the lowest element in the Set to start counting the streak
             if (!set.contains(num - 1)) {
                 int currentNum = num;
                 int currentStreak = 1;

@@ -1,10 +1,10 @@
 GAME demo project.
 
-implement algo to find nth to last element of a singly linked list.
+implement algo to find nth to last element of a singly linked linkedlist.
 
 1-9-6-8-7-5-3-4-10 => using interface called DeQueue to traverse in reverse sequential order.
 
-Implement an algo to delete a node in the middle of a single linked list given only access to that node
+Implement an algo to delete a node in the middle of a single linked linkedlist given only access to that node
 Eg: a->b->c->d->e; o/p: a->b->d->e
 
 pg 50; Q) 2.4

@@ -44,7 +44,7 @@ public class MeetingRooms {
         PriorityQueue<Integer> scheduler = new PriorityQueue<>(intervals.length, Comparator.comparingInt(a -> a));
 
         // Sort the intervals by start time
-        Arrays.sort(intervals, Comparator.comparingInt(a -> a.start));
+        Arrays.sort(intervals, Comparator.comparingInt(i -> i.start));
 
         // Add the first meeting
         scheduler.add(intervals[0].end);
