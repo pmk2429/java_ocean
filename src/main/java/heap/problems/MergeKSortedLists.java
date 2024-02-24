@@ -1,6 +1,6 @@
 package heap.problems;
 
-import list.linkedlist.ListNode;
+import linkedlist.ListNode;
 
 import java.util.PriorityQueue;
 

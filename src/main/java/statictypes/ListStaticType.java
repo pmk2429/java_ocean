@@ -7,10 +7,10 @@ public class ListStaticType {
 
     public static void main(String[] args) {
         List<Temp.LocationDetails> locations = new ListStaticType()
-                .getLocations();
+            .getLocations();
 
-        for (int i = 0; i < locations.size(); i++) {
-            System.out.println(locations.get(i).toString());
+        for (Temp.LocationDetails location : locations) {
+            System.out.println(location.toString());
         }
 
     }

@@ -1,5 +1,7 @@
 package hard;
 
+import strings.HanaStringUtils;
+
 import java.util.Stack;
 
 /**
@@ -19,7 +21,7 @@ import java.util.Stack;
  */
 public class DecodeString {
     private static String decodeString(String s) {
-        if (s == null || s.length() == 0) {
+        if (HanaStringUtils.isNullOrEmpty(s)) {
             return "";
         }
 
@@ -45,7 +47,7 @@ public class DecodeString {
                     next.append(poppedChar);
                 }
                 if (!wordStack.isEmpty()) {
-                    wordStack.push(wordStack.pop() + next.toString());
+                    wordStack.push(wordStack.pop() + next);
                 }
                 else {
                     wordStack.push(next.toString());

@@ -1,6 +1,6 @@
 package tree.problems;
 
-import list.linkedlist.ListNode;
+import linkedlist.ListNode;
 
 /**
  * Given a singly linked list where elements are sorted in ascending order, convert it to a height balanced BST.

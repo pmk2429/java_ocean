@@ -19,6 +19,8 @@ package matrix;
  * Given word = "ABCB", return false.
  * <p>
  * ~!@#HARD:REVISE
+ * <p>
+ * Related to {@link trie.WordSearch} and {@link DicesWordSearch}.
  */
 public class WordSearchMaze {
 
@@ -68,10 +70,10 @@ public class WordSearchMaze {
 
     public static void main(String[] args) {
         char[][] board = {
-            {'A', 'B', 'C', 'E'},
+            {'A', 'B', 'P', 'E'},
             {'S', 'F', 'C', 'S'},
-            {'A', 'D', 'P', 'E'},
-            {'A', 'K', 'M', 'E'}
+            {'K', 'D', 'O', 'E'},
+            {'A', 'R', 'M', 'E'}
         };
 
         M = board.length;

@@ -46,6 +46,9 @@ public class PathExistsInGraph {
         Deque<Integer> queue = new ArrayDeque<>();
         queue.offer(source);
 
+        /**
+         * For each edge `u` and `v` in a graph, build bidirectional edge from `u` to `v` and vice versa.
+         */
         for (int[] edge : edges) {
             int u = edge[0];
             int v = edge[1];
