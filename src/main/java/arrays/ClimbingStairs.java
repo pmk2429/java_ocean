@@ -25,6 +25,7 @@ package arrays;
  * Constraints:
  * -----------
  * 1 <= n <= 45
+ * Related to {@link MinCostClimbingStairs}.
  */
 public class ClimbingStairs {
     public static int climbStairs(int n) {

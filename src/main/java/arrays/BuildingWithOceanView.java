@@ -32,6 +32,9 @@ import java.util.Stack;
  */
 public class BuildingWithOceanView {
 
+    /**
+     * Returns list of indices of the buildings who have an ocean view on the right side.
+     */
     private static int[] findBuildings(int[] heights) {
         Stack<Integer> stack = new Stack<>();
         for (int i = heights.length - 1; i >= 0; i--) {

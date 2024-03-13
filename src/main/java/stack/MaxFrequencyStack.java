@@ -1,9 +1,6 @@
 package stack;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.NavigableMap;
-import java.util.TreeMap;
+import java.util.*;
 
 public class MaxFrequencyStack {
     private NavigableMap<Integer, Integer> freqMap;
@@ -29,7 +26,7 @@ public class MaxFrequencyStack {
     }
 
     public Integer peek() {
-        if (freqMap != null && freqMap.size() > 0) {
+        if (freqMap != null && !freqMap.isEmpty()) {
             Map.Entry<Integer, Integer> lastEntry = freqMap.lastEntry();
             return lastEntry.getKey();
         }
@@ -39,7 +36,7 @@ public class MaxFrequencyStack {
     public Integer poll() {
         int x = freqGroup.get(MAX_FREQ).pop();
         freqMap.put(x, freqMap.get(x) - 1);
-        if (freqGroup.get(MAX_FREQ).size() == 0) {
+        if (freqGroup.get(MAX_FREQ).isEmpty()) {
             MAX_FREQ--;
         }
         return x;

@@ -1,6 +1,7 @@
 package arrays;
 
 import java.util.PriorityQueue;
+import java.util.Queue;
 
 /**
  * Given two sorted arrays of size m and n respectively, find the element that would be at the k’th position of the
@@ -40,7 +41,7 @@ public class KthElementOfTwoSortedArrays {
      * - Loop from reverse to find the kth element
      */
     private static int kthElement(int[] a, int[] b, int k) {
-        PriorityQueue<Integer> queue = new PriorityQueue<>();
+        Queue<Integer> queue = new PriorityQueue<>();
 
         for (int i : a) {
             queue.offer(i);
