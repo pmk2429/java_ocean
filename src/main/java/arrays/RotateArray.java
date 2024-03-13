@@ -50,10 +50,10 @@ public class RotateArray {
     }
 
     private static void rotateArrayLeft(int[] arr, int distance) {
+        int length = arr.length;
         // distance iteration
         for (int i = 0; i < distance; i++) {
             // arr iteration
-            int length = arr.length;
             int temp = arr[0];
             for (int d = 0; d < length - 1; d++) {
                 arr[d] = arr[d + 1];
@@ -65,10 +65,10 @@ public class RotateArray {
     }
 
     private static void rotateArrayRight(int[] arr, int distance) {
+        int length = arr.length;
         // distance iteration
         for (int i = 0; i < distance; i++) {
             // arr iteration
-            int length = arr.length;
             int temp = arr[length - 1];
             for (int d = length - 1; d >= 1; d--) {
                 arr[d] = arr[d - 1];

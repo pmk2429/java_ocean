@@ -85,6 +85,8 @@ public class NumberOfLines {
         int[] widths = {10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10};
         int[] o2 = numberOfLines(widths, "abcdefghijklmnopqrstuvwxyz");
         System.out.println(Arrays.toString(o2));
+        int[] o2O = numberOfLinesOptimized(widths, "abcdefghijklmnopqrstuvwxyz");
+        System.out.println(Arrays.toString(o2O));
         int[] widths2 = {4, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10};
         int[] output = numberOfLines(widths2, "bbbcccdddaaa");
         System.out.println(Arrays.toString(output));

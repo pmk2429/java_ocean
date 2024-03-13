@@ -41,54 +41,52 @@ import java.util.Set;
  * isEmpty() : O(1)
  */
 public class DoubleEndedPriorityQueue {
-    Set<Integer> qImpl;
+    private final Set<Integer> queueImpl;
 
     private DoubleEndedPriorityQueue() {
-        qImpl = new HashSet<>();
+        queueImpl = new HashSet<>();
     }
 
     // Returns size of the queue. Works in O(1) time
     int size() {
-        return qImpl.size();
+        return queueImpl.size();
     }
 
-    // Returns true if queue is empty. Works
-    // in O(1) time
+    // Returns true if queue is empty. Works in O(1) time
     private boolean isEmpty() {
-        return (qImpl.size() == 0);
+        return (queueImpl.size() == 0);
     }
 
     // Inserts an element. Works in O(Log n) time
     private void insert(int x) {
-        qImpl.add(x);
+        queueImpl.add(x);
     }
 
     // Returns minimum element. Works in O(1) time
     private int getMin() {
-        return Collections.min(qImpl, null);
+        return Collections.min(queueImpl, null);
     }
 
     // Returns maximum element. Works in O(1) time
     private int getMax() {
-        return Collections.max(qImpl, null);
+        return Collections.max(queueImpl, null);
     }
 
     // Deletes minimum element. Works in O(Log n)
     // time
     private void deleteMin() {
-        if (qImpl.size() == 0) {
+        if (queueImpl.size() == 0) {
             return;
         }
-        qImpl.remove(Collections.min(qImpl, null));
+        queueImpl.remove(Collections.min(queueImpl, null));
     }
 
-    // Deletes maximum element. Works in O(Log n)
-    // time
+    // Deletes maximum element. Works in O(Log n) time
     private void deleteMax() {
-        if (qImpl.size() == 0) {
+        if (queueImpl.size() == 0) {
             return;
         }
-        qImpl.remove(Collections.max(qImpl, null));
+        queueImpl.remove(Collections.max(queueImpl, null));
     }
 
     public static void main(String[] args) {

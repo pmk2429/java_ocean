@@ -30,7 +30,7 @@ import iomain.standardio.StdOut;
  * All stack operations except iteration are constant time.
  * <p>
  */
-public class Stack<Item> implements Iterable<Item> {
+public class MyStack<Item> implements Iterable<Item> {
   private int N; // size of the stack
   private Node first; // top of stack
 
@@ -43,7 +43,7 @@ public class Stack<Item> implements Iterable<Item> {
   /**
    * Create an empty stack.
    */
-  public Stack() {
+  public MyStack() {
     first = null;
     N = 0;
   }
@@ -139,7 +139,7 @@ public class Stack<Item> implements Iterable<Item> {
    * A test client.
    */
   public static void main(String[] args) {
-    Stack<String> s = new Stack<String>();
+    MyStack<String> s = new MyStack<String>();
     while (!StdIn.isEmpty()) {
       String item = StdIn.readString();
       if (!item.equals("-"))

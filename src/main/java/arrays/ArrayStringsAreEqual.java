@@ -31,33 +31,33 @@ package arrays;
  * word1[i] and word2[i] consist of lowercase letters.
  */
 public class ArrayStringsAreEqual {
-    private static boolean arrayStringsAreEqual(String[] word1, String[] word2) {
-        int word1Pointer = 0;
-        int word2Pointer = 0;
-        int char1Pointer = 0;
-        int char2Pointer = 0;
-        int word1Length = word1.length;
-        int word2Length = word2.length;
+    private static boolean arrayStringsAreEqual(String[] firstWordArr, String[] secondWordArr) {
+        int w1 = 0;
+        int w2 = 0;
+        int c1 = 0;
+        int c2 = 0;
+        int word1Length = firstWordArr.length;
+        int word2Length = secondWordArr.length;
 
-        while (word1Pointer < word1Length && word2Pointer < word2Length) {
-            if (word1[word1Pointer].charAt(char1Pointer++) != word2[word2Pointer].charAt(char2Pointer++)) {
+        while (w1 < word1Length && w2 < word2Length) {
+            if (firstWordArr[w1].charAt(c1++) != secondWordArr[w2].charAt(c2++)) {
                 return false;
             }
 
             // reset character pointer and increment the word pointer to point to next pointer in the Array
-            if (char1Pointer == word1[word1Pointer].length()) {
-                word1Pointer++;
-                char1Pointer = 0;
+            if (c1 == firstWordArr[w1].length()) {
+                w1++;
+                c1 = 0;
             }
 
             // reset character pointer and increment the word pointer to point to next pointer in the Array
-            if (char2Pointer == word2[word2Pointer].length()) {
-                word2Pointer++;
-                char2Pointer = 0;
+            if (c2 == secondWordArr[w2].length()) {
+                w2++;
+                c2 = 0;
             }
         }
 
-        return word1Pointer == word1Length && word2Pointer == word2Length;
+        return w1 == word1Length && w2 == word2Length;
     }
 
     public static void main(String[] args) {

@@ -33,7 +33,7 @@ package graph.api.graph;
 
 import iomain.io.In;
 import iomain.standardio.StdOut;
-import stack.Stack;
+import stack.MyStack;
 
 /**
  * The <tt>Graph</tt> class represents an undirected graph of vertices named 0
@@ -101,7 +101,7 @@ public class Graph {
     this.E = G.E();
     for (int v = 0; v < G.V(); v++) {
       // reverse so that adjacency list is in same order as original
-      Stack<Integer> reverse = new Stack<Integer>();
+      MyStack<Integer> reverse = new MyStack<Integer>();
       for (int w : G.adj[v]) {
         reverse.push(w);
       }

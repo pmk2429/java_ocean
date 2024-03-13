@@ -102,7 +102,7 @@ public class StripeInterview {
             return totalPenalty;
         }
 
-        String[] visitorLog = log.split(" ");
+        String[] visitorLog = log.split("\\s+");
 
         int visitorLogLength = visitorLog.length;
 

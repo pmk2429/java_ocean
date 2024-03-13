@@ -32,7 +32,7 @@ import graph.api.undirected.*;
 import iomain.io.*;
 import iomain.standardio.*;
 import queue.Queue;
-import stack.Stack;
+import stack.MyStack;
 
 public class PathFinder {
 
@@ -93,7 +93,7 @@ public class PathFinder {
 
   // return the shortest path from v to s as an Iterable
   public Iterable<String> pathTo(String v) {
-    Stack<String> path = new Stack<String>();
+    MyStack<String> path = new MyStack<String>();
     while (v != null && dist.contains(v)) {
       path.push(v);
       v = prev.get(v);
