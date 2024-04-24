@@ -11,7 +11,7 @@ import java.net.URL;
  * Created by Pavitra on 4/27/2016.
  */
 public class HttpConnection {
-    public static String excutePost(String targetURL, String urlParameters) {
+    public static String executePost(String targetURL, String urlParameters) {
         URL url;
         HttpURLConnection connection = null;
         try {
@@ -19,11 +19,9 @@ public class HttpConnection {
             url = new URL(targetURL);
             connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("POST");
-            connection.setRequestProperty("Content-Type",
-                    "application/x-www-form-urlencoded");
+            connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
 
-            connection.setRequestProperty("Content-Length", "" +
-                    Integer.toString(urlParameters.getBytes().length));
+            connection.setRequestProperty("Content-Length", "" + urlParameters.getBytes().length);
             connection.setRequestProperty("Content-Language", "en-US");
 
             connection.setUseCaches(false);
@@ -48,14 +46,10 @@ public class HttpConnection {
             }
             rd.close();
             return response.toString();
-
         } catch (Exception e) {
-
             e.printStackTrace();
             return null;
-
         } finally {
-
             if (connection != null) {
                 connection.disconnect();
             }

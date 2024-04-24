@@ -54,10 +54,10 @@ class UniquePaths {
 
     public static void main(String[] args) {
         int[][] maze = {
-            {1, 1, 1, 1},
-            {1, 1, 0, 1},
-            {0, 1, 0, 1},
-            {1, 1, 1, 1}
+                {1, 1, 1, 1},
+                {1, 1, 0, 1},
+                {0, 1, 0, 1},
+                {1, 1, 1, 1}
         };
 
         M = maze.length;

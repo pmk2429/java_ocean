@@ -25,13 +25,13 @@ package matrix;
  */
 public class SurroundedRegions {
 
-  private static void solve(char[][] board) {
-    for (int i = 0; i < board.length; i++) {
+    private static void solve(char[][] board) {
+        for (int i = 0; i < board.length; i++) {
+
+        }
+    }
+
+    public static void main(String[] args) {
 
     }
-  }
-
-  public static void main(String[] args) {
-
-  }
 }

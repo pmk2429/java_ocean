@@ -27,7 +27,7 @@ import java.util.List;
  * Follow up: Could you do it without extra space and in O(n) runtime?
  * You may assume the returned list does not count as extra space.
  */
-public class FindAllDisappearedNumbers {
+public class FindAllMissingNumbers {
 
     private static List<Integer> findDisappearedNumbers(int[] nums) {
         if (nums == null || nums.length == 0) {

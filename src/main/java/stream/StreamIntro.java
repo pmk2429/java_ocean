@@ -54,7 +54,7 @@ public class StreamIntro {
     }
 
     public static void main(String[] args) {
-        filter("a");
+        filter("y");
         exists("d");
         reduction();
     }

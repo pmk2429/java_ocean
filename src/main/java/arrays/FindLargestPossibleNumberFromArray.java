@@ -16,8 +16,8 @@ public class FindLargestPossibleNumberFromArray {
         nums.sort((a, b) -> (String.valueOf(b) + a).compareTo(String.valueOf(a) + b));
 
         return nums.stream()
-            .map(Object::toString)
-            .collect(Collectors.joining(""));
+                .map(Object::toString)
+                .collect(Collectors.joining(""));
     }
 
     public static void main(String[] args) {
