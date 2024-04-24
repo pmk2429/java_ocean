@@ -1,0 +1,49 @@
+Java is pass-by-value.
+When you pass a variable to a method in Java, a copy of the variable's value is passed, not the actual variable itself.
+This means that changes made to the parameter inside the method do not affect the original variable outside the method.
+However, for objects, the "value" that is passed is actually a reference to the object, which can lead to some confusion.
+
+
+Sample Code:
+------------
+public class PassByValueExample {
+    public static void main(String[] args) {
+        int x = 10;
+        System.out.println("Before modifyValue method: " + x);
+        modifyValue(x);
+        System.out.println("After modifyValue method: " + x);
+
+        StringBuilder sb = new StringBuilder("Hello");
+        System.out.println("Before modifyStringBuilder method: " + sb);
+        modifyStringBuilder(sb);
+        System.out.println("After modifyStringBuilder method: " + sb);
+    }
+
+    public static void modifyValue(int value) {
+        value = 20;
+    }
+
+    public static void modifyStringBuilder(StringBuilder builder) {
+        builder.append(" World");
+    }
+}
+
+Output:
+-------
+Before modifyValue method: 10
+After modifyValue method: 10
+Before modifyStringBuilder method: Hello
+After modifyStringBuilder method: Hello World
+
+Explanation:
+------------
+In the modifyValue method, a copy of the value of x (which is 10) is passed.
+Inside the method, this copy is modified to 20, but the original variable x remains unchanged (prints 10).
+
+In the modifyStringBuilder method, a copy of the reference to the StringBuilder object sb is passed.
+However, both the original sb variable and the copy point to the same object in memory.
+Therefore, changes made to the object through the copy (appending " World" to the StringBuilder) are reflected
+in the original object, and both print the modified value ("Hello World").
+
+This distinction is important to understand in Java, especially when dealing with mutable objects, as changes made
+ to the object inside a method can affect the original object outside the method.

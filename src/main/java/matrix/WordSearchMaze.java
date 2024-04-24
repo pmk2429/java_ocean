@@ -46,9 +46,9 @@ public class WordSearchMaze {
         board[i][j] = '\0';
 
         boolean found = wordExistsDFS(board, i + 1, j, word, index + 1) ||
-            wordExistsDFS(board, i - 1, j, word, index + 1) ||
-            wordExistsDFS(board, i, j + 1, word, index + 1) ||
-            wordExistsDFS(board, i, j - 1, word, index + 1);
+                wordExistsDFS(board, i - 1, j, word, index + 1) ||
+                wordExistsDFS(board, i, j + 1, word, index + 1) ||
+                wordExistsDFS(board, i, j - 1, word, index + 1);
 
         // mark as unvisited
         board[i][j] = temp;
@@ -70,16 +70,16 @@ public class WordSearchMaze {
 
     public static void main(String[] args) {
         char[][] board = {
-            {'A', 'B', 'P', 'E'},
-            {'S', 'F', 'C', 'S'},
-            {'K', 'D', 'O', 'E'},
-            {'A', 'R', 'M', 'E'}
+                {'A', 'B', 'P', 'E'},
+                {'S', 'F', 'C', 'S'},
+                {'K', 'D', 'O', 'E'},
+                {'A', 'R', 'M', 'E'}
         };
 
         M = board.length;
         N = board[0].length;
 
-        String a = "PMK";
+        String a = "ARM";
         System.out.println(exist(board, a));
         String b = "SEE";
         System.out.println(exist(board, b));
